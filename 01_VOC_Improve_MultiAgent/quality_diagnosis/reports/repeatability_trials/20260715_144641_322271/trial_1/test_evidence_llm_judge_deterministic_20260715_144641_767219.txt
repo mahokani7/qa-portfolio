@@ -1,0 +1,11 @@
+VOC 품질 테스트 실행 증적
+실행 유형: llm_judge_deterministic
+실행 시각: 2026-07-15T14:46:41+09:00
+결과: 0/2 PASS
+실패: 2, 오류: 0
+최종 판정: FAIL
+평균 점수: 92.0/100
+
+[상세 결과]
+- TC-01 | FAIL | score= | 
+- TC-04 | FAIL | score= | 

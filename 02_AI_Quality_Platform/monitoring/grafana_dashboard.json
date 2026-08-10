@@ -1,0 +1,29 @@
+{
+  "title": "AI Agent 품질관리 운영 대시보드",
+  "__note": "TODO(모니터링 단계): Prometheus 데이터소스 연결 후 패널의 targets.expr을 실제 메트릭 이름으로 채울 것",
+  "schemaVersion": 39,
+  "timezone": "browser",
+  "panels": [
+    {
+      "id": 1,
+      "title": "요청 수 (ask_requests_total)",
+      "type": "stat",
+      "gridPos": { "h": 6, "w": 8, "x": 0, "y": 0 },
+      "targets": [{ "expr": "ask_requests_total" }]
+    },
+    {
+      "id": 2,
+      "title": "오류 수 (ask_errors_total)",
+      "type": "stat",
+      "gridPos": { "h": 6, "w": 8, "x": 8, "y": 0 },
+      "targets": [{ "expr": "ask_errors_total" }]
+    },
+    {
+      "id": 3,
+      "title": "평균 응답시간 (ask_avg_latency_seconds)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 16, "x": 0, "y": 6 },
+      "targets": [{ "expr": "ask_avg_latency_seconds" }]
+    }
+  ]
+}

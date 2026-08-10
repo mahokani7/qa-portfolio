@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="batch_source_hidden_initial_state" tests="6" failures="0" errors="0" timestamp="2026-07-15T16:09:09+09:00">
+  <testcase classname="voc.quality.batch_source_hidden_initial_state" name="BATCH-UI-01" />
+  <testcase classname="voc.quality.batch_source_hidden_initial_state" name="BATCH-UI-02" />
+  <testcase classname="voc.quality.batch_source_hidden_initial_state" name="BATCH-UI-03" />
+  <testcase classname="voc.quality.batch_source_hidden_initial_state" name="BATCH-UI-04" />
+  <testcase classname="voc.quality.batch_source_hidden_initial_state" name="BATCH-UI-05" />
+  <testcase classname="voc.quality.batch_source_hidden_initial_state" name="BATCH-UI-06" />
+</testsuite>

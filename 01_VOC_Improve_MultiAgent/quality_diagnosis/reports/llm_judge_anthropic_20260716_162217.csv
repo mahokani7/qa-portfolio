@@ -1,0 +1,2 @@
+﻿case_id,accuracy,summary_faithfulness,policy_specificity,usefulness,safety,total_score,decision,critical_violations
+TC-01,22.0,18.0,17.0,17.0,14.0,88.0,"조건부 배포 보류, 기준 점수 충족 후 재검증",

@@ -1,0 +1,288 @@
+{
+  "summary": {
+    "generated_at": "2026-07-15T14:49:41+09:00",
+    "domain": "ecommerce",
+    "mode": "offline",
+    "trials": 3,
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "pass_rate": 100.0,
+    "average_score": 100.0,
+    "successful": true,
+    "live_quality_verified": false,
+    "criteria": {
+      "status_flip_allowed": false,
+      "maximum_score_stddev": 1.0,
+      "judge_disagreement_allowed": false
+    },
+    "judge_provider": "deterministic"
+  },
+  "trial_reports": [
+    "repeatability_trials\\20260715_144939_824021\\trial_1\\ecommerce_offline_e2e_20260715_144940.json",
+    "repeatability_trials\\20260715_144939_824021\\trial_2\\ecommerce_offline_e2e_20260715_144940.json",
+    "repeatability_trials\\20260715_144939_824021\\trial_3\\ecommerce_offline_e2e_20260715_144941.json"
+  ],
+  "judge_reports": [
+    "repeatability_trials\\20260715_144939_824021\\trial_1\\llm_judge_deterministic_20260715_144940.json",
+    "repeatability_trials\\20260715_144939_824021\\trial_2\\llm_judge_deterministic_20260715_144940.json",
+    "repeatability_trials\\20260715_144939_824021\\trial_3\\llm_judge_deterministic_20260715_144941.json"
+  ],
+  "results": [
+    {
+      "case_id": "TC-01",
+      "question": "결제는 완료되었는데 주문 내역에 보이지 않습니다.",
+      "status": "PASS",
+      "score": 100.0,
+      "stable": true,
+      "status_flip": false,
+      "status_change_count": 0,
+      "score_mean": 90.2,
+      "score_min": 90.2,
+      "score_max": 90.2,
+      "score_stddev": 0.0,
+      "score_spread": 0.0,
+      "output_variants": 1,
+      "judge_verdicts": [
+        "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "조건부 배포 보류, 기준 점수 충족 후 재검증"
+      ],
+      "judge_disagreement": false,
+      "judge_score_mean": 92.0,
+      "judge_score_stddev": 0.0,
+      "missing_trials": 0,
+      "detail": "상태변경=0회, 표준편차=0.000, 점수범위=0.0, 출력변형=1, Judge불일치=False",
+      "trials": [
+        {
+          "trial": 1,
+          "passed": true,
+          "score": 90.2,
+          "duration_ms": 37.93,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        },
+        {
+          "trial": 2,
+          "passed": true,
+          "score": 90.2,
+          "duration_ms": 26.54,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        },
+        {
+          "trial": 3,
+          "passed": true,
+          "score": 90.2,
+          "duration_ms": 26.52,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        }
+      ]
+    },
+    {
+      "case_id": "TC-02",
+      "question": "쿠폰을 적용했는데 결제 금액이 할인되지 않았습니다.",
+      "status": "PASS",
+      "score": 100.0,
+      "stable": true,
+      "status_flip": false,
+      "status_change_count": 0,
+      "score_mean": 88.5,
+      "score_min": 88.5,
+      "score_max": 88.5,
+      "score_stddev": 0.0,
+      "score_spread": 0.0,
+      "output_variants": 1,
+      "judge_verdicts": [
+        "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "조건부 배포 보류, 기준 점수 충족 후 재검증"
+      ],
+      "judge_disagreement": false,
+      "judge_score_mean": 92.0,
+      "judge_score_stddev": 0.0,
+      "missing_trials": 0,
+      "detail": "상태변경=0회, 표준편차=0.000, 점수범위=0.0, 출력변형=1, Judge불일치=False",
+      "trials": [
+        {
+          "trial": 1,
+          "passed": true,
+          "score": 88.5,
+          "duration_ms": 30.41,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        },
+        {
+          "trial": 2,
+          "passed": true,
+          "score": 88.5,
+          "duration_ms": 25.26,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        },
+        {
+          "trial": 3,
+          "passed": true,
+          "score": 88.5,
+          "duration_ms": 30.81,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        }
+      ]
+    },
+    {
+      "case_id": "TC-03",
+      "question": "로그인 인증번호가 너무 늦게 도착합니다.",
+      "status": "PASS",
+      "score": 100.0,
+      "stable": true,
+      "status_flip": false,
+      "status_change_count": 0,
+      "score_mean": 96.2,
+      "score_min": 96.2,
+      "score_max": 96.2,
+      "score_stddev": 0.0,
+      "score_spread": 0.0,
+      "output_variants": 1,
+      "judge_verdicts": [
+        "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "조건부 배포 보류, 기준 점수 충족 후 재검증"
+      ],
+      "judge_disagreement": false,
+      "judge_score_mean": 92.0,
+      "judge_score_stddev": 0.0,
+      "missing_trials": 0,
+      "detail": "상태변경=0회, 표준편차=0.000, 점수범위=0.0, 출력변형=1, Judge불일치=False",
+      "trials": [
+        {
+          "trial": 1,
+          "passed": true,
+          "score": 96.2,
+          "duration_ms": 33.72,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        },
+        {
+          "trial": 2,
+          "passed": true,
+          "score": 96.2,
+          "duration_ms": 23.95,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        },
+        {
+          "trial": 3,
+          "passed": true,
+          "score": 96.2,
+          "duration_ms": 24.52,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        }
+      ]
+    },
+    {
+      "case_id": "TC-04",
+      "question": "배송 예정일이 지났는데 배송 상태가 바뀌지 않습니다.",
+      "status": "PASS",
+      "score": 100.0,
+      "stable": true,
+      "status_flip": false,
+      "status_change_count": 0,
+      "score_mean": 91.8,
+      "score_min": 91.8,
+      "score_max": 91.8,
+      "score_stddev": 0.0,
+      "score_spread": 0.0,
+      "output_variants": 1,
+      "judge_verdicts": [
+        "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "조건부 배포 보류, 기준 점수 충족 후 재검증"
+      ],
+      "judge_disagreement": false,
+      "judge_score_mean": 92.0,
+      "judge_score_stddev": 0.0,
+      "missing_trials": 0,
+      "detail": "상태변경=0회, 표준편차=0.000, 점수범위=0.0, 출력변형=1, Judge불일치=False",
+      "trials": [
+        {
+          "trial": 1,
+          "passed": true,
+          "score": 91.8,
+          "duration_ms": 41.96,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        },
+        {
+          "trial": 2,
+          "passed": true,
+          "score": 91.8,
+          "duration_ms": 23.25,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        },
+        {
+          "trial": 3,
+          "passed": true,
+          "score": 91.8,
+          "duration_ms": 26.17,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        }
+      ]
+    },
+    {
+      "case_id": "TC-05",
+      "question": "환불 신청을 했는데 처리 상태를 알 수 없습니다.",
+      "status": "PASS",
+      "score": 100.0,
+      "stable": true,
+      "status_flip": false,
+      "status_change_count": 0,
+      "score_mean": 89.7,
+      "score_min": 89.7,
+      "score_max": 89.7,
+      "score_stddev": 0.0,
+      "score_spread": 0.0,
+      "output_variants": 1,
+      "judge_verdicts": [
+        "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "조건부 배포 보류, 기준 점수 충족 후 재검증"
+      ],
+      "judge_disagreement": false,
+      "judge_score_mean": 92.0,
+      "judge_score_stddev": 0.0,
+      "missing_trials": 0,
+      "detail": "상태변경=0회, 표준편차=0.000, 점수범위=0.0, 출력변형=1, Judge불일치=False",
+      "trials": [
+        {
+          "trial": 1,
+          "passed": true,
+          "score": 89.7,
+          "duration_ms": 398.71,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        },
+        {
+          "trial": 2,
+          "passed": true,
+          "score": 89.7,
+          "duration_ms": 24.37,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        },
+        {
+          "trial": 3,
+          "passed": true,
+          "score": 89.7,
+          "duration_ms": 28.21,
+          "judge_decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "judge_score": 92.0
+        }
+      ]
+    }
+  ]
+}

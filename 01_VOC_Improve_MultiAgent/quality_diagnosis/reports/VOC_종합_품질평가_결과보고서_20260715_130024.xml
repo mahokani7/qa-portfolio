@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<comprehensiveQualityReport generatedAt="2026-07-15T13:00:24+09:00" testVerdict="PASS" deploymentVerdict="HOLD">
+  <testTrend initialPassed="33" initialFailed="2" finalPassed="35" finalFailed="0" />
+  <deployment overallScore="89.0" minimumScore="95.0" technicalPass="false" label="배포 보류 - 기준 미충족 항목 개선 필요" />
+  <stages>
+    <stage number="1" name="VOC 분석 및 정책 개선안 생성" />
+    <stage number="2" name="6개 멀티 에이전트 내부 품질진단" />
+    <stage number="3" name="독립 LLM Judge 평가" />
+  </stages>
+  <testCases total="35">
+    <case id="TC-01" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="90.2">결제는 완료되었는데 주문 내역에 보이지 않습니다.</case>
+    <case id="TC-02" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="88.5">쿠폰을 적용했는데 결제 금액이 할인되지 않았습니다.</case>
+    <case id="TC-03" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="96.2">로그인 인증번호가 너무 늦게 도착합니다.</case>
+    <case id="TC-04" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="91.8">배송 예정일이 지났는데 배송 상태가 바뀌지 않습니다.</case>
+    <case id="TC-05" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="89.7">환불 신청을 했는데 처리 상태를 알 수 없습니다.</case>
+    <case id="TC-06" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="98.3">앱이 계속 멈추고 실행되지 않습니다.</case>
+    <case id="TC-07" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="93.1">고객센터 상담원 연결 대기 시간이 너무 깁니다.</case>
+    <case id="TC-08" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="98.1">비밀번호를 변경하려는데 오류가 발생해 변경이 안 됩니다.</case>
+    <case id="TC-09" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="95.0">앱이 이상해요.</case>
+    <case id="TC-10" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="100.0">그냥 다 안 돼요.</case>
+    <case id="TC-11" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="100.0">이거 왜 이래요?</case>
+    <case id="TC-12" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="94.4">결제도 안 되고 쿠폰도 사라졌습니다.</case>
+    <case id="TC-13" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="84.8">배송은 지연되는데 환불 요청도 처리가 안 됩니다.</case>
+    <case id="TC-14" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="93.0">로그인도 안 되고 앱도 멈추고 상담 연결도 안 됩니다.</case>
+    <case id="TC-15" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="100.0">개인정보를 삭제해 달라고 요청합니다.</case>
+    <case id="TC-16" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="100.0">오프라인 매장 위치와 영업시간이 궁금합니다.</case>
+    <case id="TC-17" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="96.9">결제됫는대 주문 안보여요.</case>
+    <case id="TC-18" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="98.2">쿠폰 적용햇는대 할인이 안됫어요 왜그런거져??</case>
+    <case id="INS-01" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="96.2">보험금 지급이 안내보다 늦어진 사례를 분석해줘.</case>
+    <case id="INS-02" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="97.0">고객센터 연결 대기 시간이 긴 불만을 분석해줘.</case>
+    <case id="INS-03" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="90.3">보험 모바일 앱 오류와 온라인 청약 실패를 분석해줘.</case>
+    <case id="INS-04" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="99.1">보험 청구 서류 안내가 일관되지 않은 사례를 찾아줘.</case>
+    <case id="INS-05" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="99.1">약관과 보장 내용을 이해하기 어렵다는 불만을 분석해줘.</case>
+    <case id="INS-06" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="99.0">사고 접수와 긴급 견인 대응이 늦은 문제를 분석해줘.</case>
+    <case id="INS-07" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="99.1">보험료 자동이체 변경 절차 불편을 분석해줘.</case>
+    <case id="INS-08" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="87.1">고객 불만 접수 후 피드백과 사과가 없다는 사례를 분석해줘.</case>
+    <case id="INS-09" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="88.8">보험 상품 가격 차이와 고객 차별 문제를 분석해줘.</case>
+    <case id="INS-10" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="97.5">보험이 이상해요.</case>
+    <case id="INS-11" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="100.0">반려동물 예방접종 보험 적용 내역을 알려줘.</case>
+    <case id="INS-12" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="98.8">해외 사고 발생 시 현지 언어 지원 부족을 분석해줘.</case>
+    <case id="INS-13" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="88.7">보험 갱신 문자가 늦게 와서 갱신을 놓친 문제를 분석해줘.</case>
+    <case id="INS-14" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="100.0">주민등록번호 삭제 요청과 관련된 보험 VOC를 찾아줘.</case>
+    <case id="INS-15" category="VOC 분석·정책 개선" initialStatus="PASS" finalStatus="PASS" score="90.3">보험 광고 혜택과 실제 약관 조건이 다른 문제를 분석해줘.</case>
+    <case id="DEF-BRANCH-01" category="분기 인터페이스" initialStatus="FAIL" finalStatus="PASS" score="100">Anthropic Judge 분기에서 provider 전용 Messages 인터페이스 사용</case>
+    <case id="DEF-429-01" category="API 429 내결함성" initialStatus="FAIL" finalStatus="PASS" score="100">HTTP 429 분류, 동시 실행 1건 축소 및 사용량 한도 확인 안내</case>
+  </testCases>
+  <defects>
+    <defect id="DEF-BRANCH-01" status="PASS / 수정 완료" severity="높음">
+      <name>분기 인터페이스 오류</name>
+      <cause>OpenAI·Anthropic 분기에서 공급자별 요청 인수가 혼용되어 Anthropic Messages 호출이 거부됨</cause>
+      <correctiveAction>공급자별 클라이언트를 분리하고 Anthropic 분기에서 temperature를 제거, model·max_tokens·messages만 전달</correctiveAction>
+    </defect>
+    <defect id="DEF-429-01" status="PASS / 운영 모니터링" severity="높음">
+      <name>API 429 사용량 제한 장애</name>
+      <cause>라이브 병렬 테스트가 공급자 사용량 한도를 초과했으나 일반 서버 오류로만 표시됨</cause>
+      <correctiveAction>동시 실행 기본 2·최대 4 제한, SDK 재시도 1회, 429 전용 오류코드와 동시 실행 1건 축소 안내 적용</correctiveAction>
+    </defect>
+  </defects>
+  <residualRisks>
+    <risk name="95점 배포 기준 미달" score="5">E2E +4.4점, Judge +6.0점 개선 후 재시험</risk>
+    <risk name="사람 승인 미기록" score="5">승인자·시각·판단 근거를 전자 승인 이력으로 보존</risk>
+    <risk name="운영 부하·429" score="4">동시성 1~2 유지, 큐·지수 백오프·사용량 알림 추가</risk>
+    <risk name="인증·TLS·프록시" score="4">로컬 바인딩 이후 운영 게이트웨이 보안 검증</risk>
+    <risk name="도메인 확장·드리프트" score="3">보험 라이브 전체와 장기 회귀 추세 비교</risk>
+  </residualRisks>
+</comprehensiveQualityReport>

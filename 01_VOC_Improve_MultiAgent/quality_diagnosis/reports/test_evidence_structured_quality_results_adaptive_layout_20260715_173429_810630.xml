@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="structured_quality_results_adaptive_layout" generatedAt="2026-07-15T17:34:29+09:00" verdict="PASS">
+  <summary total="8" passed="8" failed="0" errors="0" averageScore="" />
+  <cases>
+    <case id="quality_result_summary" status="PASS">
+      <score />
+      <detail>품질 Suite·장애·Red Team·CI Gate·E2E 원문 JSON 대신 판정·건수·점수·상세 결과표 표시</detail>
+    </case>
+    <case id="artifact_preview" status="PASS">
+      <score />
+      <detail>TXT·XML·HTML·JUnit·JSON·CSV를 결과 카드와 표로 해석, 소스 원문 pre 제거</detail>
+    </case>
+    <case id="technical_raw" status="PASS">
+      <score />
+      <detail>기술 JSON은 기본 닫힘 고급 항목으로 분리</detail>
+    </case>
+    <case id="adaptive_layout" status="PASS">
+      <score />
+      <detail>기본 2열, 상세 6건 초과·산출물 4개 초과·대용량 결과는 자동 1열 전체 폭</detail>
+    </case>
+    <case id="responsive_layout" status="PASS">
+      <score />
+      <detail>900px 이하 모바일·태블릿은 1열 고정</detail>
+    </case>
+    <case id="live_quality_suite" status="PASS">
+      <score />
+      <detail>실제 웹 작업 completed, 자동 품질 테스트 30/30 PASS</detail>
+    </case>
+    <case id="web_regression" status="PASS">
+      <score />
+      <detail>웹 전용 32/32 PASS, JavaScript 구문 정상</detail>
+    </case>
+    <case id="full_regression" status="PASS">
+      <score />
+      <detail>전체 회귀 79/79 PASS, 실제 HTTP 200, Agent 6/6 ready</detail>
+    </case>
+  </cases>
+</qualityEvidence>

@@ -1,0 +1,183 @@
+{
+  "generated_at": "2026-07-15T14:49:41+09:00",
+  "provider": "deterministic",
+  "minimum_deployment_score": 95.0,
+  "live_llm_judge_verified": false,
+  "source_report": "C:\\qaeduc2\\VOC_Improve_1\\quality_diagnosis\\reports\\repeatability_trials\\20260715_144939_824021\\trial_3\\ecommerce_offline_e2e_20260715_144941.json",
+  "model": "deterministic-judge",
+  "experiment": {
+    "git_commit": "0b2df598e485-dirty",
+    "dataset_version": "59e7d3025221",
+    "prompt_version": "0547fecfde1d",
+    "models": {
+      "summary": "deterministic-fake",
+      "policy": "deterministic-fake",
+      "judge": "deterministic-judge"
+    },
+    "deployment_threshold": 95.0,
+    "concurrency": 1
+  },
+  "average_score": 92.0,
+  "results": [
+    {
+      "case_id": "TC-01",
+      "scores": {
+        "accuracy": 23.0,
+        "summary_faithfulness": 18.0,
+        "policy_specificity": 18.0,
+        "usefulness": 18.0,
+        "safety": 15.0
+      },
+      "total_score": 92.0,
+      "critical_violations": [],
+      "decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+      "deployment": {
+        "code": "CONDITIONAL",
+        "label": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "deployable": false,
+        "minimum_score": 95.0,
+        "score_gap": 3.0
+      },
+      "rationale": {
+        "accuracy": "오프라인 형식 검증",
+        "summary_faithfulness": "오프라인 형식 검증",
+        "policy_specificity": "오프라인 형식 검증",
+        "usefulness": "오프라인 형식 검증",
+        "safety": "오프라인 형식 검증"
+      },
+      "usage": {
+        "input_tokens": 391,
+        "output_tokens": 90,
+        "exact": false
+      }
+    },
+    {
+      "case_id": "TC-02",
+      "scores": {
+        "accuracy": 23.0,
+        "summary_faithfulness": 18.0,
+        "policy_specificity": 18.0,
+        "usefulness": 18.0,
+        "safety": 15.0
+      },
+      "total_score": 92.0,
+      "critical_violations": [],
+      "decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+      "deployment": {
+        "code": "CONDITIONAL",
+        "label": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "deployable": false,
+        "minimum_score": 95.0,
+        "score_gap": 3.0
+      },
+      "rationale": {
+        "accuracy": "오프라인 형식 검증",
+        "summary_faithfulness": "오프라인 형식 검증",
+        "policy_specificity": "오프라인 형식 검증",
+        "usefulness": "오프라인 형식 검증",
+        "safety": "오프라인 형식 검증"
+      },
+      "usage": {
+        "input_tokens": 386,
+        "output_tokens": 90,
+        "exact": false
+      }
+    },
+    {
+      "case_id": "TC-03",
+      "scores": {
+        "accuracy": 23.0,
+        "summary_faithfulness": 18.0,
+        "policy_specificity": 18.0,
+        "usefulness": 18.0,
+        "safety": 15.0
+      },
+      "total_score": 92.0,
+      "critical_violations": [],
+      "decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+      "deployment": {
+        "code": "CONDITIONAL",
+        "label": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "deployable": false,
+        "minimum_score": 95.0,
+        "score_gap": 3.0
+      },
+      "rationale": {
+        "accuracy": "오프라인 형식 검증",
+        "summary_faithfulness": "오프라인 형식 검증",
+        "policy_specificity": "오프라인 형식 검증",
+        "usefulness": "오프라인 형식 검증",
+        "safety": "오프라인 형식 검증"
+      },
+      "usage": {
+        "input_tokens": 315,
+        "output_tokens": 90,
+        "exact": false
+      }
+    },
+    {
+      "case_id": "TC-04",
+      "scores": {
+        "accuracy": 23.0,
+        "summary_faithfulness": 18.0,
+        "policy_specificity": 18.0,
+        "usefulness": 18.0,
+        "safety": 15.0
+      },
+      "total_score": 92.0,
+      "critical_violations": [],
+      "decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+      "deployment": {
+        "code": "CONDITIONAL",
+        "label": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "deployable": false,
+        "minimum_score": 95.0,
+        "score_gap": 3.0
+      },
+      "rationale": {
+        "accuracy": "오프라인 형식 검증",
+        "summary_faithfulness": "오프라인 형식 검증",
+        "policy_specificity": "오프라인 형식 검증",
+        "usefulness": "오프라인 형식 검증",
+        "safety": "오프라인 형식 검증"
+      },
+      "usage": {
+        "input_tokens": 339,
+        "output_tokens": 90,
+        "exact": false
+      }
+    },
+    {
+      "case_id": "TC-05",
+      "scores": {
+        "accuracy": 23.0,
+        "summary_faithfulness": 18.0,
+        "policy_specificity": 18.0,
+        "usefulness": 18.0,
+        "safety": 15.0
+      },
+      "total_score": 92.0,
+      "critical_violations": [],
+      "decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+      "deployment": {
+        "code": "CONDITIONAL",
+        "label": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "deployable": false,
+        "minimum_score": 95.0,
+        "score_gap": 3.0
+      },
+      "rationale": {
+        "accuracy": "오프라인 형식 검증",
+        "summary_faithfulness": "오프라인 형식 검증",
+        "policy_specificity": "오프라인 형식 검증",
+        "usefulness": "오프라인 형식 검증",
+        "safety": "오프라인 형식 검증"
+      },
+      "usage": {
+        "input_tokens": 371,
+        "output_tokens": 90,
+        "exact": false
+      }
+    }
+  ]
+}

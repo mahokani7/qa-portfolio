@@ -1,0 +1,42 @@
+[
+  {
+    "case_id": "TC-001",
+    "category": "정확성",
+    "test_type": "Happy",
+    "user_question": "이 교육과정은 총 몇 시간인가요?",
+    "expected_keyword": "320시간",
+    "expected_policy": "정확한 시간 안내"
+  },
+  {
+    "case_id": "TC-002",
+    "category": "출결",
+    "test_type": "Happy",
+    "user_question": "지각을 세 번 하면 어떻게 되나요?",
+    "expected_keyword": "결석 1일",
+    "expected_policy": "지각 3회는 결석 1일"
+  },
+  {
+    "case_id": "TC-003",
+    "category": "교육시간 안내",
+    "test_type": "Edge",
+    "user_question": "직장인이라 저녁에만 들으려고 하는데, 야간 반이나 주말 반도 총 320시간인가요?",
+    "expected_keyword": "320시간",
+    "expected_policy": "주간/야간/주말 형태와 관계없이 교육과정의 총 수료 기준 시간은 320시간임을 명확히 안내해야 함."
+  },
+  {
+    "case_id": "TC-004",
+    "category": "교육시간 안내",
+    "test_type": "Negative",
+    "user_question": "이거 너무 길어요. 150시간만 듣고 조기 수료 처리해주시면 안 되나요?",
+    "expected_keyword": "320시간",
+    "expected_policy": "조기 수료는 불가능하며, 반드시 총 320시간을 이수해야 함을 단호하고 정확하게 안내해야 함."
+  },
+  {
+    "case_id": "TC-005",
+    "category": "출결 규정",
+    "test_type": "Edge",
+    "user_question": "지각 2번에 조퇴 1번을 했습니다. 이것도 결석 1일인가요?",
+    "expected_keyword": "결석 1일",
+    "expected_policy": "지각/조퇴/외출은 구분 없이 누적 3회 시 결석 1일로 처리된다는 합산 규정을 정확히 안내해야 함."
+  }
+]

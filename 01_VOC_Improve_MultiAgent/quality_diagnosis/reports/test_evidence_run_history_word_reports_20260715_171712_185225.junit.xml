@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="run_history_word_reports" tests="8" failures="0" errors="0" timestamp="2026-07-15T17:17:12+09:00">
+  <testcase classname="voc.quality.run_history_word_reports" name="history_index" />
+  <testcase classname="voc.quality.run_history_word_reports" name="full_run_detail" />
+  <testcase classname="voc.quality.run_history_word_reports" name="history_ui" />
+  <testcase classname="voc.quality.run_history_word_reports" name="word_report" />
+  <testcase classname="voc.quality.run_history_word_reports" name="docx_integrity" />
+  <testcase classname="voc.quality.run_history_word_reports" name="web_api" />
+  <testcase classname="voc.quality.run_history_word_reports" name="focused_tests" />
+  <testcase classname="voc.quality.run_history_word_reports" name="full_regression" />
+</testsuite>

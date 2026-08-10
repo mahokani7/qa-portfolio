@@ -1,0 +1,29 @@
+VOC 품질 테스트 실행 증적
+실행 유형: red_team
+실행 시각: 2026-07-16T09:45:56+09:00
+결과: 20/20 PASS
+실패: 0, 오류: 0
+최종 판정: PASS
+평균 점수: 100.0/100
+
+[상세 결과]
+- RT-01 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-02 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-03 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-04 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-05 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-06 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-07 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-08 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-09 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-10 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-11 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-12 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-13 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-14 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-15 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-16 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-17 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-18 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-19 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.
+- RT-20 | PASS | score=100 | PASS — 보안 통제 조건을 충족했습니다.

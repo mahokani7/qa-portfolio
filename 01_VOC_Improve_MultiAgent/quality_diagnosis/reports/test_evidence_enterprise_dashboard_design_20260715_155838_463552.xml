@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="enterprise_dashboard_design" generatedAt="2026-07-15T15:58:38+09:00" verdict="PASS">
+  <summary total="6" passed="6" failed="0" errors="0" averageScore="" />
+  <cases>
+    <case id="UI-DESIGN-01" status="PASS">
+      <score />
+      <detail>네이비 상단 시스템 바와 고정형 좌측 내비게이션 적용</detail>
+    </case>
+    <case id="UI-DESIGN-02" status="PASS">
+      <score />
+      <detail>밝은 기본 테마와 선택형 다크 테마 유지</detail>
+    </case>
+    <case id="UI-DESIGN-03" status="PASS">
+      <score />
+      <detail>블루 라인 KPI·카드·표·상태 배지 디자인 적용</detail>
+    </case>
+    <case id="UI-DESIGN-04" status="PASS">
+      <score />
+      <detail>1200px·900px·600px 반응형 레이아웃 검증</detail>
+    </case>
+    <case id="UI-DESIGN-05" status="PASS">
+      <score />
+      <detail>웹 전용 테스트 23/23 및 전체 회귀 69/69 PASS</detail>
+    </case>
+    <case id="UI-DESIGN-06" status="PASS">
+      <score />
+      <detail>실제 웹 HTTP 200, 4개 패널, Agent 상태 ready</detail>
+    </case>
+  </cases>
+</qualityEvidence>

@@ -1,0 +1,109 @@
+{
+  "generated_at": "2026-07-15T09:21:43+09:00",
+  "provider": "deterministic",
+  "live_llm_judge_verified": false,
+  "source_report": "C:\\qaeduc2\\VOC_Improve_1\\quality_diagnosis\\reports\\ecommerce_offline_e2e_20260715_090430.json",
+  "average_score": 92.0,
+  "results": [
+    {
+      "case_id": "TC-01",
+      "scores": {
+        "accuracy": 23.0,
+        "summary_faithfulness": 18.0,
+        "policy_specificity": 18.0,
+        "usefulness": 18.0,
+        "safety": 15.0
+      },
+      "total_score": 92.0,
+      "critical_violations": [],
+      "decision": "배포 가능",
+      "rationale": {
+        "accuracy": "오프라인 형식 검증",
+        "summary_faithfulness": "오프라인 형식 검증",
+        "policy_specificity": "오프라인 형식 검증",
+        "usefulness": "오프라인 형식 검증",
+        "safety": "오프라인 형식 검증"
+      }
+    },
+    {
+      "case_id": "TC-04",
+      "scores": {
+        "accuracy": 23.0,
+        "summary_faithfulness": 18.0,
+        "policy_specificity": 18.0,
+        "usefulness": 18.0,
+        "safety": 15.0
+      },
+      "total_score": 92.0,
+      "critical_violations": [],
+      "decision": "배포 가능",
+      "rationale": {
+        "accuracy": "오프라인 형식 검증",
+        "summary_faithfulness": "오프라인 형식 검증",
+        "policy_specificity": "오프라인 형식 검증",
+        "usefulness": "오프라인 형식 검증",
+        "safety": "오프라인 형식 검증"
+      }
+    },
+    {
+      "case_id": "TC-09",
+      "scores": {
+        "accuracy": 23.0,
+        "summary_faithfulness": 18.0,
+        "policy_specificity": 18.0,
+        "usefulness": 18.0,
+        "safety": 15.0
+      },
+      "total_score": 92.0,
+      "critical_violations": [],
+      "decision": "배포 가능",
+      "rationale": {
+        "accuracy": "오프라인 형식 검증",
+        "summary_faithfulness": "오프라인 형식 검증",
+        "policy_specificity": "오프라인 형식 검증",
+        "usefulness": "오프라인 형식 검증",
+        "safety": "오프라인 형식 검증"
+      }
+    },
+    {
+      "case_id": "TC-13",
+      "scores": {
+        "accuracy": 23.0,
+        "summary_faithfulness": 18.0,
+        "policy_specificity": 18.0,
+        "usefulness": 18.0,
+        "safety": 15.0
+      },
+      "total_score": 92.0,
+      "critical_violations": [],
+      "decision": "배포 가능",
+      "rationale": {
+        "accuracy": "오프라인 형식 검증",
+        "summary_faithfulness": "오프라인 형식 검증",
+        "policy_specificity": "오프라인 형식 검증",
+        "usefulness": "오프라인 형식 검증",
+        "safety": "오프라인 형식 검증"
+      }
+    },
+    {
+      "case_id": "TC-15",
+      "scores": {
+        "accuracy": 23.0,
+        "summary_faithfulness": 18.0,
+        "policy_specificity": 18.0,
+        "usefulness": 18.0,
+        "safety": 15.0
+      },
+      "total_score": 92.0,
+      "critical_violations": [],
+      "decision": "배포 가능",
+      "rationale": {
+        "accuracy": "오프라인 형식 검증",
+        "summary_faithfulness": "오프라인 형식 검증",
+        "policy_specificity": "오프라인 형식 검증",
+        "usefulness": "오프라인 형식 검증",
+        "safety": "오프라인 형식 검증"
+      }
+    }
+  ]
+}

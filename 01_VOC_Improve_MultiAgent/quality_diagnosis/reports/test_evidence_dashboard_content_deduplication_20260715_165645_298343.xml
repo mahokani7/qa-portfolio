@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="dashboard_content_deduplication" generatedAt="2026-07-15T16:56:45+09:00" verdict="PASS">
+  <summary total="8" passed="8" failed="0" errors="0" averageScore="" />
+  <cases>
+    <case id="DASHBOARD-ONLY-SUMMARY" status="PASS">
+      <score />
+      <detail>dashboard summary remains visible only on /dashboard</detail>
+    </case>
+    <case id="TEST-CASES-ISOLATION" status="PASS">
+      <score />
+      <detail>/test-cases page state and dashboard exclusion verified</detail>
+    </case>
+    <case id="RUNS-ISOLATION" status="PASS">
+      <score />
+      <detail>/runs page state and dashboard exclusion verified</detail>
+    </case>
+    <case id="COMPARE-ISOLATION" status="PASS">
+      <score />
+      <detail>/compare page state and dashboard exclusion verified</detail>
+    </case>
+    <case id="HIDDEN-CSS-PRIORITY" status="PASS">
+      <score />
+      <detail>[hidden] display none important rule verified</detail>
+    </case>
+    <case id="WEB-UNIT-29" status="PASS">
+      <score />
+      <detail>29/29 web tests passed</detail>
+    </case>
+    <case id="FULL-REGRESSION-75" status="PASS">
+      <score />
+      <detail>75/75 tests passed</detail>
+    </case>
+    <case id="AGENT-READINESS" status="PASS">
+      <score />
+      <detail>6/6 gRPC agents ready</detail>
+    </case>
+  </cases>
+</qualityEvidence>

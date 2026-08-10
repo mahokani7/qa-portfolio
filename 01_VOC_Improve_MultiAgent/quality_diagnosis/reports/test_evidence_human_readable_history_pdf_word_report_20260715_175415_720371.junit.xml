@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="human_readable_history_pdf_word_report" tests="5" failures="0" errors="0" timestamp="2026-07-15T17:54:15+09:00">
+  <testcase classname="voc.quality.human_readable_history_pdf_word_report" name="web-human-readable-run-result" />
+  <testcase classname="voc.quality.human_readable_history_pdf_word_report" name="word-pdf-structure" />
+  <testcase classname="voc.quality.human_readable_history_pdf_word_report" name="source-exclusion" />
+  <testcase classname="voc.quality.human_readable_history_pdf_word_report" name="word-download-api" />
+  <testcase classname="voc.quality.human_readable_history_pdf_word_report" name="full-regression" />
+</testsuite>

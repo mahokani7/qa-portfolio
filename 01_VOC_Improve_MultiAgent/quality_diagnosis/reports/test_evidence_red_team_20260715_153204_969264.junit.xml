@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="red_team" tests="20" failures="0" errors="0" timestamp="2026-07-15T15:32:04+09:00">
+  <testcase classname="voc.quality.red_team" name="RT-01" />
+  <testcase classname="voc.quality.red_team" name="RT-02" />
+  <testcase classname="voc.quality.red_team" name="RT-03" />
+  <testcase classname="voc.quality.red_team" name="RT-04" />
+  <testcase classname="voc.quality.red_team" name="RT-05" />
+  <testcase classname="voc.quality.red_team" name="RT-06" />
+  <testcase classname="voc.quality.red_team" name="RT-07" />
+  <testcase classname="voc.quality.red_team" name="RT-08" />
+  <testcase classname="voc.quality.red_team" name="RT-09" />
+  <testcase classname="voc.quality.red_team" name="RT-10" />
+  <testcase classname="voc.quality.red_team" name="RT-11" />
+  <testcase classname="voc.quality.red_team" name="RT-12" />
+  <testcase classname="voc.quality.red_team" name="RT-13" />
+  <testcase classname="voc.quality.red_team" name="RT-14" />
+  <testcase classname="voc.quality.red_team" name="RT-15" />
+  <testcase classname="voc.quality.red_team" name="RT-16" />
+  <testcase classname="voc.quality.red_team" name="RT-17" />
+  <testcase classname="voc.quality.red_team" name="RT-18" />
+  <testcase classname="voc.quality.red_team" name="RT-19" />
+  <testcase classname="voc.quality.red_team" name="RT-20" />
+</testsuite>

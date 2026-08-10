@@ -1,0 +1,44 @@
+{
+  "summary": {
+    "generated_at": "2026-07-15T15:32:11+09:00",
+    "domain": "ecommerce",
+    "mode": "ci",
+    "total": 3,
+    "passed": 2,
+    "failed": 1,
+    "errors": 0,
+    "pass_rate": 66.7,
+    "average_score": 98.3,
+    "minimum_score": 95.0,
+    "successful": false,
+    "verdict": "HOLD"
+  },
+  "inputs": {
+    "quality_suite": "test_result.json",
+    "red_team": "C:\\qaeduc2\\VOC_Improve_1\\quality_diagnosis\\reports\\red_team_20260715_153211_197151.json",
+    "e2e": "ecommerce_offline_e2e_20260715_151627.json"
+  },
+  "results": [
+    {
+      "case_id": "GATE-AUTOMATED-SUITE",
+      "component": "자동 품질 테스트",
+      "status": "PASS",
+      "score": 100,
+      "detail": "30/30 PASS"
+    },
+    {
+      "case_id": "GATE-RED-TEAM",
+      "component": "OWASP Red Team",
+      "status": "PASS",
+      "score": 100.0,
+      "detail": "20/20 PASS"
+    },
+    {
+      "case_id": "GATE-OFFLINE-E2E",
+      "component": "ecommerce 오프라인 E2E",
+      "status": "FAIL",
+      "score": 94.9,
+      "detail": "18/18 PASS · 평균 94.9점 · 기준 95.0점"
+    }
+  ]
+}

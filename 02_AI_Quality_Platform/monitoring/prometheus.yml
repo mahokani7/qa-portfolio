@@ -1,0 +1,12 @@
+# Prometheus 스크레이핑 설정 (7단계: Prometheus 지표 수집)
+# app/metrics.py가 prometheus_client로 노출하는 /metrics를 스크레이핑합니다.
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "ai_agent_quality_platform"
+    metrics_path: /metrics
+    static_configs:
+      # docker-compose 네트워크 안에서는 서비스명(app)으로 접근합니다.
+      # 로컬에서 uvicorn을 직접 띄워 테스트할 때는 "host.docker.internal:8000"으로 바꾸세요.
+      - targets: ["app:8000"]

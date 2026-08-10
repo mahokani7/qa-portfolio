@@ -1,0 +1,3561 @@
+{
+  "summary": {
+    "generated_at": "2026-07-15T15:33:08+09:00",
+    "domain": "ecommerce",
+    "mode": "offline",
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "average_score": 91.3,
+    "minimum_deployment_score": 95.0,
+    "dimension_averages": {
+      "retrieval_relevance": 74.0,
+      "summary_faithfulness": 80.0,
+      "policy_actionability": 100.0,
+      "privacy_and_prompt_safety": 100.0
+    },
+    "rubric_averages": {
+      "interpreter_accuracy": {
+        "label": "Interpreter 해석 정확성",
+        "average_score": 13.2,
+        "max_score": 15
+      },
+      "retriever_relevance": {
+        "label": "Retriever 검색 관련성",
+        "average_score": 11.1,
+        "max_score": 15
+      },
+      "summarizer_faithfulness": {
+        "label": "Summarizer 사실성·요약성",
+        "average_score": 12.0,
+        "max_score": 15
+      },
+      "evaluator_validity": {
+        "label": "Evaluator 평가 타당성",
+        "average_score": 10.0,
+        "max_score": 10
+      },
+      "critic_risk_detection": {
+        "label": "Critic 위험 탐지력",
+        "average_score": 10.0,
+        "max_score": 10
+      },
+      "improver_actionability": {
+        "label": "Improver 실행 가능성",
+        "average_score": 15.0,
+        "max_score": 15
+      },
+      "agent_handoff": {
+        "label": "Agent 연계 품질",
+        "average_score": 10.0,
+        "max_score": 10
+      },
+      "fault_and_logging": {
+        "label": "장애 대응·로그",
+        "average_score": 5.0,
+        "max_score": 5
+      },
+      "performance": {
+        "label": "성능",
+        "average_score": 5.0,
+        "max_score": 5
+      }
+    },
+    "deployment_counts": {
+      "CONDITIONAL": 4,
+      "DEPLOYABLE": 1
+    },
+    "hard_blocked": 0,
+    "live_quality_verified": false,
+    "models": {
+      "summary": "deterministic-fake",
+      "policy": "deterministic-fake"
+    },
+    "experiment": {
+      "git_commit": "0b2df598e485-dirty",
+      "dataset_version": "59e7d3025221",
+      "prompt_version": "0547fecfde1d",
+      "models": {
+        "summary": "deterministic-fake",
+        "policy": "deterministic-fake"
+      },
+      "deployment_threshold": 95.0,
+      "concurrency": 1
+    }
+  },
+  "results": [
+    {
+      "case_id": "TC-01",
+      "question": "결제는 완료되었는데 주문 내역에 보이지 않습니다.",
+      "quality": {
+        "case_id": "TC-01",
+        "passed": true,
+        "score": 90.2,
+        "max_score": 100,
+        "deployment": {
+          "code": "CONDITIONAL",
+          "label": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "deployable": false,
+          "minimum_score": 95.0,
+          "score_gap": 4.8
+        },
+        "hard_blockers": [],
+        "rubric": {
+          "interpreter_accuracy": {
+            "label": "Interpreter 해석 정확성",
+            "max_score": 15,
+            "score": 12.0,
+            "passed": true,
+            "ratio": 0.8,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.8,
+              "intent": {
+                "passed": true,
+                "matched": [
+                  {
+                    "item": "결제",
+                    "evidence": "결제"
+                  },
+                  {
+                    "item": "완료",
+                    "evidence": "완료"
+                  },
+                  {
+                    "item": "주문",
+                    "evidence": "주문"
+                  }
+                ],
+                "missing": [
+                  "조회",
+                  "실패"
+                ],
+                "ratio": 0.6,
+                "expected": "결제 완료 후 주문 조회 실패",
+                "actual_evidence": "결제 주문 내역 주문 생성 동기화 결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다."
+              },
+              "keywords": {
+                "passed": true,
+                "matched": [
+                  {
+                    "item": "결제",
+                    "evidence": "결제"
+                  },
+                  {
+                    "item": "주문 내역",
+                    "evidence": "주문 내역"
+                  },
+                  {
+                    "item": "주문 생성",
+                    "evidence": "주문 + 동기"
+                  },
+                  {
+                    "item": "동기화",
+                    "evidence": "동기화"
+                  }
+                ],
+                "missing": [],
+                "ratio": 1.0
+              }
+            }
+          },
+          "retriever_relevance": {
+            "label": "Retriever 검색 관련성",
+            "max_score": 15,
+            "score": 12.0,
+            "passed": true,
+            "ratio": 0.8,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.8,
+              "retrieved_count": 10,
+              "relevant_count": 8,
+              "evidence": [
+                {
+                  "sample": "결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다.",
+                  "evidence": [
+                    "결제",
+                    "주문 내역"
+                  ]
+                },
+                {
+                  "sample": "주문 취소는 되었다고 하는데 결제 취소가 되지 않아 돈이 그대로 빠져나갔습니다.",
+                  "evidence": [
+                    "결제"
+                  ]
+                },
+                {
+                  "sample": "결제 후 주문 확인 이메일이나 영수증이 전혀 오지 않습니다.",
+                  "evidence": [
+                    "결제"
+                  ]
+                },
+                {
+                  "sample": "결제 진행 중 오류가 발생해 결제가 중간에 실패했는데 카드로는 승인 문자가 왔습니다.",
+                  "evidence": [
+                    "결제"
+                  ]
+                },
+                {
+                  "sample": "같은 상품을 한 번 결제했는데 이중으로 결제되어 두 번 청구되었습니다.",
+                  "evidence": [
+                    "결제"
+                  ]
+                }
+              ],
+              "note": ""
+            }
+          },
+          "summarizer_faithfulness": {
+            "label": "Summarizer 사실성·요약성",
+            "max_score": 15,
+            "score": 11.2,
+            "passed": true,
+            "ratio": 0.75,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.75,
+              "lexical_grounding_ratio": 1.0,
+              "expected_keyword_ratio": 0.5,
+              "matched_expected_keywords": [
+                "결제",
+                "주문 내역"
+              ],
+              "grounded_tokens": [
+                "결제는",
+                "내역에",
+                "불안합니다",
+                "않아",
+                "완료됐는데",
+                "정상적으로",
+                "주문",
+                "주문이",
+                "표시되지",
+                "해당"
+              ],
+              "ungrounded_tokens": [],
+              "method": "retrieved VOC와 요약의 어휘 근거 일치율"
+            }
+          },
+          "evaluator_validity": {
+            "label": "Evaluator 평가 타당성",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "multiple_candidates": true,
+                "scores_are_numeric": true,
+                "winner_is_candidate": true,
+                "winner_has_best_score": true
+              },
+              "winner": "S0",
+              "scores": {
+                "S1": 8.0,
+                "S2": 7.0,
+                "S0": 9.0
+              }
+            }
+          },
+          "critic_risk_detection": {
+            "label": "Critic 위험 탐지력",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "stage_output_exists": true,
+                "decision_is_boolean": true,
+                "edits_are_structured": true,
+                "decision_and_edits_consistent": true,
+                "sample_request_is_boolean": true
+              },
+              "need_refine": false,
+              "edits": []
+            }
+          },
+          "improver_actionability": {
+            "label": "Improver 실행 가능성",
+            "max_score": 15,
+            "score": 15.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "matched": [
+                "owner",
+                "deadline",
+                "action",
+                "metric",
+                "priority"
+              ],
+              "missing": []
+            }
+          },
+          "agent_handoff": {
+            "label": "Agent 연계 품질",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "stage_order": true,
+                "retrieval_forwarded": true,
+                "summary_candidates_forwarded": true,
+                "evaluation_selects_candidate": true,
+                "critic_receives_summary": true,
+                "improver_output_forwarded": true
+              },
+              "actual_order": [
+                "Interpreter",
+                "Retriever",
+                "Summarizer",
+                "Evaluator",
+                "Critic",
+                "Improver"
+              ],
+              "expected_order": [
+                "Interpreter",
+                "Retriever",
+                "Summarizer",
+                "Evaluator",
+                "Critic",
+                "Improver"
+              ]
+            }
+          },
+          "fault_and_logging": {
+            "label": "장애 대응·로그",
+            "max_score": 5,
+            "score": 5.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "status_is_explicit": true,
+                "error_code_field_exists": true,
+                "message_is_present": true,
+                "stage_trace_is_present": true,
+                "failure_not_reported_as_success": true
+              }
+            }
+          },
+          "performance": {
+            "label": "성능",
+            "max_score": 5,
+            "score": 5.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "duration_ms": 34.22,
+              "limit_ms": 60000.0,
+              "stage_duration_ms": {
+                "Interpreter": 9.74,
+                "Retriever": 4.74,
+                "Summarizer": 3.04,
+                "Evaluator": 6.83,
+                "Critic": 3.19,
+                "Improver": 6.48
+              }
+            }
+          }
+        },
+        "checks": {
+          "status": {
+            "passed": true,
+            "expected": "success"
+          },
+          "intent": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "결제",
+                "evidence": "결제"
+              },
+              {
+                "item": "완료",
+                "evidence": "완료"
+              },
+              {
+                "item": "주문",
+                "evidence": "주문"
+              }
+            ],
+            "missing": [
+              "조회",
+              "실패"
+            ],
+            "ratio": 0.6,
+            "expected": "결제 완료 후 주문 조회 실패",
+            "actual_evidence": "결제 주문 내역 주문 생성 동기화 결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다."
+          },
+          "keywords": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "결제",
+                "evidence": "결제"
+              },
+              {
+                "item": "주문 내역",
+                "evidence": "주문 내역"
+              },
+              {
+                "item": "주문 생성",
+                "evidence": "주문 + 동기"
+              },
+              {
+                "item": "동기화",
+                "evidence": "동기화"
+              }
+            ],
+            "missing": [],
+            "ratio": 1.0
+          },
+          "required_output": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "원인 추정",
+                "evidence": "원인"
+              },
+              {
+                "item": "고객 안내",
+                "evidence": "고객 안내"
+              },
+              {
+                "item": "개선안",
+                "evidence": "개선"
+              },
+              {
+                "item": "우선순위",
+                "evidence": "우선"
+              }
+            ],
+            "missing": [],
+            "ratio": 1.0
+          },
+          "prohibited_output": {
+            "passed": true,
+            "violations": []
+          },
+          "retrieval_relevance": {
+            "passed": true,
+            "ratio": 0.8,
+            "retrieved_count": 10,
+            "relevant_count": 8,
+            "evidence": [
+              {
+                "sample": "결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다.",
+                "evidence": [
+                  "결제",
+                  "주문 내역"
+                ]
+              },
+              {
+                "sample": "주문 취소는 되었다고 하는데 결제 취소가 되지 않아 돈이 그대로 빠져나갔습니다.",
+                "evidence": [
+                  "결제"
+                ]
+              },
+              {
+                "sample": "결제 후 주문 확인 이메일이나 영수증이 전혀 오지 않습니다.",
+                "evidence": [
+                  "결제"
+                ]
+              },
+              {
+                "sample": "결제 진행 중 오류가 발생해 결제가 중간에 실패했는데 카드로는 승인 문자가 왔습니다.",
+                "evidence": [
+                  "결제"
+                ]
+              },
+              {
+                "sample": "같은 상품을 한 번 결제했는데 이중으로 결제되어 두 번 청구되었습니다.",
+                "evidence": [
+                  "결제"
+                ]
+              }
+            ],
+            "note": ""
+          },
+          "summary_faithfulness": {
+            "passed": true,
+            "ratio": 0.75,
+            "lexical_grounding_ratio": 1.0,
+            "expected_keyword_ratio": 0.5,
+            "matched_expected_keywords": [
+              "결제",
+              "주문 내역"
+            ],
+            "grounded_tokens": [
+              "결제는",
+              "내역에",
+              "불안합니다",
+              "않아",
+              "완료됐는데",
+              "정상적으로",
+              "주문",
+              "주문이",
+              "표시되지",
+              "해당"
+            ],
+            "ungrounded_tokens": [],
+            "method": "retrieved VOC와 요약의 어휘 근거 일치율"
+          },
+          "rag_metrics": {
+            "passed": true,
+            "ratio": 0.7583,
+            "context_precision": 0.8,
+            "context_recall": 1.0,
+            "faithfulness": 0.75,
+            "response_relevancy": 1.0,
+            "noise_sensitivity": 1.0,
+            "citation_coverage": 0.0,
+            "citation_details": [
+              {
+                "sentence": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다",
+                "covered": false,
+                "overlap": 0.0,
+                "source": ""
+              },
+              {
+                "sentence": "1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다",
+                "covered": false,
+                "overlap": 0.0833,
+                "source": "결제 진행 중 오류가 발생해 결제가 중간에 실패했는데 카드로는 승인 문자가 왔습니다."
+              }
+            ],
+            "noise_dependency": 0.0,
+            "relevant_context_count": 8,
+            "noise_context_count": 2,
+            "source_keyword_matches": [
+              "결제",
+              "주문 내역",
+              "주문 생성",
+              "동기화"
+            ],
+            "response_keyword_matches": [
+              "결제",
+              "주문 내역",
+              "주문 생성",
+              "동기화"
+            ],
+            "method": "결정적 어휘·문장 근거 기반 RAG 6대 지표(추가 API 호출 없음)",
+            "affects_release_score": false
+          },
+          "policy_actionability": {
+            "passed": true,
+            "ratio": 1.0,
+            "matched": [
+              "owner",
+              "deadline",
+              "action",
+              "metric",
+              "priority"
+            ],
+            "missing": []
+          },
+          "privacy_and_prompt_safety": {
+            "passed": true,
+            "raw_pii_detected": false,
+            "prompt_injection_echoed": false
+          },
+          "evaluator_validity": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "multiple_candidates": true,
+              "scores_are_numeric": true,
+              "winner_is_candidate": true,
+              "winner_has_best_score": true
+            },
+            "winner": "S0",
+            "scores": {
+              "S1": 8.0,
+              "S2": 7.0,
+              "S0": 9.0
+            }
+          },
+          "critic_risk_detection": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "stage_output_exists": true,
+              "decision_is_boolean": true,
+              "edits_are_structured": true,
+              "decision_and_edits_consistent": true,
+              "sample_request_is_boolean": true
+            },
+            "need_refine": false,
+            "edits": []
+          },
+          "agent_handoff": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "stage_order": true,
+              "retrieval_forwarded": true,
+              "summary_candidates_forwarded": true,
+              "evaluation_selects_candidate": true,
+              "critic_receives_summary": true,
+              "improver_output_forwarded": true
+            },
+            "actual_order": [
+              "Interpreter",
+              "Retriever",
+              "Summarizer",
+              "Evaluator",
+              "Critic",
+              "Improver"
+            ],
+            "expected_order": [
+              "Interpreter",
+              "Retriever",
+              "Summarizer",
+              "Evaluator",
+              "Critic",
+              "Improver"
+            ]
+          },
+          "fault_and_logging": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "status_is_explicit": true,
+              "error_code_field_exists": true,
+              "message_is_present": true,
+              "stage_trace_is_present": true,
+              "failure_not_reported_as_success": true
+            }
+          },
+          "performance": {
+            "passed": true,
+            "ratio": 1.0,
+            "duration_ms": 34.22,
+            "limit_ms": 60000.0,
+            "stage_duration_ms": {
+              "Interpreter": 9.74,
+              "Retriever": 4.74,
+              "Summarizer": 3.04,
+              "Evaluator": 6.83,
+              "Critic": 3.19,
+              "Improver": 6.48
+            }
+          }
+        }
+      },
+      "analysis": {
+        "ok": true,
+        "error_code": null,
+        "message": "success",
+        "question": "결제는 완료되었는데 주문 내역에 보이지 않습니다.",
+        "stages": [
+          {
+            "agent": "Interpreter",
+            "role": "질문 의도·검색 조건 해석",
+            "check": "의도, 키워드, 카테고리 해석 정확성",
+            "duration_ms": 9.74,
+            "output": {
+              "task": "both",
+              "filters": [
+                "결제",
+                "주문 내역",
+                "주문 생성",
+                "동기화"
+              ],
+              "max_items": 10,
+              "csv_path": "C:\\qaeduc2\\VOC_Improve_1\\voc.csv",
+              "source": "llm"
+            }
+          },
+          {
+            "agent": "Retriever",
+            "role": "VOC 데이터 검색",
+            "check": "관련 불만을 빠뜨리지 않고 찾는지",
+            "duration_ms": 4.74,
+            "output": {
+              "retrieved_count": 10,
+              "samples": [
+                "결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다.",
+                "주문 취소는 되었다고 하는데 결제 취소가 되지 않아 돈이 그대로 빠져나갔습니다.",
+                "결제 후 주문 확인 이메일이나 영수증이 전혀 오지 않습니다.",
+                "주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.",
+                "주문한 상품과 전혀 다른 상품이 배송되었습니다.",
+                "결제 진행 중 오류가 발생해 결제가 중간에 실패했는데 카드로는 승인 문자가 왔습니다.",
+                "같은 상품을 한 번 결제했는데 이중으로 결제되어 두 번 청구되었습니다.",
+                "결제 수단을 간편결제로 선택했는데 결제 단계에서 계속 오류가 발생합니다.",
+                "쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다.",
+                "장바구니에 담아둔 쿠폰이 결제하려는 순간 사라져서 사용할 수 없었습니다."
+              ]
+            }
+          },
+          {
+            "agent": "Summarizer",
+            "role": "검색 결과 요약",
+            "check": "원문 왜곡, 핵심 누락, 중복 여부",
+            "duration_ms": 3.04,
+            "output": {
+              "candidates": {
+                "S1": "[관련도 순위 1] 결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다.\n[관련도 순위 2] 주문 취소는 되었다고 하는데 결제 취소가 되지 않아 돈이 그대로 빠져나갔습니다.\n[관련도 순위 3] 결제 후 주문 확인 이메일이나 영수증이 전혀 오지 않습니다.\n[관련도 순위 4] 주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.\n[관련도 순위 5] 주문한 상품과 전혀 다른 상품이 배송되었습니다.\n[관련도 순위 6] 결제 진행 중 오류가 발생해 결제가 중간에 실패했는데 카드로는 승인 문자가 왔습니다.\n[관련도 순위 7] 같은 상품을 한 번 결제했는데 이중으로 결제되어 두 번 청구되었습니다.\n[관련도 순위 8] 결제 수단을 간편결제로 선택했는데 결제 단계에서 계속 오류가 발생합니다.\n[관련도 순위 9] 쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다.\n[관련도 순위 10] 장바구니에 담아둔 쿠폰이 결제하려는 순간 사라져서 사용할 수 없었습니다. 결제 완료 후 주문 조회 실패 결제 주문 내역 주문 생성 동기화 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다.",
+                "S2": "[관련도 순위 1] 결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다.\n[관련도 순위 2] 주문 취소는 되었다고 하는데 결제 취소가 되지 않아 돈이 그대로 빠져나갔습니다.\n[관련도 순위 3] 결제 후 주문 확인 이메일이나 영수증이 전혀 오지 않습니다.\n[관련도 순위 4] 주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.\n[관련도 순위 5] 주문한 상품과 전혀 다른 상품이 배송되었습니다.\n[관련도 순위 6] 결제 진행 중 오류가 발생해 결제가 중간에 실패했는데 카드로는 승인 문자가 왔습니다.\n[관련도 순위 7] 같은 상품을 한 번 결제했는데 이중으로 결제되어 두 번 청구되었습니다.\n[관련도 순위 8] 결제 수단을 간편결제로 선택했는데 결제 단계에서 계속 오류가 발생합니다.\n[관련도 순위 9] 쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다.\n[관련도 순위 10] 장바구니에 담아둔 쿠폰이 결제하려는 순간 사라져서 사용할 수 없었습니다. 결제 완료 후 주문 조회 실패 결제 주문 내역 주문 생성 동기화 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다.",
+                "S0": "[관련도 순위 1] 결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다.\n[관련도 순위 2] 주문 취소는 되었다고 하는데 결제 취소가 되지 않아 돈이 그대로 빠져나갔습니다.\n[관련도 순위 3] 결제 후 주문 확인 이메일이나 영수증이 전혀 오지 않습니다.\n[관련도 순위 4] 주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.\n[관련도 순위 5] 주문한 상품과 전혀 다른 상품이 배송되었습니다.\n[관련도 순위 6] 결제 진행 중 오류가 발생해 결제가 중간에 실패했는데 카드로는 승인 문자가 왔습니다.\n[관련도 순위 7] 같은 상품을 한 번 결제했는데 이중으로 결제되어 두 번 청구되었습니다.\n[관련도 순위 8] 결제 수단을 간편결제로 선택했는데 결제 단계에서 계속 오류가 발생합니다.\n[관련도 순위 9] 쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다.\n[관련도 순위 10] 장바구니에 담아둔 쿠폰이 결제하려는 순간 사라져서 사용할 수 없었습니다. 결제 완료 후 주문 조회 실패 결제 주문 내역 주문 생성 동기화 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다."
+              },
+              "post_refine_grounding_fallback": false,
+              "post_refine_grounding_precision": 1.0,
+              "pre_refine_summary": "결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다.",
+              "post_refine_summary": "결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다.",
+              "refined": false
+            }
+          },
+          {
+            "agent": "Evaluator",
+            "role": "요약·결과 평가",
+            "check": "평가 기준이 일관적인지",
+            "duration_ms": 6.83,
+            "output": {
+              "winner": "S0",
+              "llm_winner": "S0",
+              "scores": {
+                "S1": 8.0,
+                "S2": 7.0,
+                "S0": 9.0
+              },
+              "relevance_scores": {
+                "S1": 0.79,
+                "S2": 0.79,
+                "S0": 0.79
+              },
+              "grounding_override": false,
+              "summary_grounding_fallback": true,
+              "summary_grounding_precision": 0.1268,
+              "selected_summary": "결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다."
+            }
+          },
+          {
+            "agent": "Critic",
+            "role": "위험·한계 지적",
+            "check": "실제 문제와 리스크를 찾는지",
+            "duration_ms": 3.19,
+            "output": {
+              "need_refine": false,
+              "edits": [],
+              "ask_more_samples": false
+            }
+          },
+          {
+            "agent": "Improver",
+            "role": "정책 개선안 제안",
+            "check": "개선안이 구체적이고 실행 가능한지",
+            "duration_ms": 6.48,
+            "output": {
+              "policy": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다. 1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다.",
+              "skipped": false
+            }
+          }
+        ],
+        "summary": "결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다.",
+        "policy": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다. 1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다.",
+        "intent_json": "{\"task\": \"both\", \"filters\": [\"결제\", \"주문 내역\", \"주문 생성\", \"동기화\"], \"max_items\": 10, \"csv_path\": \"C:\\\\qaeduc2\\\\VOC_Improve_1\\\\voc.csv\"}",
+        "eval_json": "{\"S1\": 8.0, \"S2\": 7.0, \"S0\": 9.0}",
+        "summary_critic_json": "{\"need_refine\": false, \"edits\": []}",
+        "trace": "Interpreter; Retriever; Summarizer; Evaluator; Critic; Improver",
+        "metrics": {
+          "total_duration_ms": 34.22,
+          "stage_duration_ms": {
+            "Interpreter": 9.74,
+            "Retriever": 4.74,
+            "Summarizer": 3.04,
+            "Evaluator": 6.83,
+            "Critic": 3.19,
+            "Improver": 6.48
+          }
+        }
+      }
+    },
+    {
+      "case_id": "TC-02",
+      "question": "쿠폰을 적용했는데 결제 금액이 할인되지 않았습니다.",
+      "quality": {
+        "case_id": "TC-02",
+        "passed": true,
+        "score": 88.5,
+        "max_score": 100,
+        "deployment": {
+          "code": "CONDITIONAL",
+          "label": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "deployable": false,
+          "minimum_score": 95.0,
+          "score_gap": 6.5
+        },
+        "hard_blockers": [],
+        "rubric": {
+          "interpreter_accuracy": {
+            "label": "Interpreter 해석 정확성",
+            "max_score": 15,
+            "score": 12.5,
+            "passed": true,
+            "ratio": 0.8334,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.8334,
+              "intent": {
+                "passed": true,
+                "matched": [
+                  {
+                    "item": "쿠폰",
+                    "evidence": "쿠폰"
+                  },
+                  {
+                    "item": "할인",
+                    "evidence": "할인"
+                  }
+                ],
+                "missing": [
+                  "미적용"
+                ],
+                "ratio": 0.6667,
+                "expected": "쿠폰 할인 미적용",
+                "actual_evidence": "쿠폰 할인 결제 금액 적용 쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다."
+              },
+              "keywords": {
+                "passed": true,
+                "matched": [
+                  {
+                    "item": "쿠폰",
+                    "evidence": "쿠폰"
+                  },
+                  {
+                    "item": "할인",
+                    "evidence": "할인"
+                  },
+                  {
+                    "item": "결제 금액",
+                    "evidence": "결제 금액"
+                  },
+                  {
+                    "item": "적용",
+                    "evidence": "적용"
+                  }
+                ],
+                "missing": [],
+                "ratio": 1.0
+              }
+            }
+          },
+          "retriever_relevance": {
+            "label": "Retriever 검색 관련성",
+            "max_score": 15,
+            "score": 6.0,
+            "passed": true,
+            "ratio": 0.4,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.4,
+              "retrieved_count": 10,
+              "relevant_count": 4,
+              "evidence": [
+                {
+                  "sample": "쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다.",
+                  "evidence": [
+                    "쿠폰",
+                    "할인",
+                    "결제 금액",
+                    "적용"
+                  ]
+                },
+                {
+                  "sample": "첫 구매 할인 쿠폰이 자동 적용된다고 안내받았는데 실제로는 적용되지 않았습니다.",
+                  "evidence": [
+                    "쿠폰",
+                    "할인",
+                    "적용"
+                  ]
+                },
+                {
+                  "sample": "장바구니에 담아둔 쿠폰이 결제하려는 순간 사라져서 사용할 수 없었습니다.",
+                  "evidence": [
+                    "쿠폰"
+                  ]
+                },
+                {
+                  "sample": "유효기간이 아직 남은 쿠폰인데 사용 불가 쿠폰이라고 표시됩니다.",
+                  "evidence": [
+                    "쿠폰"
+                  ]
+                }
+              ],
+              "note": ""
+            }
+          },
+          "summarizer_faithfulness": {
+            "label": "Summarizer 사실성·요약성",
+            "max_score": 15,
+            "score": 15.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "lexical_grounding_ratio": 1.0,
+              "expected_keyword_ratio": 1.0,
+              "matched_expected_keywords": [
+                "쿠폰",
+                "할인",
+                "결제 금액",
+                "적용"
+              ],
+              "grounded_tokens": [
+                "결제",
+                "금액에",
+                "반영되지",
+                "않았습니다",
+                "적용했는데",
+                "쿠폰을",
+                "할인이"
+              ],
+              "ungrounded_tokens": [],
+              "method": "retrieved VOC와 요약의 어휘 근거 일치율"
+            }
+          },
+          "evaluator_validity": {
+            "label": "Evaluator 평가 타당성",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "multiple_candidates": true,
+                "scores_are_numeric": true,
+                "winner_is_candidate": true,
+                "winner_has_best_score": true
+              },
+              "winner": "S0",
+              "scores": {
+                "S1": 8.0,
+                "S2": 7.0,
+                "S0": 9.0
+              }
+            }
+          },
+          "critic_risk_detection": {
+            "label": "Critic 위험 탐지력",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "stage_output_exists": true,
+                "decision_is_boolean": true,
+                "edits_are_structured": true,
+                "decision_and_edits_consistent": true,
+                "sample_request_is_boolean": true
+              },
+              "need_refine": false,
+              "edits": []
+            }
+          },
+          "improver_actionability": {
+            "label": "Improver 실행 가능성",
+            "max_score": 15,
+            "score": 15.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "matched": [
+                "owner",
+                "deadline",
+                "action",
+                "metric",
+                "priority"
+              ],
+              "missing": []
+            }
+          },
+          "agent_handoff": {
+            "label": "Agent 연계 품질",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "stage_order": true,
+                "retrieval_forwarded": true,
+                "summary_candidates_forwarded": true,
+                "evaluation_selects_candidate": true,
+                "critic_receives_summary": true,
+                "improver_output_forwarded": true
+              },
+              "actual_order": [
+                "Interpreter",
+                "Retriever",
+                "Summarizer",
+                "Evaluator",
+                "Critic",
+                "Improver"
+              ],
+              "expected_order": [
+                "Interpreter",
+                "Retriever",
+                "Summarizer",
+                "Evaluator",
+                "Critic",
+                "Improver"
+              ]
+            }
+          },
+          "fault_and_logging": {
+            "label": "장애 대응·로그",
+            "max_score": 5,
+            "score": 5.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "status_is_explicit": true,
+                "error_code_field_exists": true,
+                "message_is_present": true,
+                "stage_trace_is_present": true,
+                "failure_not_reported_as_success": true
+              }
+            }
+          },
+          "performance": {
+            "label": "성능",
+            "max_score": 5,
+            "score": 5.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "duration_ms": 24.05,
+              "limit_ms": 60000.0,
+              "stage_duration_ms": {
+                "Interpreter": 3.38,
+                "Retriever": 4.23,
+                "Summarizer": 4.0,
+                "Evaluator": 4.1,
+                "Critic": 2.89,
+                "Improver": 5.27
+              }
+            }
+          }
+        },
+        "checks": {
+          "status": {
+            "passed": true,
+            "expected": "success"
+          },
+          "intent": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "쿠폰",
+                "evidence": "쿠폰"
+              },
+              {
+                "item": "할인",
+                "evidence": "할인"
+              }
+            ],
+            "missing": [
+              "미적용"
+            ],
+            "ratio": 0.6667,
+            "expected": "쿠폰 할인 미적용",
+            "actual_evidence": "쿠폰 할인 결제 금액 적용 쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다."
+          },
+          "keywords": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "쿠폰",
+                "evidence": "쿠폰"
+              },
+              {
+                "item": "할인",
+                "evidence": "할인"
+              },
+              {
+                "item": "결제 금액",
+                "evidence": "결제 금액"
+              },
+              {
+                "item": "적용",
+                "evidence": "적용"
+              }
+            ],
+            "missing": [],
+            "ratio": 1.0
+          },
+          "required_output": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "원인 추정",
+                "evidence": "원인"
+              },
+              {
+                "item": "고객 안내",
+                "evidence": "고객 안내"
+              },
+              {
+                "item": "개선안",
+                "evidence": "개선"
+              },
+              {
+                "item": "우선순위",
+                "evidence": "우선"
+              }
+            ],
+            "missing": [],
+            "ratio": 1.0
+          },
+          "prohibited_output": {
+            "passed": true,
+            "violations": []
+          },
+          "retrieval_relevance": {
+            "passed": true,
+            "ratio": 0.4,
+            "retrieved_count": 10,
+            "relevant_count": 4,
+            "evidence": [
+              {
+                "sample": "쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다.",
+                "evidence": [
+                  "쿠폰",
+                  "할인",
+                  "결제 금액",
+                  "적용"
+                ]
+              },
+              {
+                "sample": "첫 구매 할인 쿠폰이 자동 적용된다고 안내받았는데 실제로는 적용되지 않았습니다.",
+                "evidence": [
+                  "쿠폰",
+                  "할인",
+                  "적용"
+                ]
+              },
+              {
+                "sample": "장바구니에 담아둔 쿠폰이 결제하려는 순간 사라져서 사용할 수 없었습니다.",
+                "evidence": [
+                  "쿠폰"
+                ]
+              },
+              {
+                "sample": "유효기간이 아직 남은 쿠폰인데 사용 불가 쿠폰이라고 표시됩니다.",
+                "evidence": [
+                  "쿠폰"
+                ]
+              }
+            ],
+            "note": ""
+          },
+          "summary_faithfulness": {
+            "passed": true,
+            "ratio": 1.0,
+            "lexical_grounding_ratio": 1.0,
+            "expected_keyword_ratio": 1.0,
+            "matched_expected_keywords": [
+              "쿠폰",
+              "할인",
+              "결제 금액",
+              "적용"
+            ],
+            "grounded_tokens": [
+              "결제",
+              "금액에",
+              "반영되지",
+              "않았습니다",
+              "적용했는데",
+              "쿠폰을",
+              "할인이"
+            ],
+            "ungrounded_tokens": [],
+            "method": "retrieved VOC와 요약의 어휘 근거 일치율"
+          },
+          "rag_metrics": {
+            "passed": true,
+            "ratio": 0.7125,
+            "context_precision": 0.4,
+            "context_recall": 1.0,
+            "faithfulness": 1.0,
+            "response_relevancy": 1.0,
+            "noise_sensitivity": 0.875,
+            "citation_coverage": 0.0,
+            "citation_details": [
+              {
+                "sentence": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다",
+                "covered": false,
+                "overlap": 0.0,
+                "source": ""
+              },
+              {
+                "sentence": "1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다",
+                "covered": false,
+                "overlap": 0.0833,
+                "source": "결제 진행 중 오류가 발생해 결제가 중간에 실패했는데 카드로는 승인 문자가 왔습니다."
+              }
+            ],
+            "noise_dependency": 0.125,
+            "relevant_context_count": 4,
+            "noise_context_count": 6,
+            "source_keyword_matches": [
+              "쿠폰",
+              "할인",
+              "결제 금액",
+              "적용"
+            ],
+            "response_keyword_matches": [
+              "쿠폰",
+              "할인",
+              "결제 금액",
+              "적용"
+            ],
+            "method": "결정적 어휘·문장 근거 기반 RAG 6대 지표(추가 API 호출 없음)",
+            "affects_release_score": false
+          },
+          "policy_actionability": {
+            "passed": true,
+            "ratio": 1.0,
+            "matched": [
+              "owner",
+              "deadline",
+              "action",
+              "metric",
+              "priority"
+            ],
+            "missing": []
+          },
+          "privacy_and_prompt_safety": {
+            "passed": true,
+            "raw_pii_detected": false,
+            "prompt_injection_echoed": false
+          },
+          "evaluator_validity": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "multiple_candidates": true,
+              "scores_are_numeric": true,
+              "winner_is_candidate": true,
+              "winner_has_best_score": true
+            },
+            "winner": "S0",
+            "scores": {
+              "S1": 8.0,
+              "S2": 7.0,
+              "S0": 9.0
+            }
+          },
+          "critic_risk_detection": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "stage_output_exists": true,
+              "decision_is_boolean": true,
+              "edits_are_structured": true,
+              "decision_and_edits_consistent": true,
+              "sample_request_is_boolean": true
+            },
+            "need_refine": false,
+            "edits": []
+          },
+          "agent_handoff": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "stage_order": true,
+              "retrieval_forwarded": true,
+              "summary_candidates_forwarded": true,
+              "evaluation_selects_candidate": true,
+              "critic_receives_summary": true,
+              "improver_output_forwarded": true
+            },
+            "actual_order": [
+              "Interpreter",
+              "Retriever",
+              "Summarizer",
+              "Evaluator",
+              "Critic",
+              "Improver"
+            ],
+            "expected_order": [
+              "Interpreter",
+              "Retriever",
+              "Summarizer",
+              "Evaluator",
+              "Critic",
+              "Improver"
+            ]
+          },
+          "fault_and_logging": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "status_is_explicit": true,
+              "error_code_field_exists": true,
+              "message_is_present": true,
+              "stage_trace_is_present": true,
+              "failure_not_reported_as_success": true
+            }
+          },
+          "performance": {
+            "passed": true,
+            "ratio": 1.0,
+            "duration_ms": 24.05,
+            "limit_ms": 60000.0,
+            "stage_duration_ms": {
+              "Interpreter": 3.38,
+              "Retriever": 4.23,
+              "Summarizer": 4.0,
+              "Evaluator": 4.1,
+              "Critic": 2.89,
+              "Improver": 5.27
+            }
+          }
+        }
+      },
+      "analysis": {
+        "ok": true,
+        "error_code": null,
+        "message": "success",
+        "question": "쿠폰을 적용했는데 결제 금액이 할인되지 않았습니다.",
+        "stages": [
+          {
+            "agent": "Interpreter",
+            "role": "질문 의도·검색 조건 해석",
+            "check": "의도, 키워드, 카테고리 해석 정확성",
+            "duration_ms": 3.38,
+            "output": {
+              "task": "both",
+              "filters": [
+                "쿠폰",
+                "할인",
+                "결제 금액",
+                "적용"
+              ],
+              "max_items": 10,
+              "csv_path": "C:\\qaeduc2\\VOC_Improve_1\\voc.csv",
+              "source": "llm"
+            }
+          },
+          {
+            "agent": "Retriever",
+            "role": "VOC 데이터 검색",
+            "check": "관련 불만을 빠뜨리지 않고 찾는지",
+            "duration_ms": 4.23,
+            "output": {
+              "retrieved_count": 10,
+              "samples": [
+                "쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다.",
+                "첫 구매 할인 쿠폰이 자동 적용된다고 안내받았는데 실제로는 적용되지 않았습니다.",
+                "장바구니에 담아둔 쿠폰이 결제하려는 순간 사라져서 사용할 수 없었습니다.",
+                "결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다.",
+                "결제 진행 중 오류가 발생해 결제가 중간에 실패했는데 카드로는 승인 문자가 왔습니다.",
+                "같은 상품을 한 번 결제했는데 이중으로 결제되어 두 번 청구되었습니다.",
+                "결제 수단을 간편결제로 선택했는데 결제 단계에서 계속 오류가 발생합니다.",
+                "유효기간이 아직 남은 쿠폰인데 사용 불가 쿠폰이라고 표시됩니다.",
+                "반품 접수 후 일주일이 지났는데 환불 금액이 아직 입금되지 않았습니다.",
+                "주문 취소는 되었다고 하는데 결제 취소가 되지 않아 돈이 그대로 빠져나갔습니다."
+              ]
+            }
+          },
+          {
+            "agent": "Summarizer",
+            "role": "검색 결과 요약",
+            "check": "원문 왜곡, 핵심 누락, 중복 여부",
+            "duration_ms": 4.0,
+            "output": {
+              "candidates": {
+                "S1": "[관련도 순위 1] 쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다.\n[관련도 순위 2] 첫 구매 할인 쿠폰이 자동 적용된다고 안내받았는데 실제로는 적용되지 않았습니다.\n[관련도 순위 3] 장바구니에 담아둔 쿠폰이 결제하려는 순간 사라져서 사용할 수 없었습니다.\n[관련도 순위 4] 결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다.\n[관련도 순위 5] 결제 진행 중 오류가 발생해 결제가 중간에 실패했는데 카드로는 승인 문자가 왔습니다.\n[관련도 순위 6] 같은 상품을 한 번 결제했는데 이중으로 결제되어 두 번 청구되었습니다.\n[관련도 순위 7] 결제 수단을 간편결제로 선택했는데 결제 단계에서 계속 오류가 발생합니다.\n[관련도 순위 8] 유효기간이 아직 남은 쿠폰인데 사용 불가 쿠폰이라고 표시됩니다.\n[관련도 순위 9] 반품 접수 후 일주일이 지났는데 환불 금액이 아직 입금되지 않았습니다.\n[관련도 순위 10] 주문 취소는 되었다고 하는데 결제 취소가 되지 않아 돈이 그대로 빠져나갔습니다. 쿠폰 할인 미적용 쿠폰 할인 결제 금액 적용 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다.",
+                "S2": "[관련도 순위 1] 쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다.\n[관련도 순위 2] 첫 구매 할인 쿠폰이 자동 적용된다고 안내받았는데 실제로는 적용되지 않았습니다.\n[관련도 순위 3] 장바구니에 담아둔 쿠폰이 결제하려는 순간 사라져서 사용할 수 없었습니다.\n[관련도 순위 4] 결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다.\n[관련도 순위 5] 결제 진행 중 오류가 발생해 결제가 중간에 실패했는데 카드로는 승인 문자가 왔습니다.\n[관련도 순위 6] 같은 상품을 한 번 결제했는데 이중으로 결제되어 두 번 청구되었습니다.\n[관련도 순위 7] 결제 수단을 간편결제로 선택했는데 결제 단계에서 계속 오류가 발생합니다.\n[관련도 순위 8] 유효기간이 아직 남은 쿠폰인데 사용 불가 쿠폰이라고 표시됩니다.\n[관련도 순위 9] 반품 접수 후 일주일이 지났는데 환불 금액이 아직 입금되지 않았습니다.\n[관련도 순위 10] 주문 취소는 되었다고 하는데 결제 취소가 되지 않아 돈이 그대로 빠져나갔습니다. 쿠폰 할인 미적용 쿠폰 할인 결제 금액 적용 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다.",
+                "S0": "[관련도 순위 1] 쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다.\n[관련도 순위 2] 첫 구매 할인 쿠폰이 자동 적용된다고 안내받았는데 실제로는 적용되지 않았습니다.\n[관련도 순위 3] 장바구니에 담아둔 쿠폰이 결제하려는 순간 사라져서 사용할 수 없었습니다.\n[관련도 순위 4] 결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다.\n[관련도 순위 5] 결제 진행 중 오류가 발생해 결제가 중간에 실패했는데 카드로는 승인 문자가 왔습니다.\n[관련도 순위 6] 같은 상품을 한 번 결제했는데 이중으로 결제되어 두 번 청구되었습니다.\n[관련도 순위 7] 결제 수단을 간편결제로 선택했는데 결제 단계에서 계속 오류가 발생합니다.\n[관련도 순위 8] 유효기간이 아직 남은 쿠폰인데 사용 불가 쿠폰이라고 표시됩니다.\n[관련도 순위 9] 반품 접수 후 일주일이 지났는데 환불 금액이 아직 입금되지 않았습니다.\n[관련도 순위 10] 주문 취소는 되었다고 하는데 결제 취소가 되지 않아 돈이 그대로 빠져나갔습니다. 쿠폰 할인 미적용 쿠폰 할인 결제 금액 적용 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다."
+              },
+              "post_refine_grounding_fallback": false,
+              "post_refine_grounding_precision": 1.0,
+              "pre_refine_summary": "쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다.",
+              "post_refine_summary": "쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다.",
+              "refined": false
+            }
+          },
+          {
+            "agent": "Evaluator",
+            "role": "요약·결과 평가",
+            "check": "평가 기준이 일관적인지",
+            "duration_ms": 4.1,
+            "output": {
+              "winner": "S0",
+              "llm_winner": "S0",
+              "scores": {
+                "S1": 8.0,
+                "S2": 7.0,
+                "S0": 9.0
+              },
+              "relevance_scores": {
+                "S1": 0.9333,
+                "S2": 0.9333,
+                "S0": 0.9333
+              },
+              "grounding_override": false,
+              "summary_grounding_fallback": true,
+              "summary_grounding_precision": 0.0897,
+              "selected_summary": "쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다."
+            }
+          },
+          {
+            "agent": "Critic",
+            "role": "위험·한계 지적",
+            "check": "실제 문제와 리스크를 찾는지",
+            "duration_ms": 2.89,
+            "output": {
+              "need_refine": false,
+              "edits": [],
+              "ask_more_samples": false
+            }
+          },
+          {
+            "agent": "Improver",
+            "role": "정책 개선안 제안",
+            "check": "개선안이 구체적이고 실행 가능한지",
+            "duration_ms": 5.27,
+            "output": {
+              "policy": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다. 1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다.",
+              "skipped": false
+            }
+          }
+        ],
+        "summary": "쿠폰을 적용했는데 결제 금액에 할인이 반영되지 않았습니다.",
+        "policy": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다. 1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다.",
+        "intent_json": "{\"task\": \"both\", \"filters\": [\"쿠폰\", \"할인\", \"결제 금액\", \"적용\"], \"max_items\": 10, \"csv_path\": \"C:\\\\qaeduc2\\\\VOC_Improve_1\\\\voc.csv\"}",
+        "eval_json": "{\"S1\": 8.0, \"S2\": 7.0, \"S0\": 9.0}",
+        "summary_critic_json": "{\"need_refine\": false, \"edits\": []}",
+        "trace": "Interpreter; Retriever; Summarizer; Evaluator; Critic; Improver",
+        "metrics": {
+          "total_duration_ms": 24.05,
+          "stage_duration_ms": {
+            "Interpreter": 3.38,
+            "Retriever": 4.23,
+            "Summarizer": 4.0,
+            "Evaluator": 4.1,
+            "Critic": 2.89,
+            "Improver": 5.27
+          }
+        }
+      }
+    },
+    {
+      "case_id": "TC-03",
+      "question": "로그인 인증번호가 너무 늦게 도착합니다.",
+      "quality": {
+        "case_id": "TC-03",
+        "passed": true,
+        "score": 96.2,
+        "max_score": 100,
+        "deployment": {
+          "code": "DEPLOYABLE",
+          "label": "배포 가능",
+          "deployable": true,
+          "minimum_score": 95.0,
+          "score_gap": 0.0
+        },
+        "hard_blockers": [],
+        "rubric": {
+          "interpreter_accuracy": {
+            "label": "Interpreter 해석 정확성",
+            "max_score": 15,
+            "score": 15.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "intent": {
+                "passed": true,
+                "matched": [
+                  {
+                    "item": "로그인",
+                    "evidence": "로그인"
+                  },
+                  {
+                    "item": "인증번호",
+                    "evidence": "인증번호"
+                  },
+                  {
+                    "item": "수신",
+                    "evidence": "수신"
+                  },
+                  {
+                    "item": "지연",
+                    "evidence": "지연"
+                  }
+                ],
+                "missing": [],
+                "ratio": 1.0,
+                "expected": "로그인 인증번호 수신 지연",
+                "actual_evidence": "로그인 인증번호 수신 지연 로그인 인증번호 문자가 너무 늦게 도착해서 제한 시간 안에 입력하지 못했습니다."
+              },
+              "keywords": {
+                "passed": true,
+                "matched": [
+                  {
+                    "item": "로그인",
+                    "evidence": "로그인"
+                  },
+                  {
+                    "item": "인증번호",
+                    "evidence": "인증번호"
+                  },
+                  {
+                    "item": "수신",
+                    "evidence": "수신"
+                  },
+                  {
+                    "item": "지연",
+                    "evidence": "지연"
+                  }
+                ],
+                "missing": [],
+                "ratio": 1.0
+              }
+            }
+          },
+          "retriever_relevance": {
+            "label": "Retriever 검색 관련성",
+            "max_score": 15,
+            "score": 15.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "retrieved_count": 4,
+              "relevant_count": 4,
+              "evidence": [
+                {
+                  "sample": "로그인 인증번호 문자가 너무 늦게 도착해서 제한 시간 안에 입력하지 못했습니다.",
+                  "evidence": [
+                    "로그인",
+                    "인증번호"
+                  ]
+                },
+                {
+                  "sample": "아이디와 비밀번호가 맞는데도 로그인이 계속 실패합니다.",
+                  "evidence": [
+                    "로그인"
+                  ]
+                },
+                {
+                  "sample": "소셜 로그인으로 가입했는데 다시 로그인하면 계정을 찾을 수 없다고 나옵니다.",
+                  "evidence": [
+                    "로그인"
+                  ]
+                },
+                {
+                  "sample": "배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.",
+                  "evidence": [
+                    "지연"
+                  ]
+                }
+              ],
+              "note": ""
+            }
+          },
+          "summarizer_faithfulness": {
+            "label": "Summarizer 사실성·요약성",
+            "max_score": 15,
+            "score": 11.2,
+            "passed": true,
+            "ratio": 0.75,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.75,
+              "lexical_grounding_ratio": 1.0,
+              "expected_keyword_ratio": 0.5,
+              "matched_expected_keywords": [
+                "로그인",
+                "인증번호"
+              ],
+              "grounded_tokens": [
+                "너무",
+                "늦게",
+                "도착해서",
+                "로그인",
+                "못했습니다",
+                "문자가",
+                "시간",
+                "안에",
+                "인증번호",
+                "입력하지",
+                "제한"
+              ],
+              "ungrounded_tokens": [],
+              "method": "retrieved VOC와 요약의 어휘 근거 일치율"
+            }
+          },
+          "evaluator_validity": {
+            "label": "Evaluator 평가 타당성",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "multiple_candidates": true,
+                "scores_are_numeric": true,
+                "winner_is_candidate": true,
+                "winner_has_best_score": true
+              },
+              "winner": "S0",
+              "scores": {
+                "S1": 8.0,
+                "S2": 7.0,
+                "S0": 9.0
+              }
+            }
+          },
+          "critic_risk_detection": {
+            "label": "Critic 위험 탐지력",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "stage_output_exists": true,
+                "decision_is_boolean": true,
+                "edits_are_structured": true,
+                "decision_and_edits_consistent": true,
+                "sample_request_is_boolean": true
+              },
+              "need_refine": false,
+              "edits": []
+            }
+          },
+          "improver_actionability": {
+            "label": "Improver 실행 가능성",
+            "max_score": 15,
+            "score": 15.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "matched": [
+                "owner",
+                "deadline",
+                "action",
+                "metric",
+                "priority"
+              ],
+              "missing": []
+            }
+          },
+          "agent_handoff": {
+            "label": "Agent 연계 품질",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "stage_order": true,
+                "retrieval_forwarded": true,
+                "summary_candidates_forwarded": true,
+                "evaluation_selects_candidate": true,
+                "critic_receives_summary": true,
+                "improver_output_forwarded": true
+              },
+              "actual_order": [
+                "Interpreter",
+                "Retriever",
+                "Summarizer",
+                "Evaluator",
+                "Critic",
+                "Improver"
+              ],
+              "expected_order": [
+                "Interpreter",
+                "Retriever",
+                "Summarizer",
+                "Evaluator",
+                "Critic",
+                "Improver"
+              ]
+            }
+          },
+          "fault_and_logging": {
+            "label": "장애 대응·로그",
+            "max_score": 5,
+            "score": 5.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "status_is_explicit": true,
+                "error_code_field_exists": true,
+                "message_is_present": true,
+                "stage_trace_is_present": true,
+                "failure_not_reported_as_success": true
+              }
+            }
+          },
+          "performance": {
+            "label": "성능",
+            "max_score": 5,
+            "score": 5.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "duration_ms": 23.77,
+              "limit_ms": 60000.0,
+              "stage_duration_ms": {
+                "Interpreter": 3.54,
+                "Retriever": 4.69,
+                "Summarizer": 3.06,
+                "Evaluator": 3.59,
+                "Critic": 2.65,
+                "Improver": 6.06
+              }
+            }
+          }
+        },
+        "checks": {
+          "status": {
+            "passed": true,
+            "expected": "success"
+          },
+          "intent": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "로그인",
+                "evidence": "로그인"
+              },
+              {
+                "item": "인증번호",
+                "evidence": "인증번호"
+              },
+              {
+                "item": "수신",
+                "evidence": "수신"
+              },
+              {
+                "item": "지연",
+                "evidence": "지연"
+              }
+            ],
+            "missing": [],
+            "ratio": 1.0,
+            "expected": "로그인 인증번호 수신 지연",
+            "actual_evidence": "로그인 인증번호 수신 지연 로그인 인증번호 문자가 너무 늦게 도착해서 제한 시간 안에 입력하지 못했습니다."
+          },
+          "keywords": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "로그인",
+                "evidence": "로그인"
+              },
+              {
+                "item": "인증번호",
+                "evidence": "인증번호"
+              },
+              {
+                "item": "수신",
+                "evidence": "수신"
+              },
+              {
+                "item": "지연",
+                "evidence": "지연"
+              }
+            ],
+            "missing": [],
+            "ratio": 1.0
+          },
+          "required_output": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "원인 추정",
+                "evidence": "원인"
+              },
+              {
+                "item": "고객 안내",
+                "evidence": "고객 안내"
+              },
+              {
+                "item": "개선안",
+                "evidence": "개선"
+              },
+              {
+                "item": "우선순위",
+                "evidence": "우선"
+              }
+            ],
+            "missing": [],
+            "ratio": 1.0
+          },
+          "prohibited_output": {
+            "passed": true,
+            "violations": []
+          },
+          "retrieval_relevance": {
+            "passed": true,
+            "ratio": 1.0,
+            "retrieved_count": 4,
+            "relevant_count": 4,
+            "evidence": [
+              {
+                "sample": "로그인 인증번호 문자가 너무 늦게 도착해서 제한 시간 안에 입력하지 못했습니다.",
+                "evidence": [
+                  "로그인",
+                  "인증번호"
+                ]
+              },
+              {
+                "sample": "아이디와 비밀번호가 맞는데도 로그인이 계속 실패합니다.",
+                "evidence": [
+                  "로그인"
+                ]
+              },
+              {
+                "sample": "소셜 로그인으로 가입했는데 다시 로그인하면 계정을 찾을 수 없다고 나옵니다.",
+                "evidence": [
+                  "로그인"
+                ]
+              },
+              {
+                "sample": "배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.",
+                "evidence": [
+                  "지연"
+                ]
+              }
+            ],
+            "note": ""
+          },
+          "summary_faithfulness": {
+            "passed": true,
+            "ratio": 0.75,
+            "lexical_grounding_ratio": 1.0,
+            "expected_keyword_ratio": 0.5,
+            "matched_expected_keywords": [
+              "로그인",
+              "인증번호"
+            ],
+            "grounded_tokens": [
+              "너무",
+              "늦게",
+              "도착해서",
+              "로그인",
+              "못했습니다",
+              "문자가",
+              "시간",
+              "안에",
+              "인증번호",
+              "입력하지",
+              "제한"
+            ],
+            "ungrounded_tokens": [],
+            "method": "retrieved VOC와 요약의 어휘 근거 일치율"
+          },
+          "rag_metrics": {
+            "passed": true,
+            "ratio": 0.6667,
+            "context_precision": 1.0,
+            "context_recall": 0.75,
+            "faithfulness": 0.75,
+            "response_relevancy": 0.5,
+            "noise_sensitivity": 1.0,
+            "citation_coverage": 0.0,
+            "citation_details": [
+              {
+                "sentence": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다",
+                "covered": false,
+                "overlap": 0.0,
+                "source": ""
+              },
+              {
+                "sentence": "1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다",
+                "covered": false,
+                "overlap": 0.0,
+                "source": ""
+              }
+            ],
+            "noise_dependency": 0.0,
+            "relevant_context_count": 4,
+            "noise_context_count": 0,
+            "source_keyword_matches": [
+              "로그인",
+              "인증번호",
+              "지연"
+            ],
+            "response_keyword_matches": [
+              "로그인",
+              "인증번호"
+            ],
+            "method": "결정적 어휘·문장 근거 기반 RAG 6대 지표(추가 API 호출 없음)",
+            "affects_release_score": false
+          },
+          "policy_actionability": {
+            "passed": true,
+            "ratio": 1.0,
+            "matched": [
+              "owner",
+              "deadline",
+              "action",
+              "metric",
+              "priority"
+            ],
+            "missing": []
+          },
+          "privacy_and_prompt_safety": {
+            "passed": true,
+            "raw_pii_detected": false,
+            "prompt_injection_echoed": false
+          },
+          "evaluator_validity": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "multiple_candidates": true,
+              "scores_are_numeric": true,
+              "winner_is_candidate": true,
+              "winner_has_best_score": true
+            },
+            "winner": "S0",
+            "scores": {
+              "S1": 8.0,
+              "S2": 7.0,
+              "S0": 9.0
+            }
+          },
+          "critic_risk_detection": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "stage_output_exists": true,
+              "decision_is_boolean": true,
+              "edits_are_structured": true,
+              "decision_and_edits_consistent": true,
+              "sample_request_is_boolean": true
+            },
+            "need_refine": false,
+            "edits": []
+          },
+          "agent_handoff": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "stage_order": true,
+              "retrieval_forwarded": true,
+              "summary_candidates_forwarded": true,
+              "evaluation_selects_candidate": true,
+              "critic_receives_summary": true,
+              "improver_output_forwarded": true
+            },
+            "actual_order": [
+              "Interpreter",
+              "Retriever",
+              "Summarizer",
+              "Evaluator",
+              "Critic",
+              "Improver"
+            ],
+            "expected_order": [
+              "Interpreter",
+              "Retriever",
+              "Summarizer",
+              "Evaluator",
+              "Critic",
+              "Improver"
+            ]
+          },
+          "fault_and_logging": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "status_is_explicit": true,
+              "error_code_field_exists": true,
+              "message_is_present": true,
+              "stage_trace_is_present": true,
+              "failure_not_reported_as_success": true
+            }
+          },
+          "performance": {
+            "passed": true,
+            "ratio": 1.0,
+            "duration_ms": 23.77,
+            "limit_ms": 60000.0,
+            "stage_duration_ms": {
+              "Interpreter": 3.54,
+              "Retriever": 4.69,
+              "Summarizer": 3.06,
+              "Evaluator": 3.59,
+              "Critic": 2.65,
+              "Improver": 6.06
+            }
+          }
+        }
+      },
+      "analysis": {
+        "ok": true,
+        "error_code": null,
+        "message": "success",
+        "question": "로그인 인증번호가 너무 늦게 도착합니다.",
+        "stages": [
+          {
+            "agent": "Interpreter",
+            "role": "질문 의도·검색 조건 해석",
+            "check": "의도, 키워드, 카테고리 해석 정확성",
+            "duration_ms": 3.54,
+            "output": {
+              "task": "both",
+              "filters": [
+                "로그인",
+                "인증번호",
+                "수신",
+                "지연"
+              ],
+              "max_items": 10,
+              "csv_path": "C:\\qaeduc2\\VOC_Improve_1\\voc.csv",
+              "source": "llm"
+            }
+          },
+          {
+            "agent": "Retriever",
+            "role": "VOC 데이터 검색",
+            "check": "관련 불만을 빠뜨리지 않고 찾는지",
+            "duration_ms": 4.69,
+            "output": {
+              "retrieved_count": 4,
+              "samples": [
+                "로그인 인증번호 문자가 너무 늦게 도착해서 제한 시간 안에 입력하지 못했습니다.",
+                "아이디와 비밀번호가 맞는데도 로그인이 계속 실패합니다.",
+                "소셜 로그인으로 가입했는데 다시 로그인하면 계정을 찾을 수 없다고 나옵니다.",
+                "배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다."
+              ]
+            }
+          },
+          {
+            "agent": "Summarizer",
+            "role": "검색 결과 요약",
+            "check": "원문 왜곡, 핵심 누락, 중복 여부",
+            "duration_ms": 3.06,
+            "output": {
+              "candidates": {
+                "S1": "[관련도 순위 1] 로그인 인증번호 문자가 너무 늦게 도착해서 제한 시간 안에 입력하지 못했습니다.\n[관련도 순위 2] 아이디와 비밀번호가 맞는데도 로그인이 계속 실패합니다.\n[관련도 순위 3] 소셜 로그인으로 가입했는데 다시 로그인하면 계정을 찾을 수 없다고 나옵니다.\n[관련도 순위 4] 배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다. 로그인 인증번호 수신 지연 로그인 인증번호 수신 지연 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다.",
+                "S2": "[관련도 순위 1] 로그인 인증번호 문자가 너무 늦게 도착해서 제한 시간 안에 입력하지 못했습니다.\n[관련도 순위 2] 아이디와 비밀번호가 맞는데도 로그인이 계속 실패합니다.\n[관련도 순위 3] 소셜 로그인으로 가입했는데 다시 로그인하면 계정을 찾을 수 없다고 나옵니다.\n[관련도 순위 4] 배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다. 로그인 인증번호 수신 지연 로그인 인증번호 수신 지연 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다.",
+                "S0": "[관련도 순위 1] 로그인 인증번호 문자가 너무 늦게 도착해서 제한 시간 안에 입력하지 못했습니다.\n[관련도 순위 2] 아이디와 비밀번호가 맞는데도 로그인이 계속 실패합니다.\n[관련도 순위 3] 소셜 로그인으로 가입했는데 다시 로그인하면 계정을 찾을 수 없다고 나옵니다.\n[관련도 순위 4] 배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다. 로그인 인증번호 수신 지연 로그인 인증번호 수신 지연 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다."
+              },
+              "post_refine_grounding_fallback": false,
+              "post_refine_grounding_precision": 1.0,
+              "pre_refine_summary": "로그인 인증번호 문자가 너무 늦게 도착해서 제한 시간 안에 입력하지 못했습니다.",
+              "post_refine_summary": "로그인 인증번호 문자가 너무 늦게 도착해서 제한 시간 안에 입력하지 못했습니다.",
+              "refined": false
+            }
+          },
+          {
+            "agent": "Evaluator",
+            "role": "요약·결과 평가",
+            "check": "평가 기준이 일관적인지",
+            "duration_ms": 3.59,
+            "output": {
+              "winner": "S0",
+              "llm_winner": "S0",
+              "scores": {
+                "S1": 8.0,
+                "S2": 7.0,
+                "S0": 9.0
+              },
+              "relevance_scores": {
+                "S1": 0.9563,
+                "S2": 0.9563,
+                "S0": 0.9563
+              },
+              "grounding_override": false,
+              "summary_grounding_fallback": true,
+              "summary_grounding_precision": 0.2318,
+              "selected_summary": "로그인 인증번호 문자가 너무 늦게 도착해서 제한 시간 안에 입력하지 못했습니다."
+            }
+          },
+          {
+            "agent": "Critic",
+            "role": "위험·한계 지적",
+            "check": "실제 문제와 리스크를 찾는지",
+            "duration_ms": 2.65,
+            "output": {
+              "need_refine": false,
+              "edits": [],
+              "ask_more_samples": false
+            }
+          },
+          {
+            "agent": "Improver",
+            "role": "정책 개선안 제안",
+            "check": "개선안이 구체적이고 실행 가능한지",
+            "duration_ms": 6.06,
+            "output": {
+              "policy": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다. 1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다.",
+              "skipped": false
+            }
+          }
+        ],
+        "summary": "로그인 인증번호 문자가 너무 늦게 도착해서 제한 시간 안에 입력하지 못했습니다.",
+        "policy": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다. 1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다.",
+        "intent_json": "{\"task\": \"both\", \"filters\": [\"로그인\", \"인증번호\", \"수신\", \"지연\"], \"max_items\": 10, \"csv_path\": \"C:\\\\qaeduc2\\\\VOC_Improve_1\\\\voc.csv\"}",
+        "eval_json": "{\"S1\": 8.0, \"S2\": 7.0, \"S0\": 9.0}",
+        "summary_critic_json": "{\"need_refine\": false, \"edits\": []}",
+        "trace": "Interpreter; Retriever; Summarizer; Evaluator; Critic; Improver",
+        "metrics": {
+          "total_duration_ms": 23.77,
+          "stage_duration_ms": {
+            "Interpreter": 3.54,
+            "Retriever": 4.69,
+            "Summarizer": 3.06,
+            "Evaluator": 3.59,
+            "Critic": 2.65,
+            "Improver": 6.06
+          }
+        }
+      }
+    },
+    {
+      "case_id": "TC-04",
+      "question": "배송 예정일이 지났는데 배송 상태가 바뀌지 않습니다.",
+      "quality": {
+        "case_id": "TC-04",
+        "passed": true,
+        "score": 91.8,
+        "max_score": 100,
+        "deployment": {
+          "code": "CONDITIONAL",
+          "label": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "deployable": false,
+          "minimum_score": 95.0,
+          "score_gap": 3.2
+        },
+        "hard_blockers": [],
+        "rubric": {
+          "interpreter_accuracy": {
+            "label": "Interpreter 해석 정확성",
+            "max_score": 15,
+            "score": 13.1,
+            "passed": true,
+            "ratio": 0.875,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.875,
+              "intent": {
+                "passed": true,
+                "matched": [
+                  {
+                    "item": "배송",
+                    "evidence": "배송"
+                  },
+                  {
+                    "item": "지연",
+                    "evidence": "지연"
+                  },
+                  {
+                    "item": "상태",
+                    "evidence": "상태"
+                  }
+                ],
+                "missing": [
+                  "미갱신"
+                ],
+                "ratio": 0.75,
+                "expected": "배송 지연 및 상태 미갱신",
+                "actual_evidence": "배송 예정일 지연 상태 갱신 배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다."
+              },
+              "keywords": {
+                "passed": true,
+                "matched": [
+                  {
+                    "item": "배송",
+                    "evidence": "배송"
+                  },
+                  {
+                    "item": "예정일",
+                    "evidence": "예정일"
+                  },
+                  {
+                    "item": "지연",
+                    "evidence": "지연"
+                  },
+                  {
+                    "item": "상태 갱신",
+                    "evidence": "상태 갱신"
+                  }
+                ],
+                "missing": [],
+                "ratio": 1.0
+              }
+            }
+          },
+          "retriever_relevance": {
+            "label": "Retriever 검색 관련성",
+            "max_score": 15,
+            "score": 12.5,
+            "passed": true,
+            "ratio": 0.8333,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.8333,
+              "retrieved_count": 6,
+              "relevant_count": 5,
+              "evidence": [
+                {
+                  "sample": "배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.",
+                  "evidence": [
+                    "배송",
+                    "예정일"
+                  ]
+                },
+                {
+                  "sample": "배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.",
+                  "evidence": [
+                    "배송",
+                    "지연"
+                  ]
+                },
+                {
+                  "sample": "주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.",
+                  "evidence": [
+                    "배송"
+                  ]
+                },
+                {
+                  "sample": "배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다.",
+                  "evidence": [
+                    "배송"
+                  ]
+                },
+                {
+                  "sample": "주문한 상품과 전혀 다른 상품이 배송되었습니다.",
+                  "evidence": [
+                    "배송"
+                  ]
+                }
+              ],
+              "note": ""
+            }
+          },
+          "summarizer_faithfulness": {
+            "label": "Summarizer 사실성·요약성",
+            "max_score": 15,
+            "score": 11.2,
+            "passed": true,
+            "ratio": 0.75,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.75,
+              "lexical_grounding_ratio": 1.0,
+              "expected_keyword_ratio": 0.5,
+              "matched_expected_keywords": [
+                "배송",
+                "예정일"
+              ],
+              "grounded_tokens": [
+                "바뀌지",
+                "배송",
+                "상태가",
+                "상품",
+                "않습니다",
+                "예정일이",
+                "이미",
+                "준비중에서",
+                "지났는데"
+              ],
+              "ungrounded_tokens": [],
+              "method": "retrieved VOC와 요약의 어휘 근거 일치율"
+            }
+          },
+          "evaluator_validity": {
+            "label": "Evaluator 평가 타당성",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "multiple_candidates": true,
+                "scores_are_numeric": true,
+                "winner_is_candidate": true,
+                "winner_has_best_score": true
+              },
+              "winner": "S0",
+              "scores": {
+                "S1": 8.0,
+                "S2": 7.0,
+                "S0": 9.0
+              }
+            }
+          },
+          "critic_risk_detection": {
+            "label": "Critic 위험 탐지력",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "stage_output_exists": true,
+                "decision_is_boolean": true,
+                "edits_are_structured": true,
+                "decision_and_edits_consistent": true,
+                "sample_request_is_boolean": true
+              },
+              "need_refine": false,
+              "edits": []
+            }
+          },
+          "improver_actionability": {
+            "label": "Improver 실행 가능성",
+            "max_score": 15,
+            "score": 15.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "matched": [
+                "owner",
+                "deadline",
+                "action",
+                "metric",
+                "priority"
+              ],
+              "missing": []
+            }
+          },
+          "agent_handoff": {
+            "label": "Agent 연계 품질",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "stage_order": true,
+                "retrieval_forwarded": true,
+                "summary_candidates_forwarded": true,
+                "evaluation_selects_candidate": true,
+                "critic_receives_summary": true,
+                "improver_output_forwarded": true
+              },
+              "actual_order": [
+                "Interpreter",
+                "Retriever",
+                "Summarizer",
+                "Evaluator",
+                "Critic",
+                "Improver"
+              ],
+              "expected_order": [
+                "Interpreter",
+                "Retriever",
+                "Summarizer",
+                "Evaluator",
+                "Critic",
+                "Improver"
+              ]
+            }
+          },
+          "fault_and_logging": {
+            "label": "장애 대응·로그",
+            "max_score": 5,
+            "score": 5.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "status_is_explicit": true,
+                "error_code_field_exists": true,
+                "message_is_present": true,
+                "stage_trace_is_present": true,
+                "failure_not_reported_as_success": true
+              }
+            }
+          },
+          "performance": {
+            "label": "성능",
+            "max_score": 5,
+            "score": 5.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "duration_ms": 25.99,
+              "limit_ms": 60000.0,
+              "stage_duration_ms": {
+                "Interpreter": 3.81,
+                "Retriever": 4.87,
+                "Summarizer": 4.95,
+                "Evaluator": 3.62,
+                "Critic": 2.97,
+                "Improver": 5.58
+              }
+            }
+          }
+        },
+        "checks": {
+          "status": {
+            "passed": true,
+            "expected": "success"
+          },
+          "intent": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "배송",
+                "evidence": "배송"
+              },
+              {
+                "item": "지연",
+                "evidence": "지연"
+              },
+              {
+                "item": "상태",
+                "evidence": "상태"
+              }
+            ],
+            "missing": [
+              "미갱신"
+            ],
+            "ratio": 0.75,
+            "expected": "배송 지연 및 상태 미갱신",
+            "actual_evidence": "배송 예정일 지연 상태 갱신 배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다."
+          },
+          "keywords": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "배송",
+                "evidence": "배송"
+              },
+              {
+                "item": "예정일",
+                "evidence": "예정일"
+              },
+              {
+                "item": "지연",
+                "evidence": "지연"
+              },
+              {
+                "item": "상태 갱신",
+                "evidence": "상태 갱신"
+              }
+            ],
+            "missing": [],
+            "ratio": 1.0
+          },
+          "required_output": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "원인 추정",
+                "evidence": "원인"
+              },
+              {
+                "item": "고객 안내",
+                "evidence": "고객 안내"
+              },
+              {
+                "item": "개선안",
+                "evidence": "개선"
+              },
+              {
+                "item": "우선순위",
+                "evidence": "우선"
+              }
+            ],
+            "missing": [],
+            "ratio": 1.0
+          },
+          "prohibited_output": {
+            "passed": true,
+            "violations": []
+          },
+          "retrieval_relevance": {
+            "passed": true,
+            "ratio": 0.8333,
+            "retrieved_count": 6,
+            "relevant_count": 5,
+            "evidence": [
+              {
+                "sample": "배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.",
+                "evidence": [
+                  "배송",
+                  "예정일"
+                ]
+              },
+              {
+                "sample": "배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.",
+                "evidence": [
+                  "배송",
+                  "지연"
+                ]
+              },
+              {
+                "sample": "주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.",
+                "evidence": [
+                  "배송"
+                ]
+              },
+              {
+                "sample": "배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다.",
+                "evidence": [
+                  "배송"
+                ]
+              },
+              {
+                "sample": "주문한 상품과 전혀 다른 상품이 배송되었습니다.",
+                "evidence": [
+                  "배송"
+                ]
+              }
+            ],
+            "note": ""
+          },
+          "summary_faithfulness": {
+            "passed": true,
+            "ratio": 0.75,
+            "lexical_grounding_ratio": 1.0,
+            "expected_keyword_ratio": 0.5,
+            "matched_expected_keywords": [
+              "배송",
+              "예정일"
+            ],
+            "grounded_tokens": [
+              "바뀌지",
+              "배송",
+              "상태가",
+              "상품",
+              "않습니다",
+              "예정일이",
+              "이미",
+              "준비중에서",
+              "지났는데"
+            ],
+            "ungrounded_tokens": [],
+            "method": "retrieved VOC와 요약의 어휘 근거 일치율"
+          },
+          "rag_metrics": {
+            "passed": true,
+            "ratio": 0.6389,
+            "context_precision": 0.8333,
+            "context_recall": 0.75,
+            "faithfulness": 0.75,
+            "response_relevancy": 0.5,
+            "noise_sensitivity": 1.0,
+            "citation_coverage": 0.0,
+            "citation_details": [
+              {
+                "sentence": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다",
+                "covered": false,
+                "overlap": 0.0,
+                "source": ""
+              },
+              {
+                "sentence": "1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다",
+                "covered": false,
+                "overlap": 0.0,
+                "source": ""
+              }
+            ],
+            "noise_dependency": 0.0,
+            "relevant_context_count": 5,
+            "noise_context_count": 1,
+            "source_keyword_matches": [
+              "배송",
+              "예정일",
+              "지연"
+            ],
+            "response_keyword_matches": [
+              "배송",
+              "예정일"
+            ],
+            "method": "결정적 어휘·문장 근거 기반 RAG 6대 지표(추가 API 호출 없음)",
+            "affects_release_score": false
+          },
+          "policy_actionability": {
+            "passed": true,
+            "ratio": 1.0,
+            "matched": [
+              "owner",
+              "deadline",
+              "action",
+              "metric",
+              "priority"
+            ],
+            "missing": []
+          },
+          "privacy_and_prompt_safety": {
+            "passed": true,
+            "raw_pii_detected": false,
+            "prompt_injection_echoed": false
+          },
+          "evaluator_validity": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "multiple_candidates": true,
+              "scores_are_numeric": true,
+              "winner_is_candidate": true,
+              "winner_has_best_score": true
+            },
+            "winner": "S0",
+            "scores": {
+              "S1": 8.0,
+              "S2": 7.0,
+              "S0": 9.0
+            }
+          },
+          "critic_risk_detection": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "stage_output_exists": true,
+              "decision_is_boolean": true,
+              "edits_are_structured": true,
+              "decision_and_edits_consistent": true,
+              "sample_request_is_boolean": true
+            },
+            "need_refine": false,
+            "edits": []
+          },
+          "agent_handoff": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "stage_order": true,
+              "retrieval_forwarded": true,
+              "summary_candidates_forwarded": true,
+              "evaluation_selects_candidate": true,
+              "critic_receives_summary": true,
+              "improver_output_forwarded": true
+            },
+            "actual_order": [
+              "Interpreter",
+              "Retriever",
+              "Summarizer",
+              "Evaluator",
+              "Critic",
+              "Improver"
+            ],
+            "expected_order": [
+              "Interpreter",
+              "Retriever",
+              "Summarizer",
+              "Evaluator",
+              "Critic",
+              "Improver"
+            ]
+          },
+          "fault_and_logging": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "status_is_explicit": true,
+              "error_code_field_exists": true,
+              "message_is_present": true,
+              "stage_trace_is_present": true,
+              "failure_not_reported_as_success": true
+            }
+          },
+          "performance": {
+            "passed": true,
+            "ratio": 1.0,
+            "duration_ms": 25.99,
+            "limit_ms": 60000.0,
+            "stage_duration_ms": {
+              "Interpreter": 3.81,
+              "Retriever": 4.87,
+              "Summarizer": 4.95,
+              "Evaluator": 3.62,
+              "Critic": 2.97,
+              "Improver": 5.58
+            }
+          }
+        }
+      },
+      "analysis": {
+        "ok": true,
+        "error_code": null,
+        "message": "success",
+        "question": "배송 예정일이 지났는데 배송 상태가 바뀌지 않습니다.",
+        "stages": [
+          {
+            "agent": "Interpreter",
+            "role": "질문 의도·검색 조건 해석",
+            "check": "의도, 키워드, 카테고리 해석 정확성",
+            "duration_ms": 3.81,
+            "output": {
+              "task": "both",
+              "filters": [
+                "배송",
+                "예정일",
+                "지연",
+                "상태 갱신"
+              ],
+              "max_items": 10,
+              "csv_path": "C:\\qaeduc2\\VOC_Improve_1\\voc.csv",
+              "source": "llm"
+            }
+          },
+          {
+            "agent": "Retriever",
+            "role": "VOC 데이터 검색",
+            "check": "관련 불만을 빠뜨리지 않고 찾는지",
+            "duration_ms": 4.87,
+            "output": {
+              "retrieved_count": 6,
+              "samples": [
+                "배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.",
+                "배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.",
+                "주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.",
+                "배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다.",
+                "주문한 상품과 전혀 다른 상품이 배송되었습니다.",
+                "환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다."
+              ]
+            }
+          },
+          {
+            "agent": "Summarizer",
+            "role": "검색 결과 요약",
+            "check": "원문 왜곡, 핵심 누락, 중복 여부",
+            "duration_ms": 4.95,
+            "output": {
+              "candidates": {
+                "S1": "[관련도 순위 1] 배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.\n[관련도 순위 2] 배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.\n[관련도 순위 3] 주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.\n[관련도 순위 4] 배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다.\n[관련도 순위 5] 주문한 상품과 전혀 다른 상품이 배송되었습니다.\n[관련도 순위 6] 환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다. 배송 지연 및 상태 미갱신 배송 예정일 지연 상태 갱신 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다.",
+                "S2": "[관련도 순위 1] 배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.\n[관련도 순위 2] 배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.\n[관련도 순위 3] 주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.\n[관련도 순위 4] 배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다.\n[관련도 순위 5] 주문한 상품과 전혀 다른 상품이 배송되었습니다.\n[관련도 순위 6] 환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다. 배송 지연 및 상태 미갱신 배송 예정일 지연 상태 갱신 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다.",
+                "S0": "[관련도 순위 1] 배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.\n[관련도 순위 2] 배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.\n[관련도 순위 3] 주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.\n[관련도 순위 4] 배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다.\n[관련도 순위 5] 주문한 상품과 전혀 다른 상품이 배송되었습니다.\n[관련도 순위 6] 환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다. 배송 지연 및 상태 미갱신 배송 예정일 지연 상태 갱신 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다."
+              },
+              "post_refine_grounding_fallback": false,
+              "post_refine_grounding_precision": 1.0,
+              "pre_refine_summary": "배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.",
+              "post_refine_summary": "배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.",
+              "refined": false
+            }
+          },
+          {
+            "agent": "Evaluator",
+            "role": "요약·결과 평가",
+            "check": "평가 기준이 일관적인지",
+            "duration_ms": 3.62,
+            "output": {
+              "winner": "S0",
+              "llm_winner": "S0",
+              "scores": {
+                "S1": 8.0,
+                "S2": 7.0,
+                "S0": 9.0
+              },
+              "relevance_scores": {
+                "S1": 0.93,
+                "S2": 0.93,
+                "S0": 0.93
+              },
+              "grounding_override": false,
+              "summary_grounding_fallback": true,
+              "summary_grounding_precision": 0.1587,
+              "selected_summary": "배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다."
+            }
+          },
+          {
+            "agent": "Critic",
+            "role": "위험·한계 지적",
+            "check": "실제 문제와 리스크를 찾는지",
+            "duration_ms": 2.97,
+            "output": {
+              "need_refine": false,
+              "edits": [],
+              "ask_more_samples": false
+            }
+          },
+          {
+            "agent": "Improver",
+            "role": "정책 개선안 제안",
+            "check": "개선안이 구체적이고 실행 가능한지",
+            "duration_ms": 5.58,
+            "output": {
+              "policy": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다. 1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다.",
+              "skipped": false
+            }
+          }
+        ],
+        "summary": "배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.",
+        "policy": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다. 1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다.",
+        "intent_json": "{\"task\": \"both\", \"filters\": [\"배송\", \"예정일\", \"지연\", \"상태 갱신\"], \"max_items\": 10, \"csv_path\": \"C:\\\\qaeduc2\\\\VOC_Improve_1\\\\voc.csv\"}",
+        "eval_json": "{\"S1\": 8.0, \"S2\": 7.0, \"S0\": 9.0}",
+        "summary_critic_json": "{\"need_refine\": false, \"edits\": []}",
+        "trace": "Interpreter; Retriever; Summarizer; Evaluator; Critic; Improver",
+        "metrics": {
+          "total_duration_ms": 25.99,
+          "stage_duration_ms": {
+            "Interpreter": 3.81,
+            "Retriever": 4.87,
+            "Summarizer": 4.95,
+            "Evaluator": 3.62,
+            "Critic": 2.97,
+            "Improver": 5.58
+          }
+        }
+      }
+    },
+    {
+      "case_id": "TC-05",
+      "question": "환불 신청을 했는데 처리 상태를 알 수 없습니다.",
+      "quality": {
+        "case_id": "TC-05",
+        "passed": true,
+        "score": 89.7,
+        "max_score": 100,
+        "deployment": {
+          "code": "CONDITIONAL",
+          "label": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+          "deployable": false,
+          "minimum_score": 95.0,
+          "score_gap": 5.3
+        },
+        "hard_blockers": [],
+        "rubric": {
+          "interpreter_accuracy": {
+            "label": "Interpreter 해석 정확성",
+            "max_score": 15,
+            "score": 13.5,
+            "passed": true,
+            "ratio": 0.9,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.9,
+              "intent": {
+                "passed": true,
+                "matched": [
+                  {
+                    "item": "환불",
+                    "evidence": "환불"
+                  },
+                  {
+                    "item": "처리",
+                    "evidence": "처리"
+                  },
+                  {
+                    "item": "상태",
+                    "evidence": "상태"
+                  },
+                  {
+                    "item": "조회",
+                    "evidence": "조회"
+                  }
+                ],
+                "missing": [
+                  "실패"
+                ],
+                "ratio": 0.8,
+                "expected": "환불 처리 상태 조회 실패",
+                "actual_evidence": "환불 처리 상태 조회 고객 안내 환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다."
+              },
+              "keywords": {
+                "passed": true,
+                "matched": [
+                  {
+                    "item": "환불",
+                    "evidence": "환불"
+                  },
+                  {
+                    "item": "처리 상태",
+                    "evidence": "처리 상태"
+                  },
+                  {
+                    "item": "조회",
+                    "evidence": "조회"
+                  },
+                  {
+                    "item": "고객 안내",
+                    "evidence": "고객 안내"
+                  }
+                ],
+                "missing": [],
+                "ratio": 1.0
+              }
+            }
+          },
+          "retriever_relevance": {
+            "label": "Retriever 검색 관련성",
+            "max_score": 15,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 0.6667,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.6667,
+              "retrieved_count": 9,
+              "relevant_count": 6,
+              "evidence": [
+                {
+                  "sample": "환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다.",
+                  "evidence": [
+                    "환불",
+                    "처리 상태"
+                  ]
+                },
+                {
+                  "sample": "첫 구매 할인 쿠폰이 자동 적용된다고 안내받았는데 실제로는 적용되지 않았습니다.",
+                  "evidence": [
+                    "고객 안내"
+                  ]
+                },
+                {
+                  "sample": "배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다.",
+                  "evidence": [
+                    "조회"
+                  ]
+                },
+                {
+                  "sample": "배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.",
+                  "evidence": [
+                    "고객 안내"
+                  ]
+                },
+                {
+                  "sample": "반품 접수 후 일주일이 지났는데 환불 금액이 아직 입금되지 않았습니다.",
+                  "evidence": [
+                    "환불"
+                  ]
+                }
+              ],
+              "note": ""
+            }
+          },
+          "summarizer_faithfulness": {
+            "label": "Summarizer 사실성·요약성",
+            "max_score": 15,
+            "score": 11.2,
+            "passed": true,
+            "ratio": 0.75,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.75,
+              "lexical_grounding_ratio": 1.0,
+              "expected_keyword_ratio": 0.5,
+              "matched_expected_keywords": [
+                "환불",
+                "처리 상태"
+              ],
+              "grounded_tokens": [
+                "답답합니다",
+                "상태를",
+                "신청을",
+                "없어",
+                "처리",
+                "했는데",
+                "확인할",
+                "환불"
+              ],
+              "ungrounded_tokens": [],
+              "method": "retrieved VOC와 요약의 어휘 근거 일치율"
+            }
+          },
+          "evaluator_validity": {
+            "label": "Evaluator 평가 타당성",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "multiple_candidates": true,
+                "scores_are_numeric": true,
+                "winner_is_candidate": true,
+                "winner_has_best_score": true
+              },
+              "winner": "S0",
+              "scores": {
+                "S1": 8.0,
+                "S2": 7.0,
+                "S0": 9.0
+              }
+            }
+          },
+          "critic_risk_detection": {
+            "label": "Critic 위험 탐지력",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "stage_output_exists": true,
+                "decision_is_boolean": true,
+                "edits_are_structured": true,
+                "decision_and_edits_consistent": true,
+                "sample_request_is_boolean": true
+              },
+              "need_refine": false,
+              "edits": []
+            }
+          },
+          "improver_actionability": {
+            "label": "Improver 실행 가능성",
+            "max_score": 15,
+            "score": 15.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "matched": [
+                "owner",
+                "deadline",
+                "action",
+                "metric",
+                "priority"
+              ],
+              "missing": []
+            }
+          },
+          "agent_handoff": {
+            "label": "Agent 연계 품질",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "stage_order": true,
+                "retrieval_forwarded": true,
+                "summary_candidates_forwarded": true,
+                "evaluation_selects_candidate": true,
+                "critic_receives_summary": true,
+                "improver_output_forwarded": true
+              },
+              "actual_order": [
+                "Interpreter",
+                "Retriever",
+                "Summarizer",
+                "Evaluator",
+                "Critic",
+                "Improver"
+              ],
+              "expected_order": [
+                "Interpreter",
+                "Retriever",
+                "Summarizer",
+                "Evaluator",
+                "Critic",
+                "Improver"
+              ]
+            }
+          },
+          "fault_and_logging": {
+            "label": "장애 대응·로그",
+            "max_score": 5,
+            "score": 5.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "status_is_explicit": true,
+                "error_code_field_exists": true,
+                "message_is_present": true,
+                "stage_trace_is_present": true,
+                "failure_not_reported_as_success": true
+              }
+            }
+          },
+          "performance": {
+            "label": "성능",
+            "max_score": 5,
+            "score": 5.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "duration_ms": 33.56,
+              "limit_ms": 60000.0,
+              "stage_duration_ms": {
+                "Interpreter": 3.49,
+                "Retriever": 4.98,
+                "Summarizer": 7.97,
+                "Evaluator": 5.72,
+                "Critic": 4.58,
+                "Improver": 6.58
+              }
+            }
+          }
+        },
+        "checks": {
+          "status": {
+            "passed": true,
+            "expected": "success"
+          },
+          "intent": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "환불",
+                "evidence": "환불"
+              },
+              {
+                "item": "처리",
+                "evidence": "처리"
+              },
+              {
+                "item": "상태",
+                "evidence": "상태"
+              },
+              {
+                "item": "조회",
+                "evidence": "조회"
+              }
+            ],
+            "missing": [
+              "실패"
+            ],
+            "ratio": 0.8,
+            "expected": "환불 처리 상태 조회 실패",
+            "actual_evidence": "환불 처리 상태 조회 고객 안내 환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다."
+          },
+          "keywords": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "환불",
+                "evidence": "환불"
+              },
+              {
+                "item": "처리 상태",
+                "evidence": "처리 상태"
+              },
+              {
+                "item": "조회",
+                "evidence": "조회"
+              },
+              {
+                "item": "고객 안내",
+                "evidence": "고객 안내"
+              }
+            ],
+            "missing": [],
+            "ratio": 1.0
+          },
+          "required_output": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "원인 추정",
+                "evidence": "원인"
+              },
+              {
+                "item": "고객 안내",
+                "evidence": "고객 안내"
+              },
+              {
+                "item": "개선안",
+                "evidence": "개선"
+              },
+              {
+                "item": "우선순위",
+                "evidence": "우선"
+              }
+            ],
+            "missing": [],
+            "ratio": 1.0
+          },
+          "prohibited_output": {
+            "passed": true,
+            "violations": []
+          },
+          "retrieval_relevance": {
+            "passed": true,
+            "ratio": 0.6667,
+            "retrieved_count": 9,
+            "relevant_count": 6,
+            "evidence": [
+              {
+                "sample": "환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다.",
+                "evidence": [
+                  "환불",
+                  "처리 상태"
+                ]
+              },
+              {
+                "sample": "첫 구매 할인 쿠폰이 자동 적용된다고 안내받았는데 실제로는 적용되지 않았습니다.",
+                "evidence": [
+                  "고객 안내"
+                ]
+              },
+              {
+                "sample": "배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다.",
+                "evidence": [
+                  "조회"
+                ]
+              },
+              {
+                "sample": "배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.",
+                "evidence": [
+                  "고객 안내"
+                ]
+              },
+              {
+                "sample": "반품 접수 후 일주일이 지났는데 환불 금액이 아직 입금되지 않았습니다.",
+                "evidence": [
+                  "환불"
+                ]
+              }
+            ],
+            "note": ""
+          },
+          "summary_faithfulness": {
+            "passed": true,
+            "ratio": 0.75,
+            "lexical_grounding_ratio": 1.0,
+            "expected_keyword_ratio": 0.5,
+            "matched_expected_keywords": [
+              "환불",
+              "처리 상태"
+            ],
+            "grounded_tokens": [
+              "답답합니다",
+              "상태를",
+              "신청을",
+              "없어",
+              "처리",
+              "했는데",
+              "확인할",
+              "환불"
+            ],
+            "ungrounded_tokens": [],
+            "method": "retrieved VOC와 요약의 어휘 근거 일치율"
+          },
+          "rag_metrics": {
+            "passed": true,
+            "ratio": 0.6641,
+            "context_precision": 0.6667,
+            "context_recall": 1.0,
+            "faithfulness": 0.75,
+            "response_relevancy": 0.75,
+            "noise_sensitivity": 0.8182,
+            "citation_coverage": 0.0,
+            "citation_details": [
+              {
+                "sentence": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다",
+                "covered": false,
+                "overlap": 0.1,
+                "source": "고객센터에 전화하면 상담원 연결까지 대기 시간이 20분 넘게 걸립니다."
+              },
+              {
+                "sentence": "1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다",
+                "covered": false,
+                "overlap": 0.0833,
+                "source": "고객센터에 전화하면 상담원 연결까지 대기 시간이 20분 넘게 걸립니다."
+              }
+            ],
+            "noise_dependency": 0.1818,
+            "relevant_context_count": 6,
+            "noise_context_count": 3,
+            "source_keyword_matches": [
+              "환불",
+              "처리 상태",
+              "조회",
+              "고객 안내"
+            ],
+            "response_keyword_matches": [
+              "환불",
+              "처리 상태",
+              "고객 안내"
+            ],
+            "method": "결정적 어휘·문장 근거 기반 RAG 6대 지표(추가 API 호출 없음)",
+            "affects_release_score": false
+          },
+          "policy_actionability": {
+            "passed": true,
+            "ratio": 1.0,
+            "matched": [
+              "owner",
+              "deadline",
+              "action",
+              "metric",
+              "priority"
+            ],
+            "missing": []
+          },
+          "privacy_and_prompt_safety": {
+            "passed": true,
+            "raw_pii_detected": false,
+            "prompt_injection_echoed": false
+          },
+          "evaluator_validity": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "multiple_candidates": true,
+              "scores_are_numeric": true,
+              "winner_is_candidate": true,
+              "winner_has_best_score": true
+            },
+            "winner": "S0",
+            "scores": {
+              "S1": 8.0,
+              "S2": 7.0,
+              "S0": 9.0
+            }
+          },
+          "critic_risk_detection": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "stage_output_exists": true,
+              "decision_is_boolean": true,
+              "edits_are_structured": true,
+              "decision_and_edits_consistent": true,
+              "sample_request_is_boolean": true
+            },
+            "need_refine": false,
+            "edits": []
+          },
+          "agent_handoff": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "stage_order": true,
+              "retrieval_forwarded": true,
+              "summary_candidates_forwarded": true,
+              "evaluation_selects_candidate": true,
+              "critic_receives_summary": true,
+              "improver_output_forwarded": true
+            },
+            "actual_order": [
+              "Interpreter",
+              "Retriever",
+              "Summarizer",
+              "Evaluator",
+              "Critic",
+              "Improver"
+            ],
+            "expected_order": [
+              "Interpreter",
+              "Retriever",
+              "Summarizer",
+              "Evaluator",
+              "Critic",
+              "Improver"
+            ]
+          },
+          "fault_and_logging": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "status_is_explicit": true,
+              "error_code_field_exists": true,
+              "message_is_present": true,
+              "stage_trace_is_present": true,
+              "failure_not_reported_as_success": true
+            }
+          },
+          "performance": {
+            "passed": true,
+            "ratio": 1.0,
+            "duration_ms": 33.56,
+            "limit_ms": 60000.0,
+            "stage_duration_ms": {
+              "Interpreter": 3.49,
+              "Retriever": 4.98,
+              "Summarizer": 7.97,
+              "Evaluator": 5.72,
+              "Critic": 4.58,
+              "Improver": 6.58
+            }
+          }
+        }
+      },
+      "analysis": {
+        "ok": true,
+        "error_code": null,
+        "message": "success",
+        "question": "환불 신청을 했는데 처리 상태를 알 수 없습니다.",
+        "stages": [
+          {
+            "agent": "Interpreter",
+            "role": "질문 의도·검색 조건 해석",
+            "check": "의도, 키워드, 카테고리 해석 정확성",
+            "duration_ms": 3.49,
+            "output": {
+              "task": "both",
+              "filters": [
+                "환불",
+                "처리 상태",
+                "조회",
+                "고객 안내"
+              ],
+              "max_items": 10,
+              "csv_path": "C:\\qaeduc2\\VOC_Improve_1\\voc.csv",
+              "source": "llm"
+            }
+          },
+          {
+            "agent": "Retriever",
+            "role": "VOC 데이터 검색",
+            "check": "관련 불만을 빠뜨리지 않고 찾는지",
+            "duration_ms": 4.98,
+            "output": {
+              "retrieved_count": 9,
+              "samples": [
+                "환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다.",
+                "주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.",
+                "첫 구매 할인 쿠폰이 자동 적용된다고 안내받았는데 실제로는 적용되지 않았습니다.",
+                "배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.",
+                "배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다.",
+                "배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.",
+                "반품 접수 후 일주일이 지났는데 환불 금액이 아직 입금되지 않았습니다.",
+                "고객센터에 전화하면 상담원 연결까지 대기 시간이 20분 넘게 걸립니다.",
+                "적립 포인트가 만료되었다는데 만료 안내를 받은 적이 없어 당황스럽습니다."
+              ]
+            }
+          },
+          {
+            "agent": "Summarizer",
+            "role": "검색 결과 요약",
+            "check": "원문 왜곡, 핵심 누락, 중복 여부",
+            "duration_ms": 7.97,
+            "output": {
+              "candidates": {
+                "S1": "[관련도 순위 1] 환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다.\n[관련도 순위 2] 주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.\n[관련도 순위 3] 첫 구매 할인 쿠폰이 자동 적용된다고 안내받았는데 실제로는 적용되지 않았습니다.\n[관련도 순위 4] 배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.\n[관련도 순위 5] 배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다.\n[관련도 순위 6] 배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.\n[관련도 순위 7] 반품 접수 후 일주일이 지났는데 환불 금액이 아직 입금되지 않았습니다.\n[관련도 순위 8] 고객센터에 전화하면 상담원 연결까지 대기 시간이 20분 넘게 걸립니다.\n[관련도 순위 9] 적립 포인트가 만료되었다는데 만료 안내를 받은 적이 없어 당황스럽습니다. 환불 처리 상태 조회 실패 환불 처리 상태 조회 고객 안내 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다.",
+                "S2": "[관련도 순위 1] 환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다.\n[관련도 순위 2] 주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.\n[관련도 순위 3] 첫 구매 할인 쿠폰이 자동 적용된다고 안내받았는데 실제로는 적용되지 않았습니다.\n[관련도 순위 4] 배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.\n[관련도 순위 5] 배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다.\n[관련도 순위 6] 배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.\n[관련도 순위 7] 반품 접수 후 일주일이 지났는데 환불 금액이 아직 입금되지 않았습니다.\n[관련도 순위 8] 고객센터에 전화하면 상담원 연결까지 대기 시간이 20분 넘게 걸립니다.\n[관련도 순위 9] 적립 포인트가 만료되었다는데 만료 안내를 받은 적이 없어 당황스럽습니다. 환불 처리 상태 조회 실패 환불 처리 상태 조회 고객 안내 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다.",
+                "S0": "[관련도 순위 1] 환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다.\n[관련도 순위 2] 주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.\n[관련도 순위 3] 첫 구매 할인 쿠폰이 자동 적용된다고 안내받았는데 실제로는 적용되지 않았습니다.\n[관련도 순위 4] 배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.\n[관련도 순위 5] 배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다.\n[관련도 순위 6] 배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.\n[관련도 순위 7] 반품 접수 후 일주일이 지났는데 환불 금액이 아직 입금되지 않았습니다.\n[관련도 순위 8] 고객센터에 전화하면 상담원 연결까지 대기 시간이 20분 넘게 걸립니다.\n[관련도 순위 9] 적립 포인트가 만료되었다는데 만료 안내를 받은 적이 없어 당황스럽습니다. 환불 처리 상태 조회 실패 환불 처리 상태 조회 고객 안내 원인 추정 가능성을 확인해야 합니다. 고객 안내와 추가 정보 요청이 필요하며 개선안과 우선순위를 마련해야 합니다."
+              },
+              "post_refine_grounding_fallback": false,
+              "post_refine_grounding_precision": 1.0,
+              "pre_refine_summary": "환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다.",
+              "post_refine_summary": "환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다.",
+              "refined": false
+            }
+          },
+          {
+            "agent": "Evaluator",
+            "role": "요약·결과 평가",
+            "check": "평가 기준이 일관적인지",
+            "duration_ms": 5.72,
+            "output": {
+              "winner": "S0",
+              "llm_winner": "S0",
+              "scores": {
+                "S1": 8.0,
+                "S2": 7.0,
+                "S0": 9.0
+              },
+              "relevance_scores": {
+                "S1": 0.9222,
+                "S2": 0.9222,
+                "S0": 0.9222
+              },
+              "grounding_override": false,
+              "summary_grounding_fallback": true,
+              "summary_grounding_precision": 0.0952,
+              "selected_summary": "환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다."
+            }
+          },
+          {
+            "agent": "Critic",
+            "role": "위험·한계 지적",
+            "check": "실제 문제와 리스크를 찾는지",
+            "duration_ms": 4.58,
+            "output": {
+              "need_refine": false,
+              "edits": [],
+              "ask_more_samples": false
+            }
+          },
+          {
+            "agent": "Improver",
+            "role": "정책 개선안 제안",
+            "check": "개선안이 구체적이고 실행 가능한지",
+            "duration_ms": 6.58,
+            "output": {
+              "policy": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다. 1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다.",
+              "skipped": false
+            }
+          }
+        ],
+        "summary": "환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다.",
+        "policy": "최우선 개선안: 담당 운영팀은 즉시 원인을 점검하고 고객 안내를 시행합니다. 1주 이내 동기화와 오류 모니터링을 개선하며 처리시간 20% 단축을 목표 지표로 관리합니다.",
+        "intent_json": "{\"task\": \"both\", \"filters\": [\"환불\", \"처리 상태\", \"조회\", \"고객 안내\"], \"max_items\": 10, \"csv_path\": \"C:\\\\qaeduc2\\\\VOC_Improve_1\\\\voc.csv\"}",
+        "eval_json": "{\"S1\": 8.0, \"S2\": 7.0, \"S0\": 9.0}",
+        "summary_critic_json": "{\"need_refine\": false, \"edits\": []}",
+        "trace": "Interpreter; Retriever; Summarizer; Evaluator; Critic; Improver",
+        "metrics": {
+          "total_duration_ms": 33.56,
+          "stage_duration_ms": {
+            "Interpreter": 3.49,
+            "Retriever": 4.98,
+            "Summarizer": 7.97,
+            "Evaluator": 5.72,
+            "Critic": 4.58,
+            "Improver": 6.58
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "RUN-20260709162648",
+  "started_at": "2026-07-09 16:26:48",
+  "ended_at": "2026-07-09 16:27:04",
+  "duration_seconds": 15.89,
+  "selected_uploads": [
+    {
+      "id": "UP-20260709103936-006",
+      "filename": "test_cases.json",
+      "file_type": "JSON",
+      "row_count": 10,
+      "uploaded_at": "2026-07-09 10:39:36",
+      "source_path": "C:\\260710_project\\ai_quality_final_project_Team3\\data\\testcases\\uploads\\UP-20260709103936-006\\test_cases.json",
+      "run_source_path": "C:\\260710_project\\ai_quality_final_project_Team3\\reports\\test_runs\\RUN-20260709162648\\inputs\\uploads\\UP-20260709103936-006\\test_cases.json"
+    }
+  ],
+  "test_case_count": 10,
+  "reports": {
+    "json": "C:\\260710_project\\ai_quality_final_project_Team3\\reports\\test_runs\\RUN-20260709162648\\reports\\evaluation_result.json",
+    "csv": "C:\\260710_project\\ai_quality_final_project_Team3\\reports\\test_runs\\RUN-20260709162648\\reports\\evaluation_result.csv",
+    "markdown": "C:\\260710_project\\ai_quality_final_project_Team3\\reports\\test_runs\\RUN-20260709162648\\reports\\final_quality_report.md",
+    "archive": ""
+  },
+  "dashboard_snapshot": "C:\\260710_project\\ai_quality_final_project_Team3\\reports\\test_runs\\RUN-20260709162648\\dashboard_snapshot.json"
+}

@@ -1,0 +1,16 @@
+VOC 품질 테스트 실행 증적
+실행 유형: structured_quality_results_adaptive_layout
+실행 시각: 2026-07-15T17:34:29+09:00
+결과: 8/8 PASS
+실패: 0, 오류: 0
+최종 판정: PASS
+
+[상세 결과]
+- quality_result_summary | PASS | score= | 품질 Suite·장애·Red Team·CI Gate·E2E 원문 JSON 대신 판정·건수·점수·상세 결과표 표시
+- artifact_preview | PASS | score= | TXT·XML·HTML·JUnit·JSON·CSV를 결과 카드와 표로 해석, 소스 원문 pre 제거
+- technical_raw | PASS | score= | 기술 JSON은 기본 닫힘 고급 항목으로 분리
+- adaptive_layout | PASS | score= | 기본 2열, 상세 6건 초과·산출물 4개 초과·대용량 결과는 자동 1열 전체 폭
+- responsive_layout | PASS | score= | 900px 이하 모바일·태블릿은 1열 고정
+- live_quality_suite | PASS | score= | 실제 웹 작업 completed, 자동 품질 테스트 30/30 PASS
+- web_regression | PASS | score= | 웹 전용 32/32 PASS, JavaScript 구문 정상
+- full_regression | PASS | score= | 전체 회귀 79/79 PASS, 실제 HTTP 200, Agent 6/6 ready

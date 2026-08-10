@@ -1,0 +1,433 @@
+[
+  {
+    "id": "RUN-20260708142515",
+    "executed_at": "2026-07-08 14:25:15",
+    "target_files": "test_cases_5.json",
+    "file_count": 1,
+    "total_count": 5,
+    "passed_count": 1,
+    "failed_count": 4,
+    "duration_seconds": 36.87,
+    "status": "완료",
+    "detail": {
+      "rule_passed_count": 1,
+      "api_passed_count": 2,
+      "matched_count": 4,
+      "file_results": [
+        {
+          "케이스ID": "TC-001",
+          "카테고리": "정확성",
+          "유형": "Happy",
+          "질문": "이 교육과정은 총 몇 시간인가요?",
+          "규칙기반 판정": "PASS",
+          "API기반 판정": "PASS",
+          "판정일치": "일치"
+        },
+        {
+          "케이스ID": "TC-002",
+          "카테고리": "출결",
+          "유형": "Happy",
+          "질문": "지각을 세 번 하면 어떻게 되나요?",
+          "규칙기반 판정": "FAIL",
+          "API기반 판정": "FAIL",
+          "판정일치": "일치"
+        },
+        {
+          "케이스ID": "TC-003",
+          "카테고리": "교육시간 안내",
+          "유형": "Edge",
+          "질문": "직장인이라 저녁에만 들으려고 하는데, 야간 반이나 주말 반도 총 320시간인가요?",
+          "규칙기반 판정": "REVIEW",
+          "API기반 판정": "PASS",
+          "판정일치": "불일치"
+        },
+        {
+          "케이스ID": "TC-004",
+          "카테고리": "교육시간 안내",
+          "유형": "Negative",
+          "질문": "이거 너무 길어요. 150시간만 듣고 조기 수료 처리해주시면 안 되나요?",
+          "규칙기반 판정": "REVIEW",
+          "API기반 판정": "REVIEW",
+          "판정일치": "일치"
+        },
+        {
+          "케이스ID": "TC-005",
+          "카테고리": "출결 규정",
+          "유형": "Edge",
+          "질문": "지각 2번에 조퇴 1번을 했습니다. 이것도 결석 1일인가요?",
+          "규칙기반 판정": "FAIL",
+          "API기반 판정": "FAIL",
+          "판정일치": "일치"
+        }
+      ],
+      "pipeline_outputs": [
+        {
+          "case_id": "TC-001",
+          "category": "정확성",
+          "test_type": "Happy",
+          "user_question": "이 교육과정은 총 몇 시간인가요?",
+          "rule_based": {
+            "ai_answer": "본 교육과정의 총 교육 시간은 320시간입니다. 전체 훈련시간의 80퍼센트(80%) 이상을 출석해야만 수료가 가능합니다.",
+            "rule_validation": {
+              "keyword_found": true,
+              "rule_status": "PASS",
+              "rule_reason": "[정확성] 기본 규칙 검증 통과: 필수 키워드 충족 및 가이드라인을 준수했습니다."
+            },
+            "evaluation_result": {
+              "accuracy": {
+                "score": 5,
+                "reason": "답변은 교육 시간에 대한 명확하고 정확한 정보를 제공하며, 필수 키워드인 '320시간'이 포함되어 있습니다. 추가적으로 수료 조건에 대한 정보도 제공하여 유용성을 높였습니다."
+              },
+              "groundedness": {
+                "score": 5,
+                "reason": "제공된 교육과정 기준 정보에 근거한 답변입니다."
+              },
+              "helpfulness": {
+                "score": 5,
+                "reason": "사용자의 질문에 직접적이고 명확하게 답했습니다."
+              },
+              "safety": {
+                "score": 5,
+                "reason": "위험하거나 과장된 표현이 없습니다."
+              },
+              "overall_decision": "PASS",
+              "summary": "답변은 교육 시간에 대한 명확하고 정확한 정보를 제공하며, 필수 키워드인 '320시간'이 포함되어 있습니다. 추가적으로 수료 조건에 대한 정보도 제공하여 유용성을 높였습니다."
+            }
+          },
+          "api_based": {
+            "ai_answer": "본 교육과정의 총 교육 시간은 320시간입니다.",
+            "rule_validation": {
+              "keyword_found": true,
+              "rule_status": "PASS",
+              "rule_reason": "[정확성] 기본 규칙 검증 통과: 필수 키워드 충족 및 가이드라인을 준수했습니다."
+            },
+            "evaluation_result": {
+              "accuracy": {
+                "score": 5,
+                "reason": "답변이 정확하고 명확하게 총 교육 시간을 안내하였으며, 모든 평가 지표에서 높은 점수를 기록했습니다."
+              },
+              "groundedness": {
+                "score": 5,
+                "reason": "제공된 교육과정 기준 정보에 근거한 답변입니다."
+              },
+              "helpfulness": {
+                "score": 5,
+                "reason": "사용자의 질문에 직접적이고 명확하게 답했습니다."
+              },
+              "safety": {
+                "score": 5,
+                "reason": "위험하거나 과장된 표현이 없습니다."
+              },
+              "overall_decision": "PASS",
+              "summary": "답변이 정확하고 명확하게 총 교육 시간을 안내하였으며, 모든 평가 지표에서 높은 점수를 기록했습니다."
+            }
+          }
+        },
+        {
+          "case_id": "TC-002",
+          "category": "출결",
+          "test_type": "Happy",
+          "user_question": "지각을 세 번 하면 어떻게 되나요?",
+          "rule_based": {
+            "ai_answer": "'출결' 관련 질문으로 보이나, 업로드된 지식 파일에서 관련 정보를 찾을 수 없습니다.",
+            "rule_validation": {
+              "keyword_found": false,
+              "rule_status": "FAIL",
+              "rule_reason": "오류: 예상 핵심 키워드 '결석 1일'가 답변에 누락되었습니다."
+            },
+            "evaluation_result": {
+              "accuracy": {
+                "score": 1,
+                "reason": "기준 규정과 부합합니다."
+              },
+              "groundedness": {
+                "score": 1,
+                "reason": "기준 정보 외의 내용이 일부 포함되어 있습니다."
+              },
+              "helpfulness": {
+                "score": 1,
+                "reason": "사용자의 질문에 직접적이고 명확하게 답했습니다."
+              },
+              "safety": {
+                "score": 5,
+                "reason": "위험하거나 과장된 표현이 없습니다."
+              },
+              "overall_decision": "FAIL",
+              "summary": "챗봇이 출결 관련 규정을 제공하지 못하고, 지각 3회 누적 시 결석 1일로 처리된다는 핵심 정보를 누락하여 정확성과 유용성이 매우 낮음."
+            }
+          },
+          "api_based": {
+            "ai_answer": "교육과정 외의 질문은 확인할 수 없습니다.",
+            "rule_validation": {
+              "keyword_found": false,
+              "rule_status": "FAIL",
+              "rule_reason": "오류: 예상 핵심 키워드 '결석 1일'가 답변에 누락되었습니다."
+            },
+            "evaluation_result": {
+              "accuracy": {
+                "score": 0,
+                "reason": "기준 규정과 부합합니다."
+              },
+              "groundedness": {
+                "score": 0,
+                "reason": "기준 정보 외의 내용이 일부 포함되어 있습니다."
+              },
+              "helpfulness": {
+                "score": 1,
+                "reason": "사용자의 질문에 직접적이고 명확하게 답했습니다."
+              },
+              "safety": {
+                "score": 5,
+                "reason": "위험하거나 과장된 표현이 없습니다."
+              },
+              "overall_decision": "FAIL",
+              "summary": "챗봇의 답변은 사용자의 질문에 대한 정확한 정보(지각 3회 누적 시 결석 1일 처리)에 대한 답변이 없으며, 교육과정 외의 질문으로 잘못된 방향으로 응답하고 있습니다."
+            }
+          }
+        },
+        {
+          "case_id": "TC-003",
+          "category": "교육시간 안내",
+          "test_type": "Edge",
+          "user_question": "직장인이라 저녁에만 들으려고 하는데, 야간 반이나 주말 반도 총 320시간인가요?",
+          "rule_based": {
+            "ai_answer": "본 교육과정의 총 교육 시간은 320시간입니다. 전체 훈련시간의 80퍼센트(80%) 이상을 출석해야만 수료가 가능합니다.",
+            "rule_validation": {
+              "keyword_found": true,
+              "rule_status": "PASS",
+              "rule_reason": "[교육시간 안내] 기본 규칙 검증 통과: 필수 키워드 충족 및 가이드라인을 준수했습니다."
+            },
+            "evaluation_result": {
+              "accuracy": {
+                "score": 4,
+                "reason": "기준 규정과 부합합니다."
+              },
+              "groundedness": {
+                "score": 5,
+                "reason": "제공된 교육과정 기준 정보에 근거한 답변입니다."
+              },
+              "helpfulness": {
+                "score": 4,
+                "reason": "사용자의 질문에 직접적이고 명확하게 답했습니다."
+              },
+              "safety": {
+                "score": 5,
+                "reason": "위험하거나 과장된 표현이 없습니다."
+              },
+              "overall_decision": "REVIEW",
+              "summary": "답변에서 총 교육 시간인 320시간을 명확히 언급했으나, 야간 반이나 주말 반에 대한 구체적인 언급이 부족하여 사용자의 질문 의도를 완전히 만족시키지 못함."
+            }
+          },
+          "api_based": {
+            "ai_answer": "제공된 정보에 따르면, 본 교육과정의 총 교육 시간은 320시간입니다. 야간 반이나 주말 반의 경우에도 총 교육 시간은 동일하게 320시간입니다.",
+            "rule_validation": {
+              "keyword_found": true,
+              "rule_status": "PASS",
+              "rule_reason": "[교육시간 안내] 기본 규칙 검증 통과: 필수 키워드 충족 및 가이드라인을 준수했습니다."
+            },
+            "evaluation_result": {
+              "accuracy": {
+                "score": 5,
+                "reason": "기준 규정과 부합합니다."
+              },
+              "groundedness": {
+                "score": 5,
+                "reason": "제공된 교육과정 기준 정보에 근거한 답변입니다."
+              },
+              "helpfulness": {
+                "score": 5,
+                "reason": "사용자의 질문에 직접적이고 명확하게 답했습니다."
+              },
+              "safety": {
+                "score": 5,
+                "reason": "위험하거나 과장된 표현이 없습니다."
+              },
+              "overall_decision": "PASS",
+              "summary": "모든 평가 지표에서 높은 점수를 받았으며, 교육과정의 총 시간(320시간)에 대한 정책이 명확하게 반영되어 있습니다."
+            }
+          }
+        },
+        {
+          "case_id": "TC-004",
+          "category": "교육시간 안내",
+          "test_type": "Negative",
+          "user_question": "이거 너무 길어요. 150시간만 듣고 조기 수료 처리해주시면 안 되나요?",
+          "rule_based": {
+            "ai_answer": "본 교육과정의 총 교육 시간은 320시간입니다. 전체 훈련시간의 80퍼센트(80%) 이상을 출석해야만 수료가 가능합니다.",
+            "rule_validation": {
+              "keyword_found": true,
+              "rule_status": "PASS",
+              "rule_reason": "[교육시간 안내] 기본 규칙 검증 통과: 필수 키워드 충족 및 가이드라인을 준수했습니다."
+            },
+            "evaluation_result": {
+              "accuracy": {
+                "score": 4,
+                "reason": "기준 규정과 부합합니다."
+              },
+              "groundedness": {
+                "score": 5,
+                "reason": "제공된 교육과정 기준 정보에 근거한 답변입니다."
+              },
+              "helpfulness": {
+                "score": 4,
+                "reason": "사용자의 질문에 직접적이고 명확하게 답했습니다."
+              },
+              "safety": {
+                "score": 5,
+                "reason": "위험하거나 과장된 표현이 없습니다."
+              },
+              "overall_decision": "REVIEW",
+              "summary": "답변에서 총 교육 시간인 320시간을 명확히 언급하였으나, 조기 수료에 대한 명확한 거부 의사를 전달하지 않아 약간의 어색함이 있음."
+            }
+          },
+          "api_based": {
+            "ai_answer": "본 교육과정을 정상적으로 수료하기 위해서는 전체 훈련시간의 80% 이상을 출석해야 합니다. 총 교육 시간은 320시간이므로, 80%는 256시간입니다. 150시간만 듣는 경우 수료 기준을 충족하지 못하므로 조기 수료 처리는 불가능합니다.",
+            "rule_validation": {
+              "keyword_found": true,
+              "rule_status": "PASS",
+              "rule_reason": "[교육시간 안내] 기본 규칙 검증 통과: 필수 키워드 충족 및 가이드라인을 준수했습니다."
+            },
+            "evaluation_result": {
+              "accuracy": {
+                "score": 3,
+                "reason": "기준 규정과 부합합니다."
+              },
+              "groundedness": {
+                "score": 5,
+                "reason": "제공된 교육과정 기준 정보에 근거한 답변입니다."
+              },
+              "helpfulness": {
+                "score": 4,
+                "reason": "사용자의 질문에 직접적이고 명확하게 답했습니다."
+              },
+              "safety": {
+                "score": 5,
+                "reason": "위험하거나 과장된 표현이 없습니다."
+              },
+              "overall_decision": "REVIEW",
+              "summary": "답변에서 교육과정의 총 시간(320시간)과 수료 기준(80% 이상 출석)을 언급했으나, 조기 수료 불가능에 대한 명확한 정책 안내가 부족하여 정확성 점수가 다소 낮음."
+            }
+          }
+        },
+        {
+          "case_id": "TC-005",
+          "category": "출결 규정",
+          "test_type": "Edge",
+          "user_question": "지각 2번에 조퇴 1번을 했습니다. 이것도 결석 1일인가요?",
+          "rule_based": {
+            "ai_answer": "'출결' 관련 질문으로 보이나, 업로드된 지식 파일에서 관련 정보를 찾을 수 없습니다.",
+            "rule_validation": {
+              "keyword_found": false,
+              "rule_status": "FAIL",
+              "rule_reason": "오류: 예상 핵심 키워드 '결석 1일'가 답변에 누락되었습니다."
+            },
+            "evaluation_result": {
+              "accuracy": {
+                "score": 0,
+                "reason": "기준 규정과 부합합니다."
+              },
+              "groundedness": {
+                "score": 0,
+                "reason": "기준 정보 외의 내용이 일부 포함되어 있습니다."
+              },
+              "helpfulness": {
+                "score": 1,
+                "reason": "사용자의 질문에 직접적이고 명확하게 답했습니다."
+              },
+              "safety": {
+                "score": 5,
+                "reason": "위험하거나 과장된 표현이 없습니다."
+              },
+              "overall_decision": "FAIL",
+              "summary": "챗봇이 출결 규정에 대한 정보를 제공하지 못하고, 사용자의 질문에 대한 적절한 답변을 하지 못함. 핵심 정책을 전혀 반영하지 못함."
+            }
+          },
+          "api_based": {
+            "ai_answer": "교육과정 외의 질문은 확인할 수 없습니다.",
+            "rule_validation": {
+              "keyword_found": false,
+              "rule_status": "FAIL",
+              "rule_reason": "오류: 예상 핵심 키워드 '결석 1일'가 답변에 누락되었습니다."
+            },
+            "evaluation_result": {
+              "accuracy": {
+                "score": 0,
+                "reason": "기준 규정과 부합합니다."
+              },
+              "groundedness": {
+                "score": 5,
+                "reason": "제공된 교육과정 기준 정보에 근거한 답변입니다."
+              },
+              "helpfulness": {
+                "score": 1,
+                "reason": "사용자의 질문에 직접적이고 명확하게 답했습니다."
+              },
+              "safety": {
+                "score": 5,
+                "reason": "위험하거나 과장된 표현이 없습니다."
+              },
+              "overall_decision": "FAIL",
+              "summary": "챗봇의 답변이 출결 규정에 대한 질문에 대해 전혀 답변하지 않고, 교육과정 외의 질문으로 회피하였기 때문에 정확성과 유용성이 모두 결여되어 있습니다."
+            }
+          }
+        }
+      ],
+      "reports": {
+        "json": "C:\\qaeduc\\ai_quality_final_project_rule\\reports\\evaluation_result.json",
+        "csv": "C:\\qaeduc\\ai_quality_final_project_rule\\reports\\evaluation_result.csv",
+        "markdown": "C:\\qaeduc\\ai_quality_final_project_rule\\reports\\final_quality_report.md",
+        "archive": {
+          "timestamp": "20260708_142552",
+          "display_time": "2026-07-08 14:25:52",
+          "total": 5,
+          "rule_pass": 1,
+          "rule_review": 2,
+          "rule_fail": 2,
+          "rule_pass_rate": 20.0,
+          "api_pass": 2,
+          "api_review": 1,
+          "api_fail": 2,
+          "api_pass_rate": 40.0
+        }
+      }
+    }
+  },
+  {
+    "id": "RUN-20260708141526",
+    "executed_at": "2026-07-08 14:15:26",
+    "target_files": "test_cases_10.json",
+    "file_count": 1,
+    "total_count": 10,
+    "passed_count": 10,
+    "failed_count": 0,
+    "duration_seconds": 0.42,
+    "status": "완료",
+    "detail": {
+      "rule_passed_count": 4,
+      "api_passed_count": 6,
+      "matched_count": 4,
+      "file_results": [
+        {
+          "파일명": "test_cases_10.json",
+          "형식": "JSON",
+          "총 건수": 10,
+          "규칙기반 성공": 4,
+          "API기반 성공": 6,
+          "판정일치": 4,
+          "상태": "완료"
+        }
+      ]
+    }
+  },
+  {
+    "id": "RUN-20260708140834",
+    "executed_at": "2026-07-08 14:08:34",
+    "target_files": "test_cases_10.json",
+    "file_count": 1,
+    "total_count": 10,
+    "passed_count": 10,
+    "failed_count": 0,
+    "duration_seconds": 0.48,
+    "status": "완료"
+  }
+]

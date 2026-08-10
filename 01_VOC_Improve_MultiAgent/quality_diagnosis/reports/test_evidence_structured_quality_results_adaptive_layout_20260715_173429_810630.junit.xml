@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="structured_quality_results_adaptive_layout" tests="8" failures="0" errors="0" timestamp="2026-07-15T17:34:29+09:00">
+  <testcase classname="voc.quality.structured_quality_results_adaptive_layout" name="quality_result_summary" />
+  <testcase classname="voc.quality.structured_quality_results_adaptive_layout" name="artifact_preview" />
+  <testcase classname="voc.quality.structured_quality_results_adaptive_layout" name="technical_raw" />
+  <testcase classname="voc.quality.structured_quality_results_adaptive_layout" name="adaptive_layout" />
+  <testcase classname="voc.quality.structured_quality_results_adaptive_layout" name="responsive_layout" />
+  <testcase classname="voc.quality.structured_quality_results_adaptive_layout" name="live_quality_suite" />
+  <testcase classname="voc.quality.structured_quality_results_adaptive_layout" name="web_regression" />
+  <testcase classname="voc.quality.structured_quality_results_adaptive_layout" name="full_regression" />
+</testsuite>

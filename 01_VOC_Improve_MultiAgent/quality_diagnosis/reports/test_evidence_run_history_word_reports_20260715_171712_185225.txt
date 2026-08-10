@@ -1,0 +1,16 @@
+VOC 품질 테스트 실행 증적
+실행 유형: run_history_word_reports
+실행 시각: 2026-07-15T17:17:12+09:00
+결과: 8/8 PASS
+실패: 0, 오류: 0
+최종 판정: PASS
+
+[상세 결과]
+- history_index | PASS | score= | SQLite 영속 이력 91건 조회 및 필터 확인
+- full_run_detail | PASS | score= | 선택 Run의 원본 source_payload, 케이스 raw, metrics, 6-Agent Trace 반환
+- history_ui | PASS | score= | /runs 전체 데이터 상세 패널, JSON 복사, Word 다운로드 동작 연결
+- word_report | PASS | score= | 첨부 11페이지 PDF의 결론·구조·정량분석·전체 케이스·잔여위험·QA Lead·부록 형식 반영
+- docx_integrity | PASS | score= | 실제 Run 보고서 64,042 bytes, ZIP 정상, 제목·부록·8개 표 확인
+- web_api | PASS | score= | Word API HTTP 200 및 DOCX MIME/attachment 확인
+- focused_tests | PASS | score= | 보고서·웹 전용 32/32 PASS
+- full_regression | PASS | score= | 전체 회귀 78/78 PASS, Agent 6/6 ready

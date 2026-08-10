@@ -1,0 +1,12 @@
+{
+  "input_cost_per_million": 0.0,
+  "output_cost_per_million": 0.0,
+  "cost_budget": 0.0,
+  "drift_score_drop": 3.0,
+  "drift_pass_rate_drop": 5.0,
+  "drift_latency_increase_pct": 30.0,
+  "drift_p95_increase_pct": 30.0,
+  "drift_cost_increase_pct": 30.0,
+  "rate_limit_alert_count": 1.0,
+  "human_judge_gap_threshold": 10.0
+}

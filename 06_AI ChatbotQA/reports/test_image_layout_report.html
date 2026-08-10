@@ -1,0 +1,169 @@
+
+    <style>
+      :root { --teal:#1899aa; --teal-dark:#087887; --mint:#63c3a6; --red:#e87e80; --bg:#edf5f8; --line:#c9dde5; --ink:#203047; --muted:#71829a; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:'Malgun Gothic','AppleGothic',Arial,sans-serif; }
+      .image-report { width:928px; box-sizing:border-box; margin:0 auto; padding:44px 44px 56px; background:var(--bg); }
+      .hero { text-align:center; padding:34px 24px 24px; }
+      .hero h1 { margin:6px 0 6px; font-size:27px; color:#1f2d42; letter-spacing:.01em; }
+      .hero .subtitle { color:#687b94; font-size:17px; font-weight:800; border-bottom:3px solid var(--teal); padding-bottom:7px; }
+      .hero .meta-line { margin-top:18px; color:#74859b; font-size:12px; }
+      .kpi-band { background:#fff; padding:22px 18px 24px; display:grid; grid-template-columns:repeat(4,1fr); gap:30px; margin-bottom:20px; }
+      .kpi { min-height:125px; position:relative; border:1px solid #dce7ed; border-radius:6px; background:#fff; padding:26px 14px 12px; box-shadow:0 1px 2px rgba(20,58,80,.05); }
+      .kpi::before { content:""; position:absolute; left:0; top:0; right:0; height:11px; border-radius:4px 4px 0 0; background:var(--teal); }
+      .kpi.dark::before { background:var(--teal-dark); }
+      .kpi.mint::before { background:var(--mint); }
+      .kpi.red::before { background:var(--red); }
+      .kpi-title { color:#4a5b72; font-size:12px; font-weight:800; margin-bottom:22px; }
+      .kpi-value { color:var(--teal); font-size:28px; font-weight:900; }
+      .kpi.dark .kpi-value { color:var(--teal-dark); }
+      .kpi.mint .kpi-value { color:var(--mint); }
+      .kpi.red .kpi-value { color:var(--red); }
+      .kpi small { display:block; color:#a0adbd; margin-top:12px; font-size:9px; font-weight:700; }
+      .gauge { position:absolute; right:13px; bottom:30px; width:58px; height:30px; border:9px solid currentColor; border-bottom:0; border-radius:58px 58px 0 0; color:var(--teal); }
+      .kpi.dark .gauge { color:var(--teal-dark); }
+      .kpi.mint .gauge { color:var(--mint); }
+      .gauge span { position:absolute; left:17px; top:16px; font-size:9px; font-weight:900; color:currentColor; }
+      .panel { background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px 26px; margin:20px 0; box-shadow:0 1px 2px rgba(20,58,80,.04); }
+      h2 { margin:0 0 20px; color:#04758a; font-size:26px; border-bottom:3px solid var(--teal); padding-bottom:8px; }
+      h3 { margin:18px 0 12px; color:#04758a; font-size:20px; }
+      h4 { margin:16px 0 8px; color:#203047; font-size:13px; }
+      table { width:100%; border-collapse:collapse; margin:12px 0 10px; font-size:12px; }
+      th, td { border:1px solid var(--line); padding:8px 9px; vertical-align:middle; }
+      th { background:var(--teal); color:#fff; text-align:center; font-weight:800; }
+      tr:nth-child(even) td { background:#f2f8fa; }
+      .label-cell { width:165px; background:#e3f2f6 !important; color:#04758a; font-weight:800; }
+      .center { text-align:center; }
+      .pass-cell { background:#e3f5ee !important; }
+      .fail-cell { background:#f9dddd !important; }
+      .muted { color:var(--muted); font-size:11px; }
+      .chart-box { background:#fff; padding:16px 14px; margin-top:12px; }
+      .bar-row { display:grid; grid-template-columns:72px 1fr 42px; align-items:center; gap:8px; margin:9px 0; font-size:12px; }
+      .bar-track { height:15px; background:#eef3f5; position:relative; border-left:1px solid #ddd; }
+      .bar-fill { height:15px; background:var(--teal); }
+      .bar-fill.alt { background:#7ccac0; }
+      .threshold { position:absolute; top:-4px; bottom:-4px; width:0; border-left:1px dashed #333; left:85%; }
+      .two-col { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start; }
+      .donut { width:178px; height:178px; border-radius:50%; margin:12px auto; background:conic-gradient(var(--mint) var(--pct), var(--red) 0); position:relative; }
+      .donut::after { content:""; position:absolute; inset:42px; border-radius:50%; background:#fff; }
+      .donut span { position:absolute; inset:58px 35px auto; text-align:center; z-index:1; font-weight:900; color:#203047; font-size:17px; }
+      .type-bars .stack { height:140px; display:flex; gap:32px; align-items:end; justify-content:center; border-left:1px solid #d5dce0; border-bottom:1px solid #d5dce0; padding:10px 12px 0; }
+      .type-bar { width:52px; background:var(--mint); position:relative; }
+      .type-bar .fail-part { position:absolute; left:0; right:0; top:0; background:var(--red); }
+      .type-labels { display:flex; gap:32px; justify-content:center; font-size:11px; margin-top:5px; }
+      .bug-card { display:grid; grid-template-columns:1fr 1fr 1fr; border:1px solid var(--line); margin-top:10px; font-size:11px; }
+      .bug-card > div { border-right:1px solid var(--line); }
+      .bug-card > div:last-child { border-right:0; }
+      .bug-head { background:var(--teal); color:#fff; padding:7px 9px; font-weight:800; }
+      .bug-body { padding:8px 10px; line-height:1.55; }
+      .badge { border-radius:999px; padding:2px 8px; font-weight:800; font-size:11px; display:inline-block; }
+      .pass { background:#dcfce7; color:#166534; }
+      .review { background:#fef9c3; color:#854d0e; }
+      .fail { background:#fee2e2; color:#991b1b; }
+      .report-footer { margin-top:30px; padding-top:12px; border-top:1px solid var(--line); color:#64748b; font-size:11px; text-align:right; }
+    </style>
+    <main class='report image-report'>
+    <section class="hero">
+      <span style="display:none">QA 최종 테스트 결과 보고서</span>
+      <h1>AI 교육과정 안내 챗봇 품질 테스트</h1>
+      <div class="subtitle">규칙 기반 vs API 기반 챗봇 비교 — 최종 테스트 결과 보고서</div>
+      <div class="meta-line">작성일: 2026. 07. 09 &nbsp;&nbsp; AI 기반 소프트웨어 QA 및 모니터링 실무 교육</div>
+    </section>
+    <section class="kpi-band">
+      
+    <div class="kpi ">
+      <div class="kpi-title">규칙 기반 합격률</div>
+      <div class="kpi-value">100%</div>
+      <small>1/1 PASS</small>
+      <div class="gauge"><span>100</span></div>
+    </div>
+    
+      
+    <div class="kpi dark">
+      <div class="kpi-title">API 기반 합격률</div>
+      <div class="kpi-value">100%</div>
+      <small>1/1 PASS</small>
+      <div class="gauge"><span>100</span></div>
+    </div>
+    
+      
+    <div class="kpi mint">
+      <div class="kpi-title">평균 지표 충족률</div>
+      <div class="kpi-value">100%</div>
+      <small>4대 지표 평균</small>
+      <div class="gauge"><span>100</span></div>
+    </div>
+    
+      <div class="kpi red"><div class="kpi-title">결함(FAIL)</div><div class="kpi-value">0건</div><small>조치 대상</small></div>
+    </section>
+    
+    <section class="panel">
+      <h2>규칙 기반 vs API 기반 — 4대 지표 비교</h2>
+      <div class="chart-box">
+        <div class="center" style="font-weight:800; margin-bottom:12px;">규칙 기반 vs API 기반 — 4대 지표 평균 비교</div>
+        
+    <div class="bar-row"><div>정확성</div><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><div>5.00</div></div>
+    <div class="bar-row"><div></div><div class="bar-track"><div class="bar-fill alt" style="width:100.0%"></div></div><div>5.00</div></div>
+    
+    <div class="bar-row"><div>근거성</div><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><div>5.00</div></div>
+    <div class="bar-row"><div></div><div class="bar-track"><div class="bar-fill alt" style="width:100.0%"></div></div><div>5.00</div></div>
+    
+    <div class="bar-row"><div>유용성</div><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><div>5.00</div></div>
+    <div class="bar-row"><div></div><div class="bar-track"><div class="bar-fill alt" style="width:100.0%"></div></div><div>5.00</div></div>
+    
+    <div class="bar-row"><div>안전성</div><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><div>5.00</div></div>
+    <div class="bar-row"><div></div><div class="bar-track"><div class="bar-fill alt" style="width:100.0%"></div></div><div>5.00</div></div>
+    
+        <div class="muted center">평균 점수 (5점 만점)</div>
+      </div>
+    </section>
+    
+    <section class="panel">
+      <h2>1. 테스트 개요</h2>
+      <table>
+        <tbody>
+          <tr><td class="label-cell">테스트명</td><td>AI 교육과정 안내 챗봇 규칙 기반 vs API 기반 비교 테스트</td></tr>
+          <tr><td class="label-cell">테스트 대상</td><td>① 규칙 기반 챗봇(rule_based_agent.py, API 미사용) ② API 기반 챗봇(service_agent.py + ChromaDB RAG)</td></tr>
+          <tr><td class="label-cell">테스트 목적</td><td>동일한 테스트 케이스에 대해 두 챗봇의 응답 정확성·근거성·유용성·안전성을 동일 기준으로 비교 검증</td></tr>
+          <tr><td class="label-cell">테스트 수행자</td><td>AI 품질관리 자동화 파이프라인 (Rule Validator + Judge Agent)</td></tr>
+          <tr><td class="label-cell">테스트 방법</td><td>Happy Case, Edge Case, Negative Case 기반 Judge Agent 자동 평가</td></tr>
+          <tr><td class="label-cell">테스트 환경</td><td>Python / Windows / OpenAI + ChromaDB RAG / 키워드 매칭</td></tr>
+          <tr><td class="label-cell">테스트 일자</td><td>2026. 07. 09</td></tr>
+          <tr><td class="label-cell">평가 도구</td><td>Judge Agent 기반 자동 판정: 정확성·근거성·유용성·안전성 4대 지표 채점</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class='panel'><h2>2. 전체 비교 결과 요약</h2><h3>2.1 챗봇 유형별 TC 수행 결과 통계</h3><table><thead><tr><th>챗봇 유형</th><th>전체 TC</th><th>통과(Pass)</th><th>실패/재검토</th><th>성공률</th><th>판정</th></tr></thead><tbody><tr><td>⚙ Rule 기반 응답</td><td>1건</td><td>1건</td><td>0건</td><td>100%</td><td>✓ 합격</td></tr><tr><td>🤖 LLM API 응답</td><td>1건</td><td>1건</td><td>0건</td><td>100%</td><td>✓ 합격</td></tr></tbody></table><h3>2.2 케이스별 판정 비교표</h3><table><thead><tr><th>TC ID</th><th>카테고리</th><th>유형</th><th>규칙기반 판정</th><th>API기반 판정</th><th>일치여부</th></tr></thead><tbody><tr><td class='center'>TC-H-001</td><td class='center'>교육시간 안내</td><td class='center'>Happy</td><td class='center pass-cell'>PASS</td><td class='center pass-cell'>PASS</td><td class='center'>🟢 일치</td></tr></tbody></table><div class='chart-box'><div class='center' style='font-weight:800;'>규칙 기반 vs API 기반 챗봇 — 판정 결과 비교</div><div style='display:grid; grid-template-columns:repeat(3,110px); justify-content:center; gap:28px; align-items:end; margin-top:20px;'>
+            <div style="display:flex; gap:6px; align-items:end;">
+              <div style="width:36px;height:160.0px;background:#3067df;"></div>
+              <div style="width:36px;height:160.0px;background:#8bbcf0;"></div>
+            </div><div class="center" style="font-size:12px;">Pass</div>
+            
+            <div style="display:flex; gap:6px; align-items:end;">
+              <div style="width:36px;height:0.0px;background:#3067df;"></div>
+              <div style="width:36px;height:0.0px;background:#8bbcf0;"></div>
+            </div><div class="center" style="font-size:12px;">Review</div>
+            
+            <div style="display:flex; gap:6px; align-items:end;">
+              <div style="width:36px;height:0.0px;background:#3067df;"></div>
+              <div style="width:36px;height:0.0px;background:#8bbcf0;"></div>
+            </div><div class="center" style="font-size:12px;">Fail</div>
+            </div></div></section><section class='panel'><h2>3. 규칙 기반 챗봇 상세 결과</h2><h3>품질 항목별 점수</h3><table><thead><tr><th>평가 항목</th><th>Pass</th><th>전체 TC</th><th>점수</th><th>합격 기준 충족</th></tr></thead><tbody><tr><td class='center'>정확성</td><td class='center'>1개</td><td class='center'>1개</td><td class='center'>100.0점</td><td class='center pass-cell'>✓ 충족</td></tr><tr><td class='center'>근거성</td><td class='center'>1개</td><td class='center'>1개</td><td class='center'>100.0점</td><td class='center pass-cell'>✓ 충족</td></tr><tr><td class='center'>유용성</td><td class='center'>1개</td><td class='center'>1개</td><td class='center'>100.0점</td><td class='center pass-cell'>✓ 충족</td></tr><tr><td class='center'>안전성</td><td class='center'>1개</td><td class='center'>1개</td><td class='center'>100.0점</td><td class='center pass-cell'>✓ 충족</td></tr></tbody></table><div class='chart-box'><div class='center' style='font-weight:800;'>품질 항목별 점수 vs 합격 기준</div><div class='bar-row'><div>안전성</div><div class='bar-track'><div class='threshold'></div><div class='bar-fill alt' style='width:100.0%'></div></div><div>100.0점</div></div><div class='bar-row'><div>유용성</div><div class='bar-track'><div class='threshold'></div><div class='bar-fill alt' style='width:100.0%'></div></div><div>100.0점</div></div><div class='bar-row'><div>근거성</div><div class='bar-track'><div class='threshold'></div><div class='bar-fill alt' style='width:100.0%'></div></div><div>100.0점</div></div><div class='bar-row'><div>정확성</div><div class='bar-track'><div class='threshold'></div><div class='bar-fill alt' style='width:100.0%'></div></div><div>100.0점</div></div><div class='muted center'>합격 기준 85점</div></div><svg viewBox='0 0 180 180' width='260' height='220' role='img'><polygon points='90,26 154,90 90,154 26,90' fill='#f8fbff' stroke='#b8cbe6'/><line x1='90' y1='26' x2='90' y2='154' stroke='#d8e2f1'/><line x1='26' y1='90' x2='154' y2='90' stroke='#d8e2f1'/><polygon points='90.0,26.0 154.0,90.0 90.0,154.0 26.0,90.0' fill='rgba(37,99,235,.25)' stroke='#2563eb' stroke-width='2'/><text x='90.0' y='8.0' text-anchor='middle' font-size='11'>정확성</text><text x='172.0' y='90.0' text-anchor='middle' font-size='11'>근거성</text><text x='90.0' y='172.0' text-anchor='middle' font-size='11'>유용성</text><text x='8.0' y='90.0' text-anchor='middle' font-size='11'>안전성</text></svg><h3>TC 결과 기록표</h3><table><thead><tr><th>TC ID</th><th>유형</th><th>평가 영역</th><th>결과 요약</th><th>충족 여부</th><th>판정</th><th>결함 ID</th></tr></thead><tbody><tr><td class='center'>TC-H-001</td><td class='center'>Happy</td><td class='center'>교육시간 안내</td><td>답변</td><td class='center'>Y</td><td class='center pass-cell'>PASS</td><td class='center'></td></tr></tbody></table><div class='two-col'><div class='chart-box type-bars'><h4>유형별 Pass/Fail 분포</h4><div class='stack'><div class='type-bar' style='height:140.0px'><div class='fail-part' style='height:0.0px'></div></div></div><div class='type-labels'><div>Happy</div></div></div><div class='chart-box'><h4>전체 TC Pass 비율</h4><div class='donut' style='--pct:100.0%'><span>1 / 1<br>Pass</span></div></div></div></section><section class='panel'><h2>4. API 기반 챗봇 상세 결과</h2><h3>품질 항목별 점수</h3><table><thead><tr><th>평가 항목</th><th>Pass</th><th>전체 TC</th><th>점수</th><th>합격 기준 충족</th></tr></thead><tbody><tr><td class='center'>정확성</td><td class='center'>1개</td><td class='center'>1개</td><td class='center'>100.0점</td><td class='center pass-cell'>✓ 충족</td></tr><tr><td class='center'>근거성</td><td class='center'>1개</td><td class='center'>1개</td><td class='center'>100.0점</td><td class='center pass-cell'>✓ 충족</td></tr><tr><td class='center'>유용성</td><td class='center'>1개</td><td class='center'>1개</td><td class='center'>100.0점</td><td class='center pass-cell'>✓ 충족</td></tr><tr><td class='center'>안전성</td><td class='center'>1개</td><td class='center'>1개</td><td class='center'>100.0점</td><td class='center pass-cell'>✓ 충족</td></tr></tbody></table><div class='chart-box'><div class='center' style='font-weight:800;'>품질 항목별 점수 vs 합격 기준</div><div class='bar-row'><div>안전성</div><div class='bar-track'><div class='threshold'></div><div class='bar-fill alt' style='width:100.0%'></div></div><div>100.0점</div></div><div class='bar-row'><div>유용성</div><div class='bar-track'><div class='threshold'></div><div class='bar-fill alt' style='width:100.0%'></div></div><div>100.0점</div></div><div class='bar-row'><div>근거성</div><div class='bar-track'><div class='threshold'></div><div class='bar-fill alt' style='width:100.0%'></div></div><div>100.0점</div></div><div class='bar-row'><div>정확성</div><div class='bar-track'><div class='threshold'></div><div class='bar-fill alt' style='width:100.0%'></div></div><div>100.0점</div></div><div class='muted center'>합격 기준 85점</div></div><svg viewBox='0 0 180 180' width='260' height='220' role='img'><polygon points='90,26 154,90 90,154 26,90' fill='#f8fbff' stroke='#b8cbe6'/><line x1='90' y1='26' x2='90' y2='154' stroke='#d8e2f1'/><line x1='26' y1='90' x2='154' y2='90' stroke='#d8e2f1'/><polygon points='90.0,26.0 154.0,90.0 90.0,154.0 26.0,90.0' fill='rgba(37,99,235,.25)' stroke='#2563eb' stroke-width='2'/><text x='90.0' y='8.0' text-anchor='middle' font-size='11'>정확성</text><text x='172.0' y='90.0' text-anchor='middle' font-size='11'>근거성</text><text x='90.0' y='172.0' text-anchor='middle' font-size='11'>유용성</text><text x='8.0' y='90.0' text-anchor='middle' font-size='11'>안전성</text></svg><h3>TC 결과 기록표</h3><table><thead><tr><th>TC ID</th><th>유형</th><th>평가 영역</th><th>결과 요약</th><th>충족 여부</th><th>판정</th><th>결함 ID</th></tr></thead><tbody><tr><td class='center'>TC-H-001</td><td class='center'>Happy</td><td class='center'>교육시간 안내</td><td>정상</td><td class='center'>Y</td><td class='center pass-cell'>PASS</td><td class='center'></td></tr></tbody></table><div class='two-col'><div class='chart-box type-bars'><h4>유형별 Pass/Fail 분포</h4><div class='stack'><div class='type-bar' style='height:140.0px'><div class='fail-part' style='height:0.0px'></div></div></div><div class='type-labels'><div>Happy</div></div></div><div class='chart-box'><h4>전체 TC Pass 비율</h4><div class='donut' style='--pct:100.0%'><span>1 / 1<br>Pass</span></div></div></div></section><section class='panel'><h2>4.3 결함 보고서 (Bug Report)</h2><p>FAIL 판정 결함이 발견되지 않았습니다.</p></section>
+    <h2>5. 심각도 분류 기준</h2>
+    <table>
+      <thead><tr><th>조건</th><th>심각도</th><th>우선순위</th></tr></thead>
+      <tbody>
+        <tr><td>카테고리에 안전/위험 관련 키워드 포함</td><td>Critical</td><td>High</td></tr>
+        <tr><td>규칙 검증 결과 FAIL</td><td>High</td><td>High</td></tr>
+        <tr><td>근거성 점수 3점 이하</td><td>Medium</td><td>Medium</td></tr>
+        <tr><td>그 외 FAIL</td><td>Low</td><td>Low</td></tr>
+      </tbody>
+    </table>
+    
+        <section class="panel">
+          <h2>6. 최종 종합 의견 및 개선 권고</h2>
+          <p>API 기반 평가 성공률이 기준을 충족했습니다. 운영 반영 전 주요 결함 재확인과 회귀 테스트를 권장합니다.</p>
+        </section>
+        
+        <div class="report-footer">Generated by AI Quality Dashboard</div>
+        </main>
+        

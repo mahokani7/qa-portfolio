@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="llm_judge_anthropic" tests="18" failures="18" errors="0" timestamp="2026-07-16T16:33:17+09:00">
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-01">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-02">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-03">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-04">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-05">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-06">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-07">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-08">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-09">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-10">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-11">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-12">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-13">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-14">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-15">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-16">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-17">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_anthropic" name="TC-18">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+</testsuite>

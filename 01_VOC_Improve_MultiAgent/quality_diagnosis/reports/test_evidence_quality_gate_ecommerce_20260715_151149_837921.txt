@@ -1,0 +1,12 @@
+VOC 품질 테스트 실행 증적
+실행 유형: quality_gate_ecommerce
+실행 시각: 2026-07-15T15:11:49+09:00
+결과: 2/3 PASS
+실패: 1, 오류: 0
+최종 판정: FAIL
+평균 점수: 96.7/100
+
+[상세 결과]
+- GATE-AUTOMATED-SUITE | PASS | score=100 | 30/30 PASS
+- GATE-RED-TEAM | PASS | score=100.0 | 20/20 PASS
+- GATE-OFFLINE-E2E | FAIL | score=90.2 | 1/1 PASS · 평균 90.2점 · 기준 95.0점

@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+
+# 가상환경 (환경마다 다르므로 커밋 제외)
+.venv/
+venv/
+
+# 환경변수/비밀키
+.env
+
+# IDE
+.idea/
+
+# E2E 실행 결과(실행할 때마다 타임스탬프 파일 생성)
+test_results/

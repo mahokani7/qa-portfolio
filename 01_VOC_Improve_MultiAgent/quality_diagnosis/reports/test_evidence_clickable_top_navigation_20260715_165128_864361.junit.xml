@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="clickable_top_navigation" tests="10" failures="0" errors="0" timestamp="2026-07-15T16:51:28+09:00">
+  <testcase classname="voc.quality.clickable_top_navigation" name="TOP-NAV-OVERVIEW" />
+  <testcase classname="voc.quality.clickable_top_navigation" name="TOP-NAV-TESTS" />
+  <testcase classname="voc.quality.clickable_top_navigation" name="TOP-NAV-QUALITY" />
+  <testcase classname="voc.quality.clickable_top_navigation" name="TOP-NAV-TRACE" />
+  <testcase classname="voc.quality.clickable_top_navigation" name="TOP-NAV-EVIDENCE" />
+  <testcase classname="voc.quality.clickable_top_navigation" name="TOP-BRAND-LINK" />
+  <testcase classname="voc.quality.clickable_top_navigation" name="TOP-NAV-ACTIVE" />
+  <testcase classname="voc.quality.clickable_top_navigation" name="WEB-UNIT-28" />
+  <testcase classname="voc.quality.clickable_top_navigation" name="FULL-REGRESSION-74" />
+  <testcase classname="voc.quality.clickable_top_navigation" name="AGENT-READINESS" />
+</testsuite>

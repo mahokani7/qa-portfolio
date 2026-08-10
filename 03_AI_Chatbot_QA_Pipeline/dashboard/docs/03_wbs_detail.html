@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>WBS 상세</title>
+
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: '맑은 고딕', 'Malgun Gothic', 'Segoe UI', sans-serif;
+    color: #1e293b; background: #ffffff; margin: 0; padding: 28px 36px 60px 36px;
+  }
+  h1.doc-title { font-size: 25px; color: #1e293b; text-align: center; margin: 10px 0 2px 0; }
+  h2.doc-subtitle { font-size: 17px; color: #4f46e5; text-align: center; margin: 0 0 18px 0; font-weight: 600; }
+  p.doc-meta { text-align: center; color: #64748b; font-size: 13px; margin: 2px 0; }
+  hr.doc-divider { border: none; border-top: 1px solid #e2e8f0; margin: 24px 0; }
+  h2.sec { font-size: 19px; color: #ffffff; background: #4f46e5; padding: 8px 14px; border-radius: 8px; margin-top: 30px; }
+  h3.subsec { font-size: 15.5px; color: #334155; border-left: 4px solid #4f46e5; padding-left: 10px; margin-top: 22px; }
+  p.body-text { font-size: 13.5px; line-height: 1.7; color: #334155; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0 22px 0; font-size: 12.5px; }
+  th { background: #334155; color: #fff; padding: 7px 9px; text-align: left; white-space: nowrap; }
+  td { border: 1px solid #e2e8f0; padding: 6px 9px; vertical-align: top; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  td.center, th.center { text-align: center; }
+  .req-High { color: #b91c1c; font-weight: 600; }
+  .req-Medium, .req-중 { color: #b45309; font-weight: 600; }
+  .req-상 { color: #b91c1c; font-weight: 600; }
+  .tag-bug { background: #fde8e8; color: #b91c1c; padding: 1px 8px; border-radius: 10px; font-size: 11.5px; }
+  .tag-task { background: #e0e7ff; color: #4338ca; padding: 1px 8px; border-radius: 10px; font-size: 11.5px; }
+</style>
+
+</head>
+<body>
+
+    <h1 class="doc-title">AI 챗봇 품질관리 자동화 파이프라인</h1>
+    <h2 class="doc-subtitle">WBS 상세 (Work Breakdown Structure)</h2>
+    <p class="doc-meta">프로젝트명 : ai_quality_final_project</p>
+    <p class="doc-meta">작성일자 : 2026-07-01 · 총 73건</p>
+    <hr class="doc-divider">
+    
+<table>
+<tr>
+<th>No</th>
+<th>이슈유형</th>
+<th>소속 스토리</th>
+<th>요구사항ID</th>
+<th>세부 업무 내용</th>
+<th>우선순위</th>
+<th>산출물/컴포넌트</th>
+<th>담당자</th>
+</tr>
+<tr>
+<td class="center">1</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>프로젝트 폴더 구조 설계</td>
+<td class="center">-</td>
+<td>디렉터리 트리 설계(data/reports/dashboard)</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>디렉터리 구조</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">2</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>프로젝트 폴더 구조 설계</td>
+<td class="center">-</td>
+<td>.gitignore 작성</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>디렉터리 구조</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">3</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>프로젝트 폴더 구조 설계</td>
+<td class="center">CFG-001</td>
+<td>폴더 자동 생성 로직 설계</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>config.py</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">4</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>가상환경 및 패키지 관리</td>
+<td class="center">-</td>
+<td>.venv 가상환경 생성</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>.venv</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">5</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>가상환경 및 패키지 관리</td>
+<td class="center">-</td>
+<td>requirements.txt 작성</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>requirements.txt</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">6</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>가상환경 및 패키지 관리</td>
+<td class="center">-</td>
+<td>pip install 의존성 설치 검증</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>requirements.txt</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">7</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>config.py 구현</td>
+<td class="center">CFG-003</td>
+<td>pathlib 기반 경로 관리로 OS 독립성 확보</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>config.py</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">8</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>config.py 구현</td>
+<td class="center">CFG-002</td>
+<td>.env 로드(load_dotenv), 미존재 시 경고 메시지 출력</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>config.py</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">9</td>
+<td class="center"><span class="tag-bug">버그</span></td>
+<td>config.py 구현</td>
+<td class="center">CFG-002</td>
+<td>.env 미설정 시 경고 미출력·무응답 현상(결함)</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>config.py</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">10</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>config.py 구현</td>
+<td class="center">CFG-001</td>
+<td>init_directories() 자동 초기화</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>config.py</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">11</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>knowledge_base.py 구현</td>
+<td class="center">KB-001</td>
+<td>EDUCATION_POLICY_TEXT 작성</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>knowledge_base.py</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">12</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>knowledge_base.py 구현</td>
+<td class="center">KB-002</td>
+<td>EVALUATION_CRITERIA 딕셔너리 구성</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>knowledge_base.py</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">13</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>.env 환경변수 설정</td>
+<td class="center">NF-003</td>
+<td>API Key 템플릿 작성 및 보안 가이드 공유</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>.env</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">14</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>전체 일정 관리 및 팀 미팅</td>
+<td class="center">-</td>
+<td>WBS 주간 진행률 체크 및 이슈 트래킹</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>PM</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">15</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>전체 일정 관리 및 팀 미팅</td>
+<td class="center">-</td>
+<td>팀 미팅(주 2회) 진행 및 회의록 작성</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>PM</td>
+<td class="center">나병진</td>
+</tr>
+<tr>
+<td class="center">16</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>ServiceAgent 구현</td>
+<td class="center">SVC-001</td>
+<td>gpt-4o-mini 연동 답변 생성</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>service_agent.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">17</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>ServiceAgent 구현</td>
+<td class="center">SVC-002</td>
+<td>EDUCATION_POLICY_TEXT 시스템 프롬프트 반영</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>service_agent.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">18</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>ServiceAgent 구현</td>
+<td class="center">SVC-003</td>
+<td>temperature=0.0 설정</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>service_agent.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">19</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>ServiceAgent 구현</td>
+<td class="center">SVC-004</td>
+<td>정책 외 질문 응답 제한 처리</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>service_agent.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">20</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>ServiceAgent 구현</td>
+<td class="center">SVC-005</td>
+<td>비윤리적 요청 거절 처리</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>service_agent.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">21</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>ServiceAgent 구현</td>
+<td class="center">SVC-006</td>
+<td>API 오류 예외 처리</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>service_agent.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">22</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>JudgeAgent 구현</td>
+<td class="center">JDG-001</td>
+<td>Structured Outputs(parse) JSON 강제화</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>judge_agent.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">23</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>JudgeAgent 구현</td>
+<td class="center">JDG-002</td>
+<td>EvaluationSchema 필드 정의</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>judge_agent.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">24</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>JudgeAgent 구현</td>
+<td class="center">JDG-003</td>
+<td>4대 지표 0~5점 채점 및 판정</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>judge_agent.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">25</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>JudgeAgent 구현</td>
+<td class="center">JDG-004</td>
+<td>판정 기준 로직 구현</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>judge_agent.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">26</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>JudgeAgent 구현</td>
+<td class="center">JDG-005</td>
+<td>EVALUATION_CRITERIA 프롬프트 주입</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>judge_agent.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">27</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>JudgeAgent 구현</td>
+<td class="center">JDG-006</td>
+<td>API 오류 시 기본 오류 구조 반환</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>judge_agent.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">28</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>RuleValidator 구현</td>
+<td class="center">RV-001</td>
+<td>공백/빈 값 FAIL 처리</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>rule_validator.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">29</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>RuleValidator 구현</td>
+<td class="center">RV-002</td>
+<td>2글자 미만 REVIEW 처리</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>rule_validator.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">30</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>RuleValidator 구현</td>
+<td class="center">RV-003</td>
+<td>금지어/인젝션 의심 FAIL 처리</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>rule_validator.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">31</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>RuleValidator 구현</td>
+<td class="center">RV-004</td>
+<td>동일 문자 5회 반복 REVIEW 처리</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>rule_validator.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">32</td>
+<td class="center"><span class="tag-bug">버그</span></td>
+<td>RuleValidator 구현</td>
+<td class="center">RV-004</td>
+<td>반복 문자 REVIEW 오판정(PASS로 처리)</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>rule_validator.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">33</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>RuleValidator 구현</td>
+<td class="center">RV-005</td>
+<td>검증 결과 딕셔너리 반환</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>rule_validator.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">34</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>RuleValidator 구현</td>
+<td class="center">RV-006</td>
+<td>keyword_found 필드 저장</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>rule_validator.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">35</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>main.py 파이프라인 구현</td>
+<td class="center">MAIN-001</td>
+<td>test_cases.json 로드 및 순차 실행</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>main.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">36</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>main.py 파이프라인 구현</td>
+<td class="center">MAIN-002</td>
+<td>에이전트 순차 호출 흐름 구현</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>main.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">37</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>main.py 파이프라인 구현</td>
+<td class="center">MAIN-003</td>
+<td>usefulness→helpfulness 필드 변환</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>main.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">38</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>main.py 파이프라인 구현</td>
+<td class="center">MAIN-004</td>
+<td>초기화 오류 시 sys.exit(1)</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>main.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">39</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>main.py 파이프라인 구현</td>
+<td class="center">MAIN-005</td>
+<td>콘솔 진행 상황 실시간 출력</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>main.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">40</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>main.py 파이프라인 구현</td>
+<td class="center">MAIN-006</td>
+<td>키워드 누락 케이스 정밀 기록</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>main.py</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">41</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>단위 테스트 지원</td>
+<td class="center">-</td>
+<td>각 모듈 __main__ 테스트 코드 작성</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>각 모듈</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">42</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>단위 테스트 지원</td>
+<td class="center">-</td>
+<td>최성우 팀원 테스트 지원</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>각 모듈</td>
+<td class="center">김경숙</td>
+</tr>
+<tr>
+<td class="center">43</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>report_generator.py 구현</td>
+<td class="center">RPT-001</td>
+<td>JSON 중첩 구조 저장</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>report_generator.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">44</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>report_generator.py 구현</td>
+<td class="center">RPT-002</td>
+<td>CSV Flatten·utf-8-sig 저장</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>report_generator.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">45</td>
+<td class="center"><span class="tag-bug">버그</span></td>
+<td>report_generator.py 구현</td>
+<td class="center">RPT-002</td>
+<td>CSV 한글 데이터 깨짐 현상</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>report_generator.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">46</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>report_generator.py 구현</td>
+<td class="center">RPT-003</td>
+<td>Markdown 종합 보고서 저장</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>report_generator.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">47</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>report_generator.py 구현</td>
+<td class="center">RPT-004</td>
+<td>CSV 컬럼 13종 스키마 확정</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>report_generator.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">48</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>report_generator.py 구현</td>
+<td class="center">RPT-005</td>
+<td>reports/ 폴더 자동 생성</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>report_generator.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">49</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>Streamlit 대시보드 구현</td>
+<td class="center">DASH-001</td>
+<td>CSV @st.cache_data 로드</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>streamlit_app.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">50</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>Streamlit 대시보드 구현</td>
+<td class="center">DASH-002</td>
+<td>사이드바 메뉴 3종 구현</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>streamlit_app.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">51</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>Streamlit 대시보드 구현</td>
+<td class="center">DASH-003</td>
+<td>KPI 메트릭 카드 4종 구현</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>streamlit_app.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">52</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>Streamlit 대시보드 구현</td>
+<td class="center">DASH-008</td>
+<td>CSV 미존재 안내 및 경로 절대경로화</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>streamlit_app.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">53</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>Plotly 차트 구현</td>
+<td class="center">DASH-004</td>
+<td>도넛 차트(카테고리별 정확성)</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>streamlit_app.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">54</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>Plotly 차트 구현</td>
+<td class="center">DASH-005</td>
+<td>바 차트(카테고리별 정확성)</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>streamlit_app.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">55</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>최종 결론 자동 분석 구현</td>
+<td class="center">DASH-006</td>
+<td>취약 지표/최저 합격률 자동 분석</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>streamlit_app.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">56</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>최종 결론 자동 분석 구현</td>
+<td class="center">DASH-007</td>
+<td>Action Items 4종 자동 생성</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>streamlit_app.py</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">57</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>보고서 샘플 데이터 작성</td>
+<td class="center">-</td>
+<td>TC-001~007 샘플 데이터 작성 및 대시보드 검증</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>reports/</td>
+<td class="center">정진웅</td>
+</tr>
+<tr>
+<td class="center">58</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>테스트 케이스 설계</td>
+<td class="center">TC-001</td>
+<td>총 교육 시간 질의(320시간)</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>test_cases.json</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">59</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>테스트 케이스 설계</td>
+<td class="center">TC-002</td>
+<td>지각 3회 처리 질의(결석 1일)</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>test_cases.json</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">60</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>테스트 케이스 설계</td>
+<td class="center">TC-003</td>
+<td>출석률 기준 질의(80퍼센트)</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>test_cases.json</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">61</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>테스트 케이스 설계</td>
+<td class="center">TC-004</td>
+<td>취업 지원 질의(이력서)</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>test_cases.json</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">62</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>테스트 케이스 설계</td>
+<td class="center">TC-005</td>
+<td>문서 외 질문(확인할 수 없습니다)</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>test_cases.json</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">63</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>테스트 케이스 설계</td>
+<td class="center">TC-006</td>
+<td>비윤리적 요청(도와드릴 수 없습니다)</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>test_cases.json</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">64</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>테스트 케이스 설계</td>
+<td class="center">TC-007</td>
+<td>복합 질문(320시간)</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>test_cases.json</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">65</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>단위 테스트 수행</td>
+<td class="center">NF-001</td>
+<td>모듈별 독립 실행 및 성능 확인</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>테스트 결과 보고서</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">66</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>단위 테스트 수행</td>
+<td class="center">NF-002</td>
+<td>정상/오류/경계값 케이스 검증</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>테스트 결과 보고서</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">67</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>통합 테스트 수행</td>
+<td class="center">NF-001</td>
+<td>전체 파이프라인 E2E 실행 시간 검증</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>통합 테스트 결과서</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">68</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>통합 테스트 수행</td>
+<td class="center">NF-002</td>
+<td>보고서/대시보드 연동 및 엣지케이스 검증</td>
+<td class="center"><span class="req-High">High</span></td>
+<td>통합 테스트 결과서</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">69</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>발표 자료 제작</td>
+<td class="center">-</td>
+<td>발표 PPT 제작(10슬라이드 내외)</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>발표 PPT</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">70</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>데모 시나리오 준비</td>
+<td class="center">-</td>
+<td>라이브 데모 스크립트 작성</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>데모 스크립트</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">71</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>데모 시나리오 준비</td>
+<td class="center">-</td>
+<td>리허설 진행</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>데모 스크립트</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">72</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>최종 산출물 검수</td>
+<td class="center">-</td>
+<td>파일 구조 점검 및 README 작성</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>최종 제출 패키지</td>
+<td class="center">최성우</td>
+</tr>
+<tr>
+<td class="center">73</td>
+<td class="center"><span class="tag-task">하위 작업</span></td>
+<td>최종 산출물 검수</td>
+<td class="center">-</td>
+<td>산출물 취합 및 제출 패키지 구성</td>
+<td class="center"><span class="req-Medium">Medium</span></td>
+<td>최종 제출 패키지</td>
+<td class="center">최성우</td>
+</tr>
+</table>
+</body>
+</html>

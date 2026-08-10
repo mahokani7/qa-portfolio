@@ -1,0 +1,38 @@
+VOC 품질 테스트 실행 증적
+실행 유형: quality_suite
+실행 시각: 2026-07-15T12:53:41+09:00
+결과: 30/30 PASS
+실패: 0, 오류: 0
+최종 판정: PASS
+
+[상세 결과]
+- quality_diagnosis.test_agent_unit.AgentUnitTests.test_anthropic_wrapper_uses_central_policy_model | PASS | score= | 
+- quality_diagnosis.test_agent_unit.AgentUnitTests.test_critic_returns_structured_risk_decision | PASS | score= | 
+- quality_diagnosis.test_agent_unit.AgentUnitTests.test_evaluator_selects_highest_scored_candidate | PASS | score= | 
+- quality_diagnosis.test_agent_unit.AgentUnitTests.test_improver_returns_actionable_policy | PASS | score= | 
+- quality_diagnosis.test_agent_unit.AgentUnitTests.test_interpreter_extracts_expected_search_terms | PASS | score= | 
+- quality_diagnosis.test_agent_unit.AgentUnitTests.test_retriever_returns_relevant_voc | PASS | score= | 
+- quality_diagnosis.test_agent_unit.AgentUnitTests.test_summarizer_creates_three_candidates | PASS | score= | 
+- quality_diagnosis.test_pipeline_e2e.PipelineE2ETests.test_feature_cases_complete_expected_agent_path | PASS | score= | 
+- quality_diagnosis.test_pipeline_e2e.PipelineE2ETests.test_quality_catalog_contains_exactly_twenty_cases | PASS | score= | 
+- quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_empty_search_stops_safely_without_hallucination | PASS | score= | 
+- quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_rejected_api_key_error_is_preserved | PASS | score= | 
+- quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_retriever_shutdown_reports_connection_failure | PASS | score= | 
+- quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_slow_agent_returns_deadline_exceeded | PASS | score= | 
+- quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_all_ready_existing_agents_are_reused | PASS | score= | 
+- quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_missing_api_key_is_not_hidden | PASS | score= | 
+- quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_missing_csv_returns_explicit_file_error | PASS | score= | 
+- quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_partial_port_occupation_remains_a_conflict | PASS | score= | 
+- quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_port_collision_is_detected_before_process_start | PASS | score= | 
+- quality_diagnosis.test_mcp_tools.MCPToolTests.test_analyze_voc_returns_standard_success_shape | PASS | score= | 
+- quality_diagnosis.test_mcp_tools.MCPToolTests.test_health_check_reports_csv_metadata | PASS | score= | 
+- quality_diagnosis.test_mcp_tools.MCPToolTests.test_health_check_reports_missing_csv | PASS | score= | 
+- quality_diagnosis.test_mcp_tools.MCPToolTests.test_invalid_task_returns_error_instead_of_exception | PASS | score= | 
+- quality_diagnosis.test_mcp_tools.MCPToolTests.test_natural_language_tool_uses_keyword_fallback | PASS | score= | 
+- quality_diagnosis.test_llm_judge.LLMJudgeTests.test_critical_violation_forces_immediate_hold | PASS | score= | 
+- quality_diagnosis.test_llm_judge.LLMJudgeTests.test_rubric_total_is_one_hundred | PASS | score= | 
+- quality_diagnosis.test_llm_judge.LLMJudgeTests.test_score_at_95_is_deployable | PASS | score= | 
+- quality_diagnosis.test_llm_judge.LLMJudgeTests.test_score_below_95_is_conditionally_held | PASS | score= | 
+- quality_diagnosis.test_llm_judge.LLMJudgeTests.test_scores_are_clamped_to_each_dimension | PASS | score= | 
+- quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_api_429_is_classified_with_recovery_guidance | PASS | score= | 
+- quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_provider_branch_uses_anthropic_messages_interface | PASS | score= | 

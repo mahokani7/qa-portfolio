@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="web_function_audit" generatedAt="2026-07-15T15:27:29+09:00" verdict="FAIL">
+  <summary total="36" passed="31" failed="5" errors="0" averageScore="" />
+  <cases>
+    <case id="WEB-01" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-02" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-03" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-04" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-05" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-06" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-07" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-08" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-09" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-10" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-11" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-12" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-13" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-14" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-15" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-16" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-17" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-18" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-19" status="FAIL">
+      <score />
+      <detail>LIMITED: browser-only JSON/CSV click</detail>
+    </case>
+    <case id="WEB-20" status="FAIL">
+      <score />
+      <detail>LIMITED: browser-only navigation/theme click</detail>
+    </case>
+    <case id="WEB-21" status="FAIL">
+      <score />
+      <detail>FAIL: visible feedback hidden in sr-only region</detail>
+    </case>
+    <case id="WEB-22" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-23" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-24" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-25" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-26" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-27" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-28" status="FAIL">
+      <score />
+      <detail>FAIL: cancellation left Interpreter on temporary endpoint</detail>
+    </case>
+    <case id="WEB-29" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-30" status="FAIL">
+      <score />
+      <detail>LIMITED: paid live E2E not re-executed</detail>
+    </case>
+    <case id="WEB-31" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-32" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-33" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-34" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-35" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+    <case id="WEB-36" status="PASS">
+      <score />
+      <detail>verified</detail>
+    </case>
+  </cases>
+</qualityEvidence>

@@ -1,0 +1,44 @@
+VOC 품질 테스트 실행 증적
+실행 유형: web_function_audit
+실행 시각: 2026-07-15T15:27:29+09:00
+결과: 31/36 PASS
+실패: 5, 오류: 0
+최종 판정: FAIL
+
+[상세 결과]
+- WEB-01 | PASS | score= | verified
+- WEB-02 | PASS | score= | verified
+- WEB-03 | PASS | score= | verified
+- WEB-04 | PASS | score= | verified
+- WEB-05 | PASS | score= | verified
+- WEB-06 | PASS | score= | verified
+- WEB-07 | PASS | score= | verified
+- WEB-08 | PASS | score= | verified
+- WEB-09 | PASS | score= | verified
+- WEB-10 | PASS | score= | verified
+- WEB-11 | PASS | score= | verified
+- WEB-12 | PASS | score= | verified
+- WEB-13 | PASS | score= | verified
+- WEB-14 | PASS | score= | verified
+- WEB-15 | PASS | score= | verified
+- WEB-16 | PASS | score= | verified
+- WEB-17 | PASS | score= | verified
+- WEB-18 | PASS | score= | verified
+- WEB-19 | FAIL | score= | LIMITED: browser-only JSON/CSV click
+- WEB-20 | FAIL | score= | LIMITED: browser-only navigation/theme click
+- WEB-21 | FAIL | score= | FAIL: visible feedback hidden in sr-only region
+- WEB-22 | PASS | score= | verified
+- WEB-23 | PASS | score= | verified
+- WEB-24 | PASS | score= | verified
+- WEB-25 | PASS | score= | verified
+- WEB-26 | PASS | score= | verified
+- WEB-27 | PASS | score= | verified
+- WEB-28 | FAIL | score= | FAIL: cancellation left Interpreter on temporary endpoint
+- WEB-29 | PASS | score= | verified
+- WEB-30 | FAIL | score= | LIMITED: paid live E2E not re-executed
+- WEB-31 | PASS | score= | verified
+- WEB-32 | PASS | score= | verified
+- WEB-33 | PASS | score= | verified
+- WEB-34 | PASS | score= | verified
+- WEB-35 | PASS | score= | verified
+- WEB-36 | PASS | score= | verified

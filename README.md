@@ -1,0 +1,214 @@
+# QA 포트폴리오 — 실행 가능 프로그램 모음
+
+## 소개
+
+**최성우** — IT 프로젝트 매니지먼트 27년 경력을 바탕으로 AI QA 엔지니어로 전환 중입니다. 오랜 기간 개발 프로젝트를 관리하며 품질·일정·리스크를 조율해온 경험을, AI/LLM 서비스 시대에 맞는 품질관리·테스트 자동화 역량으로 확장하기 위해 AI QA 교육과정을 이수했습니다. 이 저장소는 그 과정에서 만든 10개 프로젝트를 정리한 것입니다.
+
+---
+
+수집일: 2026-08-05
+수집 방식: **원본 복사(copy)** — 원본 폴더는 `C:\qaeduc2\`, `C:\`에 그대로 있습니다
+수록 프로젝트: **10개** — `01`~`10` (교육과정 원래 번호 08·12·13·16을 재배치)
+선정 기준: **웹으로 보여줄 수 있는 것** + QA 문서 산출물(04)
+
+> ### 📄 제출용 요약은 [`PORTFOLIO.html`](PORTFOLIO.html)을 여세요
+> 실행 증적(명령·종료코드·출력), 웹 가동 가능성 4축 판정, 산출물 이미지가 들어 있습니다.
+> **검증 요약** — 실행 검증 완료 6개(01·02·05·06·08·09) / API 키 필요 3개(03·07·10) /
+> 문서 1개(04) / 직접 통과시킨 자동 테스트 **276건**
+>
+> 제외한 프로젝트·복사 시 뺀 것·검증 상세·수정 내역·원본 경로는 [`AUDIT_LOG.md`](AUDIT_LOG.md)에 정리했습니다.
+
+### 깃허브 → 웹 실행 점검 (2026-08-06)
+
+깃허브에 push한 그 상태로 호스팅에 연결했을 때 **방문자에게 실제로 무엇이 보이는가**를 판정했습니다.
+
+| # | 프로젝트 | 판정 | 키 | 막는 것 |
+|---|---|---|---|---|
+| 01 | VOC 멀티에이전트 | ⚠️ 부분 | 2개 | Docker 필요 (gRPC 6개 + 웹서버 동시 기동) |
+| 02 | AI품질·운영 모니터링 | ⚠️ 부분 | 필요 | Prometheus·Grafana·k6가 로컬 Docker 스택 전제 |
+| 03 | AI챗봇 QA 파이프라인 | ✅ 실행됨 | 필요 | — (ChromaDB는 재시작 시 신규 색인 소실) |
+| **04** | **QA 문서 산출물** | ❌ **실행 불가** | — | **실행할 프로그램이 아님 — 문서 13종** |
+| 05 | RAIT 평가 시스템 | ✅ 실행됨 | **불필요** | — (기동 확인 완료) |
+| 06 | 팀프로젝트 Team3 | ⚠️ 부분 | 필요 | compose 4서비스 구조 |
+| 07 | RAG 챗봇 | ✅ 실행됨 | 필요 | — (올리기 가장 쉬움) |
+| 08 | AI Agent 모니터링 | ⚠️ 부분 | **불필요** | `streamlit_app.py:17`이 `127.0.0.1:8001` 하드코딩 |
+| 09 | 풀스택 웹앱 | ⚠️ 부분 | 불필요 | **화면만 뜨고 기능 불가** — `/api` 404, MongoDB 필요 |
+| 10 | 배송조회 챗봇 | ⚠️ 부분 | 필요 | UI 없음 (`/docs`로 대체 가능) |
+
+**웹에서 실행 자체가 불가능한 것은 04번 하나뿐**이고, 그것도 결함이 아니라 문서라서 그렇습니다.
+나머지 9개는 전부 뜨지만, ⚠️ 표시된 6개는 **일부 기능이 죽은 채로** 뜹니다.
+
+> **키 없이 안전하게 공개 가능한 것: 05 · 08 · 09** (단 08·09는 위 조치 필요)
+> 나머지 **01·02·03·06·07·10은 OpenAI 키가 듭니다.** 공개 URL로 두면 방문자가 누르는 만큼 본인 카드로 결제됩니다.
+> 사용량 한도 설정 + 비밀번호·토큰 + 면접 기간 한정 공개, 이 셋은 반드시 함께 하세요.
+
+### 깃허브 업로드 전 확인 사항
+
+- **실제 키 유출 0건** — `.env` 실파일 없음, 소스 내 `sk-…` 하드코딩 없음
+- **루트 `.gitignore` 추가함** — `.env`·`.venv`·`node_modules` 커밋 방지
+- **100MB 초과 파일 없음.** `06/tools/k6.exe`(61MB)는 50MB 경고 대상이라 `.gitignore`로 저장소에서 제외함(필요 시 `winget install k6`로 로컬 설치)
+
+---
+
+## 실행 전 공통 준비 (한 번만)
+
+### 1. API 키 설정 — ⚠️ 필수
+
+**실제 `.env` 파일은 복사하지 않았습니다.** 각 프로젝트에 `.env.example`만 들어 있습니다.
+
+```powershell
+# 실행할 프로젝트 폴더에서
+copy .env.example .env
+notepad .env        # 본인 API 키 입력
+```
+
+| 필요한 키 | 사용 프로젝트 |
+|---|---|
+| `OPENAI_API_KEY` | 01, 02, 03, 06, 07, 10 |
+| `ANTHROPIC_API_KEY` | 01 |
+| `JIRA_*` (선택, 결함 자동등록) | 02, 06 |
+| 키 불필요 | 04, 05, 08, 09 |
+
+> 01·02·06·08·05는 키 없이도(또는 더미 키로도) 테스트가 통과합니다 — 근거는 [`AUDIT_LOG.md`](AUDIT_LOG.md#api-키-관련-검증-정정-2026-0805-06) 참조.
+
+### 2. Python 가상환경
+
+`venv`는 다른 PC에서 동작하지 않으므로 복사하지 않았습니다. 프로젝트마다 새로 만드세요.
+
+```powershell
+cd <프로젝트 폴더>
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+> `Activate.ps1` 실행이 막히면: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
+
+### 3. Node 프로젝트
+
+`node_modules`도 복사하지 않았습니다. `npm install`로 복원하세요.
+
+---
+
+## 프로젝트별 실행 방법
+
+> 아래 각 프로젝트는 먼저 위 "공통 준비"(venv 생성 + `pip install` 또는 `npm install` + `.env` 복사)를 마쳤다는 전제이며, 여기서는 프로젝트 고유 실행 명령만 적습니다.
+
+### 🥇 01. VOC_Improve — 멀티에이전트 QA 시스템
+> 6-에이전트 VOC 분석 + LLM Judge + 품질게이트 + 레드팀 / gRPC·MCP·Docker·CI
+
+```powershell
+cd 01_VOC_Improve_MultiAgent
+# .env에 ANTHROPIC_API_KEY 입력 후:
+python run_all.py           # ① 6개 에이전트 전체 파이프라인 실행
+python web_app.py           # ② 웹 UI (브라우저 테스트)
+python grpc_server.py       # ③ gRPC A2A 서버
+python main.py              # ④ MCP 서버
+pytest tests -v             # ⑤ 테스트 11종
+python quality_diagnosis/run_quality_suite.py   # ⑥ 품질 진단 스위트
+```
+**볼거리**: `quality_diagnosis/`(LLM Judge·품질게이트·레드팀·재현성), `docs/`(발표 PPTX/PDF, PRD), `videos/`(시연 영상 2편)
+
+### 🥈 02. AI 품질 + 운영 모니터링 플랫폼 ⭐ QA 도구 폭이 가장 넓음
+> 레드팀·환각검출·PII스캔·회귀·RAG절제·비용추적·Jira연동 + k6 + Grafana/Prometheus
+
+```powershell
+cd 02_AI_Quality_Platform
+.\run_full.ps1                              # ★ 대시보드 + 모니터링 원클릭 실행
+streamlit run dashboard\streamlit_app.py    # 대시보드만
+python -m quality.quality_pipeline          # 품질 파이프라인
+pytest tests -v                             # 테스트 15종
+docker-compose up -d                        # Prometheus + Grafana 스택
+k6 run performance\k6_test.js               # 부하 테스트 (k6 미설치 시 winget install k6)
+```
+**볼거리**: `quality/`(모듈 12종), `monitoring/grafana/`(대시보드 2종 + 알림규칙), `docs/`(테스트계획서·결함리포트·성능리포트·사양서)
+
+### 🥉 03. AI 챗봇 QA 파이프라인
+> 규칙검증 1차 + LLM Judge 2차 평가 / RAG(ChromaDB) / 테스트계획서 3종
+
+```powershell
+cd 03_AI_Chatbot_QA_Pipeline
+python main.py                              # 평가 파이프라인 실행
+streamlit run dashboard\streamlit_app.py    # 결과 대시보드
+```
+**볼거리**: 단위·통합 테스트계획서, `reports\AI_챗봇_품질검증_최종보고서.docx`, `reports\history\`(평가 이력 4건)
+> ChromaDB 인덱스 포함 — 재색인 없이 바로 실행됩니다.
+
+### 04. QA 문서 산출물 (실행 불필요 — 문서 전용)
+> **QA 직무 증빙 1순위.** 코드보다 이쪽이 채용에서 더 강합니다.
+
+요구사항정의서·업무분장·WBS·Jira 칸반·보안가이드·취약지표 분석기준·회의록·이슈트래킹시트·단위/통합 테스트계획서·프로그램분석보고서 등 13종.
+
+### 05. RAIT 평가 시스템
+```powershell
+cd 05_RAIT_Evaluation_System
+streamlit run app\app.py     # ① 평가 대시보드
+python src\main.py           # ② 평가 엔진 (별도 실행)
+```
+
+### 06. 팀 프로젝트 — AI 챗봇 QA (Team3)
+```powershell
+cd "06_AI ChatbotQA"
+python main.py                              # 평가 실행
+python api_app.py                           # FastAPI + /metrics
+streamlit run dashboard\streamlit_app.py    # 대시보드
+pytest -v                                   # 테스트
+docker-compose up -d                        # Prometheus 연동
+```
+> 자세한 실행법은 폴더 안 `RUN_GUIDE.md` 참조. 부하 테스트에 필요한 `k6`는 저장소에 포함되어 있지 않으니 `winget install k6`로 설치하세요.
+
+### 07. RAG 챗봇
+```powershell
+cd 07_RAG_Chatbot
+streamlit run app.py       # 챗봇 UI
+python ingest.py           # 문서 재색인 (documents/ 기준)
+python run_evaluation.py   # 답변 품질 평가
+python run_tests.py        # 테스트
+```
+> ChromaDB 인덱스와 `uploads/`(국민취업지원제도 매뉴얼 PDF) 포함 — 바로 질의 가능합니다.
+
+### 08. AI Agent 모니터링 대시보드
+```powershell
+cd 08_AI_Agent_Dashboard
+uvicorn app:app --reload             # ① API 서버
+streamlit run streamlit_app.py       # ② 대시보드 (별도 터미널)
+python tests\run_tests.py            # ③ 기능/성능 테스트
+```
+> 02번의 축약 원형입니다. 02번을 보여줄 수 있으면 이건 부록으로 충분합니다.
+
+### 09. 풀스택 웹앱 (테스트 대상) — **Cypress E2E + Jest 포함**
+```powershell
+cd 09_FullStack_WebApp\backend
+npm install
+copy .env.example .env
+npm start                # Express API (schema.sql로 DB 먼저 생성)
+npm test                 # 단위(node:test 5건) + 통합(Jest 4건) — exit 0
+
+cd ..\frontend
+npm install
+npm run dev              # React/Vite 개발 서버
+npx cypress open         # ★ E2E 테스트 (QA 포트폴리오 핵심)
+```
+> **이 프로젝트의 포트폴리오 가치는 앱 자체가 아니라 `cypress/` E2E 테스트와 `jest` 단위 테스트입니다.**
+
+### 10. 배송조회 LangGraph 챗봇
+```powershell
+cd 10_LangGraph_Chatbot
+python main.py       # Python 버전 (FastAPI)
+npm install; npm start   # Node 버전 (edubot.js)
+```
+
+---
+
+## 포트폴리오 발표 시 추천 순서
+
+| 순서 | 프로젝트 | 이유 | 키 없이 시연 |
+|---|---|---|---|
+| 1 | **04** (QA 문서) | 코드 켜기 전에 QA 프로세스 이해도부터 보여줌 | 문서 |
+| 2 | **02** (품질+모니터링) | 도구 폭이 가장 넓음 — 레드팀·PII·k6·Grafana·Jira | ✅ (더미 키) |
+| 3 | **01** (VOC) | 규모·완성도 최대 + 시연 영상 2편 + 오프라인 모드 | ✅ |
+| 4 | **09** (Cypress E2E) | **전통적 웹 QA 자동화 역량을 증명하는 유일한 항목** | ✅ |
+
+---
+
+더 자세한 내용(제외한 프로젝트, 복사 시 뺀 파일, 검증·수정 내역, 원본 경로)은 [`AUDIT_LOG.md`](AUDIT_LOG.md)를 참조하세요.

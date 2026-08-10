@@ -1,0 +1,27 @@
+VOC 품질 테스트 실행 증적
+실행 유형: ecommerce_offline_e2e
+실행 시각: 2026-07-15T13:00:20+09:00
+결과: 18/18 PASS
+실패: 0, 오류: 0
+최종 판정: PASS
+평균 점수: 94.9/100
+
+[상세 결과]
+- TC-01 | PASS | score=90.2 | 
+- TC-02 | PASS | score=88.5 | 
+- TC-03 | PASS | score=96.2 | 
+- TC-04 | PASS | score=91.8 | 
+- TC-05 | PASS | score=89.7 | 
+- TC-06 | PASS | score=98.3 | 
+- TC-07 | PASS | score=93.1 | 
+- TC-08 | PASS | score=98.1 | 
+- TC-09 | PASS | score=95.0 | 
+- TC-10 | PASS | score=100.0 | 
+- TC-11 | PASS | score=100.0 | 
+- TC-12 | PASS | score=94.4 | 
+- TC-13 | PASS | score=84.8 | 
+- TC-14 | PASS | score=93.0 | 
+- TC-15 | PASS | score=100.0 | 
+- TC-16 | PASS | score=100.0 | 
+- TC-17 | PASS | score=96.9 | 
+- TC-18 | PASS | score=98.2 | 

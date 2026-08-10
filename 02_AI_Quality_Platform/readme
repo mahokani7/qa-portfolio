@@ -1,0 +1,34 @@
+전체 실행명령어 
+대시보드 생성 / 운영 모니터링 동시 수행
+.\run_full.ps1
+
+# AI Agent Monitoring Platform
+
+AI Agent 품질관리·운영 모니터링 실습 프로젝트입니다.
+
+## 주요 기능
+
+- FastAPI 기반 AI Agent API
+- `/health` 서비스 상태 확인
+- `/metrics` Prometheus 지표 제공
+- pytest 기능 테스트
+- k6 성능 테스트
+- Docker Compose 기반 실행
+- Streamlit 대시보드
+- Prometheus / Grafana 모니터링 연동
+
+## 프로젝트 구조
+
+```text
+AI_AGENT_MONITORING/
+├─ app.py
+├─ agent_service.py
+├─ metrics.py
+├─ logger_config.py
+├─ dashboard.py
+├─ streamlit_app.py
+├─ requirements.txt
+├─ docker-compose.yml
+├─ tests/
+├─ performance/
+└─ prometheus/

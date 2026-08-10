@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "generated_at": "2026-07-15T13:32:04+09:00",
+    "domain": "ecommerce",
+    "mode": "offline",
+    "trials": 2,
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "pass_rate": 100.0,
+    "average_score": 100.0,
+    "successful": true,
+    "live_quality_verified": false,
+    "criteria": {
+      "status_flip_allowed": false,
+      "maximum_score_stddev": 1.0
+    }
+  },
+  "trial_reports": [
+    "repeatability_trials\\20260715_133204_399128\\trial_1\\ecommerce_offline_e2e_20260715_133204.json",
+    "repeatability_trials\\20260715_133204_399128\\trial_2\\ecommerce_offline_e2e_20260715_133204.json"
+  ],
+  "results": [
+    {
+      "case_id": "TC-01",
+      "question": "결제는 완료되었는데 주문 내역에 보이지 않습니다.",
+      "status": "PASS",
+      "score": 100.0,
+      "stable": true,
+      "status_flip": false,
+      "score_mean": 90.2,
+      "score_min": 90.2,
+      "score_max": 90.2,
+      "score_stddev": 0.0,
+      "score_spread": 0.0,
+      "output_variants": 1,
+      "missing_trials": 0,
+      "detail": "상태변경=False, 표준편차=0.000, 점수범위=0.0, 출력변형=1",
+      "trials": [
+        {
+          "trial": 1,
+          "passed": true,
+          "score": 90.2,
+          "duration_ms": 31.87
+        },
+        {
+          "trial": 2,
+          "passed": true,
+          "score": 90.2,
+          "duration_ms": 28.54
+        }
+      ]
+    }
+  ]
+}

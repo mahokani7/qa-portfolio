@@ -1,0 +1,99 @@
+{
+  "family": "voc-improve",
+  "requiresCompatibilities": ["FARGATE"],
+  "networkMode": "awsvpc",
+  "cpu": "2048",
+  "memory": "4096",
+  "executionRoleArn": "arn:aws:iam::<AWS_ACCOUNT_ID>:role/voc-improve-ecs-execution",
+  "taskRoleArn": "arn:aws:iam::<AWS_ACCOUNT_ID>:role/voc-improve-ecs-task",
+  "containerDefinitions": [
+    {
+      "name": "voc-improve",
+      "image": "<AWS_ACCOUNT_ID>.dkr.ecr.ap-northeast-2.amazonaws.com/voc-improve:<IMAGE_TAG>",
+      "essential": true,
+      "user": "10001:10001",
+      "portMappings": [
+        {
+          "name": "http",
+          "containerPort": 8000,
+          "hostPort": 8000,
+          "protocol": "tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "environment": [
+        {"name": "WEB_HOST", "value": "0.0.0.0"},
+        {"name": "WEB_PORT", "value": "8000"},
+        {"name": "WEB_COOKIE_SECURE", "value": "true"},
+        {"name": "A2A_MODEL_SUMMARY", "value": "gpt-4o-mini"},
+        {"name": "A2A_MODEL_POLICY", "value": "claude-sonnet-4-6"},
+        {"name": "A2A_TOTAL_TIMEOUT", "value": "180"},
+        {"name": "A2A_STAGE_TIMEOUT", "value": "45"},
+        {"name": "A2A_API_TIMEOUT", "value": "45"},
+        {"name": "A2A_API_MAX_RETRIES", "value": "1"},
+        {"name": "A2A_DEPLOYMENT_MIN_SCORE", "value": "95"}
+      ],
+      "secrets": [
+        {
+          "name": "OPENAI_API_KEY",
+          "valueFrom": "<OPENAI_SECRET_ARN>"
+        },
+        {
+          "name": "ANTHROPIC_API_KEY",
+          "valueFrom": "<ANTHROPIC_SECRET_ARN>"
+        },
+        {
+          "name": "WEB_ADMIN_TOKEN",
+          "valueFrom": "<WEB_ADMIN_SECRET_ARN>"
+        },
+        {
+          "name": "WEB_REVIEWER_TOKEN",
+          "valueFrom": "<WEB_REVIEWER_SECRET_ARN>"
+        },
+        {
+          "name": "WEB_VIEWER_TOKEN",
+          "valueFrom": "<WEB_VIEWER_SECRET_ARN>"
+        }
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "voc-reports",
+          "containerPath": "/app/quality_diagnosis/reports",
+          "readOnly": false
+        }
+      ],
+      "healthCheck": {
+        "command": [
+          "CMD-SHELL",
+          "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=3)\" || exit 1"
+        ],
+        "interval": 30,
+        "timeout": 5,
+        "retries": 3,
+        "startPeriod": 60
+      },
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/voc-improve",
+          "awslogs-region": "ap-northeast-2",
+          "awslogs-stream-prefix": "service"
+        }
+      },
+      "stopTimeout": 120
+    }
+  ],
+  "volumes": [
+    {
+      "name": "voc-reports",
+      "efsVolumeConfiguration": {
+        "fileSystemId": "<EFS_FILE_SYSTEM_ID>",
+        "transitEncryption": "ENABLED",
+        "authorizationConfig": {
+          "accessPointId": "<EFS_ACCESS_POINT_ID>",
+          "iam": "ENABLED"
+        }
+      }
+    }
+  ]
+}

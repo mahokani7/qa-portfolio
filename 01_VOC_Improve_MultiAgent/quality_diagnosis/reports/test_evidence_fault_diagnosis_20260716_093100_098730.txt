@@ -1,0 +1,17 @@
+VOC 품질 테스트 실행 증적
+실행 유형: fault_diagnosis
+실행 시각: 2026-07-16T09:31:00+09:00
+결과: 9/9 PASS
+실패: 0, 오류: 0
+최종 판정: PASS
+
+[상세 결과]
+- FAULT-01 | PASS | score= | PASS — 정의된 검증 조건을 모두 충족했습니다.
+- FAULT-02 | PASS | score= | PASS — 정의된 검증 조건을 모두 충족했습니다.
+- FAULT-03 | PASS | score= | PASS — 정의된 검증 조건을 모두 충족했습니다.
+- FAULT-04 | PASS | score= | PASS — 정의된 검증 조건을 모두 충족했습니다.
+- FAULT-05 | PASS | score= | PASS — 정의된 검증 조건을 모두 충족했습니다.
+- FAULT-06 | PASS | score= | PASS — 정의된 검증 조건을 모두 충족했습니다.
+- FAULT-07 | PASS | score= | PASS — 정의된 검증 조건을 모두 충족했습니다.
+- FAULT-08 | PASS | score= | PASS — 정의된 검증 조건을 모두 충족했습니다.
+- FAULT-09 | PASS | score= | PASS — 정의된 검증 조건을 모두 충족했습니다.

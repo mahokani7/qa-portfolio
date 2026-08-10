@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="human_readable_history_pdf_word_report" generatedAt="2026-07-15T17:54:15+09:00" verdict="PASS">
+  <summary total="5" passed="5" failed="0" errors="0" averageScore="" />
+  <cases>
+    <case id="web-human-readable-run-result" status="PASS">
+      <score />
+      <detail>Run metadata, cases, expectations, rubric, RAG and agent results rendered as values</detail>
+    </case>
+    <case id="word-pdf-structure" status="PASS">
+      <score />
+      <detail>PDF-aligned sections 1-8 and QA Lead final opinion generated</detail>
+    </case>
+    <case id="source-exclusion" status="PASS">
+      <score />
+      <detail>Raw source payload and JSON appendix excluded from UI and DOCX</detail>
+    </case>
+    <case id="word-download-api" status="PASS">
+      <score />
+      <detail>HTTP 200 DOCX 47340 bytes with actual run data</detail>
+    </case>
+    <case id="full-regression" status="PASS">
+      <score />
+      <detail>79 of 79 tests passed</detail>
+    </case>
+  </cases>
+</qualityEvidence>

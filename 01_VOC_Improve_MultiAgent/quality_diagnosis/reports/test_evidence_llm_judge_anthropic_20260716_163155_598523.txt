@@ -1,0 +1,27 @@
+VOC 품질 테스트 실행 증적
+실행 유형: llm_judge_anthropic
+실행 시각: 2026-07-16T16:31:55+09:00
+결과: 0/18 PASS
+실패: 18, 오류: 0
+최종 판정: FAIL
+평균 점수: 81.4/100
+
+[상세 결과]
+- TC-01 | FAIL | score= | 
+- TC-02 | FAIL | score= | 
+- TC-03 | FAIL | score= | 
+- TC-04 | FAIL | score= | 
+- TC-05 | FAIL | score= | 
+- TC-06 | FAIL | score= | 
+- TC-07 | FAIL | score= | 
+- TC-08 | FAIL | score= | 
+- TC-09 | FAIL | score= | 
+- TC-10 | FAIL | score= | 
+- TC-11 | FAIL | score= | 
+- TC-12 | FAIL | score= | 
+- TC-13 | FAIL | score= | 
+- TC-14 | FAIL | score= | 
+- TC-15 | FAIL | score= | 
+- TC-16 | FAIL | score= | 
+- TC-17 | FAIL | score= | 
+- TC-18 | FAIL | score= | 

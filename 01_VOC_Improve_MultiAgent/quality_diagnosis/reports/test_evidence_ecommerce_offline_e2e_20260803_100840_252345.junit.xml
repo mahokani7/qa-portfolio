@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="ecommerce_offline_e2e" tests="3" failures="0" errors="0" timestamp="2026-08-03T10:08:40+09:00">
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-01" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-02" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-03" />
+</testsuite>

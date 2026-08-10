@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="clickable_top_navigation" generatedAt="2026-07-15T16:51:28+09:00" verdict="PASS">
+  <summary total="10" passed="10" failed="0" errors="0" averageScore="" />
+  <cases>
+    <case id="TOP-NAV-OVERVIEW" status="PASS">
+      <score />
+      <detail>/dashboard HTTP 200 and anchor verified</detail>
+    </case>
+    <case id="TOP-NAV-TESTS" status="PASS">
+      <score />
+      <detail>/test-cases HTTP 200 and anchor verified</detail>
+    </case>
+    <case id="TOP-NAV-QUALITY" status="PASS">
+      <score />
+      <detail>/quality HTTP 200 and anchor verified</detail>
+    </case>
+    <case id="TOP-NAV-TRACE" status="PASS">
+      <score />
+      <detail>/trace HTTP 200 and anchor verified</detail>
+    </case>
+    <case id="TOP-NAV-EVIDENCE" status="PASS">
+      <score />
+      <detail>/reports HTTP 200 and anchor verified</detail>
+    </case>
+    <case id="TOP-BRAND-LINK" status="PASS">
+      <score />
+      <detail>brand links to /control-center</detail>
+    </case>
+    <case id="TOP-NAV-ACTIVE" status="PASS">
+      <score />
+      <detail>route group active state and aria-current verified</detail>
+    </case>
+    <case id="WEB-UNIT-28" status="PASS">
+      <score />
+      <detail>28/28 web tests passed</detail>
+    </case>
+    <case id="FULL-REGRESSION-74" status="PASS">
+      <score />
+      <detail>74/74 tests passed</detail>
+    </case>
+    <case id="AGENT-READINESS" status="PASS">
+      <score />
+      <detail>6/6 gRPC agents ready</detail>
+    </case>
+  </cases>
+</qualityEvidence>

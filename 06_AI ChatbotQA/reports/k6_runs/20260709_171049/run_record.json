@@ -1,0 +1,173 @@
+{
+  "run_id": "20260709_171049",
+  "created_at": "2026-07-09T17:11:15",
+  "settings": {
+    "target_url": "http://localhost:8000/health",
+    "vus": 20,
+    "duration_seconds": 20,
+    "ramp_up_seconds": 10,
+    "p95_threshold_ms": 3000,
+    "failure_rate_threshold_pct": 1.0,
+    "checks_threshold_pct": 95.0,
+    "think_time_seconds": 1.0
+  },
+  "return_code": 0,
+  "summary_path": "C:\\260710_project\\ai_quality_final_project_Team3\\reports\\k6_runs\\20260709_171049\\summary.json",
+  "script_path": "C:\\260710_project\\ai_quality_final_project_Team3\\reports\\k6_runs\\20260709_171049\\script.js",
+  "stdout": "",
+  "stderr": "",
+  "summary": {
+    "total_requests": 361.0,
+    "failure_rate": 0.0,
+    "avg_duration_seconds": 0.003762349861495843,
+    "p95_duration_seconds": 0.0075772,
+    "p90_duration_seconds": 0.006477,
+    "p99_duration_seconds": 0.0,
+    "throughput": 14.093243687654695,
+    "checks_rate": 100.0,
+    "vus": 20.0
+  },
+  "raw_summary": {
+    "metrics": {
+      "data_received": {
+        "rate": 2339.4784521506795,
+        "count": 59926
+      },
+      "http_reqs": {
+        "count": 361,
+        "rate": 14.093243687654695
+      },
+      "iterations": {
+        "count": 361,
+        "rate": 14.093243687654695
+      },
+      "http_req_receiving": {
+        "max": 3.4501,
+        "p(90)": 1.006,
+        "p(95)": 2.0196,
+        "avg": 0.29429113573407206,
+        "min": 0,
+        "med": 0
+      },
+      "vus_max": {
+        "value": 20,
+        "min": 20,
+        "max": 20
+      },
+      "http_req_tls_handshaking": {
+        "avg": 0,
+        "min": 0,
+        "med": 0,
+        "max": 0,
+        "p(90)": 0,
+        "p(95)": 0
+      },
+      "http_req_duration": {
+        "p(90)": 6.477,
+        "p(95)": 7.5772,
+        "avg": 3.762349861495843,
+        "min": 0.2246,
+        "med": 3.0993,
+        "max": 78.7212,
+        "thresholds": {
+          "p(95)<3000": false
+        }
+      },
+      "http_req_waiting": {
+        "avg": 3.462525484764544,
+        "min": 0,
+        "med": 2.9575,
+        "max": 78.7212,
+        "p(90)": 6.0466,
+        "p(95)": 7.5171
+      },
+      "data_sent": {
+        "count": 27436,
+        "rate": 1071.086520261757
+      },
+      "checks": {
+        "passes": 722,
+        "fails": 0,
+        "thresholds": {
+          "rate>0.9500": false
+        },
+        "value": 1
+      },
+      "http_req_blocked": {
+        "avg": 0.10937229916897506,
+        "min": 0,
+        "med": 0,
+        "max": 16.3353,
+        "p(90)": 0,
+        "p(95)": 0
+      },
+      "http_req_connecting": {
+        "avg": 0.048793074792243755,
+        "min": 0,
+        "med": 0,
+        "max": 4.0879,
+        "p(90)": 0,
+        "p(95)": 0
+      },
+      "iteration_duration": {
+        "avg": 1005.4663072022153,
+        "min": 1000.8072,
+        "med": 1004.353,
+        "max": 1079.3098,
+        "p(90)": 1008.4802,
+        "p(95)": 1012.2403
+      },
+      "http_req_duration{expected_response:true}": {
+        "p(90)": 6.477,
+        "p(95)": 7.5772,
+        "avg": 3.762349861495843,
+        "min": 0.2246,
+        "med": 3.0993,
+        "max": 78.7212
+      },
+      "http_req_sending": {
+        "p(90)": 0,
+        "p(95)": 0,
+        "avg": 0.005533240997229917,
+        "min": 0,
+        "med": 0,
+        "max": 1.001
+      },
+      "http_req_failed": {
+        "passes": 0,
+        "fails": 361,
+        "thresholds": {
+          "rate<0.0100": false
+        },
+        "value": 0
+      },
+      "vus": {
+        "min": 2,
+        "max": 20,
+        "value": 3
+      }
+    },
+    "root_group": {
+      "groups": {},
+      "checks": {
+        "status is 2xx or 3xx": {
+          "name": "status is 2xx or 3xx",
+          "path": "::status is 2xx or 3xx",
+          "id": "10a17a763559dbcccbe159f7b72c614f",
+          "passes": 361,
+          "fails": 0
+        },
+        "body returned": {
+          "name": "body returned",
+          "path": "::body returned",
+          "id": "98ae50edfaa098bc58ddf88c5bcda475",
+          "passes": 361,
+          "fails": 0
+        }
+      },
+      "name": "",
+      "path": "",
+      "id": "d41d8cd98f00b204e9800998ecf8427e"
+    }
+  }
+}

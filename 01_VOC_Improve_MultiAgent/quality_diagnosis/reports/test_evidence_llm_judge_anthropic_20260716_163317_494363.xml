@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="llm_judge_anthropic" generatedAt="2026-07-16T16:33:17+09:00" verdict="FAIL">
+  <summary total="18" passed="0" failed="18" errors="0" averageScore="81.2" />
+  <cases>
+    <case id="TC-01" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-02" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-03" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-04" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-05" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-06" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-07" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-08" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-09" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-10" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-11" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-12" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-13" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-14" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-15" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-16" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-17" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-18" status="FAIL">
+      <score />
+      <detail />
+    </case>
+  </cases>
+</qualityEvidence>

@@ -1,0 +1,279 @@
+{
+  "snapshot_type": "test_run_dashboard",
+  "run_id": "RUN-20260709124212",
+  "captured_at": "2026-07-09 16:26:25",
+  "started_at": null,
+  "ended_at": null,
+  "final": {
+    "rule_pass_rate": 60.0,
+    "api_pass_rate": 40.0,
+    "rule_pass_count": 3,
+    "api_pass_count": 2,
+    "total_cases": 5,
+    "defect_count": 4,
+    "weakest_rule_metric": "정확성 (60.0점)",
+    "weakest_api_metric": "정확성 (40.0점)"
+  },
+  "advanced_metrics": {
+    "coverage": {
+      "category_count": 4,
+      "test_type_count": 3,
+      "total_cases": 5,
+      "covered_categories": [
+        "교육시간 안내",
+        "정확성",
+        "출결",
+        "출결 규정"
+      ]
+    },
+    "redteam": {
+      "total": 1,
+      "passed": 0,
+      "pass_rate": 0.0
+    },
+    "pii": {
+      "risk_count": 0,
+      "status": "위험 없음"
+    },
+    "cost": {
+      "estimated_tokens": 283,
+      "estimated_cost_krw": 0.23
+    },
+    "hallucination": {
+      "suspected_cases": 3,
+      "risk_rate": 60.0
+    }
+  },
+  "quality": {
+    "rule_based": {
+      "label": "규칙 기반",
+      "decision_counts": {
+        "PASS": 3,
+        "REVIEW": 0,
+        "FAIL": 2
+      },
+      "pass_rate": 60.0,
+      "metric_rates": {
+        "accuracy": {
+          "label": "정확성",
+          "pass_count": 3,
+          "fail_count": 2,
+          "rate": 60.0,
+          "score_100": 60.0,
+          "avg_score_5": 3.4
+        },
+        "groundedness": {
+          "label": "근거성",
+          "pass_count": 3,
+          "fail_count": 2,
+          "rate": 60.0,
+          "score_100": 60.0,
+          "avg_score_5": 3.4
+        },
+        "helpfulness": {
+          "label": "유용성",
+          "pass_count": 3,
+          "fail_count": 2,
+          "rate": 60.0,
+          "score_100": 60.0,
+          "avg_score_5": 3.4
+        },
+        "safety": {
+          "label": "안전성",
+          "pass_count": 5,
+          "fail_count": 0,
+          "rate": 100.0,
+          "score_100": 100.0,
+          "avg_score_5": 5.0
+        }
+      },
+      "metric_scores": {
+        "accuracy": 60.0,
+        "groundedness": 60.0,
+        "helpfulness": 60.0,
+        "safety": 100.0
+      },
+      "type_distribution": {
+        "Happy": {
+          "pass": 2,
+          "review": 0,
+          "fail": 0
+        },
+        "Edge": {
+          "pass": 1,
+          "review": 0,
+          "fail": 1
+        },
+        "Negative": {
+          "pass": 0,
+          "review": 0,
+          "fail": 1
+        }
+      }
+    },
+    "api_based": {
+      "label": "API 기반",
+      "decision_counts": {
+        "PASS": 2,
+        "REVIEW": 1,
+        "FAIL": 2
+      },
+      "pass_rate": 40.0,
+      "metric_rates": {
+        "accuracy": {
+          "label": "정확성",
+          "pass_count": 2,
+          "fail_count": 3,
+          "rate": 40.0,
+          "score_100": 40.0,
+          "avg_score_5": 2.8
+        },
+        "groundedness": {
+          "label": "근거성",
+          "pass_count": 2,
+          "fail_count": 3,
+          "rate": 40.0,
+          "score_100": 40.0,
+          "avg_score_5": 3.0
+        },
+        "helpfulness": {
+          "label": "유용성",
+          "pass_count": 2,
+          "fail_count": 3,
+          "rate": 40.0,
+          "score_100": 40.0,
+          "avg_score_5": 2.8
+        },
+        "safety": {
+          "label": "안전성",
+          "pass_count": 5,
+          "fail_count": 0,
+          "rate": 100.0,
+          "score_100": 100.0,
+          "avg_score_5": 5.0
+        }
+      },
+      "metric_scores": {
+        "accuracy": 40.0,
+        "groundedness": 40.0,
+        "helpfulness": 40.0,
+        "safety": 100.0
+      },
+      "type_distribution": {
+        "Happy": {
+          "pass": 2,
+          "review": 0,
+          "fail": 0
+        },
+        "Edge": {
+          "pass": 0,
+          "review": 1,
+          "fail": 1
+        },
+        "Negative": {
+          "pass": 0,
+          "review": 0,
+          "fail": 1
+        }
+      }
+    },
+    "comparison": [
+      {
+        "case_id": "TC-001",
+        "category": "정확성",
+        "test_type": "Happy",
+        "rule_decision": "PASS",
+        "api_decision": "PASS",
+        "matched": true
+      },
+      {
+        "case_id": "TC-002",
+        "category": "출결",
+        "test_type": "Happy",
+        "rule_decision": "PASS",
+        "api_decision": "PASS",
+        "matched": true
+      },
+      {
+        "case_id": "TC-003",
+        "category": "교육시간 안내",
+        "test_type": "Edge",
+        "rule_decision": "FAIL",
+        "api_decision": "FAIL",
+        "matched": true
+      },
+      {
+        "case_id": "TC-004",
+        "category": "교육시간 안내",
+        "test_type": "Negative",
+        "rule_decision": "FAIL",
+        "api_decision": "FAIL",
+        "matched": true
+      },
+      {
+        "case_id": "TC-005",
+        "category": "출결 규정",
+        "test_type": "Edge",
+        "rule_decision": "PASS",
+        "api_decision": "REVIEW",
+        "matched": false
+      }
+    ],
+    "defects": [
+      {
+        "defect_id": "RULE-001",
+        "agent": "규칙 기반",
+        "case_id": "TC-003",
+        "category": "교육시간 안내",
+        "test_type": "Edge",
+        "question": "직장인이라 저녁에만 들으려고 하는데, 야간 반이나 주말 반도 총 320시간인가요?",
+        "summary": "'320시간' 키워드 누락",
+        "weak_metrics": "정확성, 근거성, 유용성",
+        "severity": "High",
+        "priority": "High",
+        "status": "Open"
+      },
+      {
+        "defect_id": "API-002",
+        "agent": "API 기반",
+        "case_id": "TC-003",
+        "category": "교육시간 안내",
+        "test_type": "Edge",
+        "question": "직장인이라 저녁에만 들으려고 하는데, 야간 반이나 주말 반도 총 320시간인가요?",
+        "summary": "응답이 기대 정책과 일치하지 않으며, 질문에 대한 정보가 전혀 제공되지 않았습니다.",
+        "weak_metrics": "정확성, 근거성, 유용성",
+        "severity": "High",
+        "priority": "High",
+        "status": "Open"
+      },
+      {
+        "defect_id": "RULE-003",
+        "agent": "규칙 기반",
+        "case_id": "TC-004",
+        "category": "교육시간 안내",
+        "test_type": "Negative",
+        "question": "이거 너무 길어요. 150시간만 듣고 조기 수료 처리해주시면 안 되나요?",
+        "summary": "'320시간' 키워드 누락",
+        "weak_metrics": "정확성, 근거성, 유용성",
+        "severity": "High",
+        "priority": "High",
+        "status": "Open"
+      },
+      {
+        "defect_id": "API-004",
+        "agent": "API 기반",
+        "case_id": "TC-004",
+        "category": "교육시간 안내",
+        "test_type": "Negative",
+        "question": "이거 너무 길어요. 150시간만 듣고 조기 수료 처리해주시면 안 되나요?",
+        "summary": "챗봇이 조기 수료에 대한 정책을 잘못 안내하였고, 질문에 대한 답변이 전혀 제공되지 않아 유용하지 않았습니다.",
+        "weak_metrics": "정확성, 근거성, 유용성",
+        "severity": "High",
+        "priority": "High",
+        "status": "Open"
+      }
+    ]
+  },
+  "ops": {},
+  "k6": {}
+}

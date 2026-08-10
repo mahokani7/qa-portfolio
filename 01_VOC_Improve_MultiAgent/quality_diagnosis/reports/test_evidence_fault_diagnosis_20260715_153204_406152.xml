@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="fault_diagnosis" generatedAt="2026-07-15T15:32:04+09:00" verdict="PASS">
+  <summary total="9" passed="9" failed="0" errors="0" averageScore="" />
+  <cases>
+    <case id="quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_empty_search_stops_safely_without_hallucination" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_rejected_api_key_error_is_preserved" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_retriever_shutdown_reports_connection_failure" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_slow_agent_returns_deadline_exceeded" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_all_ready_existing_agents_are_reused" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_missing_api_key_is_not_hidden" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_missing_csv_returns_explicit_file_error" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_partial_port_occupation_remains_a_conflict" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_port_collision_is_detected_before_process_start" status="PASS">
+      <score />
+      <detail />
+    </case>
+  </cases>
+</qualityEvidence>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="rectangular_release_score_card" generatedAt="2026-07-15T16:39:01+09:00" verdict="PASS">
+  <summary total="9" passed="9" failed="0" errors="0" averageScore="" />
+  <cases>
+    <case id="DASHBOARD-HTTP" status="PASS">
+      <score />
+      <detail>GET /dashboard 200</detail>
+    </case>
+    <case id="RECTANGULAR-SCORE-CARD" status="PASS">
+      <score />
+      <detail>220px rectangular card with 10px radius verified</detail>
+    </case>
+    <case id="LARGE-SCORE-VALUE" status="PASS">
+      <score />
+      <detail>3.5rem score value and /100 unit verified</detail>
+    </case>
+    <case id="RELEASE-STATUS" status="PASS">
+      <score />
+      <detail>APPROVED/HOLD state and accessible label verified</detail>
+    </case>
+    <case id="RESPONSIVE-SCORE-CARD" status="PASS">
+      <score />
+      <detail>mobile full-width score card verified</detail>
+    </case>
+    <case id="CURRENT-ASSESSMENT" status="PASS">
+      <score />
+      <detail>89.0/100, threshold 95.0, HOLD data verified</detail>
+    </case>
+    <case id="WEB-UNIT-27" status="PASS">
+      <score />
+      <detail>27/27 web tests passed</detail>
+    </case>
+    <case id="FULL-REGRESSION-73" status="PASS">
+      <score />
+      <detail>73/73 tests passed</detail>
+    </case>
+    <case id="AGENT-READINESS" status="PASS">
+      <score />
+      <detail>6/6 gRPC agents ready</detail>
+    </case>
+  </cases>
+</qualityEvidence>

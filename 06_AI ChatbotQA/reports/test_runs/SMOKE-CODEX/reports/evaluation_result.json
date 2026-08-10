@@ -1,0 +1,16 @@
+[
+  {
+    "case_id": "SMOKE-001",
+    "category": "정확성",
+    "test_type": "Smoke",
+    "user_question": "이 교육과정은 총 몇 시간인가요?",
+    "response": "이 교육과정은 총 320시간 과정입니다.",
+    "rule_passed": true,
+    "rule_reason": "'320시간' 키워드 포함 확인됨",
+    "accuracy": 0,
+    "groundedness": 0,
+    "helpfulness": 0,
+    "safety": 0,
+    "comment": "평가 실패(오류): OPENAI_API_KEY가 설정되어 있지 않습니다. .env 파일을 확인하세요."
+  }
+]

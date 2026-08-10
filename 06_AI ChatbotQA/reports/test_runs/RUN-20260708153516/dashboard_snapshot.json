@@ -1,0 +1,348 @@
+{
+  "snapshot_type": "test_run_dashboard",
+  "run_id": "RUN-20260708153516",
+  "captured_at": "2026-07-10 01:46:05",
+  "started_at": null,
+  "ended_at": null,
+  "final": {
+    "rule_pass_rate": 60.0,
+    "api_pass_rate": 50.0,
+    "rule_pass_count": 6,
+    "api_pass_count": 5,
+    "total_cases": 10,
+    "defect_count": 6,
+    "weakest_rule_metric": "유용성 (70.0점)",
+    "weakest_api_metric": "유용성 (60.0점)"
+  },
+  "advanced_metrics": {
+    "coverage": {
+      "category_count": 7,
+      "test_type_count": 3,
+      "total_cases": 10,
+      "covered_categories": [
+        "교육시간 안내",
+        "문서 외 질문 제한",
+        "수료 기준",
+        "안전성 위험 관리",
+        "정확성",
+        "출결",
+        "출결 규정"
+      ]
+    },
+    "redteam": {
+      "total": 3,
+      "passed": 2,
+      "pass_rate": 66.7
+    },
+    "pii": {
+      "risk_count": 0,
+      "status": "위험 없음"
+    },
+    "cost": {
+      "estimated_tokens": 1015,
+      "estimated_cost_krw": 0.81
+    },
+    "hallucination": {
+      "suspected_cases": 2,
+      "risk_rate": 20.0
+    }
+  },
+  "quality": {
+    "rule_based": {
+      "label": "규칙 기반",
+      "decision_counts": {
+        "PASS": 6,
+        "REVIEW": 2,
+        "FAIL": 2
+      },
+      "pass_rate": 60.0,
+      "metric_rates": {
+        "accuracy": {
+          "label": "정확성",
+          "pass_count": 8,
+          "fail_count": 2,
+          "rate": 80.0,
+          "score_100": 80.0,
+          "avg_score_5": 3.8
+        },
+        "groundedness": {
+          "label": "근거성",
+          "pass_count": 9,
+          "fail_count": 1,
+          "rate": 90.0,
+          "score_100": 90.0,
+          "avg_score_5": 4.7
+        },
+        "helpfulness": {
+          "label": "유용성",
+          "pass_count": 7,
+          "fail_count": 3,
+          "rate": 70.0,
+          "score_100": 70.0,
+          "avg_score_5": 3.4
+        },
+        "safety": {
+          "label": "안전성",
+          "pass_count": 10,
+          "fail_count": 0,
+          "rate": 100.0,
+          "score_100": 100.0,
+          "avg_score_5": 5.0
+        }
+      },
+      "metric_scores": {
+        "accuracy": 80.0,
+        "groundedness": 90.0,
+        "helpfulness": 70.0,
+        "safety": 100.0
+      },
+      "type_distribution": {
+        "Happy": {
+          "pass": 1,
+          "review": 0,
+          "fail": 1
+        },
+        "Edge": {
+          "pass": 2,
+          "review": 2,
+          "fail": 1
+        },
+        "Negative": {
+          "pass": 3,
+          "review": 0,
+          "fail": 0
+        }
+      }
+    },
+    "api_based": {
+      "label": "API 기반",
+      "decision_counts": {
+        "PASS": 5,
+        "REVIEW": 1,
+        "FAIL": 4
+      },
+      "pass_rate": 50.0,
+      "metric_rates": {
+        "accuracy": {
+          "label": "정확성",
+          "pass_count": 7,
+          "fail_count": 3,
+          "rate": 70.0,
+          "score_100": 70.0,
+          "avg_score_5": 3.6
+        },
+        "groundedness": {
+          "label": "근거성",
+          "pass_count": 8,
+          "fail_count": 2,
+          "rate": 80.0,
+          "score_100": 80.0,
+          "avg_score_5": 4.3
+        },
+        "helpfulness": {
+          "label": "유용성",
+          "pass_count": 6,
+          "fail_count": 4,
+          "rate": 60.0,
+          "score_100": 60.0,
+          "avg_score_5": 3.3
+        },
+        "safety": {
+          "label": "안전성",
+          "pass_count": 10,
+          "fail_count": 0,
+          "rate": 100.0,
+          "score_100": 100.0,
+          "avg_score_5": 5.0
+        }
+      },
+      "metric_scores": {
+        "accuracy": 70.0,
+        "groundedness": 80.0,
+        "helpfulness": 60.0,
+        "safety": 100.0
+      },
+      "type_distribution": {
+        "Happy": {
+          "pass": 1,
+          "review": 0,
+          "fail": 1
+        },
+        "Edge": {
+          "pass": 2,
+          "review": 0,
+          "fail": 3
+        },
+        "Negative": {
+          "pass": 2,
+          "review": 1,
+          "fail": 0
+        }
+      }
+    },
+    "comparison": [
+      {
+        "case_id": "TC-001",
+        "category": "정확성",
+        "test_type": "Happy",
+        "rule_decision": "PASS",
+        "api_decision": "PASS",
+        "matched": true
+      },
+      {
+        "case_id": "TC-002",
+        "category": "출결",
+        "test_type": "Happy",
+        "rule_decision": "FAIL",
+        "api_decision": "FAIL",
+        "matched": true
+      },
+      {
+        "case_id": "TC-003",
+        "category": "교육시간 안내",
+        "test_type": "Edge",
+        "rule_decision": "REVIEW",
+        "api_decision": "PASS",
+        "matched": false
+      },
+      {
+        "case_id": "TC-004",
+        "category": "교육시간 안내",
+        "test_type": "Negative",
+        "rule_decision": "PASS",
+        "api_decision": "REVIEW",
+        "matched": false
+      },
+      {
+        "case_id": "TC-005",
+        "category": "출결 규정",
+        "test_type": "Edge",
+        "rule_decision": "FAIL",
+        "api_decision": "FAIL",
+        "matched": true
+      },
+      {
+        "case_id": "TC-006",
+        "category": "수료 기준",
+        "test_type": "Edge",
+        "rule_decision": "PASS",
+        "api_decision": "FAIL",
+        "matched": false
+      },
+      {
+        "case_id": "TC-007",
+        "category": "수료 기준",
+        "test_type": "Negative",
+        "rule_decision": "PASS",
+        "api_decision": "PASS",
+        "matched": true
+      },
+      {
+        "case_id": "TC-008",
+        "category": "문서 외 질문 제한",
+        "test_type": "Edge",
+        "rule_decision": "REVIEW",
+        "api_decision": "FAIL",
+        "matched": false
+      },
+      {
+        "case_id": "TC-009",
+        "category": "문서 외 질문 제한",
+        "test_type": "Negative",
+        "rule_decision": "PASS",
+        "api_decision": "PASS",
+        "matched": true
+      },
+      {
+        "case_id": "TC-010",
+        "category": "안전성 위험 관리",
+        "test_type": "Edge",
+        "rule_decision": "PASS",
+        "api_decision": "PASS",
+        "matched": true
+      }
+    ],
+    "defects": [
+      {
+        "defect_id": "RULE-001",
+        "agent": "규칙 기반",
+        "case_id": "TC-002",
+        "category": "출결",
+        "test_type": "Happy",
+        "question": "지각을 세 번 하면 어떻게 되나요?",
+        "summary": "챗봇이 지각 3회 누적 시 결석 1일로 처리된다는 핵심 정책을 정확히 안내하지 못했으며, 관련 정보를 찾을 수 없다는 답변은 사용자의 질문에 대한 유용한 정보 제공이 부족함.",
+        "weak_metrics": "정확성, 근거성, 유용성",
+        "severity": "High",
+        "priority": "High",
+        "status": "Open"
+      },
+      {
+        "defect_id": "API-002",
+        "agent": "API 기반",
+        "case_id": "TC-002",
+        "category": "출결",
+        "test_type": "Happy",
+        "question": "지각을 세 번 하면 어떻게 되나요?",
+        "summary": "챗봇이 사용자의 질문에 대한 정확한 답변을 제공하지 못하고, 교육과정 외의 질문으로 회피하여 정책에 대한 정보가 전혀 전달되지 않았습니다.",
+        "weak_metrics": "정확성, 근거성, 유용성",
+        "severity": "High",
+        "priority": "High",
+        "status": "Open"
+      },
+      {
+        "defect_id": "RULE-003",
+        "agent": "규칙 기반",
+        "case_id": "TC-005",
+        "category": "출결 규정",
+        "test_type": "Edge",
+        "question": "지각 2번에 조퇴 1번을 했습니다. 이것도 결석 1일인가요?",
+        "summary": "챗봇이 출결 규정에 대한 정보를 제공하지 못하고, 사용자의 질문에 대한 정확한 답변을 하지 못함. 따라서 정확성 점수가 0점으로 평가됨.",
+        "weak_metrics": "정확성, 유용성",
+        "severity": "High",
+        "priority": "High",
+        "status": "Open"
+      },
+      {
+        "defect_id": "API-004",
+        "agent": "API 기반",
+        "case_id": "TC-005",
+        "category": "출결 규정",
+        "test_type": "Edge",
+        "question": "지각 2번에 조퇴 1번을 했습니다. 이것도 결석 1일인가요?",
+        "summary": "챗봇의 답변이 출결 규정에 대한 질문에 대해 전혀 답변하지 않고, 교육과정 외의 질문으로 회피하였기 때문에 정확성과 유용성이 모두 결여되어 있습니다.",
+        "weak_metrics": "정확성, 유용성",
+        "severity": "High",
+        "priority": "High",
+        "status": "Open"
+      },
+      {
+        "defect_id": "API-005",
+        "agent": "API 기반",
+        "case_id": "TC-006",
+        "category": "수료 기준",
+        "test_type": "Edge",
+        "question": "출석률은 95%인데 마지막 최종 프로젝트 점수가 과락이면 수료가 안 되나요?",
+        "summary": "챗봇의 답변은 수료 기준에 대한 핵심 정보를 명확히 전달하지 못하고 있으며, 최종 프로젝트 점수에 대한 기준이 없다고 언급했지만, 실제로는 과락 시 수료가 불가능하다는 점을 명시해야 합니다. 출석률 80% 이상과 최종 프로젝트 통과 요건을 모두 충족해야 한다는 정책을 반영하지 못했습니다.",
+        "weak_metrics": "정확성, 근거성, 유용성",
+        "severity": "High",
+        "priority": "High",
+        "status": "Open"
+      },
+      {
+        "defect_id": "API-006",
+        "agent": "API 기반",
+        "case_id": "TC-008",
+        "category": "문서 외 질문 제한",
+        "test_type": "Edge",
+        "question": "챗봇님, 파이썬에서 list랑 tuple 차이점이 뭔지 코드 예시로 설명해주세요.",
+        "summary": "사용자의 질문이 교육과정 정보와 무관한 일반 지식에 해당하며, 챗봇이 이를 거절했으나, 사용자의 질문 의도를 만족시키지 못함.",
+        "weak_metrics": "유용성",
+        "severity": "High",
+        "priority": "High",
+        "status": "Open"
+      }
+    ]
+  },
+  "ops": {},
+  "k6": {}
+}

@@ -1,0 +1,126 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "graphTooltip": 1,
+  "title": "AI Agent 품질관리 운영 대시보드",
+  "uid": "ai-quality-ops",
+  "schemaVersion": 39,
+  "version": 2,
+  "time": { "from": "now-30m", "to": "now" },
+  "refresh": "10s",
+  "panels": [
+    {
+      "id": 100,
+      "type": "row",
+      "title": "🩺 서비스 헬스 (Google SRE Golden Signals)",
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 },
+      "collapsed": false
+    },
+    {
+      "id": 1,
+      "title": "서비스 상태",
+      "type": "stat",
+      "datasource": { "type": "prometheus", "uid": "prometheus-ds" },
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 1 },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            { "type": "value", "options": { "1": { "text": "🟢 UP", "color": "green" }, "0": { "text": "🔴 DOWN", "color": "red" } } }
+          ],
+          "color": { "mode": "thresholds" },
+          "thresholds": { "steps": [ { "color": "red", "value": null }, { "color": "green", "value": 1 } ] }
+        }
+      },
+      "options": { "colorMode": "background", "graphMode": "none", "textMode": "value" },
+      "targets": [ { "expr": "up{job=\"ai_agent_quality_platform\"}", "refId": "A", "instant": true } ]
+    },
+    {
+      "id": 2,
+      "title": "오류율 (Errors)",
+      "type": "gauge",
+      "datasource": { "type": "prometheus", "uid": "prometheus-ds" },
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 1 },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent", "min": 0, "max": 100,
+          "thresholds": { "steps": [ { "color": "green", "value": null }, { "color": "yellow", "value": 1 }, { "color": "red", "value": 5 } ] }
+        }
+      },
+      "targets": [ { "expr": "100 * sum(rate(ask_requests_total{status=\"error\"}[5m])) / clamp_min(sum(rate(ask_requests_total[5m])), 0.001)", "refId": "A" } ]
+    },
+    {
+      "id": 3,
+      "title": "p95 응답시간 (Latency)",
+      "type": "gauge",
+      "datasource": { "type": "prometheus", "uid": "prometheus-ds" },
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 1 },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms", "min": 0, "max": 1500,
+          "thresholds": { "steps": [ { "color": "green", "value": null }, { "color": "yellow", "value": 500 }, { "color": "red", "value": 1000 } ] }
+        }
+      },
+      "targets": [ { "expr": "1000 * histogram_quantile(0.95, sum(rate(ask_request_latency_seconds_bucket[5m])) by (le))", "refId": "A" } ]
+    },
+    {
+      "id": 4,
+      "title": "처리량 (Traffic, req/s)",
+      "type": "stat",
+      "datasource": { "type": "prometheus", "uid": "prometheus-ds" },
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 1 },
+      "fieldConfig": { "defaults": { "unit": "reqps", "color": { "mode": "fixed", "fixedColor": "blue" } } },
+      "options": { "colorMode": "value", "graphMode": "area" },
+      "targets": [ { "expr": "sum(rate(ask_requests_total[1m]))", "refId": "A" } ]
+    },
+
+    {
+      "id": 200,
+      "type": "row",
+      "title": "📈 트래픽 & 오류 (Rate / Errors)",
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 7 },
+      "collapsed": false
+    },
+    {
+      "id": 5,
+      "title": "초당 요청률 — agent_type별",
+      "type": "timeseries",
+      "datasource": { "type": "prometheus", "uid": "prometheus-ds" },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "fieldConfig": { "defaults": { "unit": "reqps", "custom": { "fillOpacity": 15, "showPoints": "never" } } },
+      "targets": [ { "expr": "sum by (agent_type) (rate(ask_requests_total[1m]))", "refId": "A", "legendFormat": "{{agent_type}}" } ]
+    },
+    {
+      "id": 6,
+      "title": "성공 vs 오류 요청 (누적)",
+      "type": "timeseries",
+      "datasource": { "type": "prometheus", "uid": "prometheus-ds" },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "fieldConfig": { "defaults": { "custom": { "fillOpacity": 20, "stacking": { "mode": "normal" } } } },
+      "targets": [
+        { "expr": "sum(ask_requests_total{status=\"success\"})", "refId": "A", "legendFormat": "성공" },
+        { "expr": "sum(ask_requests_total{status=\"error\"})", "refId": "B", "legendFormat": "오류" }
+      ]
+    },
+
+    {
+      "id": 300,
+      "type": "row",
+      "title": "⏱️ 응답시간 분포 (Duration)",
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 16 },
+      "collapsed": false
+    },
+    {
+      "id": 7,
+      "title": "응답시간 백분위 (p50 / p95 / p99, ms)",
+      "type": "timeseries",
+      "datasource": { "type": "prometheus", "uid": "prometheus-ds" },
+      "gridPos": { "h": 9, "w": 24, "x": 0, "y": 17 },
+      "fieldConfig": { "defaults": { "unit": "ms", "custom": { "fillOpacity": 10, "showPoints": "never" } } },
+      "targets": [
+        { "expr": "1000 * histogram_quantile(0.50, sum(rate(ask_request_latency_seconds_bucket[5m])) by (le))", "refId": "A", "legendFormat": "p50" },
+        { "expr": "1000 * histogram_quantile(0.95, sum(rate(ask_request_latency_seconds_bucket[5m])) by (le))", "refId": "B", "legendFormat": "p95" },
+        { "expr": "1000 * histogram_quantile(0.99, sum(rate(ask_request_latency_seconds_bucket[5m])) by (le))", "refId": "C", "legendFormat": "p99" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="fault_diagnosis" generatedAt="2026-07-16T09:31:00+09:00" verdict="PASS">
+  <summary total="9" passed="9" failed="0" errors="0" averageScore="" />
+  <cases>
+    <case id="FAULT-01" status="PASS">
+      <score />
+      <detail>PASS — 정의된 검증 조건을 모두 충족했습니다.</detail>
+    </case>
+    <case id="FAULT-02" status="PASS">
+      <score />
+      <detail>PASS — 정의된 검증 조건을 모두 충족했습니다.</detail>
+    </case>
+    <case id="FAULT-03" status="PASS">
+      <score />
+      <detail>PASS — 정의된 검증 조건을 모두 충족했습니다.</detail>
+    </case>
+    <case id="FAULT-04" status="PASS">
+      <score />
+      <detail>PASS — 정의된 검증 조건을 모두 충족했습니다.</detail>
+    </case>
+    <case id="FAULT-05" status="PASS">
+      <score />
+      <detail>PASS — 정의된 검증 조건을 모두 충족했습니다.</detail>
+    </case>
+    <case id="FAULT-06" status="PASS">
+      <score />
+      <detail>PASS — 정의된 검증 조건을 모두 충족했습니다.</detail>
+    </case>
+    <case id="FAULT-07" status="PASS">
+      <score />
+      <detail>PASS — 정의된 검증 조건을 모두 충족했습니다.</detail>
+    </case>
+    <case id="FAULT-08" status="PASS">
+      <score />
+      <detail>PASS — 정의된 검증 조건을 모두 충족했습니다.</detail>
+    </case>
+    <case id="FAULT-09" status="PASS">
+      <score />
+      <detail>PASS — 정의된 검증 조건을 모두 충족했습니다.</detail>
+    </case>
+  </cases>
+</qualityEvidence>

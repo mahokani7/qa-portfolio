@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="quality_gate_ecommerce" tests="3" failures="1" errors="0" timestamp="2026-07-15T13:37:44+09:00">
+  <testcase classname="voc.quality.quality_gate_ecommerce" name="GATE-AUTOMATED-SUITE" />
+  <testcase classname="voc.quality.quality_gate_ecommerce" name="GATE-RED-TEAM" />
+  <testcase classname="voc.quality.quality_gate_ecommerce" name="GATE-OFFLINE-E2E">
+    <failure message="18/18 PASS · 평균 94.9점 · 기준 95.0점" type="QualityGateFailure">status=FAIL; score=94.9</failure>
+  </testcase>
+</testsuite>

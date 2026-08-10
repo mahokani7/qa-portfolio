@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="insurance_offline_e2e" tests="15" failures="0" errors="0" timestamp="2026-07-15T15:16:28+09:00">
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-01" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-02" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-03" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-04" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-05" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-06" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-07" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-08" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-09" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-10" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-11" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-12" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-13" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-14" />
+  <testcase classname="voc.quality.insurance_offline_e2e" name="INS-15" />
+</testsuite>

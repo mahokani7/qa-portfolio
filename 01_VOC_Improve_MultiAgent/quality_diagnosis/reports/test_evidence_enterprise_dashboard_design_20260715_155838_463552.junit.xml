@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="enterprise_dashboard_design" tests="6" failures="0" errors="0" timestamp="2026-07-15T15:58:38+09:00">
+  <testcase classname="voc.quality.enterprise_dashboard_design" name="UI-DESIGN-01" />
+  <testcase classname="voc.quality.enterprise_dashboard_design" name="UI-DESIGN-02" />
+  <testcase classname="voc.quality.enterprise_dashboard_design" name="UI-DESIGN-03" />
+  <testcase classname="voc.quality.enterprise_dashboard_design" name="UI-DESIGN-04" />
+  <testcase classname="voc.quality.enterprise_dashboard_design" name="UI-DESIGN-05" />
+  <testcase classname="voc.quality.enterprise_dashboard_design" name="UI-DESIGN-06" />
+</testsuite>

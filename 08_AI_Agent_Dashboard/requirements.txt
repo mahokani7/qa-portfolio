@@ -1,0 +1,8 @@
+﻿fastapi
+uvicorn[standard]
+pytest
+httpx
+prometheus-client   # app.py: /metrics 노출
+requests            # tests/run_tests.py, dashboard.py, streamlit_app.py
+streamlit           # streamlit_app.py, dashboard.py
+pandas              # streamlit_app.py, dashboard.py

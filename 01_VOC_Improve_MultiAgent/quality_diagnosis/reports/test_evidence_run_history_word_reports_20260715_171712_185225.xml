@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="run_history_word_reports" generatedAt="2026-07-15T17:17:12+09:00" verdict="PASS">
+  <summary total="8" passed="8" failed="0" errors="0" averageScore="" />
+  <cases>
+    <case id="history_index" status="PASS">
+      <score />
+      <detail>SQLite 영속 이력 91건 조회 및 필터 확인</detail>
+    </case>
+    <case id="full_run_detail" status="PASS">
+      <score />
+      <detail>선택 Run의 원본 source_payload, 케이스 raw, metrics, 6-Agent Trace 반환</detail>
+    </case>
+    <case id="history_ui" status="PASS">
+      <score />
+      <detail>/runs 전체 데이터 상세 패널, JSON 복사, Word 다운로드 동작 연결</detail>
+    </case>
+    <case id="word_report" status="PASS">
+      <score />
+      <detail>첨부 11페이지 PDF의 결론·구조·정량분석·전체 케이스·잔여위험·QA Lead·부록 형식 반영</detail>
+    </case>
+    <case id="docx_integrity" status="PASS">
+      <score />
+      <detail>실제 Run 보고서 64,042 bytes, ZIP 정상, 제목·부록·8개 표 확인</detail>
+    </case>
+    <case id="web_api" status="PASS">
+      <score />
+      <detail>Word API HTTP 200 및 DOCX MIME/attachment 확인</detail>
+    </case>
+    <case id="focused_tests" status="PASS">
+      <score />
+      <detail>보고서·웹 전용 32/32 PASS</detail>
+    </case>
+    <case id="full_regression" status="PASS">
+      <score />
+      <detail>전체 회귀 78/78 PASS, Agent 6/6 ready</detail>
+    </case>
+  </cases>
+</qualityEvidence>

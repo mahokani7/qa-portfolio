@@ -1,0 +1,16 @@
+VOC 품질 테스트 실행 증적
+실행 유형: dashboard_content_deduplication
+실행 시각: 2026-07-15T16:56:45+09:00
+결과: 8/8 PASS
+실패: 0, 오류: 0
+최종 판정: PASS
+
+[상세 결과]
+- DASHBOARD-ONLY-SUMMARY | PASS | score= | dashboard summary remains visible only on /dashboard
+- TEST-CASES-ISOLATION | PASS | score= | /test-cases page state and dashboard exclusion verified
+- RUNS-ISOLATION | PASS | score= | /runs page state and dashboard exclusion verified
+- COMPARE-ISOLATION | PASS | score= | /compare page state and dashboard exclusion verified
+- HIDDEN-CSS-PRIORITY | PASS | score= | [hidden] display none important rule verified
+- WEB-UNIT-29 | PASS | score= | 29/29 web tests passed
+- FULL-REGRESSION-75 | PASS | score= | 75/75 tests passed
+- AGENT-READINESS | PASS | score= | 6/6 gRPC agents ready

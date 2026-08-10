@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="text_input_design" tests="10" failures="0" errors="0" timestamp="2026-07-15T16:31:40+09:00">
+  <testcase classname="voc.quality.text_input_design" name="INPUT-DESIGN-RUNS" />
+  <testcase classname="voc.quality.text_input_design" name="INPUT-DESIGN-TEST-CASES" />
+  <testcase classname="voc.quality.text_input_design" name="INPUT-DESIGN-APPROVALS" />
+  <testcase classname="voc.quality.text_input_design" name="INPUT-DESIGN-SETTINGS" />
+  <testcase classname="voc.quality.text_input_design" name="INPUT-DESIGN-SINGLE" />
+  <testcase classname="voc.quality.text_input_design" name="INPUT-DESIGN-BATCH" />
+  <testcase classname="voc.quality.text_input_design" name="INPUT-DESIGN-QUALITY" />
+  <testcase classname="voc.quality.text_input_design" name="WEB-UNIT-26" />
+  <testcase classname="voc.quality.text_input_design" name="FULL-REGRESSION-72" />
+  <testcase classname="voc.quality.text_input_design" name="AGENT-READINESS" />
+</testsuite>

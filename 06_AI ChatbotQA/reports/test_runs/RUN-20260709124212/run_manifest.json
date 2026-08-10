@@ -1,0 +1,24 @@
+{
+  "id": "RUN-20260709124212",
+  "started_at": "2026-07-09 12:42:12",
+  "ended_at": "2026-07-09 12:42:21",
+  "duration_seconds": 9.03,
+  "selected_uploads": [
+    {
+      "id": "UP-20260708152448-004",
+      "filename": "TC-05_AI_Edu_Info_Chatbot.json",
+      "file_type": "JSON",
+      "row_count": 5,
+      "uploaded_at": "2026-07-08 15:24:48",
+      "source_path": "C:\\qaeduc\\ai_quality_final_project_Team3\\data\\testcases\\uploads\\UP-20260708152448-004\\TC-05_AI_Edu_Info_Chatbot.json",
+      "run_source_path": ""
+    }
+  ],
+  "test_case_count": 5,
+  "reports": {
+    "json": "C:\\260710_project\\ai_quality_final_project_Team3\\reports\\test_runs\\RUN-20260709124212\\reports\\evaluation_result.json",
+    "csv": "C:\\260710_project\\ai_quality_final_project_Team3\\reports\\test_runs\\RUN-20260709124212\\reports\\evaluation_result.csv",
+    "markdown": "C:\\260710_project\\ai_quality_final_project_Team3\\reports\\test_runs\\RUN-20260709124212\\reports\\final_quality_report.md",
+    "archive": ""
+  }
+}

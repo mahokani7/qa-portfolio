@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="quality_gate_ecommerce" generatedAt="2026-07-15T17:16:59+09:00" verdict="FAIL">
+  <summary total="3" passed="2" failed="1" errors="0" averageScore="96.7" />
+  <cases>
+    <case id="GATE-AUTOMATED-SUITE" status="PASS">
+      <score>100</score>
+      <detail>30/30 PASS</detail>
+    </case>
+    <case id="GATE-RED-TEAM" status="PASS">
+      <score>100.0</score>
+      <detail>20/20 PASS</detail>
+    </case>
+    <case id="GATE-OFFLINE-E2E" status="FAIL">
+      <score>90.2</score>
+      <detail>1/1 PASS · 평균 90.2점 · 기준 95.0점</detail>
+    </case>
+  </cases>
+</qualityEvidence>

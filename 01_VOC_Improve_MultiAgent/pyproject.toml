@@ -1,0 +1,57 @@
+[project]
+name = "12-voc-improve"
+version = "0.1.0"
+description = "VOC(Voice of Customer) 분석 멀티에이전트 시스템 (gRPC + MCP)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    # gRPC 런타임 및 Protocol Buffers (에이전트 간 통신, voc_pb2/voc_pb2_grpc)
+    "grpcio>=1.60",
+    "protobuf>=5.26",
+    # MCP 서버 프레임워크 (Claude Desktop/Cursor 연동, utils/tools.py의 FastMCP)
+    "mcp>=1.2",
+    # LLM SDK — 요약/평가/비평/질의해석(OpenAI), 정책 생성(Anthropic)
+    # OpenAI Responses API(client.responses.create) 사용 → 1.66 이상 필요
+    "openai>=1.66",
+    "anthropic>=0.39",
+    # .env 파일 로드 (run_all.py의 선택적 환경변수 주입)
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+# 개발용: voc.proto로부터 voc_pb2.py / voc_pb2_grpc.py를 재생성할 때만 필요
+# 사용:  python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. voc.proto
+dev = [
+    "grpcio-tools>=1.60",
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    # Starlette 1.x TestClient가 사용하는 후속 HTTP 테스트 클라이언트
+    "httpx2>=0.1",
+]
+# 웹 UI(web_app.py)로 브라우저에서 테스트할 때 필요
+web = [
+    "starlette>=0.37",
+    "uvicorn>=0.30",
+    "Pillow>=10.0",
+    "reportlab>=4.0",
+    "python-docx>=1.1",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# 단일 프로젝트 구조(에이전트/유틸 패키지 + 루트 모듈)이므로 자동 탐색을 제한합니다.
+py-modules = ["main", "run_all", "e2e_runner", "grpc_server", "presentation", "voc_pb2", "voc_pb2_grpc"]
+packages = ["agents", "llm_wrappers", "utils", "quality_diagnosis"]
+
+[tool.setuptools.package-data]
+quality_diagnosis = ["*.json", "*.csv", "*.md"]
+
+[tool.setuptools.data-files]
+"." = ["voc.csv", "test_cases.txt", "test_cases_insurance.jsonl"]
+"data" = ["data/voc_insurance.csv"]
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"

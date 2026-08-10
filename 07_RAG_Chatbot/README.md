@@ -1,0 +1,78 @@
+# RAG 챗봇 — 문서 기반 근거 답변 + 품질평가
+
+LLM이 아는 척 답하지 않고, 업로드한 문서에서 근거를 찾아 그 근거와 함께 답하도록 만든 RAG(Retrieval-Augmented Generation) 챗봇입니다. 문서 업로드 → 분할 → 임베딩·ChromaDB 저장 → 질문 시 유사 문서 검색 → 근거 기반 답변 흐름이며, LLM Judge가 답변 품질(이해도·정확성·관련성·표현성)을 자동 평가합니다.
+
+## 주요 기능
+
+- Streamlit 3탭 구성: **챗봇**(질문·답변·근거 확인) / **문서 관리**(업로드·벡터DB 재구축) / **품질평가 안내**
+- LangChain + ChromaDB 기반 문서 검색(RAG)
+- OpenAI Judge Agent(`evaluator_agent.py`)가 루브릭 평가 → 감점 평가 → 최종 점수(5점 만점) 산출
+- 평가 결과를 JSON/Markdown 리포트로 저장(`run_tests.py`, `run_evaluation.py`)
+- `documents/` — 교육과정 안내 문서, `uploads/` — 국민취업지원제도 매뉴얼 PDF 등 샘플 데이터 포함, **ChromaDB 인덱스도 이미 만들어져 있어 재색인 없이 바로 질의 가능**
+
+## 프로젝트 구조
+
+```text
+.
+├─ app.py               # Streamlit 챗봇 UI(챗봇/문서관리/품질평가 3탭)
+├─ ingest.py             # 문서 → 벡터DB 재구축 CLI
+├─ rag_service.py        # 문서 검색 + 답변 생성 로직
+├─ evaluator_agent.py    # OpenAI Judge — 답변 품질 평가
+├─ run_tests.py          # 테스트 케이스 일괄 실행 + 리포트 생성
+├─ run_evaluation.py     # 평가 파이프라인
+├─ report.py
+├─ documents/            # RAG 원본 문서(샘플)
+├─ uploads/               # 업로드 PDF(샘플)
+├─ chroma_db/             # 벡터DB(이미 생성됨)
+├─ reports/               # 평가 결과 리포트
+└─ requirements.txt
+```
+
+## 준비 사항
+
+- Python 3.10+
+- OpenAI API 키(임베딩 + LLM 응답 + Judge 평가에 사용)
+
+## 설치 및 실행
+
+```powershell
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+py -m pip install -r requirements.txt
+Copy-Item .env.example .env
+# .env에 OPENAI_API_KEY 입력
+```
+
+### 1) 챗봇 UI 실행
+
+```powershell
+streamlit run app.py
+```
+
+브라우저에서 **http://localhost:8501** 접속. 좌측 사이드바에서 문서를 업로드하고 벡터DB를 만든 뒤, 챗봇 탭에서 질문하면 근거 문서와 함께 답변을 확인할 수 있습니다. (샘플 `documents/`·`uploads/`와 사전 생성된 `chroma_db/`가 포함되어 있어 새 문서 없이도 바로 질의해 볼 수 있습니다.)
+
+### 2) 문서를 새로 추가·수정했다면 벡터DB 재생성
+
+```powershell
+Remove-Item -Recurse -Force chroma_db
+py ingest.py
+```
+
+### 3) 품질평가 파이프라인 실행 (별도 터미널)
+
+```powershell
+py run_tests.py
+```
+
+`test_cases.json`의 질문을 순회하며 RAG 답변 생성 → Judge 평가 → `reports/`에 JSON/Markdown 리포트를 저장합니다.
+
+## 환경변수
+
+| 변수 | 필수 여부 | 설명 |
+|---|---:|---|
+| `OPENAI_API_KEY` | 필수 | 임베딩(ChromaDB), 답변 생성, Judge 평가에 모두 사용 |
+
+## 참고
+
+- 처음 실습 시 PDF보다 `.txt`/`.md` 문서로 시작하면 오류가 적습니다.
+- 문서에 없는 내용은 "제공된 문서에서는 확인할 수 없습니다"처럼 답하는 것이 정상입니다 — 근거 없이 그럴듯하게 답을 지어내지 않는 것이 RAG의 핵심입니다.

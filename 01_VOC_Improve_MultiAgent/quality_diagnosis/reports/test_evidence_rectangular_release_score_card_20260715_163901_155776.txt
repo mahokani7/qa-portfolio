@@ -1,0 +1,17 @@
+VOC 품질 테스트 실행 증적
+실행 유형: rectangular_release_score_card
+실행 시각: 2026-07-15T16:39:01+09:00
+결과: 9/9 PASS
+실패: 0, 오류: 0
+최종 판정: PASS
+
+[상세 결과]
+- DASHBOARD-HTTP | PASS | score= | GET /dashboard 200
+- RECTANGULAR-SCORE-CARD | PASS | score= | 220px rectangular card with 10px radius verified
+- LARGE-SCORE-VALUE | PASS | score= | 3.5rem score value and /100 unit verified
+- RELEASE-STATUS | PASS | score= | APPROVED/HOLD state and accessible label verified
+- RESPONSIVE-SCORE-CARD | PASS | score= | mobile full-width score card verified
+- CURRENT-ASSESSMENT | PASS | score= | 89.0/100, threshold 95.0, HOLD data verified
+- WEB-UNIT-27 | PASS | score= | 27/27 web tests passed
+- FULL-REGRESSION-73 | PASS | score= | 73/73 tests passed
+- AGENT-READINESS | PASS | score= | 6/6 gRPC agents ready

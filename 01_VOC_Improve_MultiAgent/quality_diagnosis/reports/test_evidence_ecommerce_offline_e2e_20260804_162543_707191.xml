@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="ecommerce_offline_e2e" generatedAt="2026-08-04T16:25:43+09:00" verdict="PASS">
+  <summary total="1" passed="1" failed="0" errors="0" averageScore="88.7" />
+  <cases>
+    <case id="SINGLE-FALLBACK-CB37DB6A" status="PASS">
+      <score>88.7</score>
+      <detail />
+    </case>
+  </cases>
+</qualityEvidence>

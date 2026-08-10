@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="llm_judge_deterministic" tests="2" failures="2" errors="0" timestamp="2026-07-15T14:46:42+09:00">
+  <testcase classname="voc.quality.llm_judge_deterministic" name="TC-01">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_deterministic" name="TC-04">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+</testsuite>

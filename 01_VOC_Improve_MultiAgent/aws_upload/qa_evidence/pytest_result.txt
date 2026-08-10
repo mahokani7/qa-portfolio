@@ -1,0 +1,43 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.9, pytest-8.3.5, pluggy-1.6.0 -- C:\qaeduc2\VOC_Improve_1\.venv\Scripts\python.exe
+metadata: {'Python': '3.12.9', 'Platform': 'Windows-10-10.0.19045-SP0', 'Packages': {'pytest': '8.3.5', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.14.2', 'asyncio': '0.25.3', 'html': '4.2.0', 'metadata': '3.1.1'}}
+rootdir: C:\qaeduc2\VOC_Improve_1
+configfile: pyproject.toml
+plugins: anyio-4.14.2, asyncio-0.25.3, html-4.2.0, metadata-3.1.1
+asyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=function
+collecting ... collected 32 items
+
+quality_diagnosis/test_agent_unit.py::AgentUnitTests::test_anthropic_wrapper_uses_central_policy_model PASSED [  3%]
+quality_diagnosis/test_agent_unit.py::AgentUnitTests::test_critic_returns_structured_risk_decision PASSED [  6%]
+quality_diagnosis/test_agent_unit.py::AgentUnitTests::test_evaluator_selects_highest_scored_candidate PASSED [  9%]
+quality_diagnosis/test_agent_unit.py::AgentUnitTests::test_improver_returns_actionable_policy PASSED [ 12%]
+quality_diagnosis/test_agent_unit.py::AgentUnitTests::test_interpreter_extracts_expected_search_terms PASSED [ 15%]
+quality_diagnosis/test_agent_unit.py::AgentUnitTests::test_retriever_returns_relevant_voc PASSED [ 18%]
+quality_diagnosis/test_agent_unit.py::AgentUnitTests::test_summarizer_creates_three_candidates PASSED [ 21%]
+quality_diagnosis/test_pipeline_e2e.py::PipelineE2ETests::test_feature_cases_complete_expected_agent_path PASSED [ 25%]
+quality_diagnosis/test_pipeline_e2e.py::PipelineE2ETests::test_quality_catalog_contains_exactly_twenty_cases PASSED [ 28%]
+quality_diagnosis/test_fault_tolerance.py::SynchronousFaultTests::test_all_ready_existing_agents_are_reused PASSED [ 31%]
+quality_diagnosis/test_fault_tolerance.py::SynchronousFaultTests::test_missing_api_key_is_not_hidden PASSED [ 34%]
+quality_diagnosis/test_fault_tolerance.py::SynchronousFaultTests::test_missing_csv_returns_explicit_file_error PASSED [ 37%]
+quality_diagnosis/test_fault_tolerance.py::SynchronousFaultTests::test_partial_port_occupation_remains_a_conflict PASSED [ 40%]
+quality_diagnosis/test_fault_tolerance.py::SynchronousFaultTests::test_port_collision_is_detected_before_process_start PASSED [ 43%]
+quality_diagnosis/test_fault_tolerance.py::AsynchronousFaultTests::test_empty_search_stops_safely_without_hallucination PASSED [ 46%]
+quality_diagnosis/test_fault_tolerance.py::AsynchronousFaultTests::test_rejected_api_key_error_is_preserved PASSED [ 50%]
+quality_diagnosis/test_fault_tolerance.py::AsynchronousFaultTests::test_retriever_shutdown_reports_connection_failure PASSED [ 53%]
+quality_diagnosis/test_fault_tolerance.py::AsynchronousFaultTests::test_slow_agent_returns_deadline_exceeded PASSED [ 56%]
+quality_diagnosis/test_mcp_tools.py::MCPToolTests::test_analyze_voc_returns_standard_success_shape PASSED [ 59%]
+quality_diagnosis/test_mcp_tools.py::MCPToolTests::test_health_check_reports_csv_metadata PASSED [ 62%]
+quality_diagnosis/test_mcp_tools.py::MCPToolTests::test_health_check_reports_missing_csv PASSED [ 65%]
+quality_diagnosis/test_mcp_tools.py::MCPToolTests::test_invalid_task_returns_error_instead_of_exception PASSED [ 68%]
+quality_diagnosis/test_mcp_tools.py::MCPToolTests::test_natural_language_tool_uses_keyword_fallback PASSED [ 71%]
+quality_diagnosis/test_llm_judge.py::LLMJudgeTests::test_critical_violation_forces_immediate_hold PASSED [ 75%]
+quality_diagnosis/test_llm_judge.py::LLMJudgeTests::test_rubric_total_is_one_hundred PASSED [ 78%]
+quality_diagnosis/test_llm_judge.py::LLMJudgeTests::test_score_at_95_is_deployable PASSED [ 81%]
+quality_diagnosis/test_llm_judge.py::LLMJudgeTests::test_score_below_95_is_conditionally_held PASSED [ 84%]
+quality_diagnosis/test_llm_judge.py::LLMJudgeTests::test_scores_are_clamped_to_each_dimension PASSED [ 87%]
+quality_diagnosis/test_release_defects.py::ReleaseDefectRegressionTests::test_api_429_is_classified_with_recovery_guidance PASSED [ 90%]
+quality_diagnosis/test_release_defects.py::ReleaseDefectRegressionTests::test_provider_auth_error_is_redacted_and_classified PASSED [ 93%]
+quality_diagnosis/test_release_defects.py::ReleaseDefectRegressionTests::test_provider_branch_uses_anthropic_messages_interface PASSED [ 96%]
+quality_diagnosis/test_release_defects.py::ReleaseDefectRegressionTests::test_provider_credit_error_has_billing_guidance PASSED [100%]
+
+============================= 32 passed in 8.03s ==============================

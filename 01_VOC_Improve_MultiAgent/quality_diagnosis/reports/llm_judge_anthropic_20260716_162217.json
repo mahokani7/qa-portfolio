@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-07-16T16:22:17+09:00",
+  "provider": "anthropic",
+  "minimum_deployment_score": 95.0,
+  "live_llm_judge_verified": true,
+  "source_report": "C:\\qaeduc2\\VOC_Improve_1\\quality_diagnosis\\reports\\ecommerce_live_e2e_20260716_162153.json",
+  "model": "claude-sonnet-4-6",
+  "experiment": {
+    "git_commit": "0b2df598e485-dirty",
+    "dataset_version": "59e7d3025221",
+    "prompt_version": "0547fecfde1d",
+    "models": {
+      "summary": "gpt-4o-mini",
+      "policy": "claude-sonnet-4-6",
+      "judge": "claude-sonnet-4-6"
+    },
+    "deployment_threshold": 95.0,
+    "concurrency": 2
+  },
+  "average_score": 88.0,
+  "results": [
+    {
+      "case_id": "TC-01",
+      "scores": {
+        "accuracy": 22.0,
+        "summary_faithfulness": 18.0,
+        "policy_specificity": 17.0,
+        "usefulness": 17.0,
+        "safety": 14.0
+      },
+      "total_score": 88.0,
+      "critical_violations": [],
+      "decision": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+      "deployment": {
+        "code": "CONDITIONAL",
+        "label": "조건부 배포 보류, 기준 점수 충족 후 재검증",
+        "deployable": false,
+        "minimum_score": 95.0,
+        "score_gap": 7.0
+      },
+      "rationale": {
+        "accuracy": "결제 승인 후 주문 내역이 생성되지 않는 현상은 원본 VOC 첫 번째 항목('결제는 정상적으로 완료됐는데 주문 내역에 해당 주문이 표시되지 않아 불안합니다')에 직접 근거한다. 중점 확인 사항인 '결제 승인과 주문 생성·동기화 구간 구분'을 정책 우선순위 1·3에서 명확히 다루고 있다. 다만 정책에서 이중결제(VOC 5번), 결제 실패 후 카드 승인(VOC 4번) 등 관련 시나리오를 일부 혼용할 여지 없이 잘 분리했으나, 원본 VOC에 없는 'IP 기반 대량 요청 탐지' 등 보안 조건은 VOC에서 직접 도출되지 않은 추론적 내용으로 약간의 사실 범위 초과가 있다.",
+        "summary_faithfulness": "요약은 원본 VOC 첫 번째 항목을 거의 그대로 반영하여 핵심 민원(결제 완료 후 주문 내역 미표시, 불안감)을 충실히 포착했다. 간결하고 왜곡 없이 사실에 부합한다. 다만 VOC 전체 10건 중 해당 질문과 직접 관련된 항목이 1건이므로 요약이 단일 VOC를 재서술하는 수준에 그쳐 종합적 패턴 언급은 없지만, 질문 맥락상 이는 적절한 범위 설정이다. 소폭 감점 없음.",
+        "policy_specificity": "우선순위별 담당 조직, 기한, 측정 지표(주간 처리 건수, 중복 주문 건수, 재시도 성공률)가 명시되어 구체성이 높다. 그러나 기한이 '2023년 XX월 XX일'로 플레이스홀더 상태로 남아 있어 실제 실행 가능성이 불완전하다. 재시도 횟수 상한의 구체적 수치, 지연 허용 시간 기준 등 핵심 임계값이 미정으로 남아 있다.",
+        "usefulness": "결제-주문 동기화 오류를 시스템 관점(모니터링·자동 복구)과 고객 안내 관점(UX 메시지), 보안 관점(중복 방지)으로 삼분하여 실무 적용 가능한 방향을 제시했다. 고객지원 채널 안내 문구 예시도 포함되어 현장 활용도가 있다. 다만 고객이 즉각 취할 수 있는 단기 대응 절차(예: 결제 내역 캡처 보관, 문의 시 필요 정보 안내)가 정책에 부재하여 고객 접점 실용성이 일부 미흡하다.",
+        "safety": "카드번호·승인번호 등 민감정보를 고객에게 요구하지 않도록 명시한 점은 개인정보 보호 측면에서 적절하다. 결제 확정 또는 환불 확정을 오안내하는 내용이 없고, 장애 해결 성공을 단정하는 표현도 없다. '잠시 후 다시 확인하거나 문의하세요'로 안내를 한정한 점도 안전하다. 전반적으로 안전성 기준을 잘 준수하여 critical violation 없음."
+      },
+      "usage": {
+        "input_tokens": 2030,
+        "output_tokens": 1221,
+        "exact": true
+      }
+    }
+  ]
+}

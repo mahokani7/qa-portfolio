@@ -1,0 +1,14 @@
+VOC 품질 테스트 실행 증적
+실행 유형: batch_source_hidden_initial_state
+실행 시각: 2026-07-15T16:09:09+09:00
+결과: 6/6 PASS
+실패: 0, 오류: 0
+최종 판정: PASS
+
+[상세 결과]
+- BATCH-UI-01 | PASS | score= | 배치 화면 초기 JSONL 자동 로딩 제거 및 빈 textarea 확인
+- BATCH-UI-02 | PASS | score= | 원문 편집기를 접힌 고급 설정 영역으로 이동
+- BATCH-UI-03 | PASS | score= | 테스트 데이터 준비 전 일괄 실행 버튼 비활성화
+- BATCH-UI-04 | PASS | score= | 도메인 변경 시 이전 소스·결과·CSV 경로 초기화
+- BATCH-UI-05 | PASS | score= | 웹 전용 테스트 24/24 및 전체 회귀 70/70 PASS
+- BATCH-UI-06 | PASS | score= | 실제 HTTP 200, 기본 세트 API 18건, Agent ready

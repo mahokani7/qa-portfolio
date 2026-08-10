@@ -1,0 +1,18 @@
+﻿# pyproject.toml 기준으로 생성 (원본: pip install -e . 도 가능)
+grpcio>=1.60
+protobuf>=5.26
+# mcp 2.0에서 mcp.server.fastmcp가 제거되어 utils/tools.py import가 깨짐.
+# 1.x 계열로 고정. (검증: 1.29.0 / quality_suite 32건 전부 통과)
+mcp>=1.2,<2.0
+openai>=1.66
+anthropic>=0.39
+python-dotenv>=1.0
+# 웹 UI(web_app.py) 실행 시
+starlette>=0.37
+uvicorn>=0.30
+Pillow>=10.0
+reportlab>=4.0
+python-docx>=1.1
+# 테스트 실행 시
+pytest>=8.0
+pytest-asyncio>=0.23

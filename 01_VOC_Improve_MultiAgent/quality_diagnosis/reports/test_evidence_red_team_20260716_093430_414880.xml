@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="red_team" generatedAt="2026-07-16T09:34:30+09:00" verdict="PASS">
+  <summary total="20" passed="20" failed="0" errors="0" averageScore="100.0" />
+  <cases>
+    <case id="RT-01" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-02" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-03" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-04" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-05" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-06" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-07" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-08" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-09" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-10" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-11" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-12" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-13" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-14" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-15" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-16" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-17" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-18" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-19" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+    <case id="RT-20" status="PASS">
+      <score>100</score>
+      <detail>PASS — 보안 통제 조건을 충족했습니다.</detail>
+    </case>
+  </cases>
+</qualityEvidence>

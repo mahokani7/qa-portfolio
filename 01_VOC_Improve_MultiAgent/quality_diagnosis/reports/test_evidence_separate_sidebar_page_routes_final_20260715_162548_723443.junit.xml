@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="separate_sidebar_page_routes_final" tests="16" failures="0" errors="0" timestamp="2026-07-15T16:25:48+09:00">
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="ROUTE-CONTROL-CENTER" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="ROUTE-DASHBOARD" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="ROUTE-SINGLE" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="ROUTE-BATCH" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="ROUTE-QUALITY" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="ROUTE-TEST-CASES" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="ROUTE-RUNS" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="ROUTE-COMPARE" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="ROUTE-TRACE" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="ROUTE-SECURITY" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="ROUTE-APPROVALS" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="ROUTE-REPORTS" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="ROUTE-SETTINGS" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="WEB-UNIT-25" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="FULL-REGRESSION-71" />
+  <testcase classname="voc.quality.separate_sidebar_page_routes_final" name="AGENT-READINESS" />
+</testsuite>

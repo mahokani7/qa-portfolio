@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="quality_suite" generatedAt="2026-07-15T15:34:59+09:00" verdict="PASS">
+  <summary total="30" passed="30" failed="0" errors="0" averageScore="" />
+  <cases>
+    <case id="quality_diagnosis.test_agent_unit.AgentUnitTests.test_anthropic_wrapper_uses_central_policy_model" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_agent_unit.AgentUnitTests.test_critic_returns_structured_risk_decision" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_agent_unit.AgentUnitTests.test_evaluator_selects_highest_scored_candidate" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_agent_unit.AgentUnitTests.test_improver_returns_actionable_policy" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_agent_unit.AgentUnitTests.test_interpreter_extracts_expected_search_terms" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_agent_unit.AgentUnitTests.test_retriever_returns_relevant_voc" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_agent_unit.AgentUnitTests.test_summarizer_creates_three_candidates" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_pipeline_e2e.PipelineE2ETests.test_feature_cases_complete_expected_agent_path" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_pipeline_e2e.PipelineE2ETests.test_quality_catalog_contains_exactly_twenty_cases" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_empty_search_stops_safely_without_hallucination" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_rejected_api_key_error_is_preserved" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_retriever_shutdown_reports_connection_failure" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_slow_agent_returns_deadline_exceeded" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_all_ready_existing_agents_are_reused" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_missing_api_key_is_not_hidden" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_missing_csv_returns_explicit_file_error" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_partial_port_occupation_remains_a_conflict" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_port_collision_is_detected_before_process_start" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_mcp_tools.MCPToolTests.test_analyze_voc_returns_standard_success_shape" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_mcp_tools.MCPToolTests.test_health_check_reports_csv_metadata" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_mcp_tools.MCPToolTests.test_health_check_reports_missing_csv" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_mcp_tools.MCPToolTests.test_invalid_task_returns_error_instead_of_exception" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_mcp_tools.MCPToolTests.test_natural_language_tool_uses_keyword_fallback" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_llm_judge.LLMJudgeTests.test_critical_violation_forces_immediate_hold" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_llm_judge.LLMJudgeTests.test_rubric_total_is_one_hundred" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_llm_judge.LLMJudgeTests.test_score_at_95_is_deployable" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_llm_judge.LLMJudgeTests.test_score_below_95_is_conditionally_held" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_llm_judge.LLMJudgeTests.test_scores_are_clamped_to_each_dimension" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_api_429_is_classified_with_recovery_guidance" status="PASS">
+      <score />
+      <detail />
+    </case>
+    <case id="quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_provider_branch_uses_anthropic_messages_interface" status="PASS">
+      <score />
+      <detail />
+    </case>
+  </cases>
+</qualityEvidence>

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="separate_sidebar_page_routes" generatedAt="2026-07-15T16:20:44+09:00" verdict="PASS">
+  <summary total="15" passed="15" failed="0" errors="0" averageScore="" />
+  <cases>
+    <case id="ROUTE-DASHBOARD" status="PASS">
+      <score />
+      <detail>HTTP 200, page state and sidebar link verified</detail>
+    </case>
+    <case id="ROUTE-SINGLE" status="PASS">
+      <score />
+      <detail>HTTP 200, page state and sidebar link verified</detail>
+    </case>
+    <case id="ROUTE-BATCH" status="PASS">
+      <score />
+      <detail>HTTP 200, page state and sidebar link verified</detail>
+    </case>
+    <case id="ROUTE-QUALITY" status="PASS">
+      <score />
+      <detail>HTTP 200, page state and sidebar link verified</detail>
+    </case>
+    <case id="ROUTE-TEST-CASES" status="PASS">
+      <score />
+      <detail>HTTP 200, page state and sidebar link verified</detail>
+    </case>
+    <case id="ROUTE-RUNS" status="PASS">
+      <score />
+      <detail>HTTP 200, page state and sidebar link verified</detail>
+    </case>
+    <case id="ROUTE-COMPARE" status="PASS">
+      <score />
+      <detail>HTTP 200, page state and sidebar link verified</detail>
+    </case>
+    <case id="ROUTE-TRACE" status="PASS">
+      <score />
+      <detail>HTTP 200, page state and sidebar link verified</detail>
+    </case>
+    <case id="ROUTE-SECURITY" status="PASS">
+      <score />
+      <detail>HTTP 200, page state and sidebar link verified</detail>
+    </case>
+    <case id="ROUTE-APPROVALS" status="PASS">
+      <score />
+      <detail>HTTP 200, page state and sidebar link verified</detail>
+    </case>
+    <case id="ROUTE-REPORTS" status="PASS">
+      <score />
+      <detail>HTTP 200, page state and sidebar link verified</detail>
+    </case>
+    <case id="ROUTE-SETTINGS" status="PASS">
+      <score />
+      <detail>HTTP 200, page state and sidebar link verified</detail>
+    </case>
+    <case id="WEB-UNIT-25" status="PASS">
+      <score />
+      <detail>25/25 web tests passed</detail>
+    </case>
+    <case id="FULL-REGRESSION-71" status="PASS">
+      <score />
+      <detail>71/71 tests passed</detail>
+    </case>
+    <case id="AGENT-READINESS" status="PASS">
+      <score />
+      <detail>6/6 gRPC agents ready</detail>
+    </case>
+  </cases>
+</qualityEvidence>

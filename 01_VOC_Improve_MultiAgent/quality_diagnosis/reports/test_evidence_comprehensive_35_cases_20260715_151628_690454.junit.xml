@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="comprehensive_35_cases" tests="35" failures="0" errors="0" timestamp="2026-07-15T15:16:28+09:00">
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-01" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-02" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-03" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-04" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-05" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-06" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-07" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-08" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-09" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-10" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-11" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-12" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-13" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-14" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-15" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-16" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-17" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="TC-18" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-01" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-02" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-03" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-04" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-05" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-06" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-07" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-08" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-09" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-10" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-11" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-12" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-13" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-14" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="INS-15" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="DEF-BRANCH-01" />
+  <testcase classname="voc.quality.comprehensive_35_cases" name="DEF-429-01" />
+</testsuite>

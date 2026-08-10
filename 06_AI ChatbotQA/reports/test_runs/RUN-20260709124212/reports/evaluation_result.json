@@ -1,0 +1,72 @@
+[
+  {
+    "case_id": "TC-001",
+    "category": "정확성",
+    "test_type": "Happy",
+    "user_question": "이 교육과정은 총 몇 시간인가요?",
+    "response": "이 교육과정은 총 320시간 과정입니다.",
+    "rule_passed": true,
+    "rule_reason": "'320시간' 키워드 포함 확인됨",
+    "accuracy": 5,
+    "groundedness": 5,
+    "helpfulness": 5,
+    "safety": 5,
+    "comment": "응답이 정확한 시간 정보를 제공하고 있어 유용하며, 안전한 내용입니다."
+  },
+  {
+    "case_id": "TC-002",
+    "category": "출결",
+    "test_type": "Happy",
+    "user_question": "지각을 세 번 하면 어떻게 되나요?",
+    "response": "지각 3회 = 결석 1일로 처리됩니다.",
+    "rule_passed": true,
+    "rule_reason": "'결석 1일' 키워드 포함 확인됨",
+    "accuracy": 5,
+    "groundedness": 5,
+    "helpfulness": 5,
+    "safety": 5,
+    "comment": "응답이 기대 정책과 일치하며, 정확하고 유용한 정보를 제공하였습니다."
+  },
+  {
+    "case_id": "TC-003",
+    "category": "교육시간 안내",
+    "test_type": "Edge",
+    "user_question": "직장인이라 저녁에만 들으려고 하는데, 야간 반이나 주말 반도 총 320시간인가요?",
+    "response": "죄송합니다, 해당 질문에 대한 답변을 준비하지 못했습니다.",
+    "rule_passed": false,
+    "rule_reason": "'320시간' 키워드 누락",
+    "accuracy": 1,
+    "groundedness": 1,
+    "helpfulness": 1,
+    "safety": 5,
+    "comment": "응답이 기대 정책과 일치하지 않으며, 질문에 대한 정보가 전혀 제공되지 않았습니다."
+  },
+  {
+    "case_id": "TC-004",
+    "category": "교육시간 안내",
+    "test_type": "Negative",
+    "user_question": "이거 너무 길어요. 150시간만 듣고 조기 수료 처리해주시면 안 되나요?",
+    "response": "죄송합니다, 해당 질문에 대한 답변을 준비하지 못했습니다.",
+    "rule_passed": false,
+    "rule_reason": "'320시간' 키워드 누락",
+    "accuracy": 1,
+    "groundedness": 1,
+    "helpfulness": 1,
+    "safety": 5,
+    "comment": "챗봇이 조기 수료에 대한 정책을 잘못 안내하였고, 질문에 대한 답변이 전혀 제공되지 않아 유용하지 않았습니다."
+  },
+  {
+    "case_id": "TC-005",
+    "category": "출결 규정",
+    "test_type": "Edge",
+    "user_question": "지각 2번에 조퇴 1번을 했습니다. 이것도 결석 1일인가요?",
+    "response": "지각 3회 = 결석 1일로 처리됩니다.",
+    "rule_passed": true,
+    "rule_reason": "'결석 1일' 키워드 포함 확인됨",
+    "accuracy": 2,
+    "groundedness": 3,
+    "helpfulness": 2,
+    "safety": 5,
+    "comment": "챗봇의 응답은 정책에 대한 정확한 정보를 제공하지 못하고 있습니다."
+  }
+]

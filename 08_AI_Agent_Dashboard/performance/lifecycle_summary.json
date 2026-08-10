@@ -1,0 +1,232 @@
+{
+  "root_group": {
+    "path": "",
+    "id": "d41d8cd98f00b204e9800998ecf8427e",
+    "groups": [
+      {
+        "path": "::setup",
+        "id": "5c0f8025f7e0b6654089e5b00e950f1a",
+        "groups": [],
+        "checks": [
+            {
+              "name": "health API 상태코드가 200인가",
+              "path": "::setup::health API 상태코드가 200인가",
+              "id": "9aaf6d3588c1571c4a1108cc42d8eedf",
+              "passes": 1,
+              "fails": 0
+            }
+          ],
+        "name": "setup"
+      }
+    ],
+    "checks": [
+      {
+        "name": "VU 요청 성공",
+        "path": "::VU 요청 성공",
+        "id": "09f7895fc369d96e1535d58776049427",
+        "passes": 30,
+        "fails": 0
+      }
+    ],
+    "name": ""
+  },
+  "options": {
+    "noColor": false,
+    "summaryTrendStats": [
+      "avg",
+      "min",
+      "med",
+      "max",
+      "p(90)",
+      "p(95)"
+    ],
+    "summaryTimeUnit": ""
+  },
+  "state": {
+    "isStdOutTTY": true,
+    "isStdErrTTY": true,
+    "testRunDurationMs": 10054.5589
+  },
+  "metrics": {
+    "http_req_connecting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 0.08542580645161289,
+        "min": 0,
+        "med": 0,
+        "max": 1.036,
+        "p(90)": 0.5374,
+        "p(95)": 0.5374
+      }
+    },
+    "http_reqs": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 31,
+        "rate": 3.083178517160012
+      }
+    },
+    "http_req_blocked": {
+      "values": {
+        "avg": 0.08542580645161289,
+        "min": 0,
+        "med": 0,
+        "max": 1.036,
+        "p(90)": 0.5374,
+        "p(95)": 0.5374
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "http_req_failed": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 31
+      }
+    },
+    "iteration_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 1004.5918533333336,
+        "min": 1002.7484,
+        "med": 1004.4373,
+        "max": 1006.7237,
+        "p(90)": 1006.2634400000001,
+        "p(95)": 1006.7237
+      }
+    },
+    "vus_max": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "value": 3,
+        "min": 3,
+        "max": 3
+      }
+    },
+    "http_req_tls_handshaking": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 0,
+        "min": 0,
+        "med": 0,
+        "max": 0,
+        "p(90)": 0,
+        "p(95)": 0
+      }
+    },
+    "checks": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 1,
+        "passes": 31,
+        "fails": 0
+      }
+    },
+    "vus": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "value": 3,
+        "min": 3,
+        "max": 3
+      }
+    },
+    "http_req_duration{expected_response:true}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 4.089090322580644,
+        "min": 2.379,
+        "med": 3.8365,
+        "max": 5.8488,
+        "p(90)": 5.561,
+        "p(95)": 5.7049
+      }
+    },
+    "http_req_sending": {
+      "values": {
+        "avg": 0.012690322580645163,
+        "min": 0,
+        "med": 0,
+        "max": 0.3934,
+        "p(90)": 0,
+        "p(95)": 0
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "http_req_waiting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 4.041174193548385,
+        "min": 2.379,
+        "med": 3.8365,
+        "max": 5.8488,
+        "p(90)": 5.561,
+        "p(95)": 5.7049
+      }
+    },
+    "data_sent": {
+      "contains": "data",
+      "values": {
+        "count": 2356,
+        "rate": 234.3215673041609
+      },
+      "type": "counter"
+    },
+    "http_req_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "max": 5.8488,
+        "p(90)": 5.561,
+        "p(95)": 5.7049,
+        "avg": 4.089090322580644,
+        "min": 2.379,
+        "med": 3.8365
+      }
+    },
+    "http_req_receiving": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 0.035225806451612905,
+        "min": 0,
+        "med": 0,
+        "max": 0.5382,
+        "p(90)": 0,
+        "p(95)": 0.2769
+      }
+    },
+    "data_received": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 4340,
+        "rate": 431.64499240240167
+      }
+    },
+    "iterations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 30,
+        "rate": 2.983721145638721
+      }
+    }
+  },
+  "setup_data": {
+    "baseUrl": "http://127.0.0.1:8000",
+    "testName": "k6 라이프사이클 실습"
+  }
+}

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="ecommerce_offline_e2e" generatedAt="2026-07-15T14:49:41+09:00" verdict="PASS">
+  <summary total="5" passed="5" failed="0" errors="0" averageScore="91.3" />
+  <cases>
+    <case id="TC-01" status="PASS">
+      <score>90.2</score>
+      <detail />
+    </case>
+    <case id="TC-02" status="PASS">
+      <score>88.5</score>
+      <detail />
+    </case>
+    <case id="TC-03" status="PASS">
+      <score>96.2</score>
+      <detail />
+    </case>
+    <case id="TC-04" status="PASS">
+      <score>91.8</score>
+      <detail />
+    </case>
+    <case id="TC-05" status="PASS">
+      <score>89.7</score>
+      <detail />
+    </case>
+  </cases>
+</qualityEvidence>

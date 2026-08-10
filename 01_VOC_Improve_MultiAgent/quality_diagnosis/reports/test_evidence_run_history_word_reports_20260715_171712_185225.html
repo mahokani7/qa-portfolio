@@ -1,0 +1,11 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<title>VOC 테스트 증적 - run_history_word_reports</title><style>
+body{font-family:'Malgun Gothic',sans-serif;margin:36px;background:#f4f7fb;color:#172033}
+.card{background:white;border:1px solid #d8e0eb;border-radius:14px;padding:22px;margin-bottom:18px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric{background:#eef5ff;padding:16px;border-radius:10px}
+.metric b{display:block;font-size:28px;color:#0758a8}table{width:100%;border-collapse:collapse}th,td{border:1px solid #d8e0eb;padding:9px;text-align:left}
+th{background:#163a5f;color:white}.pass{color:#087a3e;font-weight:bold}.fail{color:#c52c2c;font-weight:bold}
+</style></head><body><h1>VOC 품질 테스트 실행 증적</h1><p>2026-07-15T17:17:12+09:00 · run_history_word_reports</p>
+<div class="metrics"><div class="metric">전체<b>8</b></div><div class="metric">PASS<b>8</b></div><div class="metric">FAIL<b>0</b></div><div class="metric">판정<b>PASS</b></div></div>
+<div class="card"><h2>상세 결과</h2><table><thead><tr><th>ID</th><th>상태</th><th>점수</th><th>상세</th></tr></thead><tbody><tr><td>history_index</td><td class='pass'>PASS</td><td></td><td>SQLite 영속 이력 91건 조회 및 필터 확인</td></tr><tr><td>full_run_detail</td><td class='pass'>PASS</td><td></td><td>선택 Run의 원본 source_payload, 케이스 raw, metrics, 6-Agent Trace 반환</td></tr><tr><td>history_ui</td><td class='pass'>PASS</td><td></td><td>/runs 전체 데이터 상세 패널, JSON 복사, Word 다운로드 동작 연결</td></tr><tr><td>word_report</td><td class='pass'>PASS</td><td></td><td>첨부 11페이지 PDF의 결론·구조·정량분석·전체 케이스·잔여위험·QA Lead·부록 형식 반영</td></tr><tr><td>docx_integrity</td><td class='pass'>PASS</td><td></td><td>실제 Run 보고서 64,042 bytes, ZIP 정상, 제목·부록·8개 표 확인</td></tr><tr><td>web_api</td><td class='pass'>PASS</td><td></td><td>Word API HTTP 200 및 DOCX MIME/attachment 확인</td></tr><tr><td>focused_tests</td><td class='pass'>PASS</td><td></td><td>보고서·웹 전용 32/32 PASS</td></tr><tr><td>full_regression</td><td class='pass'>PASS</td><td></td><td>전체 회귀 78/78 PASS, Agent 6/6 ready</td></tr></tbody></table></div>
+</body></html>

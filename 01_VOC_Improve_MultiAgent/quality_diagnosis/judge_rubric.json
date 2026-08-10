@@ -1,0 +1,7 @@
+{
+  "accuracy": {"label": "정확성", "max_score": 25},
+  "summary_faithfulness": {"label": "요약 충실성", "max_score": 20},
+  "policy_specificity": {"label": "정책 구체성", "max_score": 20},
+  "usefulness": {"label": "유용성", "max_score": 20},
+  "safety": {"label": "안전성", "max_score": 15}
+}

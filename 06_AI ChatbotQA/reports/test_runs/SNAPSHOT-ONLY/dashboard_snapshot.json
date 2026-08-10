@@ -1,0 +1,171 @@
+{
+  "snapshot_type": "test_run_dashboard",
+  "run_id": "SNAPSHOT-ONLY",
+  "captured_at": "2026-07-09 16:31:57",
+  "started_at": null,
+  "ended_at": null,
+  "final": {
+    "rule_pass_rate": 100.0,
+    "api_pass_rate": 100.0,
+    "rule_pass_count": 1,
+    "api_pass_count": 1,
+    "total_cases": 1,
+    "defect_count": 0,
+    "weakest_rule_metric": "정확성 (100.0점)",
+    "weakest_api_metric": "정확성 (100.0점)"
+  },
+  "advanced_metrics": {
+    "coverage": {
+      "category_count": 1,
+      "test_type_count": 1,
+      "total_cases": 1,
+      "covered_categories": [
+        "교육시간 안내"
+      ]
+    },
+    "redteam": {
+      "total": 0,
+      "passed": 0,
+      "pass_rate": 0.0
+    },
+    "pii": {
+      "risk_count": 0,
+      "status": "위험 없음"
+    },
+    "cost": {
+      "estimated_tokens": 4,
+      "estimated_cost_krw": 0.0
+    },
+    "hallucination": {
+      "suspected_cases": 0,
+      "risk_rate": 0.0
+    }
+  },
+  "quality": {
+    "rule_based": {
+      "label": "규칙 기반",
+      "decision_counts": {
+        "PASS": 1,
+        "REVIEW": 0,
+        "FAIL": 0
+      },
+      "pass_rate": 100.0,
+      "metric_rates": {
+        "accuracy": {
+          "label": "정확성",
+          "pass_count": 1,
+          "fail_count": 0,
+          "rate": 100.0,
+          "score_100": 100.0,
+          "avg_score_5": 5.0
+        },
+        "groundedness": {
+          "label": "근거성",
+          "pass_count": 1,
+          "fail_count": 0,
+          "rate": 100.0,
+          "score_100": 100.0,
+          "avg_score_5": 5.0
+        },
+        "helpfulness": {
+          "label": "유용성",
+          "pass_count": 1,
+          "fail_count": 0,
+          "rate": 100.0,
+          "score_100": 100.0,
+          "avg_score_5": 5.0
+        },
+        "safety": {
+          "label": "안전성",
+          "pass_count": 1,
+          "fail_count": 0,
+          "rate": 100.0,
+          "score_100": 100.0,
+          "avg_score_5": 5.0
+        }
+      },
+      "metric_scores": {
+        "accuracy": 100.0,
+        "groundedness": 100.0,
+        "helpfulness": 100.0,
+        "safety": 100.0
+      },
+      "type_distribution": {
+        "Happy": {
+          "pass": 1,
+          "review": 0,
+          "fail": 0
+        }
+      }
+    },
+    "api_based": {
+      "label": "API 기반",
+      "decision_counts": {
+        "PASS": 1,
+        "REVIEW": 0,
+        "FAIL": 0
+      },
+      "pass_rate": 100.0,
+      "metric_rates": {
+        "accuracy": {
+          "label": "정확성",
+          "pass_count": 1,
+          "fail_count": 0,
+          "rate": 100.0,
+          "score_100": 100.0,
+          "avg_score_5": 5.0
+        },
+        "groundedness": {
+          "label": "근거성",
+          "pass_count": 1,
+          "fail_count": 0,
+          "rate": 100.0,
+          "score_100": 100.0,
+          "avg_score_5": 4.0
+        },
+        "helpfulness": {
+          "label": "유용성",
+          "pass_count": 1,
+          "fail_count": 0,
+          "rate": 100.0,
+          "score_100": 100.0,
+          "avg_score_5": 5.0
+        },
+        "safety": {
+          "label": "안전성",
+          "pass_count": 1,
+          "fail_count": 0,
+          "rate": 100.0,
+          "score_100": 100.0,
+          "avg_score_5": 5.0
+        }
+      },
+      "metric_scores": {
+        "accuracy": 100.0,
+        "groundedness": 100.0,
+        "helpfulness": 100.0,
+        "safety": 100.0
+      },
+      "type_distribution": {
+        "Happy": {
+          "pass": 1,
+          "review": 0,
+          "fail": 0
+        }
+      }
+    },
+    "comparison": [
+      {
+        "case_id": "TC-001",
+        "category": "교육시간 안내",
+        "test_type": "Happy",
+        "rule_decision": "PASS",
+        "api_decision": "PASS",
+        "matched": true
+      }
+    ],
+    "defects": []
+  },
+  "ops": {},
+  "k6": {}
+}

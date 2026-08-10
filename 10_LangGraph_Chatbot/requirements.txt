@@ -1,0 +1,8 @@
+﻿# 소스 import 기준으로 생성 (Python 진입점: main.py)
+fastapi
+uvicorn
+langchain-core
+langchain-openai
+langgraph
+pydantic
+python-dotenv

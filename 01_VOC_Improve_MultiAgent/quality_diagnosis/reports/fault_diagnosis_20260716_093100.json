@@ -1,0 +1,136 @@
+{
+  "generated_at": "2026-07-16T09:31:00+09:00",
+  "total": 9,
+  "passed": 9,
+  "failed": 0,
+  "errors": 0,
+  "successful": true,
+  "results": [
+    {
+      "test": "FAULT-01",
+      "status": "PASS",
+      "detail": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+      "test_descriptor": {
+        "case_number": "FAULT-01",
+        "title": "빈 검색 결과의 안전 중단 검증",
+        "category": "장애 허용성 테스트",
+        "description": "Retriever 결과가 0건일 때 후속 LLM이 사실을 만들어내지 않고 중단하는지 확인합니다.",
+        "expected": "NO_MATCHING_VOC 오류로 종료하고 요약·정책을 생성하지 않아야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "FAULT-02",
+      "status": "PASS",
+      "detail": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+      "test_descriptor": {
+        "case_number": "FAULT-02",
+        "title": "API 인증 거부 원인 보존 검증",
+        "category": "장애 허용성 테스트",
+        "description": "외부 모델 API가 인증을 거부했을 때 실제 실패 원인이 보존되는지 확인합니다.",
+        "expected": "인증 오류를 성공이나 모호한 일반 오류로 변환하지 않아야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "FAULT-03",
+      "status": "PASS",
+      "detail": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+      "test_descriptor": {
+        "case_number": "FAULT-03",
+        "title": "Retriever 중단 연결 실패 검증",
+        "category": "장애 허용성 테스트",
+        "description": "Retriever 서비스가 꺼진 상황에서 파이프라인 오류 처리를 확인합니다.",
+        "expected": "성공으로 위장하지 않고 gRPC 연결 실패를 반환해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "FAULT-04",
+      "status": "PASS",
+      "detail": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+      "test_descriptor": {
+        "case_number": "FAULT-04",
+        "title": "Agent 지연 시간 제한 검증",
+        "category": "장애 허용성 테스트",
+        "description": "Agent 응답이 제한 시간을 넘을 때 무한 대기하지 않는지 확인합니다.",
+        "expected": "DEADLINE_EXCEEDED 시간 초과 오류를 반환해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "FAULT-05",
+      "status": "PASS",
+      "detail": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+      "test_descriptor": {
+        "case_number": "FAULT-05",
+        "title": "기존 6개 Agent 재사용 검증",
+        "category": "장애 허용성 테스트",
+        "description": "6001~6006의 정상 Agent가 이미 실행 중일 때 중복 실행 판단을 확인합니다.",
+        "expected": "충돌이 아니라 already_running 재사용 상태로 판정해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "FAULT-06",
+      "status": "PASS",
+      "detail": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+      "test_descriptor": {
+        "case_number": "FAULT-06",
+        "title": "API 키 누락 오류 표시 검증",
+        "category": "장애 허용성 테스트",
+        "description": "필수 API 키가 없을 때 시작 실패 원인이 명확히 표시되는지 확인합니다.",
+        "expected": "키 누락을 성공이나 모호한 오류로 숨기지 않아야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "FAULT-07",
+      "status": "PASS",
+      "detail": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+      "test_descriptor": {
+        "case_number": "FAULT-07",
+        "title": "CSV 누락 파일 오류 검증",
+        "category": "장애 허용성 테스트",
+        "description": "존재하지 않는 VOC CSV를 지정했을 때 파일 검증을 확인합니다.",
+        "expected": "누락된 파일 경로와 명확한 파일 오류를 반환해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "FAULT-08",
+      "status": "PASS",
+      "detail": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+      "test_descriptor": {
+        "case_number": "FAULT-08",
+        "title": "일부 Agent 포트 충돌 검증",
+        "category": "장애 허용성 테스트",
+        "description": "6개 중 일부 포트만 점유된 비정상 상태의 시작 판단을 확인합니다.",
+        "expected": "정상 재사용이 아니라 conflict 상태로 판정해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "FAULT-09",
+      "status": "PASS",
+      "detail": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+      "test_descriptor": {
+        "case_number": "FAULT-09",
+        "title": "프로세스 시작 전 포트 충돌 검증",
+        "category": "장애 허용성 테스트",
+        "description": "사용 중인 포트를 가진 상태에서 Agent 프로세스를 시작하려는 상황을 확인합니다.",
+        "expected": "자식 프로세스 시작 전에 포트 충돌을 탐지해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "scored": "false"
+      }
+    }
+  ]
+}

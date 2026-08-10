@@ -1,0 +1,17 @@
+.git
+.pytest_tmp
+__pycache__/
+*.pyc
+*.pyo
+.coverage*
+.env
+.venv/
+venv/
+data/lock
+reports/formal_reports/
+reports/test_*.pdf
+reports/test_*.docx
+reports/test_*.html
+# Windows 전용 바이너리 — 리눅스 이미지에서 실행되지 않으므로 넣지 않는다.
+# 컨테이너에서 부하 테스트를 돌리려면 grafana/k6 이미지를 별도 서비스로 띄운다.
+tools/k6.exe

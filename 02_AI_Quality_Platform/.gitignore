@@ -1,0 +1,55 @@
+# Secrets and local environment variables
+.env
+.env.*
+!.env.example
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# Virtual environments
+.venv/
+.venv_test/
+venv/
+env/
+ENV/
+
+# Test, coverage, and performance output
+.coverage
+.coverage.*
+htmlcov/
+tests_output/
+performance/results/
+
+# Runtime-generated data and reports
+logs/
+*.log
+data/knowledge/chroma_db/
+quality/reports/history/
+quality/reports/preview_*.html
+quality/reports/dashboard.html
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+~$*
+
+# IDE and OS metadata
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local tooling
+.codex/
+.agents/
+

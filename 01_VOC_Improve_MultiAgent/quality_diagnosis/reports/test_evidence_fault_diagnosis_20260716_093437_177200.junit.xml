@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="fault_diagnosis" tests="9" failures="0" errors="0" timestamp="2026-07-16T09:34:37+09:00">
+  <testcase classname="voc.quality.fault_diagnosis" name="FAULT-01" />
+  <testcase classname="voc.quality.fault_diagnosis" name="FAULT-02" />
+  <testcase classname="voc.quality.fault_diagnosis" name="FAULT-03" />
+  <testcase classname="voc.quality.fault_diagnosis" name="FAULT-04" />
+  <testcase classname="voc.quality.fault_diagnosis" name="FAULT-05" />
+  <testcase classname="voc.quality.fault_diagnosis" name="FAULT-06" />
+  <testcase classname="voc.quality.fault_diagnosis" name="FAULT-07" />
+  <testcase classname="voc.quality.fault_diagnosis" name="FAULT-08" />
+  <testcase classname="voc.quality.fault_diagnosis" name="FAULT-09" />
+</testsuite>

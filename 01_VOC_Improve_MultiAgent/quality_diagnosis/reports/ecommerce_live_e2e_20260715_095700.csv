@@ -1,0 +1,4 @@
+﻿case_id,passed,score,retrieval_relevance,summary_faithfulness,policy_actionability,safety,deployment,hard_blockers,interpreter_accuracy,retriever_relevance,summarizer_faithfulness,evaluator_validity,critic_risk_detection,improver_actionability,agent_handoff,fault_and_logging,performance,total_duration_ms,error_code
+TC-01,True,93.2,1.0,0.75,1.0,True,배포 가능,,12.0,15.0,11.2,10.0,10.0,15.0,10.0,5.0,5.0,44592.01,
+TC-02,True,91.5,0.6,1.0,1.0,True,배포 가능,,12.5,9.0,15.0,10.0,10.0,15.0,10.0,5.0,5.0,39534.67,
+TC-03,True,89.9,1.0,0.75,1.0,True,"조건부 배포 가능, 개선 후 재검증",,11.2,15.0,11.2,7.5,10.0,15.0,10.0,5.0,5.0,41158.22,

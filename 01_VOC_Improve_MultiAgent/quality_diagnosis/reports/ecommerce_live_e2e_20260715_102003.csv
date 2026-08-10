@@ -1,0 +1,2 @@
+﻿case_id,passed,score,retrieval_relevance,summary_faithfulness,policy_actionability,safety,deployment,hard_blockers,interpreter_accuracy,retriever_relevance,summarizer_faithfulness,evaluator_validity,critic_risk_detection,improver_actionability,agent_handoff,fault_and_logging,performance,total_duration_ms,error_code
+TC-13,True,84.2,0.4286,0.6583,1.0,True,"조건부 배포 가능, 개선 후 재검증",,12.9,6.4,9.9,10.0,10.0,15.0,10.0,5.0,5.0,48036.09,

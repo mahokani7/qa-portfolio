@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "MountVocImproveReports",
+      "Effect": "Allow",
+      "Action": [
+        "elasticfilesystem:ClientMount",
+        "elasticfilesystem:ClientWrite"
+      ],
+      "Resource": "arn:aws:elasticfilesystem:ap-northeast-2:<AWS_ACCOUNT_ID>:file-system/<EFS_FILE_SYSTEM_ID>",
+      "Condition": {
+        "StringEquals": {
+          "elasticfilesystem:AccessPointArn": "arn:aws:elasticfilesystem:ap-northeast-2:<AWS_ACCOUNT_ID>:access-point/<EFS_ACCESS_POINT_ID>"
+        }
+      }
+    }
+  ]
+}

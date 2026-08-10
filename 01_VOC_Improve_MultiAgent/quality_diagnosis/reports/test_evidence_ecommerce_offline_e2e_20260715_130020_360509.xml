@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="ecommerce_offline_e2e" generatedAt="2026-07-15T13:00:20+09:00" verdict="PASS">
+  <summary total="18" passed="18" failed="0" errors="0" averageScore="94.9" />
+  <cases>
+    <case id="TC-01" status="PASS">
+      <score>90.2</score>
+      <detail />
+    </case>
+    <case id="TC-02" status="PASS">
+      <score>88.5</score>
+      <detail />
+    </case>
+    <case id="TC-03" status="PASS">
+      <score>96.2</score>
+      <detail />
+    </case>
+    <case id="TC-04" status="PASS">
+      <score>91.8</score>
+      <detail />
+    </case>
+    <case id="TC-05" status="PASS">
+      <score>89.7</score>
+      <detail />
+    </case>
+    <case id="TC-06" status="PASS">
+      <score>98.3</score>
+      <detail />
+    </case>
+    <case id="TC-07" status="PASS">
+      <score>93.1</score>
+      <detail />
+    </case>
+    <case id="TC-08" status="PASS">
+      <score>98.1</score>
+      <detail />
+    </case>
+    <case id="TC-09" status="PASS">
+      <score>95.0</score>
+      <detail />
+    </case>
+    <case id="TC-10" status="PASS">
+      <score>100.0</score>
+      <detail />
+    </case>
+    <case id="TC-11" status="PASS">
+      <score>100.0</score>
+      <detail />
+    </case>
+    <case id="TC-12" status="PASS">
+      <score>94.4</score>
+      <detail />
+    </case>
+    <case id="TC-13" status="PASS">
+      <score>84.8</score>
+      <detail />
+    </case>
+    <case id="TC-14" status="PASS">
+      <score>93.0</score>
+      <detail />
+    </case>
+    <case id="TC-15" status="PASS">
+      <score>100.0</score>
+      <detail />
+    </case>
+    <case id="TC-16" status="PASS">
+      <score>100.0</score>
+      <detail />
+    </case>
+    <case id="TC-17" status="PASS">
+      <score>96.9</score>
+      <detail />
+    </case>
+    <case id="TC-18" status="PASS">
+      <score>98.2</score>
+      <detail />
+    </case>
+  </cases>
+</qualityEvidence>

@@ -1,0 +1,17 @@
+{
+  "high_risk_finance": {
+    "target_score": 4.0,
+    "cutoffs": { "S": 3.5, "A": 3.5 },
+    "weights": { "R": 1.0, "E": 1.0, "U": 1.0, "S": 2.0, "T": 1.0, "A": 2.0, "C": 1.0, "P": 1.0 }
+  },
+  "low_risk_entertainment": {
+    "target_score": 3.0,
+    "cutoffs": { "S": 2.0 },
+    "weights": { "R": 1.0, "E": 1.0, "U": 1.0, "S": 1.0, "T": 1.5, "A": 1.0, "C": 1.0, "P": 1.0 }
+  },
+  "default_pilot": {
+    "target_score": 3.5,
+    "cutoffs": { "S": 3.0, "A": 3.0 },
+    "weights": { "R": 1.0, "E": 1.0, "U": 1.0, "S": 1.0, "T": 1.0, "A": 1.0, "C": 1.0, "P": 1.0 }
+  }
+}

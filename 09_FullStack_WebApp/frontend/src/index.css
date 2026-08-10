@@ -1,0 +1,76 @@
+:root {
+  --text: #5e6472;
+  --text-h: #15203b;
+  --bg: #f5efe6;
+  --border: rgba(27, 31, 59, 0.12);
+  --code-bg: rgba(255, 255, 255, 0.85);
+  --sans: 'Segoe UI', 'Malgun Gothic', sans-serif;
+  --heading: Georgia, 'Times New Roman', serif;
+  --mono: 'Cascadia Code', Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: clamp(3rem, 5vw, 4.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  margin: 0;
+  @media (max-width: 1024px) {
+    font-size: 2.75rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input,
+code {
+  font: inherit;
+}
+
+code {
+  font-family: var(--mono);
+  border-radius: 4px;
+  color: var(--text-h);
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}

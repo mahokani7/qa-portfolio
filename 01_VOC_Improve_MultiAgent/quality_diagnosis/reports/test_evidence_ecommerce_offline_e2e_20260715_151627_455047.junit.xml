@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="ecommerce_offline_e2e" tests="18" failures="0" errors="0" timestamp="2026-07-15T15:16:27+09:00">
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-01" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-02" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-03" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-04" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-05" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-06" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-07" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-08" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-09" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-10" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-11" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-12" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-13" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-14" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-15" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-16" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-17" />
+  <testcase classname="voc.quality.ecommerce_offline_e2e" name="TC-18" />
+</testsuite>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="rectangular_release_score_card" tests="9" failures="0" errors="0" timestamp="2026-07-15T16:39:01+09:00">
+  <testcase classname="voc.quality.rectangular_release_score_card" name="DASHBOARD-HTTP" />
+  <testcase classname="voc.quality.rectangular_release_score_card" name="RECTANGULAR-SCORE-CARD" />
+  <testcase classname="voc.quality.rectangular_release_score_card" name="LARGE-SCORE-VALUE" />
+  <testcase classname="voc.quality.rectangular_release_score_card" name="RELEASE-STATUS" />
+  <testcase classname="voc.quality.rectangular_release_score_card" name="RESPONSIVE-SCORE-CARD" />
+  <testcase classname="voc.quality.rectangular_release_score_card" name="CURRENT-ASSESSMENT" />
+  <testcase classname="voc.quality.rectangular_release_score_card" name="WEB-UNIT-27" />
+  <testcase classname="voc.quality.rectangular_release_score_card" name="FULL-REGRESSION-73" />
+  <testcase classname="voc.quality.rectangular_release_score_card" name="AGENT-READINESS" />
+</testsuite>

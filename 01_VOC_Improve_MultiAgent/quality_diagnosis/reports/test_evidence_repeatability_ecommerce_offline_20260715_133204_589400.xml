@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="repeatability_ecommerce_offline" generatedAt="2026-07-15T13:32:04+09:00" verdict="PASS">
+  <summary total="1" passed="1" failed="0" errors="0" averageScore="100.0" />
+  <cases>
+    <case id="TC-01" status="PASS">
+      <score>100.0</score>
+      <detail>상태변경=False, 표준편차=0.000, 점수범위=0.0, 출력변형=1</detail>
+    </case>
+  </cases>
+</qualityEvidence>

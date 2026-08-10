@@ -1,0 +1,37 @@
+name: VOC QA Quality Gate
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  deterministic-quality-gate:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install application and web dependencies
+        run: python -m pip install -e ".[web]"
+      - name: Run unit and web regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Run deterministic E2E baseline
+        run: python e2e_runner.py --mode offline --domain ecommerce --cases test_cases.txt --csv voc.csv --concurrency 2
+      - name: Enforce 95-point QA gate
+        run: python -m quality_diagnosis.quality_gate --domain ecommerce --minimum-score 95
+      - name: Upload TXT XML HTML and JUnit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: voc-quality-evidence
+          path: |
+            quality_diagnosis/reports/*.json
+            quality_diagnosis/reports/*.txt
+            quality_diagnosis/reports/*.xml
+            quality_diagnosis/reports/*.html
+          if-no-files-found: error

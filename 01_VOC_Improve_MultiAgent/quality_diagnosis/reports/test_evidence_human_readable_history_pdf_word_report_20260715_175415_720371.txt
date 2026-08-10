@@ -1,0 +1,13 @@
+VOC 품질 테스트 실행 증적
+실행 유형: human_readable_history_pdf_word_report
+실행 시각: 2026-07-15T17:54:15+09:00
+결과: 5/5 PASS
+실패: 0, 오류: 0
+최종 판정: PASS
+
+[상세 결과]
+- web-human-readable-run-result | PASS | score= | Run metadata, cases, expectations, rubric, RAG and agent results rendered as values
+- word-pdf-structure | PASS | score= | PDF-aligned sections 1-8 and QA Lead final opinion generated
+- source-exclusion | PASS | score= | Raw source payload and JSON appendix excluded from UI and DOCX
+- word-download-api | PASS | score= | HTTP 200 DOCX 47340 bytes with actual run data
+- full-regression | PASS | score= | 79 of 79 tests passed

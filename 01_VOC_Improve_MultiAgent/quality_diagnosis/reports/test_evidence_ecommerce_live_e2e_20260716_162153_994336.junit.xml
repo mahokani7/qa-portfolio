@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="ecommerce_live_e2e" tests="1" failures="0" errors="0" timestamp="2026-07-16T16:21:53+09:00">
+  <testcase classname="voc.quality.ecommerce_live_e2e" name="TC-01" />
+</testsuite>

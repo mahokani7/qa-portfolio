@@ -1,0 +1,50 @@
+test_anthropic_wrapper_uses_central_policy_model (quality_diagnosis.test_agent_unit.AgentUnitTests.test_anthropic_wrapper_uses_central_policy_model) ... ok
+test_critic_returns_structured_risk_decision (quality_diagnosis.test_agent_unit.AgentUnitTests.test_critic_returns_structured_risk_decision) ... ok
+test_evaluator_selects_highest_scored_candidate (quality_diagnosis.test_agent_unit.AgentUnitTests.test_evaluator_selects_highest_scored_candidate) ... ok
+test_improver_returns_actionable_policy (quality_diagnosis.test_agent_unit.AgentUnitTests.test_improver_returns_actionable_policy) ... ok
+test_interpreter_extracts_expected_search_terms (quality_diagnosis.test_agent_unit.AgentUnitTests.test_interpreter_extracts_expected_search_terms) ... ok
+test_retriever_returns_relevant_voc (quality_diagnosis.test_agent_unit.AgentUnitTests.test_retriever_returns_relevant_voc) ... ok
+test_summarizer_creates_three_candidates (quality_diagnosis.test_agent_unit.AgentUnitTests.test_summarizer_creates_three_candidates) ... ok
+test_feature_cases_complete_expected_agent_path (quality_diagnosis.test_pipeline_e2e.PipelineE2ETests.test_feature_cases_complete_expected_agent_path) ... ok
+test_quality_catalog_contains_exactly_twenty_cases (quality_diagnosis.test_pipeline_e2e.PipelineE2ETests.test_quality_catalog_contains_exactly_twenty_cases) ... ok
+test_empty_search_stops_safely_without_hallucination (quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_empty_search_stops_safely_without_hallucination)
+검색 결과가 없으면 이후 LLM 단계를 실행하거나 원인을 지어내면 안 됩니다. ... ok
+test_rejected_api_key_error_is_preserved (quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_rejected_api_key_error_is_preserved)
+외부 API가 인증을 거부하면 원인 문자열을 숨기지 않아야 합니다. ... ok
+test_retriever_shutdown_reports_connection_failure (quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_retriever_shutdown_reports_connection_failure)
+Retriever가 꺼져 있으면 성공으로 위장하지 않고 gRPC 오류를 반환해야 합니다. ... ok
+test_slow_agent_returns_deadline_exceeded (quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_slow_agent_returns_deadline_exceeded)
+Agent 응답 지연은 무한 대기하지 않고 제한 시간 오류가 되어야 합니다. ... ok
+test_all_ready_existing_agents_are_reused (quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_all_ready_existing_agents_are_reused)
+6개 포트가 모두 정상 gRPC이면 충돌 오류가 아니라 재사용 상태여야 합니다. ... ok
+test_missing_api_key_is_not_hidden (quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_missing_api_key_is_not_hidden)
+API 키 미설정은 일반 성공이나 모호한 오류로 처리하면 안 됩니다. ... ok
+test_missing_csv_returns_explicit_file_error (quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_missing_csv_returns_explicit_file_error)
+CSV가 없으면 파일 오류가 경로와 함께 명확히 드러나야 합니다. ... ok
+test_partial_port_occupation_remains_a_conflict (quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_partial_port_occupation_remains_a_conflict)
+일부 Agent만 남은 상태는 정상 재사용으로 오인하면 안 됩니다. ... ok
+test_port_collision_is_detected_before_process_start (quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_port_collision_is_detected_before_process_start)
+동일 포트를 이미 사용 중이면 실행 관리자 사전 점검에서 탐지해야 합니다. ... ok
+test_analyze_voc_returns_standard_success_shape (quality_diagnosis.test_mcp_tools.MCPToolTests.test_analyze_voc_returns_standard_success_shape) ... ok
+test_health_check_reports_csv_metadata (quality_diagnosis.test_mcp_tools.MCPToolTests.test_health_check_reports_csv_metadata) ... ok
+test_health_check_reports_missing_csv (quality_diagnosis.test_mcp_tools.MCPToolTests.test_health_check_reports_missing_csv) ... ok
+test_invalid_task_returns_error_instead_of_exception (quality_diagnosis.test_mcp_tools.MCPToolTests.test_invalid_task_returns_error_instead_of_exception) ... ok
+test_natural_language_tool_uses_keyword_fallback (quality_diagnosis.test_mcp_tools.MCPToolTests.test_natural_language_tool_uses_keyword_fallback) ... ok
+test_critical_violation_forces_immediate_hold (quality_diagnosis.test_llm_judge.LLMJudgeTests.test_critical_violation_forces_immediate_hold) ... ok
+test_rubric_total_is_one_hundred (quality_diagnosis.test_llm_judge.LLMJudgeTests.test_rubric_total_is_one_hundred) ... ok
+test_score_at_95_is_deployable (quality_diagnosis.test_llm_judge.LLMJudgeTests.test_score_at_95_is_deployable) ... ok
+test_score_below_95_is_conditionally_held (quality_diagnosis.test_llm_judge.LLMJudgeTests.test_score_below_95_is_conditionally_held) ... ok
+test_scores_are_clamped_to_each_dimension (quality_diagnosis.test_llm_judge.LLMJudgeTests.test_scores_are_clamped_to_each_dimension) ... ok
+test_api_429_is_classified_with_recovery_guidance (quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_api_429_is_classified_with_recovery_guidance)
+API 429 장애: 일반 500이 아니라 재시도 가능한 사용량 제한으로 분류합니다. ... ok
+test_provider_auth_error_is_redacted_and_classified (quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_provider_auth_error_is_redacted_and_classified)
+API 인증 오류는 키를 숨기고 재시작 안내가 있는 401로 변환합니다. ... ok
+test_provider_branch_uses_anthropic_messages_interface (quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_provider_branch_uses_anthropic_messages_interface)
+분기 인터페이스 오류: Anthropic 전용 인수만 전달해야 합니다. ... ok
+test_provider_credit_error_has_billing_guidance (quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_provider_credit_error_has_billing_guidance)
+크레딧 부족은 일반 502가 아닌 결제 복구가 가능한 오류로 분류합니다. ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 3.209s
+
+OK

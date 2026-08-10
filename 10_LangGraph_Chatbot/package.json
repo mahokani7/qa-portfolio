@@ -1,0 +1,20 @@
+{
+  "name": "project_2026",
+  "version": "1.0.0",
+  "description": "LangChain LangGraph 기반 에듀봇 실습 프로젝트",
+  "main": "edubot.js",
+  "type": "module",
+  "scripts": {
+    "start": "node edubot.js",
+    "dev": "node edubot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@langchain/core": "^0.3.80",
+    "@langchain/langgraph": "^0.3.12",
+    "@langchain/openai": "^0.6.17",
+    "dotenv": "^17.4.2"
+  }
+}

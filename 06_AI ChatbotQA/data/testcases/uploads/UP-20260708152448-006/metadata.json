@@ -1,0 +1,11 @@
+{
+  "id": "UP-20260708152448-006",
+  "filename": "TC-10_AI_Edu_Info_Chatbot.json",
+  "file_type": "JSON",
+  "row_count": 10,
+  "column_count": 6,
+  "columns": "case_id, category, test_type, user_question, expected_keyword, expected_policy",
+  "uploaded_at": "2026-07-08 15:24:48",
+  "source_path": "C:\\qaeduc\\ai_quality_final_project_Team3\\data\\testcases\\uploads\\UP-20260708152448-006\\TC-10_AI_Edu_Info_Chatbot.json",
+  "parsed_path": "C:\\qaeduc\\ai_quality_final_project_Team3\\data\\testcases\\uploads\\UP-20260708152448-006\\parsed_records.json"
+}

@@ -1,0 +1,522 @@
+{
+  "generated_at": "2026-08-04T15:37:20+09:00",
+  "total": 32,
+  "passed": 32,
+  "failed": 0,
+  "errors": 0,
+  "successful": true,
+  "results": [
+    {
+      "test": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_anthropic_wrapper_uses_central_policy_model",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "AGENT-01",
+        "title": "Anthropic 정책 모델 중앙 설정 검증",
+        "category": "Agent 단위 테스트",
+        "description": "Anthropic 래퍼가 개별 하드코딩 대신 공통 정책 모델 설정을 사용하는지 확인합니다.",
+        "expected": "AnthropicChat의 모델과 중앙 MODEL_POLICY 값이 같아야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_anthropic_wrapper_uses_central_policy_model",
+        "source": "quality_diagnosis/test_agent_unit.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_critic_returns_structured_risk_decision",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "AGENT-02",
+        "title": "Critic 구조화 위험 판정 검증",
+        "category": "Agent 단위 테스트",
+        "description": "Critic이 요약 검토 결과를 수정 여부·수정 지침·추가 샘플 여부로 구조화하는지 확인합니다.",
+        "expected": "need_refine은 Boolean, edits는 목록, ask_more_samples는 Boolean이어야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_critic_returns_structured_risk_decision",
+        "source": "quality_diagnosis/test_agent_unit.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_evaluator_selects_highest_scored_candidate",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "AGENT-03",
+        "title": "Evaluator 최고 점수 후보 선택 검증",
+        "category": "Agent 단위 테스트",
+        "description": "S0·S1·S2 요약 후보를 결정적 Evaluator에 전달해 최고점 후보 선택 규칙을 확인합니다.",
+        "expected": "winner가 S0이고 S0 점수가 모든 후보 점수 중 최고점이어야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_evaluator_selects_highest_scored_candidate",
+        "source": "quality_diagnosis/test_agent_unit.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_improver_returns_actionable_policy",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "AGENT-04",
+        "title": "Improver 실행 가능한 정책 생성 검증",
+        "category": "Agent 단위 테스트",
+        "description": "결제 후 주문 반영 지연 요약으로 담당·일정·목표 지표가 있는 정책을 생성하는지 확인합니다.",
+        "expected": "정책에 담당, 1주 이내 일정, 목표 지표가 모두 포함되어야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_improver_returns_actionable_policy",
+        "source": "quality_diagnosis/test_agent_unit.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_interpreter_extracts_expected_search_terms",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "AGENT-05",
+        "title": "Interpreter 검색어 추출 검증",
+        "category": "Agent 단위 테스트",
+        "description": "첫 번째 VOC 테스트 질문을 분석해 작업 유형과 검색 키워드를 추출하는지 확인합니다.",
+        "expected": "task=both, 기대 키워드 포함, max_items=10이어야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_interpreter_extracts_expected_search_terms",
+        "source": "quality_diagnosis/test_agent_unit.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_retriever_returns_relevant_voc",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "AGENT-06",
+        "title": "Retriever 관련 VOC 검색 검증",
+        "category": "Agent 단위 테스트",
+        "description": "결제·주문 키워드로 CSV를 검색해 관련 고객 불만을 반환하는지 확인합니다.",
+        "expected": "검색 결과가 존재하고 최소 한 건에 결제 또는 주문 키워드가 포함되어야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_retriever_returns_relevant_voc",
+        "source": "quality_diagnosis/test_agent_unit.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_summarizer_creates_three_candidates",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "AGENT-07",
+        "title": "Summarizer 요약 후보 3개 생성 검증",
+        "category": "Agent 단위 테스트",
+        "description": "주문 반영 지연 VOC로 S0·S1·S2 세 가지 요약 후보를 생성하는지 확인합니다.",
+        "expected": "후보 키가 S0·S1·S2이고 모든 요약이 비어 있지 않아야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_agent_unit.AgentUnitTests.test_summarizer_creates_three_candidates",
+        "source": "quality_diagnosis/test_agent_unit.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_pipeline_e2e.PipelineE2ETests.test_feature_cases_complete_expected_agent_path",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "PIPE-01",
+        "title": "18개 기능 케이스 Agent 경로 완주 검증",
+        "category": "파이프라인 E2E 테스트",
+        "description": "이커머스 18개 케이스를 오프라인 전체 파이프라인으로 실행해 단계 연결을 확인합니다.",
+        "expected": "18건 모두 PASS하고 상황별 기대 Agent 순서를 정확히 따라야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_pipeline_e2e.PipelineE2ETests.test_feature_cases_complete_expected_agent_path",
+        "source": "quality_diagnosis/test_pipeline_e2e.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_pipeline_e2e.PipelineE2ETests.test_quality_catalog_contains_exactly_twenty_cases",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "PIPE-02",
+        "title": "품질 카탈로그 20건 구성 검증",
+        "category": "파이프라인 E2E 테스트",
+        "description": "품질 테스트 카탈로그와 기대 결과 파일의 개수·고유성·장애 시나리오 구성을 확인합니다.",
+        "expected": "각 파일 20건, case_id 중복 없음, 장애 시나리오 2건이어야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_pipeline_e2e.PipelineE2ETests.test_quality_catalog_contains_exactly_twenty_cases",
+        "source": "quality_diagnosis/test_pipeline_e2e.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_empty_search_stops_safely_without_hallucination",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "FAULT-01",
+        "title": "빈 검색 결과의 안전 중단 검증",
+        "category": "장애 허용성 테스트",
+        "description": "Retriever 결과가 0건일 때 후속 LLM이 사실을 만들어내지 않고 중단하는지 확인합니다.",
+        "expected": "NO_MATCHING_VOC 오류로 종료하고 요약·정책을 생성하지 않아야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_empty_search_stops_safely_without_hallucination",
+        "source": "quality_diagnosis/test_fault_tolerance.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_rejected_api_key_error_is_preserved",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "FAULT-02",
+        "title": "API 인증 거부 원인 보존 검증",
+        "category": "장애 허용성 테스트",
+        "description": "외부 모델 API가 인증을 거부했을 때 실제 실패 원인이 보존되는지 확인합니다.",
+        "expected": "인증 오류를 성공이나 모호한 일반 오류로 변환하지 않아야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_rejected_api_key_error_is_preserved",
+        "source": "quality_diagnosis/test_fault_tolerance.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_retriever_shutdown_reports_connection_failure",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "FAULT-03",
+        "title": "Retriever 중단 연결 실패 검증",
+        "category": "장애 허용성 테스트",
+        "description": "Retriever 서비스가 꺼진 상황에서 파이프라인 오류 처리를 확인합니다.",
+        "expected": "성공으로 위장하지 않고 gRPC 연결 실패를 반환해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_retriever_shutdown_reports_connection_failure",
+        "source": "quality_diagnosis/test_fault_tolerance.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_slow_agent_returns_deadline_exceeded",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "FAULT-04",
+        "title": "Agent 지연 시간 제한 검증",
+        "category": "장애 허용성 테스트",
+        "description": "Agent 응답이 제한 시간을 넘을 때 무한 대기하지 않는지 확인합니다.",
+        "expected": "DEADLINE_EXCEEDED 시간 초과 오류를 반환해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_fault_tolerance.AsynchronousFaultTests.test_slow_agent_returns_deadline_exceeded",
+        "source": "quality_diagnosis/test_fault_tolerance.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_all_ready_existing_agents_are_reused",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "FAULT-05",
+        "title": "기존 6개 Agent 재사용 검증",
+        "category": "장애 허용성 테스트",
+        "description": "6001~6006의 정상 Agent가 이미 실행 중일 때 중복 실행 판단을 확인합니다.",
+        "expected": "충돌이 아니라 already_running 재사용 상태로 판정해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_all_ready_existing_agents_are_reused",
+        "source": "quality_diagnosis/test_fault_tolerance.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_missing_api_key_is_not_hidden",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "FAULT-06",
+        "title": "API 키 누락 오류 표시 검증",
+        "category": "장애 허용성 테스트",
+        "description": "필수 API 키가 없을 때 시작 실패 원인이 명확히 표시되는지 확인합니다.",
+        "expected": "키 누락을 성공이나 모호한 오류로 숨기지 않아야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_missing_api_key_is_not_hidden",
+        "source": "quality_diagnosis/test_fault_tolerance.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_missing_csv_returns_explicit_file_error",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "FAULT-07",
+        "title": "CSV 누락 파일 오류 검증",
+        "category": "장애 허용성 테스트",
+        "description": "존재하지 않는 VOC CSV를 지정했을 때 파일 검증을 확인합니다.",
+        "expected": "누락된 파일 경로와 명확한 파일 오류를 반환해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_missing_csv_returns_explicit_file_error",
+        "source": "quality_diagnosis/test_fault_tolerance.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_partial_port_occupation_remains_a_conflict",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "FAULT-08",
+        "title": "일부 Agent 포트 충돌 검증",
+        "category": "장애 허용성 테스트",
+        "description": "6개 중 일부 포트만 점유된 비정상 상태의 시작 판단을 확인합니다.",
+        "expected": "정상 재사용이 아니라 conflict 상태로 판정해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_partial_port_occupation_remains_a_conflict",
+        "source": "quality_diagnosis/test_fault_tolerance.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_port_collision_is_detected_before_process_start",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "FAULT-09",
+        "title": "프로세스 시작 전 포트 충돌 검증",
+        "category": "장애 허용성 테스트",
+        "description": "사용 중인 포트를 가진 상태에서 Agent 프로세스를 시작하려는 상황을 확인합니다.",
+        "expected": "자식 프로세스 시작 전에 포트 충돌을 탐지해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_fault_tolerance.SynchronousFaultTests.test_port_collision_is_detected_before_process_start",
+        "source": "quality_diagnosis/test_fault_tolerance.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_mcp_tools.MCPToolTests.test_analyze_voc_returns_standard_success_shape",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "MCP-01",
+        "title": "MCP VOC 분석 성공 응답 형식 검증",
+        "category": "MCP 도구 테스트",
+        "description": "analyze_voc 도구가 정상 실행 결과를 공통 응답 구조로 반환하는지 확인합니다.",
+        "expected": "ok=true, error_code=null이고 파라미터 실행 경로를 한 번 호출해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_mcp_tools.MCPToolTests.test_analyze_voc_returns_standard_success_shape",
+        "source": "quality_diagnosis/test_mcp_tools.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_mcp_tools.MCPToolTests.test_health_check_reports_csv_metadata",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "MCP-02",
+        "title": "MCP CSV 상태 점검 메타데이터 검증",
+        "category": "MCP 도구 테스트",
+        "description": "health_check 도구가 기본 CSV의 접근 가능성과 크기를 반환하는지 확인합니다.",
+        "expected": "ok=true이고 파일 크기가 0보다 커야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_mcp_tools.MCPToolTests.test_health_check_reports_csv_metadata",
+        "source": "quality_diagnosis/test_mcp_tools.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_mcp_tools.MCPToolTests.test_health_check_reports_missing_csv",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "MCP-03",
+        "title": "MCP 누락 CSV 오류 검증",
+        "category": "MCP 도구 테스트",
+        "description": "health_check에 없는 CSV를 전달했을 때 표준 오류 응답을 확인합니다.",
+        "expected": "ok=false이고 error_code=HEALTH_CHECK_FAILED여야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_mcp_tools.MCPToolTests.test_health_check_reports_missing_csv",
+        "source": "quality_diagnosis/test_mcp_tools.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_mcp_tools.MCPToolTests.test_invalid_task_returns_error_instead_of_exception",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "MCP-04",
+        "title": "MCP 잘못된 작업값 오류 응답 검증",
+        "category": "MCP 도구 테스트",
+        "description": "지원하지 않는 task 값을 전달했을 때 예외 대신 표준 오류를 반환하는지 확인합니다.",
+        "expected": "ok=false이고 ANALYZE_VOC_FAILED 오류 코드를 반환해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_mcp_tools.MCPToolTests.test_invalid_task_returns_error_instead_of_exception",
+        "source": "quality_diagnosis/test_mcp_tools.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_mcp_tools.MCPToolTests.test_natural_language_tool_uses_keyword_fallback",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "MCP-05",
+        "title": "자연어 분석 실패 시 키워드 대체 검증",
+        "category": "MCP 도구 테스트",
+        "description": "Interpreter 실행 실패 시 자연어 질문에서 키워드를 추출해 대체 분석하는지 확인합니다.",
+        "expected": "질문 경로와 파라미터 경로를 각각 한 번 호출하고 fallback을 표시해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_mcp_tools.MCPToolTests.test_natural_language_tool_uses_keyword_fallback",
+        "source": "quality_diagnosis/test_mcp_tools.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_llm_judge.LLMJudgeTests.test_critical_violation_forces_immediate_hold",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "JUDGE-01",
+        "title": "중대 위반 즉시 배포 보류 검증",
+        "category": "LLM Judge 판정 테스트",
+        "description": "Judge 평가에 중대 위반이 있을 때 점수와 무관하게 배포를 차단하는지 확인합니다.",
+        "expected": "판정이 IMMEDIATE_HOLD이며 배포 불가여야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_llm_judge.LLMJudgeTests.test_critical_violation_forces_immediate_hold",
+        "source": "quality_diagnosis/test_llm_judge.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_llm_judge.LLMJudgeTests.test_rubric_total_is_one_hundred",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "JUDGE-02",
+        "title": "Judge 평가표 총점 100점 검증",
+        "category": "LLM Judge 판정 테스트",
+        "description": "독립 Judge의 평가 항목 배점 합계를 확인합니다.",
+        "expected": "전체 평가 항목의 최대 점수 합계가 정확히 100이어야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_llm_judge.LLMJudgeTests.test_rubric_total_is_one_hundred",
+        "source": "quality_diagnosis/test_llm_judge.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_llm_judge.LLMJudgeTests.test_score_at_95_is_deployable",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "JUDGE-03",
+        "title": "95점 배포 가능 경계값 검증",
+        "category": "LLM Judge 판정 테스트",
+        "description": "배포 기준과 같은 95점에서 경계 판정이 올바른지 확인합니다.",
+        "expected": "중대 위반이 없으면 95점은 DEPLOYABLE이어야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_llm_judge.LLMJudgeTests.test_score_at_95_is_deployable",
+        "source": "quality_diagnosis/test_llm_judge.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_llm_judge.LLMJudgeTests.test_score_below_95_is_conditionally_held",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "JUDGE-04",
+        "title": "95점 미만 조건부 보류 검증",
+        "category": "LLM Judge 판정 테스트",
+        "description": "배포 기준보다 낮은 점수의 판정 규칙을 확인합니다.",
+        "expected": "95점 미만은 배포 불가이며 조건부 보류로 분류되어야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_llm_judge.LLMJudgeTests.test_score_below_95_is_conditionally_held",
+        "source": "quality_diagnosis/test_llm_judge.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_llm_judge.LLMJudgeTests.test_scores_are_clamped_to_each_dimension",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "JUDGE-05",
+        "title": "Judge 항목별 점수 범위 제한 검증",
+        "category": "LLM Judge 판정 테스트",
+        "description": "모델이 배점 범위를 벗어난 점수를 반환했을 때 정규화하는지 확인합니다.",
+        "expected": "각 점수는 해당 항목의 0~최대 배점 범위로 제한되어야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_llm_judge.LLMJudgeTests.test_scores_are_clamped_to_each_dimension",
+        "source": "quality_diagnosis/test_llm_judge.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_api_429_is_classified_with_recovery_guidance",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "REG-01",
+        "title": "API 429 사용량 제한 안내 회귀 검증",
+        "category": "핵심 결함 회귀 테스트",
+        "description": "API 사용량 제한이 일반 서버 오류가 아닌 복구 가능한 429로 분류되는지 확인합니다.",
+        "expected": "API_RATE_LIMITED 코드와 재시도 안내를 반환해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_api_429_is_classified_with_recovery_guidance",
+        "source": "quality_diagnosis/test_release_defects.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_provider_auth_error_is_redacted_and_classified",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "AUTO-ETC",
+        "title": "provider auth error is redacted and classified",
+        "category": "자동 품질 테스트",
+        "description": "Python unittest로 시스템의 내부 동작 계약을 검증합니다.",
+        "expected": "정의된 assertion을 모두 통과해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_provider_auth_error_is_redacted_and_classified",
+        "source": "quality_diagnosis/test_release_defects.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_provider_branch_uses_anthropic_messages_interface",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "REG-02",
+        "title": "Anthropic 전용 인터페이스 분기 회귀 검증",
+        "category": "핵심 결함 회귀 테스트",
+        "description": "Anthropic Judge 분기에서 OpenAI 인수가 섞이지 않는지 확인합니다.",
+        "expected": "Anthropic messages 인터페이스에 허용된 인수만 전달해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_provider_branch_uses_anthropic_messages_interface",
+        "source": "quality_diagnosis/test_release_defects.py",
+        "scored": "false"
+      }
+    },
+    {
+      "test": "quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_provider_credit_error_has_billing_guidance",
+      "status": "PASS",
+      "detail": "",
+      "test_descriptor": {
+        "case_number": "AUTO-ETC",
+        "title": "provider credit error has billing guidance",
+        "category": "자동 품질 테스트",
+        "description": "Python unittest로 시스템의 내부 동작 계약을 검증합니다.",
+        "expected": "정의된 assertion을 모두 통과해야 합니다.",
+        "actual": "PASS — 정의된 검증 조건을 모두 충족했습니다.",
+        "internal_id": "quality_diagnosis.test_release_defects.ReleaseDefectRegressionTests.test_provider_credit_error_has_billing_guidance",
+        "source": "quality_diagnosis/test_release_defects.py",
+        "scored": "false"
+      }
+    }
+  ]
+}

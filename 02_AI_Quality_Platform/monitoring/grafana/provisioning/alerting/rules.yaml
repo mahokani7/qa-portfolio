@@ -1,0 +1,105 @@
+# Grafana 알림 규칙 자동 프로비저닝  [고도화 #4: Grafana Alerting]
+# 임계값 근거: Google SRE 'Four Golden Signals' + RED 메서드 + 프로젝트 성능 기준(k6: 오류율 5%, p95 1000ms)
+apiVersion: 1
+
+groups:
+  - orgId: 1
+    name: ai-quality-golden-signals
+    folder: AI Quality Alerts
+    interval: 1m
+    rules:
+      # ── (1) 서비스 다운 : up == 0 이면 즉시 Critical ──────────────────────────
+      - uid: alert-service-down
+        title: "[Critical] 서비스 다운 — app /metrics 응답 없음"
+        condition: C
+        for: 1m
+        noDataState: Alerting
+        execErrState: Error
+        labels:
+          severity: critical
+          signal: availability
+        annotations:
+          summary: "AI Agent 서비스가 다운되었습니다 (up=0). 컨테이너/포트를 확인하세요."
+        data:
+          - refId: A
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: prometheus-ds
+            model:
+              refId: A
+              editorMode: code
+              expr: 'up{job="ai_agent_quality_platform"}'
+              instant: true
+              intervalMs: 1000
+              maxDataPoints: 43200
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: A
+              conditions:
+                - evaluator: { type: lt, params: [1] }
+
+      # ── (2) 높은 오류율 : /ask 오류율 > 5% 가 2분 지속 ────────────────────────
+      - uid: alert-high-error-rate
+        title: "[Warning] 높은 오류율 — /ask 오류율 5% 초과"
+        condition: C
+        for: 2m
+        noDataState: OK
+        execErrState: OK
+        labels:
+          severity: warning
+          signal: errors
+        annotations:
+          summary: "최근 5분 /ask 오류율이 5%를 초과했습니다. LLM/RAG 호출 실패 여부를 점검하세요."
+        data:
+          - refId: A
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: prometheus-ds
+            model:
+              refId: A
+              editorMode: code
+              expr: '100 * sum(rate(ask_requests_total{status="error"}[5m])) / clamp_min(sum(rate(ask_requests_total[5m])), 0.001)'
+              instant: true
+              intervalMs: 1000
+              maxDataPoints: 43200
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: A
+              conditions:
+                - evaluator: { type: gt, params: [5] }
+
+      # ── (3) 높은 응답 지연 : p95 응답시간 > 1000ms 가 2분 지속 ────────────────
+      - uid: alert-high-latency
+        title: "[Warning] 높은 응답 지연 — p95 응답시간 1000ms 초과"
+        condition: C
+        for: 2m
+        noDataState: OK
+        execErrState: OK
+        labels:
+          severity: warning
+          signal: latency
+        annotations:
+          summary: "최근 5분 /ask p95 응답시간이 1000ms를 초과했습니다. 병목(LLM/ChromaDB)을 점검하세요."
+        data:
+          - refId: A
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: prometheus-ds
+            model:
+              refId: A
+              editorMode: code
+              expr: '1000 * histogram_quantile(0.95, sum(rate(ask_request_latency_seconds_bucket[5m])) by (le))'
+              instant: true
+              intervalMs: 1000
+              maxDataPoints: 43200
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: A
+              conditions:
+                - evaluator: { type: gt, params: [1000] }

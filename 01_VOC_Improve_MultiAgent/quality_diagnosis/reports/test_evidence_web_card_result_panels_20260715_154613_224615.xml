@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="web_card_result_panels" generatedAt="2026-07-15T15:46:13+09:00" verdict="PASS">
+  <summary total="4" passed="4" failed="0" errors="0" averageScore="" />
+  <cases>
+    <case id="UI-CARD-01" status="PASS">
+      <score />
+      <detail>12개 품질 작업에 버튼별 전용 결과 영역 연결</detail>
+    </case>
+    <case id="UI-CARD-02" status="PASS">
+      <score />
+      <detail>내장 JavaScript 구문 및 DOM ID 연결 검증</detail>
+    </case>
+    <case id="UI-CARD-03" status="PASS">
+      <score />
+      <detail>전체 회귀 테스트 68/68 PASS</detail>
+    </case>
+    <case id="UI-CARD-04" status="PASS">
+      <score />
+      <detail>실제 HTTP 200 및 장애 진단 백그라운드 작업 completed 100%</detail>
+    </case>
+  </cases>
+</qualityEvidence>

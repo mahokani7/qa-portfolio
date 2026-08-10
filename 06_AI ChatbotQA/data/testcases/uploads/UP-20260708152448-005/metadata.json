@@ -1,0 +1,11 @@
+{
+  "id": "UP-20260708152448-005",
+  "filename": "TC-05_AI_품질관리 챗봇 테스크.json",
+  "file_type": "JSON",
+  "row_count": 5,
+  "column_count": 6,
+  "columns": "case_id, category, test_type, user_question, expected_keyword, expected_policy",
+  "uploaded_at": "2026-07-08 15:24:48",
+  "source_path": "C:\\qaeduc\\ai_quality_final_project_Team3\\data\\testcases\\uploads\\UP-20260708152448-005\\TC-05_AI_품질관리_챗봇_테스크.json",
+  "parsed_path": "C:\\qaeduc\\ai_quality_final_project_Team3\\data\\testcases\\uploads\\UP-20260708152448-005\\parsed_records.json"
+}

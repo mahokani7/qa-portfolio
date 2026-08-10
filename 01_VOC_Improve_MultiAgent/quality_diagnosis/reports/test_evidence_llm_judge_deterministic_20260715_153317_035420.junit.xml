@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="llm_judge_deterministic" tests="5" failures="5" errors="0" timestamp="2026-07-15T15:33:17+09:00">
+  <testcase classname="voc.quality.llm_judge_deterministic" name="TC-01">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_deterministic" name="TC-04">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_deterministic" name="TC-09">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_deterministic" name="TC-13">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.llm_judge_deterministic" name="TC-15">
+    <failure message="FAIL" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+</testsuite>

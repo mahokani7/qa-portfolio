@@ -1,0 +1,30 @@
+[
+  {
+    "case_id": "TC-001",
+    "category": "정상 기능",
+    "question": "대한민국의 수도는 어디인가요?",
+    "expected_status": 200,
+    "expected_keyword": "서울"
+  },
+  {
+    "case_id": "TC-002",
+    "category": "정상 기능",
+    "question": "안녕하세요",
+    "expected_status": 200,
+    "expected_keyword": "안녕하세요"
+  },
+  {
+    "case_id": "TC-003",
+    "category": "오류 처리",
+    "question": "오류를 발생시켜 주세요.",
+    "expected_status": 500,
+    "expected_keyword": "오류"
+  },
+  {
+    "case_id": "TC-004",
+    "category": "성능 테스트",
+    "question": "응답을 느리게 만들어 주세요.",
+    "expected_status": 200,
+    "expected_keyword": "지연"
+  }
+]

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>업무분장 및 WBS</title>
+
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: '맑은 고딕', 'Malgun Gothic', 'Segoe UI', sans-serif;
+    color: #1e293b; background: #ffffff; margin: 0; padding: 28px 36px 60px 36px;
+  }
+  h1.doc-title { font-size: 25px; color: #1e293b; text-align: center; margin: 10px 0 2px 0; }
+  h2.doc-subtitle { font-size: 17px; color: #4f46e5; text-align: center; margin: 0 0 18px 0; font-weight: 600; }
+  p.doc-meta { text-align: center; color: #64748b; font-size: 13px; margin: 2px 0; }
+  hr.doc-divider { border: none; border-top: 1px solid #e2e8f0; margin: 24px 0; }
+  h2.sec { font-size: 19px; color: #ffffff; background: #4f46e5; padding: 8px 14px; border-radius: 8px; margin-top: 30px; }
+  h3.subsec { font-size: 15.5px; color: #334155; border-left: 4px solid #4f46e5; padding-left: 10px; margin-top: 22px; }
+  p.body-text { font-size: 13.5px; line-height: 1.7; color: #334155; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0 22px 0; font-size: 12.5px; }
+  th { background: #334155; color: #fff; padding: 7px 9px; text-align: left; white-space: nowrap; }
+  td { border: 1px solid #e2e8f0; padding: 6px 9px; vertical-align: top; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  td.center, th.center { text-align: center; }
+  .req-High { color: #b91c1c; font-weight: 600; }
+  .req-Medium, .req-중 { color: #b45309; font-weight: 600; }
+  .req-상 { color: #b91c1c; font-weight: 600; }
+  .tag-bug { background: #fde8e8; color: #b91c1c; padding: 1px 8px; border-radius: 10px; font-size: 11.5px; }
+  .tag-task { background: #e0e7ff; color: #4338ca; padding: 1px 8px; border-radius: 10px; font-size: 11.5px; }
+</style>
+
+</head>
+<body>
+
+    <h1 class="doc-title">AI 챗봇 품질관리 자동화 파이프라인</h1>
+    <h2 class="doc-subtitle">업무분장 및 WBS (Work Breakdown Structure)</h2>
+    <p class="doc-meta">프로젝트명 : ai_quality_final_project</p>
+    <p class="doc-meta">작성일자 : 2026-07-01</p>
+    <p class="doc-meta">팀 구성 : 김경숙 · 나병진 · 정진웅 · 최성우</p>
+    <hr class="doc-divider">
+    
+<h2 class="sec">1. 팀 구성 및 역할 개요</h2>
+<table>
+<tr>
+<th>이름</th>
+<th>담당 영역</th>
+<th>핵심 책임 파일</th>
+<th>역할 요약</th>
+</tr>
+<tr>
+<td>김경숙</td>
+<td>핵심 기능 개발</td>
+<td>service_agent.py · judge_agent.py<br>rule_validator.py · main.py</td>
+<td>OpenAI API 연동, 챗봇·평가 에이전트 구현, 파이프라인 오케스트레이션</td>
+</tr>
+<tr>
+<td>나병진</td>
+<td>프로젝트 환경 구성 및 일정 관리</td>
+<td>config.py · knowledge_base.py<br>.env · requirements.txt</td>
+<td>가상환경·의존성 설정, 지식베이스 구축, 전체 일정 조율 및 팀 미팅 주관</td>
+</tr>
+<tr>
+<td>정진웅</td>
+<td>결과 리포트 및 대시보드 구현</td>
+<td>report_generator.py<br>dashboard/streamlit_app.py</td>
+<td>JSON·CSV·MD 보고서 자동 생성, Plotly 시각화 대시보드 구현</td>
+</tr>
+<tr>
+<td>최성우</td>
+<td>테스트 및 발표 준비</td>
+<td>data/test_cases.json<br>최종 발표 자료 (PPT)</td>
+<td>테스트 케이스 설계·통합 테스트 수행, 발표 자료 및 데모 시나리오 제작</td>
+</tr>
+</table>
+<h2 class="sec">2. 세부 업무분장표</h2>
+<h3 class="subsec">2-1. 김경숙 — 핵심 기능 개발</h3>
+<table>
+<tr>
+<th>No</th>
+<th>업무 항목</th>
+<th>세부 내용</th>
+<th>산출물</th>
+<th>비고</th>
+</tr>
+<tr>
+<td class="center">1</td>
+<td>ServiceAgent 구현</td>
+<td>OpenAI gpt-4o-mini 연동, EDUCATION_POLICY_TEXT 기반 시스템 프롬프트 설계, temperature=0.0 설정, 예외 처리</td>
+<td>service_agent.py</td>
+<td class="center">SVC-001~006</td>
+</tr>
+<tr>
+<td class="center">2</td>
+<td>JudgeAgent 구현</td>
+<td>Pydantic EvaluationSchema 정의, Structured Outputs API 호출, 4대 지표(정확성·근거성·유용성·안전성) 채점 로직, 판정 기준(PASS/REVIEW/FAIL) 구현</td>
+<td>judge_agent.py</td>
+<td class="center">JDG-001~006</td>
+</tr>
+<tr>
+<td class="center">3</td>
+<td>RuleValidator 구현</td>
+<td>Empty/Short 답변 검출, 금지어 사전 필터, 동일문자 반복 이상탐지(정규식), 결과 딕셔너리 반환</td>
+<td>rule_validator.py</td>
+<td class="center">RV-001~006</td>
+</tr>
+<tr>
+<td class="center">4</td>
+<td>main.py 파이프라인 구현</td>
+<td>테스트 케이스 순회, 키워드 매칭, 에이전트 순차 호출, usefulness→helpfulness 필드 변환, 스키마 조립, 콘솔 진행 출력</td>
+<td>main.py</td>
+<td class="center">MAIN-001~006</td>
+</tr>
+<tr>
+<td class="center">5</td>
+<td>단위 테스트 지원</td>
+<td>각 모듈 __main__ 블록 작성, 최성우 팀원 테스트 지원</td>
+<td>각 모듈 하단 테스트 코드</td>
+<td class="center">협업</td>
+</tr>
+</table>
+<h3 class="subsec">2-2. 나병진 — 프로젝트 환경 구성 및 일정 관리</h3>
+<table>
+<tr>
+<th>No</th>
+<th>업무 항목</th>
+<th>세부 내용</th>
+<th>산출물</th>
+<th>비고</th>
+</tr>
+<tr>
+<td class="center">1</td>
+<td>프로젝트 폴더 구조 설계</td>
+<td>디렉터리 트리 설계(data·reports·dashboard), .gitignore 작성, 폴더 자동 생성 로직 설계</td>
+<td>디렉터리 구조</td>
+<td class="center">CFG-001</td>
+</tr>
+<tr>
+<td class="center">2</td>
+<td>가상환경 및 패키지 관리</td>
+<td>.venv 생성, requirements.txt 작성(openai·pydantic·pandas·streamlit·plotly·python-docx 등), pip install 검증</td>
+<td>requirements.txt · .venv</td>
+<td class="center">CFG-001~003</td>
+</tr>
+<tr>
+<td class="center">3</td>
+<td>config.py 구현</td>
+<td>pathlib 기반 경로 관리, .env 로드(load_dotenv), init_directories() 자동 초기화, OS 독립성 확보</td>
+<td>config.py</td>
+<td class="center">CFG-001~003</td>
+</tr>
+<tr>
+<td class="center">4</td>
+<td>knowledge_base.py 구현</td>
+<td>EDUCATION_POLICY_TEXT(교육시간·출결·수료·취업지원·예외처리 정책) 작성, EVALUATION_CRITERIA 딕셔너리 구성</td>
+<td>knowledge_base.py</td>
+<td class="center">KB-001~003</td>
+</tr>
+<tr>
+<td class="center">5</td>
+<td>.env 환경변수 설정</td>
+<td>OPENAI_API_KEY 환경변수 템플릿 작성, Key 보안 관리 가이드 팀 공유</td>
+<td>.env (템플릿)</td>
+<td class="center">NF-003</td>
+</tr>
+<tr>
+<td class="center">6</td>
+<td>전체 일정 관리 및 팀 미팅</td>
+<td>WBS 기준 주간 진행률 체크, 이슈 트래킹, 팀 미팅 진행 및 회의록 작성</td>
+<td>WBS · 회의록</td>
+<td class="center">PM</td>
+</tr>
+</table>
+<h3 class="subsec">2-3. 정진웅 — 결과 리포트 및 대시보드 구현</h3>
+<table>
+<tr>
+<th>No</th>
+<th>업무 항목</th>
+<th>세부 내용</th>
+<th>산출물</th>
+<th>비고</th>
+</tr>
+<tr>
+<td class="center">1</td>
+<td>report_generator.py 구현</td>
+<td>JSON 보고서(중첩 구조 유지), CSV 보고서(Flatten·utf-8-sig 인코딩), Markdown 보고서(이모지 배지·지표 평균·케이스별 상세) 3종 자동 생성</td>
+<td>report_generator.py</td>
+<td class="center">RPT-001~005</td>
+</tr>
+<tr>
+<td class="center">2</td>
+<td>Streamlit 대시보드 구현</td>
+<td>사이드바 메뉴 3종(종합통계·세부로그·최종결론), KPI 메트릭 카드 4종, 파일 경로 절대경로화(__file__ 기준)</td>
+<td>streamlit_app.py</td>
+<td class="center">DASH-001~008</td>
+</tr>
+<tr>
+<td class="center">3</td>
+<td>Plotly 차트 구현</td>
+<td>도넛 차트(PASS·REVIEW·FAIL 분포), 바 차트(카테고리별 평균 정확성), 색상 팔레트 정의</td>
+<td>streamlit_app.py 차트 섹션</td>
+<td class="center">DASH-004~005</td>
+</tr>
+<tr>
+<td class="center">4</td>
+<td>최종 결론 자동 분석 구현</td>
+<td>취약 지표 자동 탐지(idxmin), 최저 합격률 카테고리 분석, Action Items 4종 동적 생성</td>
+<td>streamlit_app.py 결론 섹션</td>
+<td class="center">DASH-006~007</td>
+</tr>
+<tr>
+<td class="center">5</td>
+<td>보고서 샘플 데이터 작성</td>
+<td>TC-001~007 기준 evaluation_result.json·csv·md 샘플 데이터 직접 작성하여 대시보드 초기 검증</td>
+<td>reports/ 3종 파일</td>
+<td class="center">협업</td>
+</tr>
+</table>
+<h3 class="subsec">2-4. 최성우 — 테스트 및 발표 준비</h3>
+<table>
+<tr>
+<th>No</th>
+<th>업무 항목</th>
+<th>세부 내용</th>
+<th>산출물</th>
+<th>비고</th>
+</tr>
+<tr>
+<td class="center">1</td>
+<td>테스트 케이스 설계</td>
+<td>7개 시나리오(Happy·Edge·Negative) 설계, case_id·category·test_type·user_question·expected_keyword·expected_policy 필드 작성</td>
+<td>data/test_cases.json</td>
+<td class="center">TC-001~007</td>
+</tr>
+<tr>
+<td class="center">2</td>
+<td>단위 테스트 수행</td>
+<td>각 모듈 독립 실행 테스트(__main__ 블록), 정상·오류·경계값 케이스 검증, 결과 기록</td>
+<td>테스트 결과 보고서</td>
+<td class="center">NF-001~002</td>
+</tr>
+<tr>
+<td class="center">3</td>
+<td>통합 테스트 수행</td>
+<td>전체 파이프라인(main.py) E2E 실행, 보고서 3종 생성 확인, 대시보드 데이터 연동 검증, 엣지케이스 재현</td>
+<td>통합 테스트 결과서</td>
+<td class="center">NF-001~002</td>
+</tr>
+<tr>
+<td class="center">4</td>
+<td>발표 자료 제작</td>
+<td>프로젝트 개요·아키텍처·시연 흐름·평가 결과·결론 포함 PPT 제작(10슬라이드 내외)</td>
+<td>발표 PPT (.pptx)</td>
+<td class="center">발표</td>
+</tr>
+<tr>
+<td class="center">5</td>
+<td>데모 시나리오 준비</td>
+<td>main.py 실행 → reports/ 생성 → 대시보드 시연 순서의 라이브 데모 스크립트 작성, 리허설 진행</td>
+<td>데모 스크립트</td>
+<td class="center">발표</td>
+</tr>
+<tr>
+<td class="center">6</td>
+<td>최종 산출물 검수</td>
+<td>전체 파일 구조 최종 점검, README 작성, 팀원 산출물 취합 및 제출 패키지 구성</td>
+<td>최종 제출 패키지</td>
+<td class="center">PM 협업</td>
+</tr>
+</table>
+</body>
+</html>

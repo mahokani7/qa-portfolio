@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="web_function_audit" tests="36" failures="5" errors="0" timestamp="2026-07-15T15:27:29+09:00">
+  <testcase classname="voc.quality.web_function_audit" name="WEB-01" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-02" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-03" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-04" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-05" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-06" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-07" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-08" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-09" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-10" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-11" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-12" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-13" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-14" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-15" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-16" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-17" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-18" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-19">
+    <failure message="LIMITED: browser-only JSON/CSV click" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.web_function_audit" name="WEB-20">
+    <failure message="LIMITED: browser-only navigation/theme click" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.web_function_audit" name="WEB-21">
+    <failure message="FAIL: visible feedback hidden in sr-only region" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.web_function_audit" name="WEB-22" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-23" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-24" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-25" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-26" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-27" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-28">
+    <failure message="FAIL: cancellation left Interpreter on temporary endpoint" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.web_function_audit" name="WEB-29" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-30">
+    <failure message="LIMITED: paid live E2E not re-executed" type="QualityGateFailure">status=FAIL; score=</failure>
+  </testcase>
+  <testcase classname="voc.quality.web_function_audit" name="WEB-31" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-32" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-33" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-34" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-35" />
+  <testcase classname="voc.quality.web_function_audit" name="WEB-36" />
+</testsuite>

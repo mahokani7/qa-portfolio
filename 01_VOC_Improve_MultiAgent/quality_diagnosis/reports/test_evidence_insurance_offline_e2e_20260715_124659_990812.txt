@@ -1,0 +1,24 @@
+VOC 품질 테스트 실행 증적
+실행 유형: insurance_offline_e2e
+실행 시각: 2026-07-15T12:46:59+09:00
+결과: 15/15 PASS
+실패: 0, 오류: 0
+최종 판정: PASS
+평균 점수: 95.4/100
+
+[상세 결과]
+- INS-01 | PASS | score=96.2 | 
+- INS-02 | PASS | score=97.0 | 
+- INS-03 | PASS | score=90.3 | 
+- INS-04 | PASS | score=99.1 | 
+- INS-05 | PASS | score=99.1 | 
+- INS-06 | PASS | score=99.0 | 
+- INS-07 | PASS | score=99.1 | 
+- INS-08 | PASS | score=87.1 | 
+- INS-09 | PASS | score=88.8 | 
+- INS-10 | PASS | score=97.5 | 
+- INS-11 | PASS | score=100.0 | 
+- INS-12 | PASS | score=98.8 | 
+- INS-13 | PASS | score=88.7 | 
+- INS-14 | PASS | score=100.0 | 
+- INS-15 | PASS | score=90.3 | 

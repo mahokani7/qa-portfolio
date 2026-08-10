@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="llm_judge_deterministic" generatedAt="2026-07-15T14:49:41+09:00" verdict="FAIL">
+  <summary total="5" passed="0" failed="5" errors="0" averageScore="92.0" />
+  <cases>
+    <case id="TC-01" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-02" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-03" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-04" status="FAIL">
+      <score />
+      <detail />
+    </case>
+    <case id="TC-05" status="FAIL">
+      <score />
+      <detail />
+    </case>
+  </cases>
+</qualityEvidence>

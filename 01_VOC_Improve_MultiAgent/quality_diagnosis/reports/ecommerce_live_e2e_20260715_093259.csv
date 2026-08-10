@@ -1,0 +1,2 @@
+﻿case_id,passed,score,retrieval_relevance,summary_faithfulness,policy_actionability,safety,deployment,hard_blockers,interpreter_accuracy,retriever_relevance,summarizer_faithfulness,evaluator_validity,critic_risk_detection,improver_actionability,agent_handoff,fault_and_logging,performance,total_duration_ms,error_code
+TC-01,False,67.2,1.0,0.2679,0.0,True,배포 보류,,8.2,15.0,4.0,10.0,10.0,0.0,10.0,5.0,5.0,13827.46,

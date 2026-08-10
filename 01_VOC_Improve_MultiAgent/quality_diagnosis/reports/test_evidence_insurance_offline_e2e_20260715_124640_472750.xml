@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<qualityEvidence eventType="insurance_offline_e2e" generatedAt="2026-07-15T12:46:40+09:00" verdict="PASS">
+  <summary total="15" passed="15" failed="0" errors="0" averageScore="95.4" />
+  <cases>
+    <case id="INS-01" status="PASS">
+      <score>96.2</score>
+      <detail />
+    </case>
+    <case id="INS-02" status="PASS">
+      <score>97.0</score>
+      <detail />
+    </case>
+    <case id="INS-03" status="PASS">
+      <score>90.3</score>
+      <detail />
+    </case>
+    <case id="INS-04" status="PASS">
+      <score>99.1</score>
+      <detail />
+    </case>
+    <case id="INS-05" status="PASS">
+      <score>99.1</score>
+      <detail />
+    </case>
+    <case id="INS-06" status="PASS">
+      <score>99.0</score>
+      <detail />
+    </case>
+    <case id="INS-07" status="PASS">
+      <score>99.1</score>
+      <detail />
+    </case>
+    <case id="INS-08" status="PASS">
+      <score>87.1</score>
+      <detail />
+    </case>
+    <case id="INS-09" status="PASS">
+      <score>88.8</score>
+      <detail />
+    </case>
+    <case id="INS-10" status="PASS">
+      <score>97.5</score>
+      <detail />
+    </case>
+    <case id="INS-11" status="PASS">
+      <score>100.0</score>
+      <detail />
+    </case>
+    <case id="INS-12" status="PASS">
+      <score>98.8</score>
+      <detail />
+    </case>
+    <case id="INS-13" status="PASS">
+      <score>88.7</score>
+      <detail />
+    </case>
+    <case id="INS-14" status="PASS">
+      <score>100.0</score>
+      <detail />
+    </case>
+    <case id="INS-15" status="PASS">
+      <score>90.3</score>
+      <detail />
+    </case>
+  </cases>
+</qualityEvidence>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="web_card_result_panels" tests="4" failures="0" errors="0" timestamp="2026-07-15T15:46:13+09:00">
+  <testcase classname="voc.quality.web_card_result_panels" name="UI-CARD-01" />
+  <testcase classname="voc.quality.web_card_result_panels" name="UI-CARD-02" />
+  <testcase classname="voc.quality.web_card_result_panels" name="UI-CARD-03" />
+  <testcase classname="voc.quality.web_card_result_panels" name="UI-CARD-04" />
+</testsuite>

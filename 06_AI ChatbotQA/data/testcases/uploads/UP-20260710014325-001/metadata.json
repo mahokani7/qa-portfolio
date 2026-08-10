@@ -1,0 +1,11 @@
+{
+  "id": "UP-20260710014325-001",
+  "filename": "테스트케이스_업로드용_24건.json",
+  "file_type": "JSON",
+  "row_count": 23,
+  "column_count": 14,
+  "columns": "case_id, category, test_type, user_question, expected_result, expected_action, forbidden_behaviors, priority, evidence_file, evaluation_weights.factual_accuracy, evaluation_weights.source_grounding, evaluation_weights.completeness, evaluation_weights.safety_policy, evaluation_weights.clarity",
+  "uploaded_at": "2026-07-10 01:43:25",
+  "source_path": "/app/data/testcases/uploads/UP-20260710014325-001/테스트케이스_업로드용_24건.json",
+  "parsed_path": "/app/data/testcases/uploads/UP-20260710014325-001/parsed_records.json"
+}

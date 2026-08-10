@@ -1,0 +1,825 @@
+{
+  "summary": {
+    "generated_at": "2026-07-15T10:20:03+09:00",
+    "domain": "ecommerce",
+    "mode": "live",
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "average_score": 84.2,
+    "dimension_averages": {
+      "retrieval_relevance": 42.9,
+      "summary_faithfulness": 65.8,
+      "policy_actionability": 100.0,
+      "privacy_and_prompt_safety": 100.0
+    },
+    "rubric_averages": {
+      "interpreter_accuracy": {
+        "label": "Interpreter 해석 정확성",
+        "average_score": 12.9,
+        "max_score": 15
+      },
+      "retriever_relevance": {
+        "label": "Retriever 검색 관련성",
+        "average_score": 6.4,
+        "max_score": 15
+      },
+      "summarizer_faithfulness": {
+        "label": "Summarizer 사실성·요약성",
+        "average_score": 9.9,
+        "max_score": 15
+      },
+      "evaluator_validity": {
+        "label": "Evaluator 평가 타당성",
+        "average_score": 10.0,
+        "max_score": 10
+      },
+      "critic_risk_detection": {
+        "label": "Critic 위험 탐지력",
+        "average_score": 10.0,
+        "max_score": 10
+      },
+      "improver_actionability": {
+        "label": "Improver 실행 가능성",
+        "average_score": 15.0,
+        "max_score": 15
+      },
+      "agent_handoff": {
+        "label": "Agent 연계 품질",
+        "average_score": 10.0,
+        "max_score": 10
+      },
+      "fault_and_logging": {
+        "label": "장애 대응·로그",
+        "average_score": 5.0,
+        "max_score": 5
+      },
+      "performance": {
+        "label": "성능",
+        "average_score": 5.0,
+        "max_score": 5
+      }
+    },
+    "deployment_counts": {
+      "CONDITIONAL": 1
+    },
+    "hard_blocked": 0,
+    "live_quality_verified": true,
+    "models": {
+      "summary": "gpt-4o-mini",
+      "policy": "claude-sonnet-4-6"
+    }
+  },
+  "results": [
+    {
+      "case_id": "TC-13",
+      "question": "배송은 지연되는데 환불 요청도 처리가 안 됩니다.",
+      "quality": {
+        "case_id": "TC-13",
+        "passed": true,
+        "score": 84.2,
+        "max_score": 100,
+        "deployment": {
+          "code": "CONDITIONAL",
+          "label": "조건부 배포 가능, 개선 후 재검증",
+          "deployable": true
+        },
+        "hard_blockers": [],
+        "rubric": {
+          "interpreter_accuracy": {
+            "label": "Interpreter 해석 정확성",
+            "max_score": 15,
+            "score": 12.9,
+            "passed": true,
+            "ratio": 0.8572,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.8572,
+              "intent": {
+                "passed": true,
+                "matched": [
+                  {
+                    "item": "배송",
+                    "evidence": "배송"
+                  },
+                  {
+                    "item": "환불",
+                    "evidence": "환불"
+                  },
+                  {
+                    "item": "처리",
+                    "evidence": "처리"
+                  },
+                  {
+                    "item": "실패",
+                    "evidence": "장애"
+                  },
+                  {
+                    "item": "복합",
+                    "evidence": "복합"
+                  }
+                ],
+                "missing": [
+                  "지연과",
+                  "불만"
+                ],
+                "ratio": 0.7143,
+                "expected": "배송 지연과 환불 처리 실패 복합 불만",
+                "actual_evidence": "배송 지연 환불 복합 장애 문의로 다음 처리 실패 문제가 함께 제기되었습니다: 배송은 지연되는데 환불 요청도 처리가 안 됩니다. 배송이 지연되고 있으며, 언제 도착하는지에 대한 안내가 전혀 없습니다. 또한, 환불 요청이 처리되지 않아 답답함을 느끼고 있습니다. 주문 완료 후 바로 주문을 취소했으나, 취소 처리가 되지 않고 그대로 배송되었습니다. 배송 예정일이 이미 지났음에도 배송 상태는 상품 준비중에서 바뀌지 않고 있으며, 배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다. 더불어, 주문한 상품과 전혀 다른 상품이 배송되었습니다."
+              },
+              "keywords": {
+                "passed": true,
+                "matched": [
+                  {
+                    "item": "배송 지연",
+                    "evidence": "배송 지연"
+                  },
+                  {
+                    "item": "환불",
+                    "evidence": "결제 + 취소"
+                  },
+                  {
+                    "item": "처리 실패",
+                    "evidence": "처리 실패"
+                  },
+                  {
+                    "item": "우선순위",
+                    "evidence": "우선순위"
+                  }
+                ],
+                "missing": [],
+                "ratio": 1.0
+              }
+            }
+          },
+          "retriever_relevance": {
+            "label": "Retriever 검색 관련성",
+            "max_score": 15,
+            "score": 6.4,
+            "passed": true,
+            "ratio": 0.4286,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.4286,
+              "retrieved_count": 7,
+              "relevant_count": 3,
+              "evidence": [
+                {
+                  "sample": "배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.",
+                  "evidence": [
+                    "배송 지연"
+                  ]
+                },
+                {
+                  "sample": "환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다.",
+                  "evidence": [
+                    "환불"
+                  ]
+                },
+                {
+                  "sample": "반품 접수 후 일주일이 지났는데 환불 금액이 아직 입금되지 않았습니다.",
+                  "evidence": [
+                    "환불"
+                  ]
+                }
+              ],
+              "note": ""
+            }
+          },
+          "summarizer_faithfulness": {
+            "label": "Summarizer 사실성·요약성",
+            "max_score": 15,
+            "score": 9.9,
+            "passed": true,
+            "ratio": 0.6583,
+            "evidence": {
+              "passed": true,
+              "ratio": 0.6583,
+              "lexical_grounding_ratio": 0.5667,
+              "expected_keyword_ratio": 0.75,
+              "matched_expected_keywords": [
+                "배송 지연",
+                "환불",
+                "처리 실패"
+              ],
+              "grounded_tokens": [
+                "그대로",
+                "나옵니다",
+                "다른",
+                "되지",
+                "바뀌지",
+                "바로",
+                "배송",
+                "배송되었습니다",
+                "배송이",
+                "번호가",
+                "상품",
+                "상품과",
+                "상품이",
+                "안내가",
+                "않고",
+                "않는다고",
+                "언제",
+                "없습니다",
+                "예정일이",
+                "완료",
+                "운송장",
+                "이미",
+                "전혀",
+                "조회되지",
+                "조회를",
+                "주문",
+                "주문한",
+                "준비중에서",
+                "지연되는데",
+                "처리"
+              ],
+              "ungrounded_tokens": [
+                "느끼고",
+                "다음",
+                "답답함을",
+                "더불어",
+                "도착하는지에",
+                "됩니다",
+                "또한",
+                "문의로",
+                "문제가",
+                "배송은",
+                "복합",
+                "상태는",
+                "실패",
+                "않아",
+                "요청도",
+                "요청이",
+                "있습니다",
+                "있으며",
+                "장애",
+                "제기되었습니다",
+                "주문을",
+                "지났음에도",
+                "지연되고",
+                "처리되지",
+                "취소했으나",
+                "함께"
+              ],
+              "method": "retrieved VOC와 요약의 어휘 근거 일치율"
+            }
+          },
+          "evaluator_validity": {
+            "label": "Evaluator 평가 타당성",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "multiple_candidates": true,
+                "scores_are_numeric": true,
+                "winner_is_candidate": true,
+                "winner_has_best_score": true
+              },
+              "winner": "S0",
+              "scores": {
+                "S1": 8.5,
+                "S2": 9.0,
+                "S0": 8.0
+              }
+            }
+          },
+          "critic_risk_detection": {
+            "label": "Critic 위험 탐지력",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "stage_output_exists": true,
+                "decision_is_boolean": true,
+                "edits_are_structured": true,
+                "decision_and_edits_consistent": true,
+                "sample_request_is_boolean": true
+              },
+              "need_refine": true,
+              "edits": [
+                "첫 문단에서 '배송이 계속 지연되고 있지만' 대신 '배송이 지연되고 있으며'로 수정하여 문장을 간결하게 만들어라.",
+                "환불 요청 처리 상태에 대한 언급을 '처리 상태를 확인할 수 없어 답답한 느낌이 있습니다'에서 '환불 요청이 처리되지 않아 답답함을 느끼고 있습니다'로 변경하여 명확성을 높여라.",
+                "원문에서 언급된 다양한 배송 문제를 요약문에 포함시켜 문제의 심각성을 강조하라."
+              ]
+            }
+          },
+          "improver_actionability": {
+            "label": "Improver 실행 가능성",
+            "max_score": 15,
+            "score": 15.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "matched": [
+                "owner",
+                "deadline",
+                "action",
+                "metric",
+                "priority"
+              ],
+              "missing": []
+            }
+          },
+          "agent_handoff": {
+            "label": "Agent 연계 품질",
+            "max_score": 10,
+            "score": 10.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "stage_order": true,
+                "retrieval_forwarded": true,
+                "summary_candidates_forwarded": true,
+                "evaluation_selects_candidate": true,
+                "critic_receives_summary": true,
+                "improver_output_forwarded": true
+              },
+              "actual_order": [
+                "Interpreter",
+                "Retriever",
+                "Summarizer",
+                "Evaluator",
+                "Critic",
+                "Improver"
+              ],
+              "expected_order": [
+                "Interpreter",
+                "Retriever",
+                "Summarizer",
+                "Evaluator",
+                "Critic",
+                "Improver"
+              ]
+            }
+          },
+          "fault_and_logging": {
+            "label": "장애 대응·로그",
+            "max_score": 5,
+            "score": 5.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "checks": {
+                "status_is_explicit": true,
+                "error_code_field_exists": true,
+                "message_is_present": true,
+                "stage_trace_is_present": true,
+                "failure_not_reported_as_success": true
+              }
+            }
+          },
+          "performance": {
+            "label": "성능",
+            "max_score": 5,
+            "score": 5.0,
+            "passed": true,
+            "ratio": 1.0,
+            "evidence": {
+              "passed": true,
+              "ratio": 1.0,
+              "duration_ms": 48036.09,
+              "limit_ms": 60000.0,
+              "stage_duration_ms": {
+                "Interpreter": 2547.52,
+                "Retriever": 7.08,
+                "Summarizer": 2869.92,
+                "Evaluator": 2320.65,
+                "Critic": 3102.47,
+                "Improver": 35820.07
+              }
+            }
+          }
+        },
+        "checks": {
+          "status": {
+            "passed": true,
+            "expected": "success"
+          },
+          "intent": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "배송",
+                "evidence": "배송"
+              },
+              {
+                "item": "환불",
+                "evidence": "환불"
+              },
+              {
+                "item": "처리",
+                "evidence": "처리"
+              },
+              {
+                "item": "실패",
+                "evidence": "장애"
+              },
+              {
+                "item": "복합",
+                "evidence": "복합"
+              }
+            ],
+            "missing": [
+              "지연과",
+              "불만"
+            ],
+            "ratio": 0.7143,
+            "expected": "배송 지연과 환불 처리 실패 복합 불만",
+            "actual_evidence": "배송 지연 환불 복합 장애 문의로 다음 처리 실패 문제가 함께 제기되었습니다: 배송은 지연되는데 환불 요청도 처리가 안 됩니다. 배송이 지연되고 있으며, 언제 도착하는지에 대한 안내가 전혀 없습니다. 또한, 환불 요청이 처리되지 않아 답답함을 느끼고 있습니다. 주문 완료 후 바로 주문을 취소했으나, 취소 처리가 되지 않고 그대로 배송되었습니다. 배송 예정일이 이미 지났음에도 배송 상태는 상품 준비중에서 바뀌지 않고 있으며, 배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다. 더불어, 주문한 상품과 전혀 다른 상품이 배송되었습니다."
+          },
+          "keywords": {
+            "passed": true,
+            "matched": [
+              {
+                "item": "배송 지연",
+                "evidence": "배송 지연"
+              },
+              {
+                "item": "환불",
+                "evidence": "결제 + 취소"
+              },
+              {
+                "item": "처리 실패",
+                "evidence": "처리 실패"
+              },
+              {
+                "item": "우선순위",
+                "evidence": "우선순위"
+              }
+            ],
+            "missing": [],
+            "ratio": 1.0
+          },
+          "required_output": {
+            "passed": false,
+            "matched": [
+              {
+                "item": "고객 안내",
+                "evidence": "안내"
+              },
+              {
+                "item": "개선안",
+                "evidence": "개선"
+              },
+              {
+                "item": "우선순위",
+                "evidence": "우선"
+              }
+            ],
+            "missing": [
+              "원인 추정"
+            ],
+            "ratio": 0.75
+          },
+          "prohibited_output": {
+            "passed": true,
+            "violations": []
+          },
+          "retrieval_relevance": {
+            "passed": true,
+            "ratio": 0.4286,
+            "retrieved_count": 7,
+            "relevant_count": 3,
+            "evidence": [
+              {
+                "sample": "배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.",
+                "evidence": [
+                  "배송 지연"
+                ]
+              },
+              {
+                "sample": "환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다.",
+                "evidence": [
+                  "환불"
+                ]
+              },
+              {
+                "sample": "반품 접수 후 일주일이 지났는데 환불 금액이 아직 입금되지 않았습니다.",
+                "evidence": [
+                  "환불"
+                ]
+              }
+            ],
+            "note": ""
+          },
+          "summary_faithfulness": {
+            "passed": true,
+            "ratio": 0.6583,
+            "lexical_grounding_ratio": 0.5667,
+            "expected_keyword_ratio": 0.75,
+            "matched_expected_keywords": [
+              "배송 지연",
+              "환불",
+              "처리 실패"
+            ],
+            "grounded_tokens": [
+              "그대로",
+              "나옵니다",
+              "다른",
+              "되지",
+              "바뀌지",
+              "바로",
+              "배송",
+              "배송되었습니다",
+              "배송이",
+              "번호가",
+              "상품",
+              "상품과",
+              "상품이",
+              "안내가",
+              "않고",
+              "않는다고",
+              "언제",
+              "없습니다",
+              "예정일이",
+              "완료",
+              "운송장",
+              "이미",
+              "전혀",
+              "조회되지",
+              "조회를",
+              "주문",
+              "주문한",
+              "준비중에서",
+              "지연되는데",
+              "처리"
+            ],
+            "ungrounded_tokens": [
+              "느끼고",
+              "다음",
+              "답답함을",
+              "더불어",
+              "도착하는지에",
+              "됩니다",
+              "또한",
+              "문의로",
+              "문제가",
+              "배송은",
+              "복합",
+              "상태는",
+              "실패",
+              "않아",
+              "요청도",
+              "요청이",
+              "있습니다",
+              "있으며",
+              "장애",
+              "제기되었습니다",
+              "주문을",
+              "지났음에도",
+              "지연되고",
+              "처리되지",
+              "취소했으나",
+              "함께"
+            ],
+            "method": "retrieved VOC와 요약의 어휘 근거 일치율"
+          },
+          "policy_actionability": {
+            "passed": true,
+            "ratio": 1.0,
+            "matched": [
+              "owner",
+              "deadline",
+              "action",
+              "metric",
+              "priority"
+            ],
+            "missing": []
+          },
+          "privacy_and_prompt_safety": {
+            "passed": true,
+            "raw_pii_detected": false,
+            "prompt_injection_echoed": false
+          },
+          "evaluator_validity": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "multiple_candidates": true,
+              "scores_are_numeric": true,
+              "winner_is_candidate": true,
+              "winner_has_best_score": true
+            },
+            "winner": "S0",
+            "scores": {
+              "S1": 8.5,
+              "S2": 9.0,
+              "S0": 8.0
+            }
+          },
+          "critic_risk_detection": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "stage_output_exists": true,
+              "decision_is_boolean": true,
+              "edits_are_structured": true,
+              "decision_and_edits_consistent": true,
+              "sample_request_is_boolean": true
+            },
+            "need_refine": true,
+            "edits": [
+              "첫 문단에서 '배송이 계속 지연되고 있지만' 대신 '배송이 지연되고 있으며'로 수정하여 문장을 간결하게 만들어라.",
+              "환불 요청 처리 상태에 대한 언급을 '처리 상태를 확인할 수 없어 답답한 느낌이 있습니다'에서 '환불 요청이 처리되지 않아 답답함을 느끼고 있습니다'로 변경하여 명확성을 높여라.",
+              "원문에서 언급된 다양한 배송 문제를 요약문에 포함시켜 문제의 심각성을 강조하라."
+            ]
+          },
+          "agent_handoff": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "stage_order": true,
+              "retrieval_forwarded": true,
+              "summary_candidates_forwarded": true,
+              "evaluation_selects_candidate": true,
+              "critic_receives_summary": true,
+              "improver_output_forwarded": true
+            },
+            "actual_order": [
+              "Interpreter",
+              "Retriever",
+              "Summarizer",
+              "Evaluator",
+              "Critic",
+              "Improver"
+            ],
+            "expected_order": [
+              "Interpreter",
+              "Retriever",
+              "Summarizer",
+              "Evaluator",
+              "Critic",
+              "Improver"
+            ]
+          },
+          "fault_and_logging": {
+            "passed": true,
+            "ratio": 1.0,
+            "checks": {
+              "status_is_explicit": true,
+              "error_code_field_exists": true,
+              "message_is_present": true,
+              "stage_trace_is_present": true,
+              "failure_not_reported_as_success": true
+            }
+          },
+          "performance": {
+            "passed": true,
+            "ratio": 1.0,
+            "duration_ms": 48036.09,
+            "limit_ms": 60000.0,
+            "stage_duration_ms": {
+              "Interpreter": 2547.52,
+              "Retriever": 7.08,
+              "Summarizer": 2869.92,
+              "Evaluator": 2320.65,
+              "Critic": 3102.47,
+              "Improver": 35820.07
+            }
+          }
+        }
+      },
+      "analysis": {
+        "ok": true,
+        "error_code": null,
+        "message": "success",
+        "question": "배송은 지연되는데 환불 요청도 처리가 안 됩니다.",
+        "stages": [
+          {
+            "agent": "Interpreter",
+            "role": "질문 의도·검색 조건 해석",
+            "check": "의도, 키워드, 카테고리 해석 정확성",
+            "duration_ms": 2547.52,
+            "output": {
+              "task": "both",
+              "filters": [
+                "배송",
+                "지연",
+                "환불"
+              ],
+              "max_items": 10,
+              "csv_path": "C:\\qaeduc2\\VOC_Improve_1\\voc.csv",
+              "source": "llm"
+            }
+          },
+          {
+            "agent": "Retriever",
+            "role": "VOC 데이터 검색",
+            "check": "관련 불만을 빠뜨리지 않고 찾는지",
+            "duration_ms": 7.08,
+            "output": {
+              "retrieved_count": 7,
+              "samples": [
+                "배송이 계속 지연되는데 언제 도착하는지 안내가 전혀 없습니다.",
+                "주문 완료 후 바로 주문 취소를 눌렀는데 취소 처리가 되지 않고 그대로 배송되었습니다.",
+                "배송 예정일이 이미 지났는데 배송 상태가 상품 준비중에서 바뀌지 않습니다.",
+                "배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다.",
+                "주문한 상품과 전혀 다른 상품이 배송되었습니다.",
+                "환불 신청을 했는데 처리 상태를 확인할 수 없어 답답합니다.",
+                "반품 접수 후 일주일이 지났는데 환불 금액이 아직 입금되지 않았습니다."
+              ]
+            }
+          },
+          {
+            "agent": "Summarizer",
+            "role": "검색 결과 요약",
+            "check": "원문 왜곡, 핵심 누락, 중복 여부",
+            "duration_ms": 2869.92,
+            "output": {
+              "candidates": {
+                "S1": "현재 배송이 지속적으로 지연되고 있으며, 배송 상태에 대한 안내가 전혀 없습니다. 또한, 환불 요청을 했지만 처리 상태에 대한 정보가 없어 불만이 제기되고 있습니다.",
+                "S2": "배송 지연이 계속되고 있지만 이에 대한 안내가 없는 상태입니다. 같은 맥락에서, 환불 요청도 제대로 처리되지 않고 있어 불만이 쌓이고 있습니다.",
+                "S0": "배송이 계속 지연되고 있지만 언제 도착하는지에 대한 안내가 전혀 없는 상황입니다. 이와 함께 환불 요청을 했지만, 처리 상태를 확인할 수 없어 답답한 느낌이 있습니다."
+              },
+              "refine_duration_ms": 1368.14,
+              "post_refine_grounding_fallback": false,
+              "post_refine_grounding_precision": 1.0
+            }
+          },
+          {
+            "agent": "Evaluator",
+            "role": "요약·결과 평가",
+            "check": "평가 기준이 일관적인지",
+            "duration_ms": 2320.65,
+            "output": {
+              "winner": "S0",
+              "llm_winner": "S2",
+              "scores": {
+                "S1": 8.5,
+                "S2": 9.0,
+                "S0": 8.0
+              },
+              "relevance_scores": {
+                "S1": 0.4387,
+                "S2": 0.3907,
+                "S0": 0.5347
+              },
+              "grounding_override": true,
+              "summary_grounding_fallback": false,
+              "summary_grounding_precision": 1.0,
+              "selected_summary": "배송이 계속 지연되고 있지만 언제 도착하는지에 대한 안내가 전혀 없는 상황입니다. 이와 함께 환불 요청을 했지만, 처리 상태를 확인할 수 없어 답답한 느낌이 있습니다."
+            }
+          },
+          {
+            "agent": "Critic",
+            "role": "위험·한계 지적",
+            "check": "실제 문제와 리스크를 찾는지",
+            "duration_ms": 3102.47,
+            "output": {
+              "need_refine": true,
+              "edits": [
+                "첫 문단에서 '배송이 계속 지연되고 있지만' 대신 '배송이 지연되고 있으며'로 수정하여 문장을 간결하게 만들어라.",
+                "환불 요청 처리 상태에 대한 언급을 '처리 상태를 확인할 수 없어 답답한 느낌이 있습니다'에서 '환불 요청이 처리되지 않아 답답함을 느끼고 있습니다'로 변경하여 명확성을 높여라.",
+                "원문에서 언급된 다양한 배송 문제를 요약문에 포함시켜 문제의 심각성을 강조하라."
+              ],
+              "ask_more_samples": false
+            }
+          },
+          {
+            "agent": "Improver",
+            "role": "정책 개선안 제안",
+            "check": "개선안이 구체적이고 실행 가능한지",
+            "duration_ms": 35820.07,
+            "output": {
+              "policy": "# 정책 개선안\n\n---\n\n## 🔴 [우선순위 1] 주문 취소 요청의 즉시 처리 보장\n\n**담당 조직:** 주문·결제 운영팀\n\n**무엇을:** 주문 완료 직후의 취소 요청이 출고 이전에 반드시 반영되지 않아 고객 불만 및 불필요한 반품·환불 비용이 발생하고 있다. 취소 요청 접수 → 출고 시스템 간 연동 프로세스를 점검하고 개선하여, 취소 요청이 즉시 출고 중단으로 이어지는 구조를 확립한다.\n\n**언제까지:** 개선 과제 정의 후 스프린트 단위 일정으로 착수하며, 1차 개선안은 착수 후 4주 이내 적용을 목표로 한다.\n\n**어떻게:**\n- 취소 요청이 접수된 시점에 출고 프로세스가 즉시 중단되는 인터럽트 로직을 구현한다.\n- 취소 요청 접수 후 고객에게 \"취소 접수 완료 여부\"를 명확히 안내하는 알림을 발송한다.\n- 취소 요청이 있음에도 출고가 진행된 건을 역추적할 수 있는 로그 기록 체계를 마련한다.\n- 재시도 가능한 취소 요청 횟수 및 요청 가능 시간 범위를 정책으로 명문화하고, 악용 방지 조건(예: 동일 계정 비정상 취소 패턴 감지)을 함께 수립한다.\n\n---\n\n## 🔴 [우선순위 2] 환불 처리 불가 상태 해소 및 환불 정책 명확화\n\n**담당 조직:** 고객지원팀 · 정산·환불 운영팀\n\n**무엇을:** 취소 요청이 수용되지 않고 배송이 진행된 경우, 또는 오배송이 확인된 경우에 환불 요청이 항상 처리될 수 있도록 환불 승인 기준과 처리 절차를 정비한다. 현재 환불 처리 지연 및 누락은 고객 신뢰 저하와 반복적인 문의 증가로 이어지고 있으며, 이를 구조적으로 해소하는 것이 본 과제의 핵심 목적이다.\n\n**언제까지:** 절차 정비안 수립은 과제 착수 후 3주 이내, 실제 적용은 보안 검토 완료 후 6주 이내를 목표로 한다. 환불 처리 완료 목표 기간은 현재 내부 실측 평균 소요 기간(예: 승인 후 평균 10영업일)을 기준으로 단계별 목표값을 설정하며, 개선 후 목표 기간은 승인 후 5영업일 이내 완료를 기준으로 한다.\n\n**어떻게:**\n- 오배송(주문 상품과 다른 상품 수령) 및 취소 미반영 후 출고된 건에 대한 환불 승인 요건과 처리 경",
+              "skipped": false
+            }
+          }
+        ],
+        "summary": "복합 장애 문의로 다음 처리 실패 문제가 함께 제기되었습니다: 배송은 지연되는데 환불 요청도 처리가 안 됩니다.\n배송이 지연되고 있으며, 언제 도착하는지에 대한 안내가 전혀 없습니다. 또한, 환불 요청이 처리되지 않아 답답함을 느끼고 있습니다. 주문 완료 후 바로 주문을 취소했으나, 취소 처리가 되지 않고 그대로 배송되었습니다. 배송 예정일이 이미 지났음에도 배송 상태는 상품 준비중에서 바뀌지 않고 있으며, 배송 조회를 하면 운송장 번호가 조회되지 않는다고 나옵니다. 더불어, 주문한 상품과 전혀 다른 상품이 배송되었습니다.",
+        "policy": "# 정책 개선안\n\n---\n\n## 🔴 [우선순위 1] 주문 취소 요청의 즉시 처리 보장\n\n**담당 조직:** 주문·결제 운영팀\n\n**무엇을:** 주문 완료 직후의 취소 요청이 출고 이전에 반드시 반영되지 않아 고객 불만 및 불필요한 반품·환불 비용이 발생하고 있다. 취소 요청 접수 → 출고 시스템 간 연동 프로세스를 점검하고 개선하여, 취소 요청이 즉시 출고 중단으로 이어지는 구조를 확립한다.\n\n**언제까지:** 개선 과제 정의 후 스프린트 단위 일정으로 착수하며, 1차 개선안은 착수 후 4주 이내 적용을 목표로 한다.\n\n**어떻게:**\n- 취소 요청이 접수된 시점에 출고 프로세스가 즉시 중단되는 인터럽트 로직을 구현한다.\n- 취소 요청 접수 후 고객에게 \"취소 접수 완료 여부\"를 명확히 안내하는 알림을 발송한다.\n- 취소 요청이 있음에도 출고가 진행된 건을 역추적할 수 있는 로그 기록 체계를 마련한다.\n- 재시도 가능한 취소 요청 횟수 및 요청 가능 시간 범위를 정책으로 명문화하고, 악용 방지 조건(예: 동일 계정 비정상 취소 패턴 감지)을 함께 수립한다.\n\n---\n\n## 🔴 [우선순위 2] 환불 처리 불가 상태 해소 및 환불 정책 명확화\n\n**담당 조직:** 고객지원팀 · 정산·환불 운영팀\n\n**무엇을:** 취소 요청이 수용되지 않고 배송이 진행된 경우, 또는 오배송이 확인된 경우에 환불 요청이 항상 처리될 수 있도록 환불 승인 기준과 처리 절차를 정비한다. 현재 환불 처리 지연 및 누락은 고객 신뢰 저하와 반복적인 문의 증가로 이어지고 있으며, 이를 구조적으로 해소하는 것이 본 과제의 핵심 목적이다.\n\n**언제까지:** 절차 정비안 수립은 과제 착수 후 3주 이내, 실제 적용은 보안 검토 완료 후 6주 이내를 목표로 한다. 환불 처리 완료 목표 기간은 현재 내부 실측 평균 소요 기간(예: 승인 후 평균 10영업일)을 기준으로 단계별 목표값을 설정하며, 개선 후 목표 기간은 승인 후 5영업일 이내 완료를 기준으로 한다.\n\n**어떻게:**\n- 오배송(주문 상품과 다른 상품 수령) 및 취소 미반영 후 출고된 건에 대한 환불 승인 요건과 처리 경",
+        "intent_json": "{\"task\": \"both\", \"filters\": [\"배송\", \"지연\", \"환불\"], \"max_items\": 10, \"csv_path\": \"C:\\\\qaeduc2\\\\VOC_Improve_1\\\\voc.csv\"}",
+        "eval_json": "{\"S1\": 8.5, \"S2\": 9.0, \"S0\": 8.0}",
+        "summary_critic_json": "{\"need_refine\": true, \"edits\": [\"첫 문단에서 '배송이 계속 지연되고 있지만' 대신 '배송이 지연되고 있으며'로 수정하여 문장을 간결하게 만들어라.\", \"환불 요청 처리 상태에 대한 언급을 '처리 상태를 확인할 수 없어 답답한 느낌이 있습니다'에서 '환불 요청이 처리되지 않아 답답함을 느끼고 있습니다'로 변경하여 명확성을 높여라.\", \"원문에서 언급된 다양한 배송 문제를 요약문에 포함시켜 문제의 심각성을 강조하라.\"]}",
+        "trace": "Interpreter; Retriever; Summarizer; Evaluator; Critic; Improver",
+        "metrics": {
+          "total_duration_ms": 48036.09,
+          "stage_duration_ms": {
+            "Interpreter": 2547.52,
+            "Retriever": 7.08,
+            "Summarizer": 2869.92,
+            "Evaluator": 2320.65,
+            "Critic": 3102.47,
+            "Improver": 35820.07
+          }
+        }
+      }
+    }
+  ]
+}

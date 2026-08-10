@@ -1,0 +1,2 @@
+case_id,category,test_type,user_question,response,rule_passed,rule_reason,accuracy,groundedness,helpfulness,safety,comment
+SMOKE-001,정확성,Smoke,이 교육과정은 총 몇 시간인가요?,이 교육과정은 총 320시간 과정입니다.,True,'320시간' 키워드 포함 확인됨,0,0,0,0,평가 실패(오류): OPENAI_API_KEY가 설정되어 있지 않습니다. .env 파일을 확인하세요.

@@ -1,0 +1,36 @@
+{
+  "id": "RUN-20260708153022",
+  "started_at": "2026-07-08 15:30:22",
+  "ended_at": "2026-07-08 15:30:55",
+  "duration_seconds": 32.49,
+  "selected_uploads": [
+    {
+      "id": "UP-20260708152448-005",
+      "filename": "TC-05_AI_품질관리 챗봇 테스크.json",
+      "file_type": "JSON",
+      "row_count": 5,
+      "uploaded_at": "2026-07-08 15:24:48",
+      "source_path": "C:\\qaeduc\\ai_quality_final_project_Team3\\data\\testcases\\uploads\\UP-20260708152448-005\\TC-05_AI_품질관리_챗봇_테스크.json",
+      "run_source_path": "C:\\qaeduc\\ai_quality_final_project_Team3\\reports\\test_runs\\RUN-20260708153022\\inputs\\uploads\\UP-20260708152448-005\\TC-05_AI_품질관리_챗봇_테스크.json"
+    }
+  ],
+  "test_case_count": 5,
+  "reports": {
+    "json": "C:\\qaeduc\\ai_quality_final_project_Team3\\reports\\test_runs\\RUN-20260708153022\\reports\\evaluation_result.json",
+    "csv": "C:\\qaeduc\\ai_quality_final_project_Team3\\reports\\test_runs\\RUN-20260708153022\\reports\\evaluation_result.csv",
+    "markdown": "C:\\qaeduc\\ai_quality_final_project_Team3\\reports\\test_runs\\RUN-20260708153022\\reports\\final_quality_report.md",
+    "archive": {
+      "timestamp": "20260708_153055",
+      "display_time": "2026-07-08 15:30:55",
+      "total": 5,
+      "rule_pass": 2,
+      "rule_review": 1,
+      "rule_fail": 2,
+      "rule_pass_rate": 40.0,
+      "api_pass": 3,
+      "api_review": 0,
+      "api_fail": 2,
+      "api_pass_rate": 60.0
+    }
+  }
+}

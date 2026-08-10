@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="dashboard_content_deduplication" tests="8" failures="0" errors="0" timestamp="2026-07-15T16:56:45+09:00">
+  <testcase classname="voc.quality.dashboard_content_deduplication" name="DASHBOARD-ONLY-SUMMARY" />
+  <testcase classname="voc.quality.dashboard_content_deduplication" name="TEST-CASES-ISOLATION" />
+  <testcase classname="voc.quality.dashboard_content_deduplication" name="RUNS-ISOLATION" />
+  <testcase classname="voc.quality.dashboard_content_deduplication" name="COMPARE-ISOLATION" />
+  <testcase classname="voc.quality.dashboard_content_deduplication" name="HIDDEN-CSS-PRIORITY" />
+  <testcase classname="voc.quality.dashboard_content_deduplication" name="WEB-UNIT-29" />
+  <testcase classname="voc.quality.dashboard_content_deduplication" name="FULL-REGRESSION-75" />
+  <testcase classname="voc.quality.dashboard_content_deduplication" name="AGENT-READINESS" />
+</testsuite>
