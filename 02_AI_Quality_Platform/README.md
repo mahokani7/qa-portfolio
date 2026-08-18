@@ -2,6 +2,20 @@
 
 AI Agent의 답변 품질을 평가하고 운영 상태를 모니터링하는 통합 프로젝트입니다. FastAPI 기반 질의 API, RAG 지식 검색, 품질 평가 파이프라인, Streamlit 대시보드, Prometheus/Grafana 모니터링을 제공합니다.
 
+## Project Type
+
+개인 프로젝트 — 기획부터 구현까지 단독 수행
+
+## My Role
+
+- 루브릭(8축 평가 기준·가중치) 설계
+- Judge Agent(`app/judge_agent.py`) 구현 — LLM 기반 채점 로직
+- Rule-based Agent(`app/rule_based_agent.py`) 구현 — 규칙 기반 1차 검증
+- JSON Schema(`app/schemas.py`) 설계 — Judge 출력 구조화
+- Streamlit 대시보드(`dashboard/streamlit_app.py`) 구현
+- pytest 테스트 18개 파일(정상 케이스·레드팀·회귀 시나리오) 설계·구현
+- k6 성능 테스트 설계·실행
+
 ## 주요 기능
 
 - FastAPI 기반 AI Agent API (`/health`, `/ask`, `/metrics`)

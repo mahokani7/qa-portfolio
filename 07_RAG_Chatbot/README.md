@@ -2,6 +2,17 @@
 
 LLM이 아는 척 답하지 않고, 업로드한 문서에서 근거를 찾아 그 근거와 함께 답하도록 만든 RAG(Retrieval-Augmented Generation) 챗봇입니다. 문서 업로드 → 분할 → 임베딩·ChromaDB 저장 → 질문 시 유사 문서 검색 → 근거 기반 답변 흐름이며, LLM Judge가 답변 품질(이해도·정확성·관련성·표현성)을 자동 평가합니다.
 
+## Project Type
+
+개인 프로젝트
+
+## My Role
+
+- RAG 파이프라인(`ingest.py`, `rag_service.py`) 설계·구현
+- Judge Agent(`evaluator_agent.py`) 설계 — 루브릭 평가·감점 평가·최종 점수 산출 로직
+- 답변 품질 평가 실행 및 리포트 생성(`run_evaluation.py`, `run_tests.py`)
+- Streamlit UI(챗봇/문서관리/품질평가 3탭) 구현
+
 ## 주요 기능
 
 - Streamlit 3탭 구성: **챗봇**(질문·답변·근거 확인) / **문서 관리**(업로드·벡터DB 재구축) / **품질평가 안내**

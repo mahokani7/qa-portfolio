@@ -21,7 +21,7 @@
 
 ## AI-assisted development
 
-이 저장소의 코드와 문서 작성에 AI 도구(Claude 등)를 보조 수단으로 활용했습니다. 코드 작성과 문서 초안 생성을 AI가 보조했지만, **요구사항 정의·테스트 설계·결과 검증·오류 분석·최종 판단은 직접 수행**했습니다. 이 저장소를 공개용으로 정리하면서 발견한 결함(의존성 오류, 자격 증명 노출, 채점 로직 결함 등)과 수정 내역은 [`PROJECT_VALIDATION.md`](PROJECT_VALIDATION.md)에 정리했습니다.
+이 저장소의 코드와 문서 작성에 AI 도구(Claude 등)를 보조 수단으로 활용했습니다. 코드 작성과 문서 초안 생성을 AI가 보조했지만, **요구사항 정의·테스트 설계·결과 검증·오류 분석·최종 판단은 직접 수행**했습니다. 이 저장소를 공개용으로 정리하면서 발견한 결함(의존성 오류, 자격 증명 노출, 채점 로직 결함 등)과 수정 내역은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)에 정리했습니다.
 
 ---
 
@@ -45,7 +45,7 @@
 | 09 · 풀스택 웹앱 (Jest) | 4 |
 | **합계** | **276** |
 
-> 검증 방법과 발견한 결함·수정 내역은 [`PROJECT_VALIDATION.md`](PROJECT_VALIDATION.md)에 정리했습니다.
+> 검증 방법과 발견한 결함·수정 내역은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)에 정리했습니다.
 
 ### 깃허브 → 웹 실행 점검 (2026-08-06)
 
@@ -73,7 +73,7 @@
 
 ### 깃허브 업로드 전 확인 사항
 
-- **실제 키 유출 0건** — `.env` 실파일 없음, 소스 내 `sk-…` 하드코딩 없음(발견된 노출 사례와 조치는 [`PROJECT_VALIDATION.md`](PROJECT_VALIDATION.md) 참조)
+- **실제 키 유출 0건** — `.env` 실파일 없음, 소스 내 `sk-…` 하드코딩 없음(발견된 노출 사례와 조치는 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md) 참조)
 - **루트 `.gitignore` 추가함** — `.env`·`.venv`·`node_modules` 커밋 방지
 - **100MB 초과 파일 없음.** `06_AI_Chatbot_QA/tools/k6.exe`(61MB)는 50MB 경고 대상이라 `.gitignore`로 저장소에서 제외함(필요 시 `winget install k6`로 로컬 설치)
 
@@ -98,7 +98,7 @@ notepad .env        # 본인 API 키 입력
 | `JIRA_*` (선택, 결함 자동등록) | 02, 06 |
 | 키 불필요 | 04, 05, 08, 09 |
 
-> 01·02·06·08·05는 키 없이도(또는 더미 키로도) 테스트가 통과합니다 — 근거는 [`PROJECT_VALIDATION.md`](PROJECT_VALIDATION.md) 참조.
+> 01·02·06·08·05는 키 없이도(또는 더미 키로도) 테스트가 통과합니다 — 근거는 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md) 참조.
 
 ### 2. Python 가상환경
 
@@ -185,7 +185,7 @@ pytest -v                                   # 테스트
 docker-compose up -d                        # Prometheus 연동
 ```
 > 자세한 실행법은 폴더 안 `RUN_GUIDE.md` 참조. 부하 테스트에 필요한 `k6`는 저장소에 포함되어 있지 않으니 `winget install k6`로 설치하세요.
-> 3인 팀 프로젝트이며, 제 담당은 테스트 설계·평가 검증·발표였습니다. 팀원별 역할은 [mahokani7.github.io/qa/project-01.html](https://mahokani7.github.io/qa/project-01.html)에 정리했습니다.
+> 팀 프로젝트입니다. 정확한 팀 구성·역할 분담은 03번과의 관계를 포함해 확인 중이며, 확정되는 대로 갱신하겠습니다.
 
 ### 07. RAG 챗봇
 ```powershell
@@ -241,4 +241,4 @@ npm install; npm start   # Node 버전 (edubot.js)
 
 ---
 
-검증 방법, 발견한 결함, 수정 내역, 재검증 결과는 [`PROJECT_VALIDATION.md`](PROJECT_VALIDATION.md)를 참조하세요.
+검증 방법, 발견한 결함, 수정 내역, 재검증 결과는 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)를 참조하세요.

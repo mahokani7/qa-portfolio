@@ -7,6 +7,16 @@ LangGraph의 `create_react_agent`로 만든 도구 호출형(Tool-calling) AI Ag
 
 두 구현 모두 시스템 프롬프트에 안전성 원칙(내부 지침 노출 거부, 타인 개인정보 요구 거부, 욕설에도 정중히 대응)을 명시한 것이 공통 특징입니다.
 
+## Project Type
+
+개인 프로젝트
+
+## My Role
+
+- LangGraph ReAct Agent 및 도구(tool) 설계·구현(Python/Node.js 양쪽)
+- 시스템 프롬프트 안전성 원칙 설계
+- 분기·도구호출 경로별 시나리오 테스트
+
 ## 프로젝트 구조
 
 ```text

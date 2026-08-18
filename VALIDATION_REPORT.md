@@ -1,17 +1,10 @@
-# Project Validation
+# Project Validation Report
 
 `README.md`에서 분리한 검증 상세 기록입니다. "무엇을 만들었는지"가 아니라 **"어떻게 검증했는지"**를 다룹니다.
 
 ---
 
-## Test Environment
-
-- Windows 11, Python(`venv` 격리) — 8개 프로젝트(01·02·03·05·06·07·08·10)는 프로젝트별 `.venv` 생성 후 `pip install -r requirements.txt`로 실행 환경을 재구성해 검증했습니다.
-- `venv`·`node_modules`는 다른 환경에서 그대로 동작하지 않아 저장소에 포함하지 않았습니다(`.gitignore` 처리). 실행하려면 위 방식으로 새로 만들어야 합니다.
-- Node.js는 이 검증에 사용한 환경에 설치되어 있지 않아, 09(풀스택 웹앱)와 10의 Node 구현부는 정적 코드 검토만 진행하고 실행 검증은 하지 않았습니다.
-- 01·02·03·06·07·10은 LLM API 키가 필요합니다. 실제 `.env`는 저장소에 포함하지 않았고 `.env.example`만 제공합니다.
-
-## Test Scope
+## 1. Validation Scope
 
 | # | 프로젝트 | 검증 방식 |
 |---|---|---|
@@ -26,7 +19,14 @@
 | 09 | 풀스택 웹앱 | 정적 코드 검토(Node 미설치 환경이라 실행 검증 제외) |
 | 10 | LangGraph 챗봇 | Python 모듈 import 검증(Node 구현부는 정적 검토) |
 
-## Automated Tests
+## 2. Test Environment
+
+- Windows 11, Python(`venv` 격리) — 8개 프로젝트(01·02·03·05·06·07·08·10)는 프로젝트별 `.venv` 생성 후 `pip install -r requirements.txt`로 실행 환경을 재구성해 검증했습니다.
+- `venv`·`node_modules`는 다른 환경에서 그대로 동작하지 않아 저장소에 포함하지 않았습니다(`.gitignore` 처리). 실행하려면 위 방식으로 새로 만들어야 합니다.
+- Node.js는 이 검증에 사용한 환경에 설치되어 있지 않아, 09(풀스택 웹앱)와 10의 Node 구현부는 정적 코드 검토만 진행하고 실행 검증은 하지 않았습니다.
+- 01·02·03·06·07·10은 LLM API 키가 필요합니다. 실제 `.env`는 저장소에 포함하지 않았고 `.env.example`만 제공합니다.
+
+## 3. Automated Tests
 
 실행 환경이 갖춰진 항목에서, 직접 돌려 통과를 확인한 자동 테스트는 다음과 같습니다.
 
@@ -45,12 +45,12 @@
 - 05는 별도의 pytest 스위트가 없어, Mock LLM Judge(`use_mock=True`)로 평가 파이프라인 전체를 직접 실행해 4가지 집계 방식(simple/weight/cutoff/hybrid)과 도메인별 정책이 각각 다른 PASS/FAIL을 내는지 확인했습니다.
 - 03·07·10(Python)은 실 API 키 없이 전체 모듈 import가 정상 동작하는 것까지 확인했고, 파이프라인 전체 실행은 API 키가 있어야 합니다.
 
-## Validation Results
+## 4. Test Results
 
 - 위 표의 자동 테스트는 실행 환경이 갖춰진 항목에서 전부 PASS했습니다.
 - **테스트 통과가 곧 배포 승인은 아니라는 사례(PRJ_01)**: 내부 파이프라인 자체 평가로는 100점(배포 가능) 판정이 나온 케이스에서도, 별도로 붙인 독립 LLM Judge는 정책 구체성 축을 0점으로 매겨 68~74점으로 재평가했습니다. 라이브 E2E 18건 전체 평균은 81.2점으로 배포 기준(95점)에 못 미쳤고, 최종 판정은 배포 보류(HOLD)였습니다. `pytest 32건 PASS`와 `독립 Judge 평균 81.2점 미달`이 동시에 성립한다는 것 자체가, 자동 테스트 통과와 실제 배포 판정 기준이 다른 층위라는 것을 보여주는 근거로 남겼습니다.
 
-## Defects Found
+## 5. Defects Found
 
 이 포트폴리오를 정리하는 과정에서 실제로 발견한 결함입니다.
 
@@ -65,7 +65,7 @@
 | `.gitignore` 누락 | 10개 중 5개 프로젝트에 `.gitignore`가 없어 `.env`가 커밋될 위험이 있었음 |
 | 테스트 러너 충돌 (09) | 단위 테스트 러너가 대상 범위를 지정하지 않아 통합 테스트 파일까지 함께 실행되던 문제 |
 
-## Fixes Applied
+## 6. Fixes Applied
 
 - 의존성 버전을 명시적으로 고정해 재현 가능한 설치로 수정
 - 노출된 자격 증명은 값을 제거하고 해당 실습 프로젝트는 포트폴리오에서 제외
@@ -76,17 +76,17 @@
 - 루트에 공통 `.gitignore` 추가
 - 09의 테스트 스크립트를 `test:unit`(node:test) / `test:integration`(Jest)로 분리하고 `npm test`가 둘을 순차 실행하도록 수정
 
-## Re-test Results
+## 7. Re-test Results
 
 수정을 적용한 뒤 관련 항목을 다시 실행해 전부 PASS를 재확인했습니다. `Automated Tests` 표의 수치가 이 재검증 이후의 최종 결과입니다.
 
-## Known Limitations
+## 8. Known Limitations
 
 - Node.js가 없는 환경에서 검증해, 09(풀스택 웹앱)의 실행 검증과 10의 Node 구현부(`edubot.js`)는 정적 코드 검토로 대체했습니다.
 - 02의 모니터링 스택(Prometheus/Grafana/k6)과 01·06의 Docker Compose 구성은 이번 검증에서 컨테이너로 직접 기동하지 않았습니다.
 - 03·07·10은 실 LLM API 키가 있어야 전체 파이프라인을 끝까지 실행할 수 있어, 모듈 단위 검증까지만 진행했습니다.
 
-## Not Measured
+## 9. Not Measured
 
 다음 항목은 이 포트폴리오에서 실제로 측정하지 않았고, 임의로 수치를 추정해 넣지 않았습니다.
 

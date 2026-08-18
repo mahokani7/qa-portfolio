@@ -2,6 +2,18 @@
 
 VOC(Voice of Customer) 분석 시스템 - 고객 불만사항 분석 및 정책 개선안 생성
 
+## Project Type
+
+팀 프로젝트(4인) — 멀티에이전트 파이프라인·AWS 인프라·리포팅 대시보드는 팀원이 담당했습니다.
+
+## My Role
+
+- 테스트 시나리오 설계, 평가 루브릭(LLM Judge 채점 기준) 설계
+- Judge 프롬프트 검증, 독립 LLM Judge 채점 결과 검증
+- 최종 발표 스크립트 작성 및 시연
+
+팀원별 역할 상세는 [mahokani7.github.io/qa/project-01.html](https://mahokani7.github.io/qa/project-01.html) 참고.
+
 ## 프로젝트 구조
 
 ```

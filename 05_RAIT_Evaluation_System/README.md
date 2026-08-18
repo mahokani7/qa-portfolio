@@ -2,6 +2,19 @@
 
 AI 응답 품질을 R·E·U·S·T·A·C·P(관련성·적합성·이해도·안전성·표현성·정확성·일관성·지속성) 8개 지표로 평가하고, 도메인별 정책(기준점·과락 조건)에 따라 서비스 배포 가능 여부(PASS/FAIL)를 판정하는 교육용 품질관리 도구입니다.
 
+## Project Type
+
+개인 프로젝트 — 지표 체계부터 계산 로직까지 단독 설계·구현
+
+## My Role
+
+- 8축 지표 체계 정의 및 축별 판정 기준(루브릭) 수립
+- Judge 프롬프트(`src/runner/llm_judge.py`) 설계 — 축별 점수+근거를 JSON으로 반환
+- 계산 엔진(`src/engine/calculator.py`, `src/engine/filter.py`) 구현 — simple/weight/cutoff/hybrid 4가지 집계 방식
+- 도메인별 정책(`config/policy_config.json`) 설계 — 기준점·가중치·과락 조건
+- Streamlit 대시보드(`app/app.py`) 구현
+- Mock LLM Judge로 파이프라인 전체 실행 검증(별도 pytest 스위트는 없음)
+
 ## 주요 기능
 
 - Streamlit 대시보드에서 8개 지표 점수를 슬라이더로 직접 조정하며 실시간 판정 확인
