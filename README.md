@@ -45,7 +45,7 @@
 
 - **프로젝트 성격**: 개인 프로젝트 — 전통적 웹 QA 자동화 역량을 보여주는 유일한 항목
 - **핵심**: Cypress E2E 테스트, Jest 통합 테스트, node:test 단위 테스트
-- **내 역할**: 테스트 대상 웹앱과 Cypress/Jest 테스트 스위트를 직접 작성. `npm test` 기준 단위 5건·통합 4건 전부 PASS.
+- **내 역할**: 테스트 대상 웹앱과 Cypress/Jest 테스트 스위트를 직접 작성. `npm test` 기준 단위 5건·통합 4건 전부 PASS. 상세는 [`09_FullStack_WebApp/README.md`](09_FullStack_WebApp/README.md) 참고.
 
 ## Additional Projects
 
