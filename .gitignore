@@ -53,6 +53,9 @@ desktop.ini
 .vscode/
 *.swp
 
+# ── AI 개발 도구 로컬 설정 (개인 PC 경로·권한 설정 등, 공개 불필요) ──
+.claude/
+
 # ── 대용량 바이너리 ───────────────────────────────────────────
 # tools/k6.exe(61MB)는 GitHub 50MB 경고 대상이라 제외. 필요하면 winget install k6로 로컬 설치.
 **/tools/k6.exe

@@ -1,22 +1,51 @@
-# QA 포트폴리오 — 실행 가능 프로그램 모음
+# 최성우 | IT 기획 · PM · AI QA
 
-## 소개
+20년+ IT 기획·PM 경험을 바탕으로 AI/LLM 서비스의 품질과 테스트 영역으로 역량을 확장하고 있습니다.
 
-**최성우** — IT 프로젝트 매니지먼트 20년+ 경력을 바탕으로 AI QA 엔지니어로 전환 중입니다. 오랜 기간 개발 프로젝트를 관리하며 품질·일정·리스크를 조율해온 경험을, AI/LLM 서비스 시대에 맞는 품질관리·테스트 자동화 역량으로 확장하기 위해 AI QA 교육과정을 이수했습니다. 이 저장소는 그 과정에서 만든 10개 프로젝트를 정리한 것입니다.
+이 저장소에는 AI QA 교육 과정에서 진행한 개인·팀 프로젝트 10개 중, 직접 설계·구현·테스트·검증한 산출물을 정리했습니다.
+
+- 개인 브랜딩 사이트: [mahokani7.github.io](https://mahokani7.github.io/)
+- AI QA 포트폴리오(정리된 버전): [mahokani7.github.io/qa](https://mahokani7.github.io/qa/)
+
+## 핵심 역량
+
+이 저장소의 프로젝트에서 실제로 사용한 역량만 적었습니다.
+
+- 요구사항 분석 및 테스트 전략 수립
+- 테스트 케이스 설계, 결함 분석·관리
+- LLM-as-a-Judge 기반 AI 응답 품질 평가
+- 품질 지표·루브릭 설계 (RaiT 8축 프레임워크)
+- API 테스트(pytest), E2E 테스트(Cypress)
+- Jira 기반 QA 관리, WBS·테스트 계획 수립
+- QA 결과 분석 및 재검증(Re-test)
+
+## AI-assisted development
+
+이 저장소의 코드와 문서 작성에 AI 도구(Claude 등)를 보조 수단으로 활용했습니다. 코드 작성과 문서 초안 생성을 AI가 보조했지만, **요구사항 정의·테스트 설계·결과 검증·오류 분석·최종 판단은 직접 수행**했습니다. 이 저장소를 공개용으로 정리하면서 발견한 결함(의존성 오류, 자격 증명 노출, 채점 로직 결함 등)과 수정 내역은 [`PROJECT_VALIDATION.md`](PROJECT_VALIDATION.md)에 정리했습니다.
 
 ---
 
 수집일: 2026-08-05
-수집 방식: **원본 복사(copy)** — 원본 폴더는 `C:\qaeduc2\`, `C:\`에 그대로 있습니다
 수록 프로젝트: **10개** — `01`~`10` (교육과정 원래 번호 08·12·13·16을 재배치)
 선정 기준: **웹으로 보여줄 수 있는 것** + QA 문서 산출물(04)
 
-> ### 📄 제출용 요약은 [`PORTFOLIO.html`](PORTFOLIO.html)을 여세요
-> 실행 증적(명령·종료코드·출력), 웹 가동 가능성 4축 판정, 산출물 이미지가 들어 있습니다.
-> **검증 요약** — 실행 검증 완료 6개(01·02·05·06·08·09) / API 키 필요 3개(03·07·10) /
-> 문서 1개(04) / 직접 통과시킨 자동 테스트 **276건**
+> ### 📄 실행 검증 요약은 [`index.html`](index.html)을 여세요 ([mahokani7.github.io/qa-portfolio](https://mahokani7.github.io/qa-portfolio/)에서도 볼 수 있습니다)
+> 실행 증적(명령·종료코드·출력), 웹 가동 가능성 4축 판정이 들어 있습니다.
+> **검증 요약** — 실행 검증 완료 6개(01·02·05·06·08·09) / API 키 필요 3개(03·07·10) / 문서 1개(04)
 >
-> 제외한 프로젝트·복사 시 뺀 것·검증 상세·수정 내역·원본 경로는 [`AUDIT_LOG.md`](AUDIT_LOG.md)에 정리했습니다.
+> 자동 테스트 **276건**을 직접 실행해 통과를 확인했습니다 — 내역:
+
+| 항목 | 테스트 수 |
+|---|---:|
+| 01 · VOC 멀티에이전트 (`unittest`) | 98 |
+| 01 · VOC 멀티에이전트 (품질 스위트, pytest) | 32 |
+| 02 · AI 품질 평가 플랫폼 (pytest) | 84 |
+| 06 · 팀 프로젝트 — AI 챗봇 QA (pytest) | 53 |
+| 09 · 풀스택 웹앱 (`node:test`) | 5 |
+| 09 · 풀스택 웹앱 (Jest) | 4 |
+| **합계** | **276** |
+
+> 검증 방법과 발견한 결함·수정 내역은 [`PROJECT_VALIDATION.md`](PROJECT_VALIDATION.md)에 정리했습니다.
 
 ### 깃허브 → 웹 실행 점검 (2026-08-06)
 
@@ -29,7 +58,7 @@
 | 03 | AI챗봇 QA 파이프라인 | ✅ 실행됨 | 필요 | — (ChromaDB는 재시작 시 신규 색인 소실) |
 | **04** | **QA 문서 산출물** | ❌ **실행 불가** | — | **실행할 프로그램이 아님 — 문서 13종** |
 | 05 | RAIT 평가 시스템 | ✅ 실행됨 | **불필요** | — (기동 확인 완료) |
-| 06 | 팀프로젝트 Team3 | ⚠️ 부분 | 필요 | compose 4서비스 구조 |
+| 06 | 팀 프로젝트 — AI 챗봇 QA | ⚠️ 부분 | 필요 | compose 4서비스 구조 |
 | 07 | RAG 챗봇 | ✅ 실행됨 | 필요 | — (올리기 가장 쉬움) |
 | 08 | AI Agent 모니터링 | ⚠️ 부분 | **불필요** | `streamlit_app.py:17`이 `127.0.0.1:8001` 하드코딩 |
 | 09 | 풀스택 웹앱 | ⚠️ 부분 | 불필요 | **화면만 뜨고 기능 불가** — `/api` 404, MongoDB 필요 |
@@ -44,9 +73,9 @@
 
 ### 깃허브 업로드 전 확인 사항
 
-- **실제 키 유출 0건** — `.env` 실파일 없음, 소스 내 `sk-…` 하드코딩 없음
+- **실제 키 유출 0건** — `.env` 실파일 없음, 소스 내 `sk-…` 하드코딩 없음(발견된 노출 사례와 조치는 [`PROJECT_VALIDATION.md`](PROJECT_VALIDATION.md) 참조)
 - **루트 `.gitignore` 추가함** — `.env`·`.venv`·`node_modules` 커밋 방지
-- **100MB 초과 파일 없음.** `06/tools/k6.exe`(61MB)는 50MB 경고 대상이라 `.gitignore`로 저장소에서 제외함(필요 시 `winget install k6`로 로컬 설치)
+- **100MB 초과 파일 없음.** `06_AI_Chatbot_QA/tools/k6.exe`(61MB)는 50MB 경고 대상이라 `.gitignore`로 저장소에서 제외함(필요 시 `winget install k6`로 로컬 설치)
 
 ---
 
@@ -69,7 +98,7 @@ notepad .env        # 본인 API 키 입력
 | `JIRA_*` (선택, 결함 자동등록) | 02, 06 |
 | 키 불필요 | 04, 05, 08, 09 |
 
-> 01·02·06·08·05는 키 없이도(또는 더미 키로도) 테스트가 통과합니다 — 근거는 [`AUDIT_LOG.md`](AUDIT_LOG.md#api-키-관련-검증-정정-2026-0805-06) 참조.
+> 01·02·06·08·05는 키 없이도(또는 더미 키로도) 테스트가 통과합니다 — 근거는 [`PROJECT_VALIDATION.md`](PROJECT_VALIDATION.md) 참조.
 
 ### 2. Python 가상환경
 
@@ -104,7 +133,7 @@ python run_all.py           # ① 6개 에이전트 전체 파이프라인 실�
 python web_app.py           # ② 웹 UI (브라우저 테스트)
 python grpc_server.py       # ③ gRPC A2A 서버
 python main.py              # ④ MCP 서버
-pytest tests -v             # ⑤ 테스트 11종
+pytest tests -v             # ⑤ 테스트
 python quality_diagnosis/run_quality_suite.py   # ⑥ 품질 진단 스위트
 ```
 **볼거리**: `quality_diagnosis/`(LLM Judge·품질게이트·레드팀·재현성), `docs/`(발표 PPTX/PDF, PRD), `videos/`(시연 영상 2편)
@@ -117,7 +146,7 @@ cd 02_AI_Quality_Platform
 .\run_full.ps1                              # ★ 대시보드 + 모니터링 원클릭 실행
 streamlit run dashboard\streamlit_app.py    # 대시보드만
 python -m quality.quality_pipeline          # 품질 파이프라인
-pytest tests -v                             # 테스트 15종
+pytest tests -v                             # 테스트
 docker-compose up -d                        # Prometheus + Grafana 스택
 k6 run performance\k6_test.js               # 부하 테스트 (k6 미설치 시 winget install k6)
 ```
@@ -143,12 +172,12 @@ streamlit run dashboard\streamlit_app.py    # 결과 대시보드
 ```powershell
 cd 05_RAIT_Evaluation_System
 streamlit run app\app.py     # ① 평가 대시보드
-python src\main.py           # ② 평가 엔진 (별도 실행)
+python src\main.py           # ② 평가 엔진 (별도 실행, Mock LLM Judge)
 ```
 
-### 06. 팀 프로젝트 — AI 챗봇 QA (Team3)
+### 06. 팀 프로젝트 — AI 챗봇 QA
 ```powershell
-cd "06_AI ChatbotQA"
+cd 06_AI_Chatbot_QA
 python main.py                              # 평가 실행
 python api_app.py                           # FastAPI + /metrics
 streamlit run dashboard\streamlit_app.py    # 대시보드
@@ -156,6 +185,7 @@ pytest -v                                   # 테스트
 docker-compose up -d                        # Prometheus 연동
 ```
 > 자세한 실행법은 폴더 안 `RUN_GUIDE.md` 참조. 부하 테스트에 필요한 `k6`는 저장소에 포함되어 있지 않으니 `winget install k6`로 설치하세요.
+> 3인 팀 프로젝트이며, 제 담당은 테스트 설계·평가 검증·발표였습니다. 팀원별 역할은 [mahokani7.github.io/qa/project-01.html](https://mahokani7.github.io/qa/project-01.html)에 정리했습니다.
 
 ### 07. RAG 챗봇
 ```powershell
@@ -211,4 +241,4 @@ npm install; npm start   # Node 버전 (edubot.js)
 
 ---
 
-더 자세한 내용(제외한 프로젝트, 복사 시 뺀 파일, 검증·수정 내역, 원본 경로)은 [`AUDIT_LOG.md`](AUDIT_LOG.md)를 참조하세요.
+검증 방법, 발견한 결함, 수정 내역, 재검증 결과는 [`PROJECT_VALIDATION.md`](PROJECT_VALIDATION.md)를 참조하세요.
