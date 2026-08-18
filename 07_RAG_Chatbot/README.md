@@ -83,6 +83,10 @@ py run_tests.py
 |---|---:|---|
 | `OPENAI_API_KEY` | 필수 | 임베딩(ChromaDB), 답변 생성, Judge 평가에 모두 사용 |
 
+## 평가 설계 (`evaluator_agent.py`)
+
+Judge 프롬프트(`ai_answer.md`)의 출력을 `<점수>`·`<최종점수>`·`<rubric 평가>` 태그로 정규식 파싱합니다. 태그가 안 나오거나 파싱에 실패하면 임의로 통과 처리하지 않고 `overall_pass: False`, `hallucination: True`로 안전하게 실패 처리합니다 — Judge 응답 형식이 깨졌을 때 거짓 PASS가 나오지 않도록 한 설계입니다.
+
 ## 참고
 
 - 처음 실습 시 PDF보다 `.txt`/`.md` 문서로 시작하면 오류가 적습니다.
