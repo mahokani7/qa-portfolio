@@ -51,17 +51,17 @@
 
 `05`(RaiT 평가 시스템, 개인) · `06`(AI 챗봇 QA, 팀 프로젝트) · `07`(RAG 챗봇, 개인) · `08`(AI Agent 모니터링, 개인) · `10`(LangGraph 챗봇, 개인) — 실행 방법은 아래 [프로젝트별 실행 방법](#프로젝트별-실행-방법)에 전부 있습니다.
 
-## AI-assisted development
+## AI 활용 원칙
 
-이 저장소의 코드와 문서 작성에 AI 도구(Claude 등)를 보조 수단으로 활용했습니다. 코드 작성과 문서 초안 생성을 AI가 보조했지만, **요구사항 정의·테스트 설계·결과 검증·오류 분석·최종 판단은 직접 수행**했습니다. 이 저장소를 공개용으로 정리하면서 발견한 결함(의존성 오류, 자격 증명 노출, 채점 로직 결함 등)과 수정 내역은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)에 정리했습니다.
+이 저장소의 코드와 문서 작성에 AI 도구(Claude 등)를 코드 작성과 문서 초안의 **보조 수단**으로 활용했습니다. 요구사항 정의·테스트 설계·결과 검증·오류 원인 분석·최종 품질 판단은 **직접 수행**했습니다. 이 저장소를 공개용으로 정리하면서 발견한 결함(의존성 오류, 자격 증명 노출, 채점 로직 결함 등)과 수정 내역은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)에 정리했습니다.
 
----
+## 검증 결과 · QA 증적
 
 수집일: 2026-08-05
 수록 프로젝트: **9개** — `01`~`10` 중 03 제외(교육과정 원래 번호 08·12·13·16을 재배치). 03(AI 챗봇 QA 파이프라인)은 06과 같은 팀 프로젝트의 초기 버전이라 06으로 통합하고 저장소에서 제외했습니다.
 선정 기준: **웹으로 보여줄 수 있는 것** + QA 문서 산출물(04)
 
-> ### 📄 실행 검증 요약은 [`index.html`](index.html)을 여세요 ([mahokani7.github.io/qa-portfolio](https://mahokani7.github.io/qa-portfolio/)에서도 볼 수 있습니다)
+> ### 📄 실행 검증 요약(실무자 영역)은 [`index.html`](index.html)을 여세요 ([mahokani7.github.io/qa-portfolio](https://mahokani7.github.io/qa-portfolio/)에서도 볼 수 있습니다)
 > 실행 증적(명령·종료코드·출력), 웹 가동 가능성 4축 판정이 들어 있습니다.
 > **검증 요약** — 실행 검증 완료 6개(01·02·05·06·08·09) / API 키 필요 2개(07·10) / 문서 1개(04)
 >
@@ -77,6 +77,7 @@
 | 09 · 풀스택 웹앱 (Jest) | 4 |
 | **합계** | **276** |
 
+> 276건 전부를 처음부터 직접 개발했다는 뜻은 아닙니다. 01·06은 팀 프로젝트이며, 그 안에서 제가 실제로 담당한 테스트 설계·검증 범위는 [Featured Projects](#featured-projects)의 프로젝트별 "내 역할"에 구분해 두었습니다.
 > 검증 방법과 발견한 결함·수정 내역은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)에 정리했습니다.
 
 ### 깃허브 → 웹 실행 점검 (2026-08-06)
@@ -262,3 +263,9 @@ npm install; npm start   # Node 버전 (edubot.js)
 ---
 
 검증 방법, 발견한 결함, 수정 내역, 재검증 결과는 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)를 참조하세요.
+
+## GitHub
+
+- 이 저장소: [github.com/mahokani7/qa-portfolio](https://github.com/mahokani7/qa-portfolio)
+- 개인 브랜딩 사이트: [mahokani7.github.io](https://mahokani7.github.io/)
+- AI QA 포트폴리오(정리된 버전): [mahokani7.github.io/qa](https://mahokani7.github.io/qa/)

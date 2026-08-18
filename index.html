@@ -1,4 +1,4 @@
-<title>QA 실습 포트폴리오 — 실행 검증 보고서</title>
+<title>최성우 — IT 기획·PM → AI QA 포트폴리오</title>
 
 <style>
   /* ── reset ─────────────────────────────────────────── */
@@ -164,7 +164,7 @@
     gap: 0.6rem 1.5rem;
     align-items: baseline;
   }
-  .mast h1 {
+  .mast h2 {
     font-size: clamp(2rem, 6vw, 3.4rem);
     line-height: 1.06;
     letter-spacing: -0.035em;
@@ -172,7 +172,7 @@
     text-wrap: balance;
     max-width: 20ch;
   }
-  .mast h1 em {
+  .mast h2 em {
     font-style: normal;
     color: var(--brand);
   }
@@ -534,9 +534,340 @@
   @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; transition: none !important; }
   }
+
+  /* ── recruiter hero ────────────────────────────────── */
+  .recruit {
+    padding: clamp(2.5rem, 7vw, 5rem) 0 2.5rem;
+    display: flex; flex-direction: column; gap: 1.5rem;
+  }
+  .recruit-meta { display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; align-items: baseline; }
+  .recruit h1 {
+    font-size: clamp(1.9rem, 5.4vw, 3rem);
+    line-height: 1.14; letter-spacing: -0.03em; font-weight: 800; text-wrap: balance;
+    max-width: 22ch;
+  }
+  .recruit h1 em { font-style: normal; color: var(--brand); }
+  .recruit-lede { max-width: var(--measure); color: var(--ink-muted); font-size: 1.02rem; }
+  .cap-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tag--cap {
+    font-family: var(--sans); font-size: 0.82rem; color: var(--ink);
+    background: var(--ground-raised); border: 1px solid var(--rule);
+    padding: 0.35rem 0.7rem; border-radius: 3px;
+  }
+  .recruit-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.25rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: var(--sans); font-size: 0.92rem; font-weight: 600;
+    padding: 0.65rem 1.1rem; border-radius: 3px; border: 1px solid transparent;
+  }
+  .btn--primary { background: var(--brand); color: var(--ground-raised); }
+  .btn--ghost { border-color: var(--rule); color: var(--ink); }
+
+  /* ── featured project cards ────────────────────────── */
+  .feat-list { display: flex; flex-direction: column; gap: 1.25rem; }
+  .feat-card {
+    background: var(--ground-raised); border: 1px solid var(--rule-soft);
+    border-left: 4px solid var(--brand);
+    padding: 1.35rem 1.35rem 1.5rem;
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .feat-top { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: baseline; }
+  .feat-id { font-family: var(--mono); font-weight: 700; color: var(--brand); font-size: 0.95rem; }
+  .feat-name { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.015em; flex: 1 1 16rem; }
+  .feat-goal { max-width: var(--measure); font-size: 0.95rem; color: var(--ink-muted); }
+  .feat-goal strong { color: var(--ink); font-weight: 600; }
+  .feat-grid { display: grid; grid-template-columns: 1fr; gap: 0.9rem; }
+  @media (min-width: 46rem) { .feat-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+  .feat-col > .lbl { display: block; padding-bottom: 0.35rem; border-bottom: 1px solid var(--rule); margin-bottom: 0.5rem; }
+  .feat-col ul { display: flex; flex-direction: column; gap: 0.4rem; }
+  .feat-col li { font-size: 0.9rem; line-height: 1.6; color: var(--ink-muted); padding-left: 1rem; position: relative; }
+  .feat-col li::before { content: "–"; position: absolute; left: 0; color: var(--ink-faint); }
+  .feat-col li strong { color: var(--ink); font-weight: 600; }
+  .feat-outcome {
+    border: 1px solid var(--rule); border-left: 4px solid var(--pass); background: var(--pass-soft);
+    padding: 0.85rem 1.1rem; font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6;
+  }
+  .feat-outcome strong { color: var(--ink); font-weight: 600; }
+  .feat-evid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  /* ── additional projects (collapsed) ───────────────── */
+  .addl > summary {
+    cursor: pointer; font-family: var(--mono); font-size: 0.85rem; font-weight: 600;
+    color: var(--brand); list-style: none; padding: 0.9rem 1.1rem;
+    background: var(--ground-raised); border: 1px solid var(--rule-soft);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .addl > summary::-webkit-details-marker { display: none; }
+  .addl > summary::before { content: "▸"; transition: transform 0.15s ease; }
+  .addl[open] > summary::before { transform: rotate(90deg); }
+  .addl-grid { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem; }
+  .addl-row {
+    border: 1px solid var(--rule-soft); border-left: 3px solid var(--inert);
+    padding: 0.85rem 1.1rem; display: flex; flex-direction: column; gap: 0.3rem;
+  }
+  .addl-row .row-id { font-family: var(--mono); font-weight: 700; color: var(--ink-faint); font-size: 0.85rem; }
+  .addl-row .row-name { font-weight: 700; font-size: 0.98rem; }
+  .addl-row p { font-size: 0.86rem; color: var(--ink-muted); }
+
+  /* ── section divider into verification area ────────── */
+  .verif-divider {
+    margin-top: 5rem; padding: 1.5rem 0; border-top: 2px solid var(--ink);
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .verif-divider h2 { font-size: 1.15rem; font-weight: 700; }
+  .verif-divider p { max-width: var(--measure); font-size: 0.9rem; color: var(--ink-muted); }
 </style>
 
 <div class="wrap">
+
+  <!-- ══ RECRUITER HERO ══════════════════════════════════ -->
+  <header class="recruit" id="top">
+    <div class="recruit-meta">
+      <span class="lbl">최성우 · IT 기획·PM → AI QA</span>
+      <span class="lbl">9개 프로젝트</span>
+    </div>
+
+    <h1>20년+ IT 기획·PM 경험을 바탕으로<br><em>AI/LLM 서비스 품질</em>을 검증합니다.</h1>
+
+    <p class="recruit-lede">
+      요구사항 분석, 테스트 전략 수립, QA 문서화, API/E2E 테스트, AI/LLM 응답 품질평가,
+      결함 분석과 재검증까지 수행합니다. 20년+ IT 프로젝트를 기획·관리해 온 경험을
+      최근 AI 서비스 품질검증 영역으로 확장하고 있습니다.
+    </p>
+
+    <div class="cap-tags">
+      <span class="tag tag--cap">요구사항 분석</span>
+      <span class="tag tag--cap">QA 전략 수립</span>
+      <span class="tag tag--cap">테스트 케이스 설계</span>
+      <span class="tag tag--cap">API 테스트</span>
+      <span class="tag tag--cap">E2E 테스트</span>
+      <span class="tag tag--cap">AI/LLM 품질평가</span>
+      <span class="tag tag--cap">결함 분석 및 재검증</span>
+      <span class="tag tag--cap">Jira / WBS / QA 문서</span>
+      <span class="tag tag--cap">AI 서비스 모니터링</span>
+    </div>
+
+    <div class="recruit-actions">
+      <a class="btn btn--primary" href="#featured">대표 프로젝트 보기 ↓</a>
+      <a class="btn btn--ghost" href="#verification">실무자 영역 — 검증 증적 보기 →</a>
+      <a class="btn btn--ghost" href="https://github.com/mahokani7/qa-portfolio" target="_blank" rel="noopener">GitHub 저장소</a>
+    </div>
+  </header>
+
+  <!-- ══ FEATURED PROJECTS ═══════════════════════════════ -->
+  <section id="featured">
+    <div class="sec-head">
+      <span class="lbl">Featured</span>
+      <h2>대표 프로젝트 4개</h2>
+      <p>9개 프로젝트 중 먼저 보시면 좋은 4개입니다. 나머지 5개는 아래 <a href="#additional">Additional Projects</a>에 있습니다.</p>
+    </div>
+
+    <div class="feat-list">
+
+      <!-- 04 -->
+      <article class="feat-card">
+        <div class="feat-top">
+          <span class="feat-id">04</span>
+          <span class="feat-name">QA 문서 산출물</span>
+          <span class="chip chip--inert">팀 프로젝트 산출물</span>
+        </div>
+        <p class="feat-goal">
+          <strong>문제</strong> — 4인 팀 프로젝트(AI 챗봇 QA 파이프라인)를 진행하며, 요구사항부터 테스트·재검증까지의
+          QA 프로세스를 문서로 남기지 않으면 팀 밖에서 무엇을 근거로 품질을 판단했는지 확인할 방법이 없었습니다.
+        </p>
+        <div class="feat-grid">
+          <div class="feat-col">
+            <span class="lbl">내가 한 일</span>
+            <ul>
+              <li><strong>단위 테스트 계획서</strong> 직접 작성</li>
+              <li><strong>통합 테스트 계획서</strong> 직접 작성</li>
+              <li><strong>최종 발표 자료</strong> 직접 작성</li>
+              <li>요구사항정의서·WBS·업무분장·회의록 등 나머지 9종은 <strong>팀 공동 산출물</strong></li>
+            </ul>
+          </div>
+          <div class="feat-col">
+            <span class="lbl">QA 관점의 핵심</span>
+            <ul>
+              <li>요구사항 → WBS → 테스트 계획 → 결함/이슈 관리 → 재검증까지 <strong>표준 QA 문서 체계</strong>로 정리</li>
+              <li>IT 기획·PM 경험(요구사항정의서·WBS 작성)과 QA 역량(테스트 계획·결함 관리)을 같은 문서 체계 안에서 연결</li>
+            </ul>
+          </div>
+        </div>
+        <div class="feat-outcome"><strong>증거</strong> — 문서 13종 중 담당분 구분표: <a href="04_QA_WBS_TestPlan/README.md">04_QA_WBS_TestPlan/README.md</a></div>
+        <div class="feat-evid">
+          <a class="tag" href="04_QA_WBS_TestPlan/" target="_blank" rel="noopener">폴더 보기 →</a>
+          <a class="tag" href="04_QA_WBS_TestPlan/evidence/02_roles_wbs.html" target="_blank" rel="noopener">업무분장 WBS 문서 →</a>
+        </div>
+      </article>
+
+      <!-- 02 -->
+      <article class="feat-card">
+        <div class="feat-top">
+          <span class="feat-id">02</span>
+          <span class="feat-name">AI 품질 평가 플랫폼</span>
+          <span class="chip chip--pass">개인 프로젝트</span>
+        </div>
+        <p class="feat-goal">
+          <strong>문제</strong> — AI 서비스는 같은 질문에도 매번 다른 응답이 나오고, 환각·개인정보 유출·프롬프트 공격 같은
+          기능 테스트만으로는 잡히지 않는 실패 유형이 있습니다. 채점 기준 하나(Judge)에만 기대면 그 기준 자체가
+          틀렸을 때 놓칩니다.
+        </p>
+        <div class="feat-grid">
+          <div class="feat-col">
+            <span class="lbl">내가 한 일</span>
+            <ul>
+              <li>루브릭 설계, Judge/Rule-based Agent 구현, JSON Schema 설계</li>
+              <li>레드팀·PII스캔·환각검출·회귀·RAG on/off 비교·비용추적 <strong>12개 검증 모듈</strong> 구현</li>
+              <li>pytest 84건, k6 성능 테스트, Streamlit 대시보드, Grafana/Prometheus 연동</li>
+            </ul>
+          </div>
+          <div class="feat-col">
+            <span class="lbl">QA 관점의 핵심</span>
+            <ul>
+              <li>Judge 채점 하나에 의존하지 않고 <strong>서로 다른 방식으로 교차 검증</strong>(레드팀은 공격 주입, PII스캔은 정규식, 환각검출은 근거 코퍼스 대조)</li>
+              <li>RAG 도입 효과를 "느낌"이 아니라 on/off 대조군 실험으로 수치화(lift %p)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="feat-outcome"><strong>검증 결과</strong> — pytest 84건 전체 PASS(LLM 호출은 Mock, 실제 과금 없음), k6 부하테스트 오류율 0%·p95 13~21ms</div>
+        <div class="feat-evid">
+          <a class="tag" href="02_AI_Quality_Platform/README.md" target="_blank" rel="noopener">README(모듈별 검증 방식 표) →</a>
+          <a class="tag" href="02_AI_Quality_Platform/quality/" target="_blank" rel="noopener">quality/ 코드 →</a>
+        </div>
+      </article>
+
+      <!-- 01 -->
+      <article class="feat-card">
+        <div class="feat-top">
+          <span class="feat-id">01</span>
+          <span class="feat-name">VOC 멀티에이전트 QA — TEST PASS ≠ RELEASE GO</span>
+          <span class="chip chip--partial">팀 프로젝트(4인)</span>
+        </div>
+        <p class="feat-goal">
+          <strong>문제</strong> — 6개 에이전트가 분업 처리하는 VOC 분석 결과를, 파이프라인 내부 채점만으로 배포 승인해도
+          되는지 확인이 필요했습니다. 내부 채점이 틀릴 가능성을 내부 채점만으로는 검증할 수 없었습니다.
+        </p>
+        <div class="feat-grid">
+          <div class="feat-col">
+            <span class="lbl">내가 한 일 (팀원과 구분)</span>
+            <ul>
+              <li>테스트 시나리오 설계, 평가 루브릭 설계, Judge 프롬프트 검증, 독립 Judge 결과 검증, 최종 발표·시연</li>
+              <li>멀티에이전트 파이프라인 개발·AWS 인프라·리포팅 대시보드는 <strong>팀원이 담당</strong></li>
+            </ul>
+          </div>
+          <div class="feat-col">
+            <span class="lbl">발견한 문제 → 개선 결과</span>
+            <ul>
+              <li>내부 파이프라인이 100점(배포 가능)으로 판정한 케이스도, 별도로 붙인 <strong>독립 LLM Judge</strong>는 정책구체성 축을 0점 매겨 68~74점으로 재평가</li>
+              <li>라이브 E2E 18건 평균 81.2점으로 배포 기준(95점) 미달 → <strong>최종 판정 HOLD</strong>(pytest 32건은 전부 PASS했음에도)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="feat-outcome"><strong>증거</strong> — 판정 증적은 S3 암호화 보관 후 CloudTrail로 감사. pytest 32건 PASS + 독립 Judge 81.2점 미달이 동시에 성립한다는 것 자체가 "테스트 통과 ≠ 배포 승인"의 근거입니다.</div>
+        <div class="feat-evid">
+          <a class="tag" href="01_VOC_Improve_MultiAgent/README.md" target="_blank" rel="noopener">README(품질 게이트 설계) →</a>
+          <a class="tag" href="01_VOC_Improve_MultiAgent/aws_upload/qa_evidence/" target="_blank" rel="noopener">Judge 채점 증적 →</a>
+        </div>
+      </article>
+
+      <!-- 09 -->
+      <article class="feat-card">
+        <div class="feat-top">
+          <span class="feat-id">09</span>
+          <span class="feat-name">FullStack Web QA</span>
+          <span class="chip chip--pass">개인 프로젝트</span>
+        </div>
+        <p class="feat-goal">
+          <strong>문제</strong> — AI QA뿐 아니라 전통적인 웹 서비스 QA(E2E·통합·단위 테스트)도 같은 사고방식으로
+          할 수 있음을 보여줄 항목이 필요했습니다. 테스트가 실제 DB·외부 API에 의존하면 느리고 불안정해집니다.
+        </p>
+        <div class="feat-grid">
+          <div class="feat-col">
+            <span class="lbl">내가 한 일</span>
+            <ul>
+              <li>테스트 대상 Express+React 앱과 Cypress/Jest 테스트 스위트를 직접 작성</li>
+              <li>Cypress는 <code>cy.intercept()</code>로 API를 네트워크 레벨에서 스텁 처리해 DB 연결 없이 프론트엔드 로직만 독립 검증</li>
+              <li>비밀번호 검증 로직은 경계값(빈 값·길이 초과·특수문자 누락 등) 위주로 단위 테스트 설계</li>
+            </ul>
+          </div>
+          <div class="feat-col">
+            <span class="lbl">발견한 문제 → 개선 결과</span>
+            <ul>
+              <li>단위(node:test)와 통합(Jest) 러너가 분리돼 있지 않아 서로의 대상 파일을 겹쳐 실행하던 문제 발견</li>
+              <li><code>test:unit</code> / <code>test:integration</code>으로 러너 분리 → <strong>단위 5건 + 통합 4건, 전부 PASS(exit 0)</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="feat-outcome"><strong>증거</strong> — MongoDB 없이도 테스트는 모델을 모킹해 통과합니다. 실행: <code>npm test</code></div>
+        <div class="feat-evid">
+          <a class="tag" href="09_FullStack_WebApp/README.md" target="_blank" rel="noopener">README(테스트 설계) →</a>
+          <a class="tag" href="09_FullStack_WebApp/frontend/cypress/e2e/todo-form.cy.js" target="_blank" rel="noopener">Cypress 스펙 →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ ADDITIONAL PROJECTS ═════════════════════════════ -->
+  <section id="additional">
+    <div class="sec-head">
+      <span class="lbl">Additional</span>
+      <h2>Additional Projects</h2>
+      <p>나머지 5개입니다. 대표 4개와 같은 방식(문제 → 내가 한 일 → 검증)으로 진행했습니다.</p>
+    </div>
+    <details class="addl">
+      <summary>5개 프로젝트 펼치기</summary>
+      <div class="addl-grid">
+        <div class="addl-row">
+          <span class="row-id">05</span>
+          <span class="row-name">RaiT 평가 시스템 <span class="chip chip--pass">개인</span></span>
+          <p>AI 응답 품질을 8개 축으로 분해해 채점하는 LLM-as-a-Judge 평가 프레임워크. 설정 로더가 정책 파일을 못 찾으면 기본값으로 조용히 넘어가지 않고 즉시 예외를 던지도록 설계 — 도메인별 가중치가 소리 없이 사라지는 채점 결함을 방지. <a href="05_RAIT_Evaluation_System/README.md">README →</a></p>
+        </div>
+        <div class="addl-row">
+          <span class="row-id">06</span>
+          <span class="row-name">AI 챗봇 QA <span class="chip chip--partial">팀(4인)</span></span>
+          <p>04와 같은 팀 프로젝트의 확장판(Docker·Jira·모니터링 추가). pytest 테스트 스위트(53건) 설계·구현과 QA 문서 작성을 담당했고, Service/Judge Agent 구현은 팀원 담당. <a href="06_AI_Chatbot_QA/README.md">README →</a></p>
+        </div>
+        <div class="addl-row">
+          <span class="row-id">07</span>
+          <span class="row-name">RAG 챗봇 <span class="chip chip--pass">개인</span></span>
+          <p>문서 기반 근거 답변 RAG 챗봇. Judge 응답 파싱에 실패하면 임의로 통과 처리하지 않고 안전하게 실패 처리하도록 설계. <a href="07_RAG_Chatbot/README.md">README →</a></p>
+        </div>
+        <div class="addl-row">
+          <span class="row-id">08</span>
+          <span class="row-name">AI Agent 모니터링 대시보드 <span class="chip chip--pass">개인</span></span>
+          <p>02번의 축약 원형. 외부 API 키 없이 완전히 로컬 mock으로 동작하며, 질문에 "오류"/"느리게"를 넣으면 장애·지연을 재현하는 테스트 시나리오를 직접 설계. <a href="08_AI_Agent_Dashboard/README.md">README →</a></p>
+        </div>
+        <div class="addl-row">
+          <span class="row-id">10</span>
+          <span class="row-name">LangGraph 챗봇 <span class="chip chip--pass">개인</span></span>
+          <p>도구 호출형 AI Agent를 Python/Node 두 스택으로 구현. 시스템 프롬프트에 내부지침 노출 거부·개인정보 요구 거부 등 안전성 원칙을 명시하고 이를 검증하는 시나리오를 함께 설계. <a href="10_LangGraph_Chatbot/README.md">README →</a></p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ══ AI 활용 원칙 ═══════════════════════════════════ -->
+  <section id="ai-principle">
+    <div class="note note--ok">
+      <h3>AI 활용 원칙</h3>
+      <p>
+        이 저장소의 코드와 문서 작성에 AI 도구(Claude 등)를 코드 작성과 문서 초안의 <strong>보조 수단</strong>으로
+        활용했습니다. 요구사항 정의, 테스트 설계, 결과 검증, 오류 원인 분석, 최종 품질 판단은 <strong>직접 수행</strong>했습니다.
+        공개용으로 정리하면서 발견한 결함과 수정 내역은 <a href="VALIDATION_REPORT.md">VALIDATION_REPORT.md</a>에 정리했습니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ 실무자 영역 진입 ═══════════════════════════════ -->
+  <div class="verif-divider" id="verification">
+    <span class="lbl">실무자 영역</span>
+    <h2>여기부터는 검증 증적입니다</h2>
+    <p>
+      실행 로그, 테스트 결과, 결함 분석, 코드, 테스트 케이스, 보고서, 기술 스택을 프로젝트별로 확인할 수 있습니다.
+      아래 내용은 실제로 한 대의 PC에서 처음부터 설치·실행해 얻은 결과입니다.
+    </p>
+  </div>
 
   <!-- ══ MASTHEAD ══════════════════════════════════════ -->
   <header class="mast">
@@ -546,7 +877,7 @@
       <span class="lbl">9개 프로젝트</span>
     </div>
 
-    <h1>돌아간다고 쓰지 않았습니다.<br><em>돌려보고 적었습니다.</em></h1>
+    <h2>돌아간다고 쓰지 않았습니다.<br><em>돌려보고 적었습니다.</em></h2>
 
     <p class="mast-lede">
       QA 교육과정에서 만든 프로젝트를 한 대의 깨끗한 PC에서 전부 새로 설치하고 실행했습니다.
@@ -581,7 +912,7 @@ test:integration Tests: <span class="p">4 passed</span>, 4 total</pre>
       <span class="strip-cap">실행 검증 완료<br>실제 API 키 불필요</span>
     </div>
     <div class="strip-cell strip-cell--partial">
-      <span class="strip-num">3</span>
+      <span class="strip-num">2</span>
       <span class="strip-cap">구동 가능<br>API 키 필요</span>
     </div>
     <div class="strip-cell strip-cell--inert">
@@ -1734,6 +2065,8 @@ npm install</pre>
       01번 <code>unittest</code> 98건 + 01번 품질 스위트 32건 + 02번 84건 + 06번 53건 +
       09번 Jest 4건 + <code>node:test</code> 5건이며, 중복 없이 각각 별도 실행한 결과입니다.
       02번은 LLM 호출이 모킹되어 있어 더미 키만으로 통과했고 실제 API 호출은 발생하지 않았습니다.
+      276건 전부를 처음부터 직접 개발했다는 뜻은 아닙니다 — 01·06은 팀 프로젝트이며, 그 안에서
+      제가 실제로 담당한 테스트 설계·검증 범위는 각 프로젝트 페이지에 구분해 두었습니다.
     </p>
   </footer>
 
