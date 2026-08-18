@@ -4,6 +4,18 @@
 결과를 JSON/CSV/Markdown 리포트와 Streamlit 대시보드로 확인하는 프로젝트입니다.
 챗봇의 기준정보는 하드코딩이 아닌 업로드한 파일(.txt/.md/.docx/.pdf)을 ChromaDB에 임베딩하여 RAG 방식으로 검색합니다.
 
+## Project Type
+
+팀 프로젝트(4인) — `06_AI_Chatbot_QA`는 같은 팀이 이 코드를 이어받아 확장한 버전입니다.
+
+## My Role
+
+- 테스트 케이스 설계(`data/test_cases.json`)
+- 단위·통합 테스트 수행
+- 최종 발표 자료 및 데모 시나리오 제작
+
+Service Agent·Judge Agent·규칙 검증(`service_agent.py`·`judge_agent.py`·`rule_validator.py`·`main.py`), 환경 구성(`config.py`·`knowledge_base.py`), 리포트·대시보드(`report_generator.py`·`dashboard/streamlit_app.py`)는 팀원이 담당했습니다. 근거: [`04_QA_WBS_TestPlan`](../04_QA_WBS_TestPlan/)의 업무분장 문서(`dashboard/docs/02_roles_wbs.html`).
+
 ---
 
 ## ⚠️ 압축을 풀기 전에 꼭 확인하세요

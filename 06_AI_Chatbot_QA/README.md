@@ -4,6 +4,18 @@ AI 기반 소프트웨어 테스터(QA) 및 모니터링 실무 과정의 실습
 
 교육과정 안내 챗봇을 대상으로 테스트케이스 업로드, 자동 평가, 결과 리포트, 지식 DB 관리, Service Agent API, 운영 모니터링 기능을 구현합니다.
 
+## Project Type
+
+팀 프로젝트(4인) — `03_AI_Chatbot_QA_Pipeline`과 같은 팀이 같은 기반 코드(service_agent.py·judge_agent.py·rule_validator.py·config.py)를 이어받아 Docker/Jira/모니터링을 추가로 확장한 버전입니다.
+
+## My Role
+
+- pytest 테스트 스위트(`tests/`, 53건) 설계·구현
+- 테스트케이스 설계 및 통합 테스트 수행
+- QA 문서(단위/통합 테스트 계획서 등)와 최종 발표 자료 작성
+
+Service Agent·Judge Agent·규칙 검증 로직, 환경 구성, 리포트/대시보드 구현은 팀원이 담당했습니다. 자세한 역할 분담 근거는 [`04_QA_WBS_TestPlan`](../04_QA_WBS_TestPlan/)의 업무분장 문서를 참고하세요.
+
 ## 주요 기능
 
 - Streamlit 기반 품질관리 대시보드

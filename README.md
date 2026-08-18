@@ -19,6 +19,38 @@
 - Jira 기반 QA 관리, WBS·테스트 계획 수립
 - QA 결과 분석 및 재검증(Re-test)
 
+## Featured Projects
+
+10개 프로젝트 중 먼저 보시면 좋은 4개입니다. 나머지 6개는 [Additional Projects](#additional-projects)에 있습니다.
+
+### [`04`](04_QA_WBS_TestPlan/) QA 문서 산출물
+
+- **프로젝트 성격**: QA 프로세스 문서 13종(팀 프로젝트 산출물)
+- **핵심**: 요구사항정의서 → WBS → 테스트 계획서 → 결함/이슈 관리 → 재검증까지 QA 문서 체계
+- **내 역할**: 단위·통합 테스트 계획서, 최종 발표 자료를 직접 작성했습니다. 나머지 문서는 팀 공동 산출물입니다 — 상세 구분은 [`04_QA_WBS_TestPlan/README.md`](04_QA_WBS_TestPlan/README.md) 참고.
+
+### [`02`](02_AI_Quality_Platform/) AI 품질 평가 플랫폼
+
+- **프로젝트 성격**: 개인 프로젝트
+- **핵심**: 레드팀·환각검출·PII스캔·회귀·RAG절제·비용추적·Jira연동 + k6 성능 테스트 + Grafana/Prometheus 모니터링
+- **내 역할**: 기획부터 구현까지 단독 수행 — 루브릭 설계, Judge/Rule-based Agent 구현, JSON Schema 설계, Streamlit 대시보드, pytest 84건 설계. 상세는 [`02_AI_Quality_Platform/README.md`](02_AI_Quality_Platform/README.md) 참고.
+
+### [`01`](01_VOC_Improve_MultiAgent/) VOC 멀티에이전트 QA 파이프라인
+
+- **프로젝트 성격**: 팀 프로젝트(4인)
+- **핵심**: 6-에이전트 VOC 분석 파이프라인 + 독립 LLM Judge 2차 검수. pytest는 전부 PASS했지만 독립 Judge는 배포 기준(95점) 미달로 배포 보류(HOLD) 판정 — 테스트 통과와 배포 승인이 다른 층위라는 것을 확인한 사례.
+- **내 역할**: 테스트 시나리오 설계, 평가 루브릭 설계, Judge 프롬프트 검증, 독립 Judge 결과 검증, 최종 발표·시연. 개발·인프라·리포팅은 팀원이 담당했습니다. 상세는 [`01_VOC_Improve_MultiAgent/README.md`](01_VOC_Improve_MultiAgent/README.md) 참고.
+
+### [`09`](09_FullStack_WebApp/) 풀스택 웹앱 QA
+
+- **프로젝트 성격**: 개인 프로젝트 — 전통적 웹 QA 자동화 역량을 보여주는 유일한 항목
+- **핵심**: Cypress E2E 테스트, Jest 통합 테스트, node:test 단위 테스트
+- **내 역할**: 테스트 대상 웹앱과 Cypress/Jest 테스트 스위트를 직접 작성. `npm test` 기준 단위 5건·통합 4건 전부 PASS.
+
+## Additional Projects
+
+`03`(AI 챗봇 QA 파이프라인, 팀 프로젝트) · `05`(RaiT 평가 시스템, 개인) · `06`(AI 챗봇 QA 확장판, 팀 프로젝트) · `07`(RAG 챗봇, 개인) · `08`(AI Agent 모니터링, 개인) · `10`(LangGraph 챗봇, 개인) — 실행 방법은 아래 [프로젝트별 실행 방법](#프로젝트별-실행-방법)에 전부 있습니다.
+
 ## AI-assisted development
 
 이 저장소의 코드와 문서 작성에 AI 도구(Claude 등)를 보조 수단으로 활용했습니다. 코드 작성과 문서 초안 생성을 AI가 보조했지만, **요구사항 정의·테스트 설계·결과 검증·오류 분석·최종 판단은 직접 수행**했습니다. 이 저장소를 공개용으로 정리하면서 발견한 결함(의존성 오류, 자격 증명 노출, 채점 로직 결함 등)과 수정 내역은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)에 정리했습니다.
