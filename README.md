@@ -2,7 +2,11 @@
 
 20년+ IT 기획·PM 경험을 바탕으로 AI/LLM 서비스의 품질과 테스트 영역으로 역량을 확장하고 있습니다.
 
-이 저장소에는 AI QA 교육 과정에서 진행한 개인·팀 프로젝트 9개 중, 직접 설계·구현·테스트·검증한 산출물을 정리했습니다.
+## About Me
+
+IT 기획·PM으로 20년+ 다양한 산업(공공·대기업·글로벌 프로젝트)의 요구사항 분석, 설계, 프로젝트 관리를 수행했습니다. 최근에는 AI QA 교육 과정을 통해 그 경험을 AI/LLM 서비스의 품질 검증 영역으로 확장하고 있습니다. 요구사항 분석, 테스트 전략 수립, QA 문서화, AI/LLM 응답 품질평가, API/E2E 테스트, 결함 분석과 재검증까지 수행합니다. 신입 개발자 출신 QA가 아니라, **기획·PM 경험을 가진 사람이 AI QA 역량을 확장한 형태**입니다.
+
+이 저장소에는 그 과정에서 진행한 개인·팀 프로젝트 9개 중, 직접 설계·구현·테스트·검증한 산출물을 정리했습니다.
 
 - 개인 브랜딩 사이트: [mahokani7.github.io](https://mahokani7.github.io/)
 - AI QA 포트폴리오(정리된 버전): [mahokani7.github.io/qa](https://mahokani7.github.io/qa/)
@@ -111,7 +115,9 @@
 
 ---
 
-## 실행 전 공통 준비 (한 번만)
+## 실행 및 검증 자료
+
+아래는 각 프로젝트를 직접 실행해보고 싶을 때 필요한 공통 준비와 프로젝트별 실행 명령입니다. 검증 방법·발견한 결함은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md), 실행 증적은 [`index.html`](index.html)에 별도로 정리했습니다.
 
 ### 1. API 키 설정 — ⚠️ 필수
 
@@ -264,8 +270,8 @@ npm install; npm start   # Node 버전 (edubot.js)
 
 검증 방법, 발견한 결함, 수정 내역, 재검증 결과는 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)를 참조하세요.
 
-## GitHub
+## Contact / Portfolio
 
 - 이 저장소: [github.com/mahokani7/qa-portfolio](https://github.com/mahokani7/qa-portfolio)
-- 개인 브랜딩 사이트: [mahokani7.github.io](https://mahokani7.github.io/)
+- 개인 브랜딩 사이트(경력·연락처): [mahokani7.github.io](https://mahokani7.github.io/)
 - AI QA 포트폴리오(정리된 버전): [mahokani7.github.io/qa](https://mahokani7.github.io/qa/)

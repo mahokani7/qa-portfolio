@@ -2,6 +2,21 @@
 
 Express(MongoDB) 백엔드 + React(Vite) 프론트엔드로 만든 Todo/연락처 앱입니다. 이 프로젝트의 포트폴리오 가치는 앱 자체가 아니라 **`cypress/` E2E 테스트와 `jest`/`node:test` 단위·통합 테스트**입니다 — 전통적인 웹 QA 자동화 역량을 보여주는 항목입니다.
 
+**왜 필요한가**: AI QA뿐 아니라 전통적인 웹 서비스 QA(단위→통합→E2E 계층 분리, API 스텁)도 같은 사고방식으로 할 수 있음을 보여주는 항목입니다.
+
+## QA SUMMARY
+
+| 항목 | 내용 |
+|---|---|
+| 프로젝트 유형 | 개인 프로젝트 |
+| 내 역할 | 테스트 대상 웹앱과 Cypress/Jest 테스트 스위트 전체 |
+| 테스트 범위 | node:test 단위 5건 + Jest 통합 4건 = 9건 |
+| 자동화 도구 | Cypress(`cy.intercept`), Jest, node:test |
+| 주요 검증 | 단위(경계값) → 통합(API) → E2E(Cypress, 네트워크 스텁) 계층별 검증 |
+| 주요 결함 | 단위(`node:test`)와 통합(Jest) 러너가 분리돼 있지 않아 서로의 대상 파일을 겹쳐 실행하던 문제 |
+| 개선 결과 | `test:unit`/`test:integration`으로 러너 분리 → `npm test`가 둘을 순차 실행, 9건 전부 PASS(exit 0) |
+| 최종 판정 | **PASS** — 9/9 |
+
 ## Project Type
 
 개인 프로젝트

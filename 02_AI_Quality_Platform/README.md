@@ -2,6 +2,21 @@
 
 AI Agent의 답변 품질을 평가하고 운영 상태를 모니터링하는 통합 프로젝트입니다. FastAPI 기반 질의 API, RAG 지식 검색, 품질 평가 파이프라인, Streamlit 대시보드, Prometheus/Grafana 모니터링을 제공합니다.
 
+**왜 필요한가**: AI 서비스는 같은 질문에도 매번 다른 응답이 나오고, 환각·개인정보 유출·프롬프트 공격처럼 기능 테스트만으로는 안 잡히는 실패 유형이 있습니다. 채점 기준 하나(Judge)에만 기대면 그 기준 자체가 틀렸을 때를 놓칩니다. 이 프로젝트는 레드팀·PII·환각·회귀를 각각 독립된 방식으로 검증해 서로 교차 확인하도록 설계했습니다.
+
+## QA SUMMARY
+
+| 항목 | 내용 |
+|---|---|
+| 프로젝트 유형 | 개인 프로젝트 |
+| 내 역할 | 기획부터 구현까지 단독 수행(아래 My Role 참고) |
+| 테스트 범위 | pytest 18개 파일 84건, k6 부하 테스트, 레드팀·PII·환각·회귀·RAG ablation 12개 모듈 |
+| 자동화 도구 | pytest, k6, Docker Compose(Prometheus/Grafana) |
+| 주요 검증 | Judge 채점 하나에 의존하지 않고 서로 다른 방식(공격 주입/정규식/근거 코퍼스 대조/대조군 실험)으로 교차 검증 |
+| 주요 결함 | 이 프로젝트 자체에서 발견·수정한 결함은 없습니다(정직하게 명시) |
+| 개선 결과 | 해당 없음 |
+| 최종 판정 | **PASS** — pytest 84/84, k6 부하테스트 오류율 0%·p95 13~21ms |
+
 ## Project Type
 
 개인 프로젝트 — 기획부터 구현까지 단독 수행
@@ -9,9 +24,9 @@ AI Agent의 답변 품질을 평가하고 운영 상태를 모니터링하는 �
 ## My Role
 
 - 루브릭(8축 평가 기준·가중치) 설계
-- Judge Agent(`app/judge_agent.py`) 구현 — LLM 기반 채점 로직
-- Rule-based Agent(`app/rule_based_agent.py`) 구현 — 규칙 기반 1차 검증
+- Judge/Rule-based Agent(`app/judge_agent.py`, `app/rule_based_agent.py`) — 팀 프로젝트(01·06 계열)와 같은 기반 코드에서 출발해 이 프로젝트에 맞게 확장. 핵심 채점 로직 자체는 그 기반 코드와 상당 부분 동일하고, 아래 항목들이 이 프로젝트에서 새로 설계·구현한 부분입니다
 - JSON Schema(`app/schemas.py`) 설계 — Judge 출력 구조화
+- `quality/` 12개 검증 모듈(레드팀·PII스캔·환각검출·회귀·RAG ablation·비용추적·Jira연동 등) — 팀 프로젝트에는 없는, 이 프로젝트만의 확장
 - Streamlit 대시보드(`dashboard/streamlit_app.py`) 구현
 - pytest 테스트 18개 파일(정상 케이스·레드팀·회귀 시나리오) 설계·구현
 - k6 성능 테스트 설계·실행
