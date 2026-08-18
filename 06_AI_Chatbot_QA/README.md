@@ -6,7 +6,7 @@ AI 기반 소프트웨어 테스터(QA) 및 모니터링 실무 과정의 실습
 
 ## Project Type
 
-팀 프로젝트(4인) — `03_AI_Chatbot_QA_Pipeline`과 같은 팀이 같은 기반 코드(service_agent.py·judge_agent.py·rule_validator.py·config.py)를 이어받아 Docker/Jira/모니터링을 추가로 확장한 버전입니다.
+팀 프로젝트(4인) — 팀이 초기 버전(같은 기반 코드: service_agent.py·judge_agent.py·rule_validator.py·config.py)에 Docker/Jira/모니터링을 추가로 확장한 버전입니다. 초기 버전은 이 버전으로 완전히 대체되어 저장소에서 별도로 두지 않았습니다.
 
 ## My Role
 

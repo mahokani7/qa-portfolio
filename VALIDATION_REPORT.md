@@ -10,7 +10,6 @@
 |---|---|---|
 | 01 | VOC 멀티에이전트 QA 파이프라인 | pytest 전체 실행 |
 | 02 | AI 품질 평가 플랫폼 | pytest 전체 실행(LLM 호출 Mock) |
-| 03 | AI 챗봇 QA 파이프라인 | 모듈 import 검증(전체 파이프라인은 API 키 필요) |
 | 04 | QA 문서 산출물 | 문서 전용 — 실행 대상 아님 |
 | 05 | RaiT 평가 시스템 | Mock LLM Judge로 파이프라인 직접 실행 |
 | 06 | 팀 프로젝트 — AI 챗봇 QA | pytest 전체 실행 |
@@ -21,10 +20,10 @@
 
 ## 2. Test Environment
 
-- Windows 11, Python(`venv` 격리) — 8개 프로젝트(01·02·03·05·06·07·08·10)는 프로젝트별 `.venv` 생성 후 `pip install -r requirements.txt`로 실행 환경을 재구성해 검증했습니다.
+- Windows 11, Python(`venv` 격리) — 7개 프로젝트(01·02·05·06·07·08·10)는 프로젝트별 `.venv` 생성 후 `pip install -r requirements.txt`로 실행 환경을 재구성해 검증했습니다.
 - `venv`·`node_modules`는 다른 환경에서 그대로 동작하지 않아 저장소에 포함하지 않았습니다(`.gitignore` 처리). 실행하려면 위 방식으로 새로 만들어야 합니다.
 - Node.js는 이 검증에 사용한 환경에 설치되어 있지 않아, 09(풀스택 웹앱)와 10의 Node 구현부는 정적 코드 검토만 진행하고 실행 검증은 하지 않았습니다.
-- 01·02·03·06·07·10은 LLM API 키가 필요합니다. 실제 `.env`는 저장소에 포함하지 않았고 `.env.example`만 제공합니다.
+- 01·02·06·07·10은 LLM API 키가 필요합니다. 실제 `.env`는 저장소에 포함하지 않았고 `.env.example`만 제공합니다.
 
 ## 3. Automated Tests
 
@@ -43,7 +42,7 @@
 그 외:
 - 08은 실제 서버(FastAPI)를 기동한 상태에서 기능/성능 테스트 스크립트를 실행해 4개 시나리오 전부 PASS를 확인했습니다.
 - 05는 별도의 pytest 스위트가 없어, Mock LLM Judge(`use_mock=True`)로 평가 파이프라인 전체를 직접 실행해 4가지 집계 방식(simple/weight/cutoff/hybrid)과 도메인별 정책이 각각 다른 PASS/FAIL을 내는지 확인했습니다.
-- 03·07·10(Python)은 실 API 키 없이 전체 모듈 import가 정상 동작하는 것까지 확인했고, 파이프라인 전체 실행은 API 키가 있어야 합니다.
+- 07·10(Python)은 실 API 키 없이 전체 모듈 import가 정상 동작하는 것까지 확인했고, 파이프라인 전체 실행은 API 키가 있어야 합니다.
 
 ## 4. Test Results
 
@@ -84,7 +83,7 @@
 
 - Node.js가 없는 환경에서 검증해, 09(풀스택 웹앱)의 실행 검증과 10의 Node 구현부(`edubot.js`)는 정적 코드 검토로 대체했습니다.
 - 02의 모니터링 스택(Prometheus/Grafana/k6)과 01·06의 Docker Compose 구성은 이번 검증에서 컨테이너로 직접 기동하지 않았습니다.
-- 03·07·10은 실 LLM API 키가 있어야 전체 파이프라인을 끝까지 실행할 수 있어, 모듈 단위 검증까지만 진행했습니다.
+- 07·10은 실 LLM API 키가 있어야 전체 파이프라인을 끝까지 실행할 수 있어, 모듈 단위 검증까지만 진행했습니다.
 
 ## 9. Not Measured
 
