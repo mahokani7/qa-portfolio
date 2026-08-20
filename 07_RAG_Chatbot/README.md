@@ -1,6 +1,6 @@
 # RAG 챗봇 — 문서 기반 근거 답변 + 품질평가
 
-LLM이 아는 척 답하지 않고, 업로드한 문서에서 근거를 찾아 그 근거와 함께 답하도록 만든 RAG(Retrieval-Augmented Generation) 챗봇입니다. 문서 업로드 → 분할 → 임베딩·ChromaDB 저장 → 질문 시 유사 문서 검색 → 근거 기반 답변 흐름이며, LLM Judge가 답변 품질(이해도·정확성·관련성·표현성)을 자동 평가합니다.
+LLM이 아는 척 답하지 않고, 업로드한 문서에서 근거를 찾아 그 근거와 함께 답하도록 만든 RAG(Retrieval-Augmented Generation) 챗봇입니다. 문서 업로드 → 분할 → 임베딩·ChromaDB 저장 → 질문 시 유사 문서 검색 → 근거 기반 답변 흐름이며, LLM Judge가 답변 품질(이해도·정확성)을 자동 평가합니다.
 
 **왜 필요한가**: 일반 LLM 챗봇은 모르는 내용도 그럴듯하게 답하는 환각 위험이 있습니다. 답변 근거를 실제 업로드 문서로 제한하고, 그 결과를 LLM Judge로 다시 채점해 "문서에 없으면 모른다고 답하는가"를 검증 가능하게 만드는 것이 목표입니다.
 
@@ -10,12 +10,12 @@ LLM이 아는 척 답하지 않고, 업로드한 문서에서 근거를 찾아 �
 |---|---|
 | 프로젝트 유형 | 개인 프로젝트 |
 | 내 역할 | RAG 파이프라인, Judge Agent, 평가 실행·리포트, Streamlit UI 전체 |
-| 테스트 범위 | 별도 pytest 스위트 없음 — `run_tests.py`가 `test_cases.json`을 순회하며 실제 LLM 호출로 채점(OpenAI API 키 필요, 이번 검증에서는 키 없이 모듈 import까지만 확인) |
+| 테스트 범위 | 별도 pytest 스위트 없음 — `run_tests.py`가 `test_cases.json`(10건) 순회하며 실제 LLM 호출로 채점, Judge 평가 7회 실행 이력 존재 |
 | 자동화 도구 | `run_tests.py`, `run_evaluation.py` (LLM Judge 채점) |
 | 주요 검증 | 정상 질문(문서 기반 답변), 문서 외 질문(모른다고 답하는지), Judge 응답 형식이 깨졌을 때 안전하게 실패 처리하는지 |
-| 주요 결함 | 이 프로젝트 자체에서 발견한 결함은 없습니다 |
-| 개선 결과 | 해당 없음 |
-| 최종 판정 | 구조·의존성 확인 완료(API 키 있어야 전체 파이프라인 실행 가능) |
+| 주요 결함 | 파이프라인 함수 시그니처 불일치로 평가가 전량 실패한 실행 이력 발견(`get_evaluation_from_openai() missing 3 required positional arguments`) |
+| 개선 결과 | 이후 실행에서는 정상적으로 10건 평가·리포트 생성됨(최신 실행 PASS 7/10) |
+| 최종 판정 | 최신 Judge 평가 기준 **10건 중 7건 PASS(70%)** |
 
 ## Project Type
 
@@ -27,6 +27,23 @@ LLM이 아는 척 답하지 않고, 업로드한 문서에서 근거를 찾아 �
 - Judge Agent(`evaluator_agent.py`) 설계 — 루브릭 평가·감점 평가·최종 점수 산출 로직
 - 답변 품질 평가 실행 및 리포트 생성(`run_evaluation.py`, `run_tests.py`)
 - Streamlit UI(챗봇/문서관리/품질평가 3탭) 구현
+
+## 📌 채용담당자용 핵심 문서
+
+- [최신 평가 결과](reports/rag_evaluation_report_latest.json) — 10건 중 PASS 7건(70%), 평균 정확성 3.6/5
+- [실패했던 평가 실행](reports/rag_evaluation_20260625_113349.json) — 함수 인자 누락으로 전량 실패한 실제 버그 사례
+- 위 QA SUMMARY, 아래 QA 관점의 핵심 — 제가 수행한 역할과 발견한 문제
+
+## QA 관점의 핵심
+
+- **무엇을 검증했는가**: RAG 챗봇이 문서에 없는 내용을 그럴듯하게 지어내지 않고, 실제로 업로드 문서에 근거해 답하는지
+- **왜 검증했는가**: 일반 LLM은 모르는 내용도 아는 척 답하는 환각 위험이 있어, 답변 품질을 LLM Judge로 재채점해 검증 가능하게 만들기 위해
+- **PASS/FAIL 기준**: `evaluator_agent.py`가 이해도·정확성 점수를 종합해 `overall_pass` 판정. Judge 응답 형식이 깨지면 임의로 통과 처리하지 않고 `overall_pass: False`로 안전하게 실패 처리
+- **발견한 문제**: (1) 라이브 평가 실행 중 `get_evaluation_from_openai()` 함수 호출에 필수 인자 3개가 누락돼 해당 실행의 모든 케이스가 에러 처리된 사례(`reports/rag_evaluation_20260625_113349.json`) — 실제 코드 결함 (2) 케이스 RAG-002·004·006은 정상 실행됐지만 Judge가 FAIL 판정(예: RAG-002는 "답변에 출처가 없어 이해도 -1점 감점")
+- **어떻게 분석했는가**: 실패 케이스의 Judge 채점 근거(`raw_output`)를 리포트에 그대로 보존해, 어떤 rubric 항목에서 왜 감점됐는지 원문으로 추적 가능하게 함
+- **재검증**: 함수 시그니처 수정 후 재실행한 최신 평가(`rag_evaluation_report_latest.json`)는 10건 모두 정상 채점되어 PASS 7건(70%)·평균 정확성 3.6/5 확보
+
+> **평가 축에 대한 정확한 설명**: Judge 프롬프트(`ai_answer.md`)는 이해도·정확성·관련성·표현성 4개 축을 예시로 보여주지만, 실제 채점 로직(`evaluator_agent.py`)이 파싱·집계하는 것은 **이해도·정확성 2개 축**입니다. 관련성·표현성은 현재 자동 집계되지 않습니다. 또한 검색 정확도(retrieval accuracy)와 근거성(groundedness)을 별도로 측정하는 지표는 없습니다 — 이해도 점수가 `grounding_score`라는 필드명으로 저장돼 있지만 실제로는 근거 인용 품질이 아닌 이해도 채점 결과입니다.
 
 ## 주요 기능
 
