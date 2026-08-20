@@ -42,6 +42,12 @@ AI Agent(챗봇) API를 FastAPI로 서비스하고, Streamlit 대시보드에서
 - **어떻게 분석했는가**: `tests/run_tests.py`로 4개 시나리오(정상·오류·지연·헬스체크)를 실행하고, k6로 100건 부하를 보내 P95·오류율을 측정
 - **재검증**: 기능 테스트 4/4 PASS(`tests/test_result.json`), k6 성능 테스트 오류율 0%·P95 17.72ms로 "적합" 판정(`performance/performance_judgment.md`)
 
+---
+
+## 🔧 Technical Reference
+
+아래는 실행 방법·코드 구조 등 기술적 상세입니다. 채용담당자는 위 내용만으로 프로젝트를 이해할 수 있습니다.
+
 ## 주요 기능
 
 Streamlit 대시보드에서 아래 5가지를 확인할 수 있습니다.

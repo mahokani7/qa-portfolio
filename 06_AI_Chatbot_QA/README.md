@@ -47,6 +47,12 @@ Service Agent·Judge Agent·규칙 검증 로직, 환경 구성, 리포트/대�
 
 > **53건 수치에 대한 참고**: 이 숫자는 오늘 기준으로는 정확하지만, 파라미터화된 테스트 중 일부(`test_selected_registered_testcase_rule_validation`)는 `data/testcases/testcase_uploads.json`에 등록된 **최신 업로드 테스트케이스 집합**의 건수만큼 자동으로 늘어나거나 줄어듭니다. 즉 53은 코드에 고정된 상수가 아니라, 현재 등록된 데이터에 따라 달라질 수 있는 값입니다.
 
+---
+
+## 🔧 Technical Reference
+
+아래는 실행 방법·API·코드 구조 등 기술적 상세입니다(RUN_GUIDE.md 포함). 채용담당자는 위 내용만으로 프로젝트를 이해할 수 있습니다.
+
 ## 주요 기능
 
 - Streamlit 기반 품질관리 대시보드

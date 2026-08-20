@@ -42,6 +42,12 @@ Express(MongoDB) 백엔드 + React(Vite) 프론트엔드로 만든 Todo/연락�
 
 > **Cypress에 대한 참고**: E2E 시나리오는 현재 1개(`todo-form.cy.js` — 폼 입력→API 호출→목록 반영, `cy.intercept`로 네트워크 스텁)이며, 별도로 저장된 Cypress 실행 로그/리포트 파일은 없습니다(코드 자체가 증거). node:test·Jest의 9건은 위 두 테스트 파일에서 직접 확인한 정확한 수치입니다.
 
+---
+
+## 🔧 Technical Reference
+
+아래는 실행 방법·코드 구조 등 기술적 상세입니다. 채용담당자는 위 내용만으로 프로젝트를 이해할 수 있습니다.
+
 ## 프로젝트 구조
 
 ```text
