@@ -1,11 +1,10 @@
-<!-- TODO: 히어로 스크린샷 -->
-
 # 최성우 | IT 기획·PM → AI/LLM QA
 
 20년+ IT 기획·PM 경험을 기반으로 요구사항 분석부터 AI/LLM 품질기준 설계, 테스트 자동화, 결함 분석까지 연결합니다.
 
-- 개인 브랜딩 사이트(경력·연락처): [mahokani7.github.io](https://mahokani7.github.io/)
-- AI QA 포트폴리오(정리된 버전): [mahokani7.github.io/qa](https://mahokani7.github.io/qa/)
+- 커리어 홈(전체 경력·연락처): [mahokani7.github.io](https://mahokani7.github.io/)
+- 채용담당자용 AI QA 요약: [mahokani7.github.io/qa](https://mahokani7.github.io/qa/)
+- 실무면접관용 상세 검증 포트폴리오: [mahokani7.github.io/qa-portfolio](https://mahokani7.github.io/qa-portfolio/)
 
 ---
 
@@ -23,6 +22,8 @@
 ---
 
 ## Featured Projects
+
+> 프로젝트 번호는 원본 작업 순서를 유지했으며, 03은 공개 포트폴리오 범위에서 제외했습니다.
 
 ### [`01`](01_VOC_Improve_MultiAgent/) VOC 멀티에이전트 QA
 
