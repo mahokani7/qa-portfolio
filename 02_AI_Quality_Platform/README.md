@@ -31,6 +31,25 @@ AI Agent의 답변 품질을 평가하고 운영 상태를 모니터링하는 �
 - pytest 테스트 18개 파일(정상 케이스·레드팀·회귀 시나리오) 설계·구현
 - k6 성능 테스트 설계·실행
 
+## 📌 채용담당자용 핵심 문서
+
+- [Test Plan](docs/test_plan.md) — 테스트 레벨(Health/API/Quality Pipeline/Negative/Performance/Monitoring) 정의, PASS 기준(`ITEM_PASS_THRESHOLD = 85%`)
+- [Performance Report](docs/performance_report.md) — k6 실측(10 VU·30s, 총 600요청·오류율 0%·p95 13~21ms)
+- [Final Quality Report](quality/reports/final_quality_report.md) ([PDF](quality/reports/QA_최종_테스트_결과_보고서.pdf) / [DOCX](quality/reports/QA_최종_테스트_결과_보고서.docx)) — 규칙기반 vs API기반 챗봇 23케이스 비교 실측 결과
+
+> `docs/final_quality_report.md`·`docs/defect_report.md`는 `python -m quality.quality_pipeline` 실행 시
+> 실제 결과가 채워지도록 설계된 **골격 템플릿**이며, 위에 링크한 `quality/reports/final_quality_report.md`가
+> 실제로 채워진 최신 보고서입니다. 같은 이름의 파일이 두 곳에 있어 혼동하지 않도록 구분해 둡니다.
+
+## QA 관점의 핵심
+
+- **무엇을 검증했는가**: 규칙기반 Agent와 API(LLM) 기반 Agent가 같은 23개 질문에 어떻게 다르게 답하는지, 그리고 LLM Judge 채점 하나에만 의존하지 않고 레드팀·PII·환각·회귀를 각각 독립된 방식으로 교차 검증
+- **왜 검증했는가**: AI 서비스는 같은 질문에도 매번 다른 응답이 나오고, 기능 테스트만으로는 안 잡히는 실패 유형(환각·PII 유출·프롬프트 공격)이 있기 때문
+- **PASS/FAIL 기준**: 항목별 통과 임계값 85%(`ITEM_PASS_THRESHOLD`, `docs/test_plan.md`), k6는 오류율·p95 응답시간 기준
+- **발견한 문제**: `quality/reports/final_quality_report.md` 비교에서 규칙기반 Agent는 23건 중 FAIL 2건, API 기반 Agent는 FAIL 0건 — 규칙기반 로직의 커버리지 공백을 수치로 확인
+- **어떻게 분석했는가**: 12개 독립 검증 모듈(레드팀/PII스캔/환각검출/RAG ablation 등, 아래 표)로 교차 검증해 단일 Judge 채점 기준의 맹점을 보완
+- **재검증**: pytest 18개 파일 84건 전수 실행, k6 부하테스트(600요청·오류율 0%) 재실행으로 회귀 확인
+
 ## 주요 기능
 
 - FastAPI 기반 AI Agent API (`/health`, `/ask`, `/metrics`)
