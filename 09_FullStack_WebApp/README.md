@@ -25,6 +25,23 @@ Express(MongoDB) 백엔드 + React(Vite) 프론트엔드로 만든 Todo/연락�
 
 테스트 대상 웹앱(백엔드 API + 프론트엔드)과 Cypress/Jest 테스트 스위트를 직접 작성했습니다.
 
+## 📌 채용담당자용 핵심 문서
+
+- [`backend/utils/passwordStrength.test.js`](backend/utils/passwordStrength.test.js) — node:test 단위 5건(경계값 위주)
+- [`backend/routes/todos.integration.test.js`](backend/routes/todos.integration.test.js) — Jest 통합 4건
+- [`frontend/cypress/e2e/todo-form.cy.js`](frontend/cypress/e2e/todo-form.cy.js) — Cypress E2E 1개 시나리오(네트워크 스텁 기반)
+
+## QA 관점의 핵심
+
+- **무엇을 검증했는가**: 단위(비밀번호 강도 경계값) → 통합(Todo API) → E2E(폼 제출→목록 반영) 세 계층을 분리해 각 계층에서 다른 종류의 결함을 잡을 수 있는지
+- **왜 검증했는가**: AI QA뿐 아니라 전통적인 웹 서비스 QA도 같은 계층 분리 사고방식으로 할 수 있음을 보여주기 위해
+- **PASS/FAIL 기준**: `npm test`(node:test + Jest) exit code, Cypress는 각 명령 단계 성공 여부
+- **발견한 문제**: 단위(`node:test`)와 통합(Jest) 러너가 분리돼 있지 않아 서로의 대상 파일을 겹쳐 실행하던 문제
+- **어떻게 분석했는가**: 두 러너가 같은 glob 패턴으로 파일을 잡아 중복 실행되는 것을 `package.json` 스크립트 정의에서 확인
+- **재검증**: `test:unit`/`test:integration`으로 러너를 분리하고 `npm test`가 순차 실행하도록 수정 — node:test 5건 + Jest 4건 = 9건 전부 PASS(exit 0)
+
+> **Cypress에 대한 참고**: E2E 시나리오는 현재 1개(`todo-form.cy.js` — 폼 입력→API 호출→목록 반영, `cy.intercept`로 네트워크 스텁)이며, 별도로 저장된 Cypress 실행 로그/리포트 파일은 없습니다(코드 자체가 증거). node:test·Jest의 9건은 위 두 테스트 파일에서 직접 확인한 정확한 수치입니다.
+
 ## 프로젝트 구조
 
 ```text
