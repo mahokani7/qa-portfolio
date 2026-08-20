@@ -1,19 +1,92 @@
 <!-- TODO: 히어로 스크린샷 -->
 
-# AI QA 포트폴리오 — 요구사항을 아는 PM이 만드는 품질 시스템
+# 최성우 | IT 기획·PM → AI/LLM QA
 
-**최성우 | IT 기획·PM → AI QA**
-
-20년+ IT 기획·PM 경험을 AI/LLM 서비스 품질 검증으로 확장하고 있습니다. 툴을 실행하는 QA가 아니라 **"무엇을 좋은 응답이라고 볼 것인가"라는 평가 기준 자체를 설계하는 QA**를 지향합니다.
-
-`Python · pytest · LLM-as-a-Judge · Streamlit · Docker · Cypress · k6 · Grafana/Prometheus · Jira` — 이 저장소 9개 프로젝트에서 실제로 사용한 스택입니다.
+20년+ IT 기획·PM 경험을 기반으로 요구사항 분석부터 AI/LLM 품질기준 설계, 테스트 자동화, 결함 분석까지 연결합니다.
 
 - 개인 브랜딩 사이트(경력·연락처): [mahokani7.github.io](https://mahokani7.github.io/)
 - AI QA 포트폴리오(정리된 버전): [mahokani7.github.io/qa](https://mahokani7.github.io/qa/)
 
 ---
 
-## 이 포트폴리오가 증명하는 QA 역량
+## Target Role
+
+**AI/LLM QA · AI 품질기획 · IT 서비스기획 · Technical PM**
+
+## Why Me?
+
+- 20년+ IT 기획·PM 경험 — 요구사항과 서비스 구조를 먼저 이해하는 QA
+- LLM 응답 품질 평가 기준(Rubric) 설계 — "무엇을 좋은 응답이라고 볼 것인가"를 측정 가능한 축으로 정의
+- 테스트 자동화 및 품질 리포트 작성 — pytest·Cypress·k6로 검증하고 결과를 문서로 남김
+- AI 도구를 활용하되, 요구사항 정의·결과 검증·최종 품질 판단은 직접 수행
+
+---
+
+## Featured Projects
+
+### [`01`](01_VOC_Improve_MultiAgent/) VOC 멀티에이전트 QA
+
+**Purpose**: VOC(고객의 소리) 멀티에이전트가 만든 정책 개선안을, 자동 처리 결과 그대로 배포해도 되는지 독립적으로 검증하는 QA 체계 구축
+
+**My Role**: 테스트 시나리오 설계, 평가 루브릭(LLM Judge 채점 기준) 설계, Judge 프롬프트 검증, 독립 LLM Judge 결과 검증, 발표·시연 — 팀 프로젝트(4인)이며 멀티에이전트 파이프라인·AWS 인프라는 팀원 담당
+
+**QA Challenge**: 자동 테스트가 통과했더라도 독립적인 LLM Judge의 평가를 통해 배포 여부를 다시 판단할 수 있는 QA 구조가 필요했음 — 내부 파이프라인이 100점(배포 가능)으로 판정한 케이스를 독립 Judge는 정책구체성 축에서 0점으로 재평가
+
+**Key Result**: pytest 32/32 PASS, 독립 Judge 평균 81.2점(배포 기준 95점 미달) → **배포 보류(HOLD)** 판정
+
+**View Project**: [01_VOC_Improve_MultiAgent](01_VOC_Improve_MultiAgent/)
+
+### [`02`](02_AI_Quality_Platform/) AI 품질 평가 플랫폼
+
+**Purpose**: AI 응답 품질을 Judge 채점 하나에 의존하지 않고, 레드팀·PII·환각·회귀 등 서로 다른 방식으로 교차 검증하는 품질 관리 체계 설계
+
+**My Role**: 루브릭(8축 평가 기준) 설계, Judge/Rule-based Agent 확장, JSON Schema 설계, 레드팀·PII스캔·환각검출 등 12개 독립 검증 모듈, Streamlit 대시보드, pytest·k6 테스트 설계·구현 — 개인 프로젝트(단독 수행)
+
+**QA Challenge**: 채점 기준(Judge) 하나가 틀렸을 때 그 오류를 놓치지 않으려면 어떻게 교차 검증할 것인가
+
+**Key Result**: pytest 84/84 PASS, k6 부하테스트 오류율 0%·p95 13~21ms
+
+**View Project**: [02_AI_Quality_Platform](02_AI_Quality_Platform/)
+
+### [`05`](05_RAIT_Evaluation_System/) RaiT 평가 시스템
+
+**Purpose**: 사람마다 다른 "좋은 응답"의 판단 기준을, 8개의 측정 가능한 축과 도메인별 정책으로 표준화해 반복 가능한 품질 판정 체계로 구현
+
+**My Role**: 8축 지표 체계 정의, Judge 프롬프트 설계, 계산 엔진(4가지 집계 방식) 구현, 도메인별 정책(기준점·가중치·과락 조건) 설계, Streamlit 대시보드 구현 — 개인 프로젝트(단독 설계·구현)
+
+**QA Challenge**: 정책 설정을 못 찾았을 때 조용히 기본값(가중치 1.0)으로 채점을 이어가면, 도메인별 가중치가 소리 없이 사라지는 채점 결함이 생김 — 실패를 숨기지 않고 즉시 드러내는 설계로 방지
+
+**Key Result**: Mock LLM Judge 기준 파이프라인 정상 동작 확인(실제 LLM 대량 채점·pytest 스위트는 이 프로젝트에서 수행하지 않았음을 그대로 밝혀둠)
+
+**View Project**: [05_RAIT_Evaluation_System](05_RAIT_Evaluation_System/)
+
+---
+
+## Additional Projects
+
+대표 3개 외에도 다양한 QA 환경(팀 프로젝트, RAG, 웹 E2E, Agent 안전성 등)을 직접 검증했습니다.
+
+### AI/LLM QA & Evaluation
+
+- [`06`](06_AI_Chatbot_QA/) AI 챗봇 QA 자동화 플랫폼(팀 프로젝트) — 규칙 기반 1차 검증 + LLM Judge 2차 평가 이중 검증, pytest 53건
+- [`07`](07_RAG_Chatbot/) RAG 챗봇 — 문서 기반 근거 답변 + LLM Judge 채점(이해도·정확성), 최신 평가 10건 중 7건 PASS
+- [`08`](08_AI_Agent_Dashboard/) AI Agent 모니터링 대시보드 — Mock 기반 장애·성능 시뮬레이션, 기능 테스트 4/4 PASS
+- [`10`](10_LangGraph_Chatbot/) LangGraph 챗봇 — 도구 호출(Tool-calling) Agent의 안전성 원칙을 수동 시나리오로 검증
+
+### QA Process / Planning
+
+- [`04`](04_QA_WBS_TestPlan/) QA 문서 산출물(팀 프로젝트) — 요구사항→WBS→테스트계획→재검증으로 이어지는 QA 프로세스 문서화, My Work/Team Artifacts 구분
+- [`09`](09_FullStack_WebApp/) 풀스택 웹앱 QA — Cypress E2E + Jest/node:test로 단위→통합→E2E 계층을 분리한 자동화 테스트
+
+> 번호가 02→04로 건너뛰는 이유: 03(AI 챗봇 QA 파이프라인 초기 버전)은 같은 팀 프로젝트의 확장판인 06으로 완전히 대체되어 이 저장소에서 제외했습니다. 자세한 내용은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md) 참고.
+
+각 프로젝트 README에는 QA SUMMARY(역할·테스트범위·주요 결함·최종 판정)와 My Role, 📌 채용담당자용 핵심 문서가 정리돼 있습니다.
+
+---
+
+## Tech Stack & 증명 QA 역량
+
+`Python · pytest · LLM-as-a-Judge · Streamlit · Docker · Cypress · k6 · Grafana/Prometheus · Jira` — 이 저장소 9개 프로젝트에서 실제로 사용한 스택입니다.
 
 | QA 역량 | 설명 | 근거 프로젝트 |
 |---|---|---|
@@ -29,52 +102,7 @@
 
 ---
 
-## 대표 프로젝트 3선
-
-### [`01`](01_VOC_Improve_MultiAgent/) VOC 멀티에이전트 QA — 자동 테스트 PASS ≠ 배포 승인
-
-내부 파이프라인이 100점(배포 가능)으로 판정한 케이스를, 별도로 붙인 독립 LLM Judge가 정책구체성 축을 0점으로 재평가해 배포를 보류(HOLD)시킨 사례. pytest 32건은 전부 PASS했지만 독립 Judge 평균은 배포 기준(95점) 미달이었습니다 — "테스트 통과"와 "배포 판단"이 다른 층위라는 것을 실제 수치로 확인했습니다.
-
-- **증명하는 QA 역량**: 품질 게이트 설계, 독립 LLM Judge 평가, 팀 프로젝트 내 QA 역할 수행
-- **스택**: Python · gRPC · MCP · pytest · LLM-as-a-Judge(Anthropic/OpenAI)
-
-### [`02`](02_AI_Quality_Platform/) AI 품질 평가 플랫폼 — Judge 하나에 기대지 않는 교차 검증
-
-AI 응답 품질을 레드팀(공격 주입)·PII스캔(정규식)·환각검출(근거 코퍼스 대조)·회귀·RAG on/off 비교 등 12개 독립 모듈로 나눠 검증합니다. 채점 기준 하나가 틀렸을 때를 대비해 서로 다른 방식으로 교차 확인하도록 설계했습니다.
-
-- **증명하는 QA 역량**: 다각도 품질 검증 설계, 성능·모니터링 연동, pytest 84건 자동화
-- **스택**: Python · pytest · k6 · Docker · Prometheus/Grafana · Jira
-
-### [`05`](05_RAIT_Evaluation_System/) RaiT 평가 시스템 — 8축 루브릭 + 도메인 정책 기반 판정
-
-AI 응답 품질을 8개 축으로 분해해 채점하고, 도메인(고위험 금융/일반 등)마다 다른 기준점·가중치·과락 조건으로 PASS/FAIL을 판정하는 프레임워크입니다. 설정을 못 찾으면 기본값으로 조용히 넘어가지 않고 즉시 실패시키도록 설계해, 채점 결과가 소리 없이 달라지는 결함을 방지했습니다.
-
-- **증명하는 QA 역량**: 평가 루브릭 설계, CI 스타일 배포 게이트(종료 코드), 조용한 실패 방지 설계
-- **스택**: Python · Streamlit · Mock LLM Judge
-
----
-
-## 전체 프로젝트 인덱스
-
-| # | 프로젝트 | 초점 | 스택 | 증명 QA 역량 |
-|---|---|---|---|---|
-| [01](01_VOC_Improve_MultiAgent/) | VOC 멀티에이전트 QA | 6-Agent 파이프라인 + 독립 Judge 배포 판정 | Python·gRPC·MCP·pytest | 품질 게이트·Judge 평가 |
-| [02](02_AI_Quality_Platform/) | AI 품질 평가 플랫폼 | 12개 검증 모듈 교차 평가 | Python·pytest·k6·Docker·Grafana | 레드팀·성능·모니터링 |
-| [04](04_QA_WBS_TestPlan/) | QA 문서 산출물 | 요구사항→WBS→테스트계획→재검증 문서화 | Jira·WBS·문서 | QA 프로세스 문서화 |
-| [05](05_RAIT_Evaluation_System/) | RaiT 평가 시스템 | 8축 루브릭 + 도메인 정책 PASS/FAIL | Python·Streamlit | 루브릭 설계·품질 게이트 |
-| [06](06_AI_Chatbot_QA/) | AI 챗봇 QA 자동화 플랫폼(팀) | 규칙+LLM 이중 검증, 테스트 이력 관리 | Python·pytest·Docker·k6·Jira | 통합 테스트·QA 문서 |
-| [07](07_RAG_Chatbot/) | RAG 챗봇 | 문서 기반 근거 답변 + Judge 채점 | Python·ChromaDB·Streamlit | Judge 설계·근거 검증 |
-| [08](08_AI_Agent_Dashboard/) | AI Agent 모니터링 대시보드 | Mock 기반 장애·성능 시뮬레이션 | Python·FastAPI·Streamlit | 테스트 시나리오 설계 |
-| [09](09_FullStack_WebApp/) | 풀스택 웹앱 QA | Unit→Integration→E2E 계층 분리 | Cypress·Jest·Express·React | E2E 자동화·API 스텁 |
-| [10](10_LangGraph_Chatbot/) | LangGraph 챗봇 | 도구 호출 Agent 안전성 설계 | Python·LangGraph·Node.js | 시나리오 설계·안전성 검증 |
-
-각 프로젝트 README에는 QA SUMMARY(역할·테스트범위·주요 결함·최종 판정)가 정리돼 있습니다.
-
-> 번호가 02→04로 건너뛰는 이유: 03(AI 챗봇 QA 파이프라인 초기 버전)은 같은 팀 프로젝트의 확장판인 06으로 완전히 대체되어 이 저장소에서 제외했습니다. 자세한 내용은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md) 참고.
-
----
-
-## 자가 QA 검증 결과
+## 🔍 Portfolio Self-QA
 
 이 포트폴리오 자체도 "링크만 걸어두고 실행된다고 주장"하지 않았습니다. 한 대의 PC에서 전부 새로 설치하고 직접 실행해 상태를 판정했고, **정상 작동하지 않는 부분도 숨기지 않고 그대로 표시**했습니다 — 이 표 자체가 QA 태도의 증거입니다.
 
@@ -92,7 +120,7 @@ AI 응답 품질을 8개 축으로 분해해 채점하고, 도메인(고위험 �
 
 `✅ 실행검증` = 실제 명령을 돌려 종료 코드와 출력을 확인 · `구조 확인` = API 키가 필요해 모듈 구조·의존성까지만 확인 · `🔑`/`🐳`/`💾` = 실행에 필요한 조건(문제가 아니라 실행 환경 요구사항)
 
-검증 과정에서 발견한 결함 7건(의존성 오류, 자격 증명 노출, 채점 로직 결함 등)과 수정·재검증 내역은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)에 정리했습니다. 자동 테스트는 총 276건을 직접 실행해 통과를 확인했으며, 프로젝트별 구성과 팀/개인 역할 구분은 위 "전체 프로젝트 인덱스"와 각 프로젝트 README에 있습니다.
+검증 과정에서 발견한 결함 7건(의존성 오류, 자격 증명 노출, 채점 로직 결함 등)과 수정·재검증 내역은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)에 정리했습니다. 자동 테스트는 총 276건을 직접 실행해 통과를 확인했습니다.
 
 ---
 
