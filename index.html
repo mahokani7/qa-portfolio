@@ -616,6 +616,65 @@
   }
   .verif-divider h2 { font-size: 1.15rem; font-weight: 700; }
   .verif-divider p { max-width: var(--measure); font-size: 0.9rem; color: var(--ink-muted); }
+
+  /* ── why-me chain ──────────────────────────────────── */
+  .chain { display: flex; flex-wrap: wrap; align-items: stretch; gap: 0; }
+  .chain-step {
+    background: var(--ground-raised); border: 1px solid var(--rule-soft);
+    padding: 0.9rem 1rem; min-width: 8.5rem; flex: 1 1 8.5rem;
+    display: flex; flex-direction: column; gap: 0.4rem;
+  }
+  .chain-step .lbl { color: var(--brand); }
+  .chain-step p { font-size: 0.84rem; color: var(--ink-muted); line-height: 1.5; }
+  .chain-step a { font-size: 0.78rem; }
+  .chain-arrow {
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-faint); font-family: var(--mono); font-size: 1rem;
+    padding: 0 0.35rem; flex: 0 0 auto;
+  }
+  @media (max-width: 46rem) {
+    .chain { flex-direction: column; }
+    .chain-arrow { transform: rotate(90deg); padding: 0.15rem 0; }
+  }
+
+  /* ── qa matrix ─────────────────────────────────────── */
+  .matrix-tbl td:first-child { font-weight: 600; white-space: nowrap; }
+  .matrix-tbl td:last-child { color: var(--ink-muted); }
+  .matrix-tbl code { background: var(--ground-sunken); padding: 0.1rem 0.3rem; border-radius: 2px; }
+
+  /* ── case study flow ───────────────────────────────── */
+  .flow { display: flex; flex-direction: column; gap: 0; }
+  .flow-step {
+    background: var(--ground-raised); border: 1px solid var(--rule-soft);
+    border-left: 4px solid var(--rail, var(--inert));
+    padding: 0.9rem 1.1rem; display: flex; flex-direction: column; gap: 0.2rem;
+  }
+  .flow-step--pass    { --rail: var(--pass); }
+  .flow-step--partial { --rail: var(--partial); }
+  .flow-step--blocked { --rail: var(--blocked); }
+  .flow-step strong { font-size: 1rem; letter-spacing: -0.01em; }
+  .flow-step span { font-size: 0.86rem; color: var(--ink-muted); }
+  .flow-arrow {
+    text-align: center; font-family: var(--mono); color: var(--ink-faint);
+    font-size: 1rem; padding: 0.15rem 0;
+  }
+
+  /* ── tech stack groups ──────────────────────────────── */
+  .stackgrid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1px; background: var(--rule); border: 1px solid var(--rule);
+  }
+  .stack-cell {
+    background: var(--ground-raised); padding: 1rem 1.1rem;
+    display: flex; flex-direction: column; gap: 0.6rem;
+  }
+  .stack-cell .tags { gap: 0.4rem; }
+
+  /* ── ai principle split ─────────────────────────────── */
+  .principle-grid {
+    display: grid; grid-template-columns: 1fr; gap: 0.9rem; margin-top: 0.9rem;
+  }
+  @media (min-width: 40rem) { .principle-grid { grid-template-columns: 1fr 1fr; } }
 </style>
 
 <div class="wrap">
@@ -624,6 +683,7 @@
   <header class="recruit" id="top">
     <div class="recruit-meta">
       <span class="lbl">최성우 · IT 기획·PM → AI QA</span>
+      <span class="lbl">지원 직무 — AI/LLM QA · AI 품질기획 · IT 서비스기획 · Technical PM</span>
       <span class="lbl">9개 프로젝트</span>
     </div>
 
@@ -654,6 +714,99 @@
     </div>
   </header>
 
+  <!-- ══ WHY ME ═══════════════════════════════════════════ -->
+  <section id="why-me">
+    <div class="sec-head">
+      <span class="lbl">Why Me</span>
+      <h2>요구사항 분석에서 Release 판단까지, 끊기지 않고 연결합니다</h2>
+      <p>
+        20년+ IT 기획·PM 경험에서 나온 습관은 "무엇을 검증해야 하는가"를 먼저 정확히 정의하는 것입니다.
+        그 습관을 QA로 옮기면 아래 7단계가 됩니다. 각 단계는 주장이 아니라 실제 프로젝트에서 수행한 근거로 이어집니다.
+      </p>
+    </div>
+    <div class="chain">
+      <div class="chain-step">
+        <span class="lbl">1 · 요구사항 분석</span>
+        <p>요구사항정의서 직접 작성</p>
+        <a href="#proj-04">04 QA 문서 산출물 →</a>
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-step">
+        <span class="lbl">2 · 테스트 전략</span>
+        <p>Judge 채점 하나에 의존하지 않는 교차검증 전략 설계</p>
+        <a href="#proj-02">02 AI 품질 평가 플랫폼 →</a>
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-step">
+        <span class="lbl">3 · 테스트 케이스 설계</span>
+        <p>단위·통합 테스트 계획서 직접 작성, 8축 평가 루브릭 설계</p>
+        <a href="#proj-04">04 QA 문서 산출물 →</a>
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-step">
+        <span class="lbl">4 · 결함 분석</span>
+        <p>검증 중 발견한 결함 7건 — 원인까지 추적</p>
+        <a href="#defects">결함 표 →</a>
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-step">
+        <span class="lbl">5 · 수정</span>
+        <p>05·06·10번 코드 수정을 실제로 저장소에 반영</p>
+        <a href="#fixes">적용 내역 →</a>
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-step">
+        <span class="lbl">6 · 재검증</span>
+        <p>수정 후 재실행해 exit 0 · PASS 재확인</p>
+        <a href="#fixes">재검증 근거 →</a>
+      </div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-step">
+        <span class="lbl">7 · 품질 판단</span>
+        <p>pytest PASS와 별개로 독립 Judge 기준 HOLD 판정</p>
+        <a href="#case-study">Case Study →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QA 역량 MATRIX ═══════════════════════════════════ -->
+  <section id="qa-matrix">
+    <div class="sec-head">
+      <span class="lbl">QA Capability Matrix</span>
+      <h2>역량별 실제 증거</h2>
+      <p>기술명만 나열하지 않고, 각 역량 옆에 실제 통과시킨 테스트 건수와 프로젝트를 그대로 붙였습니다.</p>
+    </div>
+    <div class="tbl-scroll">
+      <table class="matrix-tbl">
+        <thead><tr><th>역량</th><th>실제 증거</th></tr></thead>
+        <tbody>
+          <tr><td>요구사항 분석</td><td>요구사항정의서 직접 작성(<a href="#proj-04">04</a>)</td></tr>
+          <tr><td>테스트 전략</td><td>Judge 단일 채점 대신 레드팀·PII·환각검출 등 12개 모듈로 교차검증 설계(<a href="#proj-02">02</a>), 내부 채점과 별도로 독립 Judge를 배포 게이트로 설계(<a href="#proj-01">01</a>)</td></tr>
+          <tr><td>테스트 케이스 설계</td><td>단위·통합 테스트 계획서 직접 작성(<a href="#proj-04">04</a>)</td></tr>
+          <tr><td>Functional Test</td><td><code>pytest</code> 84건(<a href="#proj-02">02</a>) · 53건(<a href="#proj-06">06</a>) · 품질 스위트 32건(<a href="#proj-01">01</a>) 전부 PASS</td></tr>
+          <tr><td>Boundary Value Test</td><td>비밀번호 검증 경계값(빈 값·길이 초과·특수문자 누락) 단위 테스트 설계(<a href="#proj-09">09</a>)</td></tr>
+          <tr><td>Negative Test</td><td>설정 파일을 못 찾으면 조용히 기본값 대신 즉시 예외(<a href="#proj-05">05</a>), Judge 파싱 실패 시 임의 통과 대신 안전 실패 처리(<a href="#proj-07">07</a>)</td></tr>
+          <tr><td>API Test</td><td>FastAPI 엔드포인트 테스트(01·02·06·08·10)</td></tr>
+          <tr><td>E2E Test</td><td>Cypress E2E(<a href="#proj-09">09</a>), 라이브 E2E 18건(<a href="#proj-01">01</a>)</td></tr>
+          <tr><td>자동화 테스트</td><td>직접 통과시킨 자동 테스트 총 276건(전 프로젝트 합산, 중복 없음)</td></tr>
+          <tr><td>AI/LLM 품질평가</td><td>LLM-as-a-Judge 루브릭 설계(<a href="#proj-02">02</a>·<a href="#proj-05">05</a>), 8축 평가 체계(<a href="#proj-05">05</a>)</td></tr>
+          <tr><td>RAG 평가</td><td>RAG on/off 대조 실험으로 효과를 수치화(<a href="#proj-02">02</a>), 근거 기반 답변 품질 평가(07)</td></tr>
+          <tr><td>Prompt Injection / Red Team</td><td>레드팀 검증 모듈(정규식·패턴 기반, <a href="#proj-02">02</a>), 프롬프트 인젝션·권한공격 시나리오(01·02)</td></tr>
+          <tr><td>PII 검증</td><td>PII 스캔 모듈(<a href="#proj-02">02</a>)</td></tr>
+          <tr><td>성능 테스트</td><td>k6 부하테스트 — 오류율 0% · p95 13~21ms(<a href="#proj-02">02</a>)</td></tr>
+          <tr><td>모니터링</td><td>Prometheus/Grafana 연동(02·<a href="#proj-06">06</a>), 장애주입 모니터링 대시보드(08)</td></tr>
+          <tr><td>결함 분석</td><td>검증 중 발견한 결함 7건, 증상→원인→조치까지 추적(<a href="#defects">결함 표</a>)</td></tr>
+          <tr><td>재검증</td><td>수정 후 재실행해 exit 0 재확인 — 05·06·09·10 적용 완료(<a href="#fixes">근거</a>)</td></tr>
+          <tr><td>Release 품질 판단</td><td>pytest 32건 PASS했음에도 독립 Judge 81.2점(기준 95점 미달)로 HOLD 판정(<a href="#case-study">Case Study</a>)</td></tr>
+          <tr><td>Jira</td><td>Jira 칸반 문서화(04), Jira 자동등록 모듈(02)</td></tr>
+          <tr><td>WBS</td><td>WBS 직접 작성(<a href="#proj-04">04</a>)</td></tr>
+          <tr><td>QA 문서</td><td>요구사항정의서·테스트계획서 등 13종(<a href="#proj-04">04</a>)</td></tr>
+          <tr><td>팀 협업</td><td>4인 팀 프로젝트에서 담당 범위를 팀원과 명시적으로 구분(01·04·06)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <!-- ══ FEATURED PROJECTS ═══════════════════════════════ -->
   <section id="featured">
     <div class="sec-head">
@@ -664,44 +817,44 @@
 
     <div class="feat-list">
 
-      <!-- 04 -->
-      <article class="feat-card">
+      <!-- 01 -->
+      <article class="feat-card" id="proj-01">
         <div class="feat-top">
-          <span class="feat-id">04</span>
-          <span class="feat-name">QA 문서 산출물</span>
-          <span class="chip chip--inert">팀 프로젝트 산출물</span>
+          <span class="feat-id">01</span>
+          <span class="feat-name">VOC 멀티에이전트 QA — TEST PASS ≠ RELEASE GO</span>
+          <span class="chip chip--partial">팀 프로젝트(4인)</span>
         </div>
         <p class="feat-goal">
-          <strong>문제</strong> — 4인 팀 프로젝트(AI 챗봇 QA 파이프라인)를 진행하며, 요구사항부터 테스트·재검증까지의
-          QA 프로세스를 문서로 남기지 않으면 팀 밖에서 무엇을 근거로 품질을 판단했는지 확인할 방법이 없었습니다.
+          <strong>문제</strong> — 6개 에이전트가 분업 처리하는 VOC 분석 결과를, 파이프라인 내부 채점만으로 배포 승인해도
+          되는지 확인이 필요했습니다. 내부 채점이 틀릴 가능성을 내부 채점만으로는 검증할 수 없었습니다.
         </p>
         <div class="feat-grid">
           <div class="feat-col">
-            <span class="lbl">내가 한 일</span>
+            <span class="lbl">내가 한 일 (팀원과 구분)</span>
             <ul>
-              <li><strong>단위 테스트 계획서</strong> 직접 작성</li>
-              <li><strong>통합 테스트 계획서</strong> 직접 작성</li>
-              <li><strong>최종 발표 자료</strong> 직접 작성</li>
-              <li>요구사항정의서·WBS·업무분장·회의록 등 나머지 9종은 <strong>팀 공동 산출물</strong></li>
+              <li>테스트 시나리오 설계, 평가 루브릭 설계, Judge 프롬프트 검증, 독립 Judge 결과 검증, 최종 발표·시연</li>
+              <li>멀티에이전트 파이프라인 개발·AWS 인프라·리포팅 대시보드는 <strong>팀원이 담당</strong></li>
             </ul>
           </div>
           <div class="feat-col">
-            <span class="lbl">QA 관점의 핵심</span>
+            <span class="lbl">발견한 문제 → 개선 결과</span>
             <ul>
-              <li>요구사항 → WBS → 테스트 계획 → 결함/이슈 관리 → 재검증까지 <strong>표준 QA 문서 체계</strong>로 정리</li>
-              <li>IT 기획·PM 경험(요구사항정의서·WBS 작성)과 QA 역량(테스트 계획·결함 관리)을 같은 문서 체계 안에서 연결</li>
+              <li>내부 파이프라인이 100점(배포 가능)으로 판정한 케이스도 독립 Judge는 68~74점으로 재평가 →
+              <strong>최종 판정 HOLD</strong>(pytest 32건은 전부 PASS했음에도)</li>
+              <li>흐름과 "왜 HOLD했는가"는 아래 <strong><a href="#case-study">Case Study</a></strong>에 전용 섹션으로 정리했습니다</li>
             </ul>
           </div>
         </div>
-        <div class="feat-outcome"><strong>증거</strong> — 문서 13종 중 담당분 구분표: <a href="04_QA_WBS_TestPlan/README.md">04_QA_WBS_TestPlan/README.md</a></div>
+        <div class="feat-outcome"><strong>증거</strong> — 판정 증적은 S3 암호화 보관 후 CloudTrail로 감사. pytest 32건 PASS + 독립 Judge 81.2점 미달이 동시에 성립한다는 것 자체가 "테스트 통과 ≠ 배포 승인"의 근거입니다.</div>
         <div class="feat-evid">
-          <a class="tag" href="04_QA_WBS_TestPlan/" target="_blank" rel="noopener">폴더 보기 →</a>
-          <a class="tag" href="04_QA_WBS_TestPlan/evidence/02_roles_wbs.html" target="_blank" rel="noopener">업무분장 WBS 문서 →</a>
+          <a class="tag" href="#case-study">Case Study 보기 →</a>
+          <a class="tag" href="01_VOC_Improve_MultiAgent/README.md" target="_blank" rel="noopener">README(품질 게이트 설계) →</a>
+          <a class="tag" href="01_VOC_Improve_MultiAgent/aws_upload/qa_evidence/" target="_blank" rel="noopener">Judge 채점 증적 →</a>
         </div>
       </article>
 
       <!-- 02 -->
-      <article class="feat-card">
+      <article class="feat-card" id="proj-02">
         <div class="feat-top">
           <span class="feat-id">02</span>
           <span class="feat-name">AI 품질 평가 플랫폼</span>
@@ -736,42 +889,44 @@
         </div>
       </article>
 
-      <!-- 01 -->
-      <article class="feat-card">
+      <!-- 04 -->
+      <article class="feat-card" id="proj-04">
         <div class="feat-top">
-          <span class="feat-id">01</span>
-          <span class="feat-name">VOC 멀티에이전트 QA — TEST PASS ≠ RELEASE GO</span>
-          <span class="chip chip--partial">팀 프로젝트(4인)</span>
+          <span class="feat-id">04</span>
+          <span class="feat-name">QA 문서 산출물</span>
+          <span class="chip chip--inert">팀 프로젝트 산출물</span>
         </div>
         <p class="feat-goal">
-          <strong>문제</strong> — 6개 에이전트가 분업 처리하는 VOC 분석 결과를, 파이프라인 내부 채점만으로 배포 승인해도
-          되는지 확인이 필요했습니다. 내부 채점이 틀릴 가능성을 내부 채점만으로는 검증할 수 없었습니다.
+          <strong>문제</strong> — 4인 팀 프로젝트(AI 챗봇 QA 파이프라인)를 진행하며, 요구사항부터 테스트·재검증까지의
+          QA 프로세스를 문서로 남기지 않으면 팀 밖에서 무엇을 근거로 품질을 판단했는지 확인할 방법이 없었습니다.
         </p>
         <div class="feat-grid">
           <div class="feat-col">
-            <span class="lbl">내가 한 일 (팀원과 구분)</span>
+            <span class="lbl">내가 한 일</span>
             <ul>
-              <li>테스트 시나리오 설계, 평가 루브릭 설계, Judge 프롬프트 검증, 독립 Judge 결과 검증, 최종 발표·시연</li>
-              <li>멀티에이전트 파이프라인 개발·AWS 인프라·리포팅 대시보드는 <strong>팀원이 담당</strong></li>
+              <li><strong>단위 테스트 계획서</strong> 직접 작성</li>
+              <li><strong>통합 테스트 계획서</strong> 직접 작성</li>
+              <li><strong>최종 발표 자료</strong> 직접 작성</li>
+              <li>요구사항정의서·WBS·업무분장·회의록 등 나머지 9종은 <strong>팀 공동 산출물</strong></li>
             </ul>
           </div>
           <div class="feat-col">
-            <span class="lbl">발견한 문제 → 개선 결과</span>
+            <span class="lbl">QA 관점의 핵심</span>
             <ul>
-              <li>내부 파이프라인이 100점(배포 가능)으로 판정한 케이스도, 별도로 붙인 <strong>독립 LLM Judge</strong>는 정책구체성 축을 0점 매겨 68~74점으로 재평가</li>
-              <li>라이브 E2E 18건 평균 81.2점으로 배포 기준(95점) 미달 → <strong>최종 판정 HOLD</strong>(pytest 32건은 전부 PASS했음에도)</li>
+              <li>요구사항 → WBS → 테스트 계획 → 결함/이슈 관리 → 재검증까지 <strong>표준 QA 문서 체계</strong>로 정리</li>
+              <li>IT 기획·PM 경험(요구사항정의서·WBS 작성)과 QA 역량(테스트 계획·결함 관리)을 같은 문서 체계 안에서 연결</li>
             </ul>
           </div>
         </div>
-        <div class="feat-outcome"><strong>증거</strong> — 판정 증적은 S3 암호화 보관 후 CloudTrail로 감사. pytest 32건 PASS + 독립 Judge 81.2점 미달이 동시에 성립한다는 것 자체가 "테스트 통과 ≠ 배포 승인"의 근거입니다.</div>
+        <div class="feat-outcome"><strong>증거</strong> — 문서 13종 중 담당분 구분표: <a href="04_QA_WBS_TestPlan/README.md">04_QA_WBS_TestPlan/README.md</a></div>
         <div class="feat-evid">
-          <a class="tag" href="01_VOC_Improve_MultiAgent/README.md" target="_blank" rel="noopener">README(품질 게이트 설계) →</a>
-          <a class="tag" href="01_VOC_Improve_MultiAgent/aws_upload/qa_evidence/" target="_blank" rel="noopener">Judge 채점 증적 →</a>
+          <a class="tag" href="04_QA_WBS_TestPlan/" target="_blank" rel="noopener">폴더 보기 →</a>
+          <a class="tag" href="04_QA_WBS_TestPlan/evidence/02_roles_wbs.html" target="_blank" rel="noopener">업무분장 WBS 문서 →</a>
         </div>
       </article>
 
       <!-- 09 -->
-      <article class="feat-card">
+      <article class="feat-card" id="proj-09">
         <div class="feat-top">
           <span class="feat-id">09</span>
           <span class="feat-name">FullStack Web QA</span>
@@ -808,6 +963,58 @@
     </div>
   </section>
 
+  <!-- ══ CASE STUDY ═══════════════════════════════════════ -->
+  <section id="case-study">
+    <div class="sec-head">
+      <span class="lbl">Case Study</span>
+      <h2>Test PASS ≠ Release GO</h2>
+      <p>
+        01번 VOC 멀티에이전트 QA에서 실제로 있었던 판정 과정입니다.
+        내부 파이프라인과 pytest가 전부 통과했다는 사실과, 그럼에도 배포를 보류했다는 결론이 동시에 성립합니다.
+      </p>
+    </div>
+    <div class="flow">
+      <div class="flow-step flow-step--pass">
+        <strong>1 · pytest 32건 PASS</strong>
+        <span>품질 스위트(quality_diagnosis) 전체 통과 — exit 0</span>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step flow-step--partial">
+        <strong>2 · 독립 Judge 검증</strong>
+        <span>내부 파이프라인 채점과 별도로 붙인 LLM Judge가 같은 산출물을 재채점</span>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step flow-step--partial">
+        <strong>3 · 실제 E2E 평균 81.2점</strong>
+        <span>라이브 E2E 18건 재평가 — 내부 100점(배포 가능) 케이스도 정책구체성 축에서 0점 처리되어 68~74점으로 재산정</span>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step flow-step--blocked">
+        <strong>4 · Release 기준 95점 미달</strong>
+        <span>사전에 정한 배포 기준선(95점)에 미달</span>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step flow-step--blocked">
+        <strong>5 · HOLD</strong>
+        <span>최종 판정 — 배포 보류</span>
+      </div>
+    </div>
+    <div class="note" style="margin-top:1.25rem;">
+      <h3>왜 HOLD했는가</h3>
+      <p>
+        pytest 32건 PASS는 "코드가 설계대로 동작하는가"를 검증한 결과이고,
+        독립 Judge의 81.2점은 "그 결과물이 실제로 배포할 만한 품질인가"를 다시 물은 결과입니다.
+        두 질문은 답이 다를 수 있고, 이 케이스에서 실제로 달랐습니다.
+        테스트 통과를 그대로 배포 승인으로 연결하지 않고 <strong>서로 다른 검증 축(내부 채점 vs 독립 채점)을
+        교차시켜 사전에 정한 품질 기준을 지킨 것</strong>이 이 프로젝트에서 제가 맡은 역할의 핵심입니다.
+      </p>
+    </div>
+    <div class="feat-evid" style="margin-top:0.9rem;">
+      <a class="tag" href="#proj-01">01 · VOC 프로젝트 카드 →</a>
+      <a class="tag" href="01_VOC_Improve_MultiAgent/README.md" target="_blank" rel="noopener">README(품질 게이트 설계) →</a>
+    </div>
+  </section>
+
   <!-- ══ ADDITIONAL PROJECTS ═════════════════════════════ -->
   <section id="additional">
     <div class="sec-head">
@@ -818,33 +1025,93 @@
     <details class="addl">
       <summary>5개 프로젝트 펼치기</summary>
       <div class="addl-grid">
-        <div class="addl-row">
+        <div class="addl-row" id="proj-06">
+          <span class="row-id">06</span>
+          <span class="row-name">AI 챗봇 QA <span class="chip chip--partial">팀(4인)</span></span>
+          <p>04와 같은 팀 프로젝트의 확장판(Docker·Jira·모니터링 추가). <strong>My Role</strong> — pytest 테스트 스위트(53건) 설계·구현, QA 문서 작성. <strong>Team Contribution</strong> — Service/Judge Agent 구현은 팀원 담당. <a href="06_AI_Chatbot_QA/README.md">README →</a></p>
+        </div>
+        <div class="addl-row" id="proj-05">
           <span class="row-id">05</span>
           <span class="row-name">RaiT 평가 시스템 <span class="chip chip--pass">개인</span></span>
           <p>AI 응답 품질을 8개 축으로 분해해 채점하는 LLM-as-a-Judge 평가 프레임워크. 설정 로더가 정책 파일을 못 찾으면 기본값으로 조용히 넘어가지 않고 즉시 예외를 던지도록 설계 — 도메인별 가중치가 소리 없이 사라지는 채점 결함을 방지. <a href="05_RAIT_Evaluation_System/README.md">README →</a></p>
         </div>
-        <div class="addl-row">
-          <span class="row-id">06</span>
-          <span class="row-name">AI 챗봇 QA <span class="chip chip--partial">팀(4인)</span></span>
-          <p>04와 같은 팀 프로젝트의 확장판(Docker·Jira·모니터링 추가). pytest 테스트 스위트(53건) 설계·구현과 QA 문서 작성을 담당했고, Service/Judge Agent 구현은 팀원 담당. <a href="06_AI_Chatbot_QA/README.md">README →</a></p>
-        </div>
-        <div class="addl-row">
+        <div class="addl-row" id="proj-07">
           <span class="row-id">07</span>
           <span class="row-name">RAG 챗봇 <span class="chip chip--pass">개인</span></span>
           <p>문서 기반 근거 답변 RAG 챗봇. Judge 응답 파싱에 실패하면 임의로 통과 처리하지 않고 안전하게 실패 처리하도록 설계. <a href="07_RAG_Chatbot/README.md">README →</a></p>
         </div>
-        <div class="addl-row">
+        <div class="addl-row" id="proj-08">
           <span class="row-id">08</span>
           <span class="row-name">AI Agent 모니터링 대시보드 <span class="chip chip--pass">개인</span></span>
           <p>02번의 축약 원형. 외부 API 키 없이 완전히 로컬 mock으로 동작하며, 질문에 "오류"/"느리게"를 넣으면 장애·지연을 재현하는 테스트 시나리오를 직접 설계. <a href="08_AI_Agent_Dashboard/README.md">README →</a></p>
         </div>
-        <div class="addl-row">
+        <div class="addl-row" id="proj-10">
           <span class="row-id">10</span>
           <span class="row-name">LangGraph 챗봇 <span class="chip chip--pass">개인</span></span>
           <p>도구 호출형 AI Agent를 Python/Node 두 스택으로 구현. 시스템 프롬프트에 내부지침 노출 거부·개인정보 요구 거부 등 안전성 원칙을 명시하고 이를 검증하는 시나리오를 함께 설계. <a href="10_LangGraph_Chatbot/README.md">README →</a></p>
         </div>
       </div>
     </details>
+  </section>
+
+  <!-- ══ TECH STACK ═══════════════════════════════════════ -->
+  <section id="tech-stack">
+    <div class="sec-head">
+      <span class="lbl">Tech Stack</span>
+      <h2>사용 기술 — 증거와 함께</h2>
+      <p>9개 프로젝트에서 실제로 사용한 스택만 적었습니다. 괄호 안 번호는 사용 프로젝트입니다.</p>
+    </div>
+    <div class="stackgrid">
+      <div class="stack-cell">
+        <span class="lbl">Test</span>
+        <div class="tags">
+          <span class="tag">pytest (01·02·06)</span>
+          <span class="tag">Cypress (09)</span>
+          <span class="tag">Jest (09)</span>
+          <span class="tag">unittest (01)</span>
+          <span class="tag">node:test (09)</span>
+        </div>
+      </div>
+      <div class="stack-cell">
+        <span class="lbl">API / Backend</span>
+        <div class="tags">
+          <span class="tag">FastAPI (01·02·06·08·10)</span>
+          <span class="tag">Express (09)</span>
+          <span class="tag">Node.js (09·10)</span>
+        </div>
+      </div>
+      <div class="stack-cell">
+        <span class="lbl">AI / LLM</span>
+        <div class="tags">
+          <span class="tag">LLM-as-a-Judge (01·02·05·07)</span>
+          <span class="tag">RAG (02·07)</span>
+          <span class="tag">LangGraph (10)</span>
+          <span class="tag">Prompt Evaluation (02·05)</span>
+        </div>
+      </div>
+      <div class="stack-cell">
+        <span class="lbl">Performance</span>
+        <div class="tags">
+          <span class="tag">k6 (02·06)</span>
+        </div>
+      </div>
+      <div class="stack-cell">
+        <span class="lbl">Monitoring</span>
+        <div class="tags">
+          <span class="tag">Prometheus (02·06·08)</span>
+          <span class="tag">Grafana (02·06)</span>
+        </div>
+      </div>
+      <div class="stack-cell">
+        <span class="lbl">Collaboration</span>
+        <div class="tags">
+          <span class="tag">Jira (02·04)</span>
+          <span class="tag">WBS (04)</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">QA 문서화 (04·06)</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ══ AI 활용 원칙 ═══════════════════════════════════ -->
@@ -856,6 +1123,28 @@
         활용했습니다. 요구사항 정의, 테스트 설계, 결과 검증, 오류 원인 분석, 최종 품질 판단은 <strong>직접 수행</strong>했습니다.
         공개용으로 정리하면서 발견한 결함과 수정 내역은 <a href="VALIDATION_REPORT.md">VALIDATION_REPORT.md</a>에 정리했습니다.
       </p>
+      <div class="principle-grid">
+        <div class="feat-col">
+          <span class="lbl">AI 활용</span>
+          <ul>
+            <li>코드 초안</li>
+            <li>문서 초안</li>
+            <li>반복 작업 보조</li>
+          </ul>
+        </div>
+        <div class="feat-col">
+          <span class="lbl">직접 수행</span>
+          <ul>
+            <li>요구사항 분석</li>
+            <li>테스트 전략 수립</li>
+            <li>테스트 케이스 설계</li>
+            <li>테스트 실행</li>
+            <li>결과 검증</li>
+            <li>결함 원인 분석</li>
+            <li>최종 품질 판단</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -909,23 +1198,23 @@ test:integration Tests: <span class="p">4 passed</span>, 4 total</pre>
   <div class="strip">
     <div class="strip-cell strip-cell--pass">
       <span class="strip-num">6</span>
-      <span class="strip-cap">실행 검증 완료<br>실제 API 키 불필요</span>
+      <span class="strip-cap">직접 실행해 종료코드까지 확인<br>→ "돌아간다고 말만 하지 않는다"</span>
     </div>
     <div class="strip-cell strip-cell--partial">
       <span class="strip-num">2</span>
-      <span class="strip-cap">구동 가능<br>API 키 필요</span>
+      <span class="strip-cap">구동 가능, 키 필요<br>→ 못하는 것도 숨기지 않는다</span>
     </div>
     <div class="strip-cell strip-cell--inert">
       <span class="strip-num">1</span>
-      <span class="strip-cap">문서 산출물<br>실행 불필요</span>
+      <span class="strip-cap">QA 문서 산출물<br>→ 요구사항·WBS·테스트계획 직접 작성</span>
     </div>
     <div class="strip-cell strip-cell--blocked">
       <span class="strip-num">7</span>
-      <span class="strip-cap">검증 중 발견한<br>결함 (전부 조치)</span>
+      <span class="strip-cap">검증 중 발견해 조치한 결함<br>→ 재현·원인분석·수정·재검증 역량</span>
     </div>
     <div class="strip-cell">
       <span class="strip-num">276</span>
-      <span class="strip-cap">직접 통과시킨<br>자동 테스트 건수</span>
+      <span class="strip-cap">직접 통과시킨 자동 테스트<br>→ 테스트 설계·자동화 실행 역량</span>
     </div>
   </div>
 
@@ -1183,7 +1472,7 @@ high_risk_finance weights S = <span class="p">2.0</span></pre>
   </section>
 
   <!-- ══ DEFECTS ═══════════════════════════════════════ -->
-  <section>
+  <section id="defects">
     <div class="sec-head">
       <span class="lbl">검증 산출물</span>
       <h2>검증 중 발견해 조치한 결함 7건</h2>
