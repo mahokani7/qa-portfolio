@@ -29,6 +29,24 @@ VOC(Voice of Customer) 분석 시스템 - 고객 불만사항 분석 및 정책 
 
 팀원별 역할 상세는 [mahokani7.github.io/qa/project-01.html](https://mahokani7.github.io/qa/project-01.html) 참고.
 
+## 📌 채용담당자용 핵심 문서
+
+이 프로젝트에서 제가 수행한 역할과 QA 결과를 빠르게 확인할 수 있는 문서입니다.
+
+- [PRD](docs/PRD_VOC_Improve_QA_Control_Center_20260716.md) — 요구사항 정의
+- [최종 발표자료](docs/FINAL_PRESENTATION.pdf) ([PPTX](docs/FINAL_PRESENTATION.pptx)) — 11장, 자동테스트 PASS와 독립 Judge 판정이 갈린 지점을 중심으로 구성
+- [녹화 시나리오](docs/VOC_WEB_ANALYSIS_RECORDING_SCENARIO_20260805.md) — 고객 문의 입력→6-Agent 처리→독립 Judge 채점→배포 판단까지 데모 스크립트
+- [품질 점수 리포트](aws_upload/qa_evidence/quality_score_report.md) · [배포 판단 문서](aws_upload/qa_evidence/deployment_decision.md) · [pytest 실행 결과](aws_upload/qa_evidence/pytest_result.txt) — QA 관점의 핵심(아래) 판단에 쓰인 실측 증적
+
+## QA 관점의 핵심
+
+- **무엇을 검증했는가**: 6-Agent 파이프라인이 만든 정책 개선안을, 내부 파이프라인 채점과는 독립된 LLM Judge로 2차 검수해도 같은 결론이 나오는가
+- **왜 검증했는가**: 자동 테스트 PASS만으로 배포를 승인하면, 파이프라인 자체 편향(자기 채점)을 놓칠 수 있기 때문
+- **PASS/FAIL 기준**: `quality_gate.py`가 (1) 자동 품질 테스트 전수 통과 (2) OWASP 레드팀 20개 시나리오 통과 (3) 오프라인 E2E 평균이 배포 기준(95점) 이상 — 셋 다 충족해야 PASS, 하나라도 미달이면 HOLD
+- **발견한 문제**: pytest 32/32 PASS했지만, 라이브 E2E 18건 중 내부 파이프라인이 100점(배포 가능) 판정한 케이스를 독립 Judge는 정책구체성 축에서 0점으로 재평가(18건 중 7건에서 이 축이 최저점) — [`quality_score_report.md`](aws_upload/qa_evidence/quality_score_report.md)
+- **어떻게 분석했는가**: 항목별 Judge 점수(정확성 85%·요약충실성 82%·정책구체성 74%·유용성 76%·안전성 91%)를 배점별로 분해해 정책구체성이 유일한 저점 축임을 특정 — [`deployment_decision.md`](aws_upload/qa_evidence/deployment_decision.md)
+- **재검증**: Judge 평균 81.2점이 배포 기준 95점에 미달함을 근거로 최종 판정을 배포 보류(HOLD)로 확정, 정책 구체성 축을 프롬프트 단계에서 보강하는 것을 다음 개선 과제로 문서화
+
 ## 프로젝트 구조
 
 ```

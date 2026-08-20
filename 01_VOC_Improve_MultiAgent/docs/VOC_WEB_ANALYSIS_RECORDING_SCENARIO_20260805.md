@@ -2,7 +2,7 @@
 
 - 작성 기준일: 2026-08-05 KST
 - 분석 대상 프로그램: `VOC_Improve_1/web_app.py` 및 품질 진단 모듈
-- 발표 기준 자료: `001. VOC_Improve_3팀_LLM_Judge_20260804.pdf` 11쪽
+- 발표 기준 자료: `FINAL_PRESENTATION.pdf` 11쪽
 - 녹화 목표: 고객 문의 입력부터 6-Agent 결과, 독립 LLM Judge 채점, 최종 배포 판단, 사람 검토, 보고서 생성, AWS S3 증적 보관·보안·감사·전체 삭제까지 화면으로 설명
 - 최종 통합 시나리오: 14장
 

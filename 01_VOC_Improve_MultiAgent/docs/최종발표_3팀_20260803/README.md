@@ -9,8 +9,7 @@
 
 | 파일 | 용도 |
 | --- | --- |
-| [`../VOC_Improve_3팀_LLM_Judge_최종발표_CLD_정정_20260804.pptx`](../VOC_Improve_3팀_LLM_Judge_최종발표_CLD_정정_20260804.pptx) | 정정 발표자료 11장 (평가일·패키지 생성일 구분) |
-| [`../VOC_Improve_3팀_LLM_Judge_최종발표_GPT_정정_20260804.pptx`](../VOC_Improve_3팀_LLM_Judge_최종발표_GPT_정정_20260804.pptx) | 정정 발표자료 대안본 11장 |
+| [`../FINAL_PRESENTATION.pptx`](../FINAL_PRESENTATION.pptx) / [`.pdf`](../FINAL_PRESENTATION.pdf) | **최종 발표자료 11장** (2026-08-04 최종 수정, 녹화 시나리오의 발표 기준 자료) |
 | [`발표대본_10분.md`](발표대본_10분.md) | 슬라이드별 대사·시간배분·예상 질문 |
 | [`oCam_녹화_시나리오.md`](oCam_녹화_시나리오.md) | 녹화 설정·체크리스트·타임라인·편집 규격 |
 | [`AWS_시연_명령어.md`](AWS_시연_명령어.md) | CloudShell 복붙용 명령 전체 |
