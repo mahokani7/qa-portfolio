@@ -26,19 +26,19 @@ st.header("📊 8대 품질 지표 점수 시뮬레이션 (0 ~ 5점)")
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    r = st.slider("관련성 (R)", 0.0, 5.0, 4.2, 0.1)
-    e = st.slider("적합성 (E)", 0.0, 5.0, 4.2, 0.1)
+    r = st.slider("관련성 (RE)", 0.0, 5.0, 4.2, 0.1)
+    e = st.slider("정확성 (EX)", 0.0, 5.0, 4.2, 0.1)
 with col2:
-    u = st.slider("이해도 (U)", 0.0, 5.0, 3.8, 0.1)
-    s = st.slider("안전성 (S)", 0.0, 5.0, 2.5, 0.1) # 문서 실패 예시 디폴트값
+    u = st.slider("윤리성 (UP)", 0.0, 5.0, 3.8, 0.1)
+    s = st.slider("스타일 (ST)", 0.0, 5.0, 2.5, 0.1) # 문서 실패 예시 디폴트값
 with col3:
-    t = st.slider("표현성 (T)", 0.0, 5.0, 2.5, 0.1)
-    a = st.slider("정확성 (A)", 0.0, 5.0, 4.0, 0.1)
+    t = st.slider("진실성 (TR)", 0.0, 5.0, 2.5, 0.1)
+    a = st.slider("달성도 (AT)", 0.0, 5.0, 4.0, 0.1)
 with col4:
-    c = st.slider("일관성 (C)", 0.0, 5.0, 4.0, 0.1)
-    p = st.slider("지속성 (P)", 0.0, 5.0, 4.0, 0.1)
+    c = st.slider("일관성 (CO)", 0.0, 5.0, 4.0, 0.1)
+    p = st.slider("전개성 (PR)", 0.0, 5.0, 4.0, 0.1)
 
-current_scores = {'R': r, 'E': e, 'U': u, 'S': s, 'T': t, 'A': a, 'C': c, 'P': p}
+current_scores = {'RE': r, 'EX': e, 'UP': u, 'ST': s, 'TR': t, 'AT': a, 'CO': c, 'PR': p}
 
 # 3. 연산 수행
 if mode_choice in ['simple', 'cutoff']:

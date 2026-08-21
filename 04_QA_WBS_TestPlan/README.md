@@ -56,5 +56,4 @@
 | [`07_취약지표_분석기준_AI챗봇QA파이프라인.xlsx`](07_취약지표_분석기준_AI챗봇QA파이프라인.xlsx) | 취약지표 분석기준 |
 | [`08_회의록_AI챗봇QA파이프라인.docx`](08_회의록_AI챗봇QA파이프라인.docx) | 회의록 |
 | [`09_이슈트래킹시트_AI챗봇QA파이프라인.xlsx`](09_이슈트래킹시트_AI챗봇QA파이프라인.xlsx) | 이슈 트래킹 시트 |
-| [`KakaoTalk_20260702_133129979.png`](KakaoTalk_20260702_133129979.png) | 팀 업무 관련 스크린샷 |
 | [`evidence/03_wbs_detail.html`](evidence/03_wbs_detail.html) | WBS 상세 산출물 |

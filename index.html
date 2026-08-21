@@ -1031,8 +1031,8 @@
       </div>
       <div class="flow-arrow">↓</div>
       <div class="flow-step flow-step--partial">
-        <strong>3 · 실제 E2E 평균 81.2점</strong>
-        <span>라이브 E2E 18건 재평가 — 내부 100점(배포 가능) 케이스도 정책구체성 축에서 0점 처리되어 68~74점으로 재산정</span>
+        <strong>3 · 독립 Judge 평균 81.2점</strong>
+        <span>라이브 E2E 18건의 산출물을 독립 Judge가 재평가 — 내부 100점(배포 가능) 케이스도 정책구체성 축에서 0점 처리되어 68~74점으로 재산정</span>
       </div>
       <div class="flow-arrow">↓</div>
       <div class="flow-step flow-step--blocked">
@@ -1051,7 +1051,8 @@
         <tbody>
           <tr><td>내부 품질 게이트</td><td>100점</td></tr>
           <tr><td>독립 Judge</td><td>68~74점</td></tr>
-          <tr><td>Live E2E 평균</td><td>81.2점</td></tr>
+          <tr><td>Live E2E 평균</td><td>90.9점</td></tr>
+          <tr><td>독립 Judge 평균</td><td>81.2점</td></tr>
           <tr><td>Release 기준</td><td>95점</td></tr>
           <tr><td>최종 판정</td><td>HOLD</td></tr>
         </tbody>
@@ -1060,7 +1061,7 @@
     <div class="note" style="margin-top:1.25rem;">
       <h3>품질 판단</h3>
       <p>
-        내부 테스트는 통과했지만 독립 Judge와 Live E2E 결과가 Release 기준 95점에 미달하여
+        Live E2E는 18/18 PASS·평균 90.9점이었지만 독립 Judge 평균이 Release 기준 95점에 미달하여
         최종 판정은 <code>HOLD</code>로 기록했습니다.
       </p>
     </div>

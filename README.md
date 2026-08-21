@@ -41,7 +41,7 @@
 
 **Purpose**: AI 응답 품질을 Judge 채점 하나에 의존하지 않고, 레드팀·PII·환각·회귀 등 서로 다른 방식으로 교차 검증하는 품질 관리 체계 설계
 
-**My Role**: 루브릭(8축 평가 기준) 설계, Judge/Rule-based Agent 확장, JSON Schema 설계, 레드팀·PII스캔·환각검출 등 12개 독립 검증 모듈, Streamlit 대시보드, pytest·k6 테스트 설계·구현 — 개인 프로젝트(단독 수행)
+**My Role**: 팀 프로젝트 기반 Judge/Rule-based 코드를 바탕으로 루브릭(8축 평가 기준), JSON Schema, 레드팀·PII스캔·환각검출 등 12개 독립 검증 모듈, Streamlit 대시보드, pytest·k6 테스트 체계를 단독 확장 — 개인 확장 프로젝트
 
 **QA Challenge**: 채점 기준(Judge) 하나가 틀렸을 때 그 오류를 놓치지 않으려면 어떻게 교차 검증할 것인가
 
@@ -148,6 +148,5 @@ API 키 안내, Node 프로젝트 설치, 프로젝트별 상세 실행 명령, 
 ## Contact
 
 - 이메일: [mahokani7@gmail.com](mailto:mahokani7@gmail.com)
-- 전화: 010-5033-1779
 - 커리어 홈: [mahokani7.github.io](https://mahokani7.github.io/)
 - 검증 방법·발견한 결함·수정 내역: [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)

@@ -11,7 +11,7 @@ class LLMJudge:
         """
         if self.use_mock:
             # 현실적인 테스트를 위해 2.5 ~ 4.8 사이의 무작위 점수 생성
-            metrics = ['R', 'E', 'U', 'S', 'T', 'A', 'C', 'P']
+            metrics = ['RE', 'EX', 'UP', 'ST', 'TR', 'AT', 'CO', 'PR']
             return {m: round(random.uniform(2.5, 5.0), 1) for m in metrics}
         
         else:
