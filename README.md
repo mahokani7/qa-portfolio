@@ -1,10 +1,33 @@
-# 최성우 | IT 기획·PM → AI/LLM QA
+# 최성우 | IT 기획·PM 20년+ → AI/LLM QA
 
-20년+ IT 기획·PM 경험을 기반으로 요구사항 분석부터 AI/LLM 품질기준 설계, 테스트 자동화, 결함 분석까지 연결합니다.
+요구사항을 검증 가능한 품질 기준으로 구조화하고, 테스트 설계·실행·결함 분석·재검증을 거쳐 Release 판단까지 연결합니다.
+AI/LLM 품질평가에서는 실제 실행, Mock, 외부 API 필요 범위를 구분해 결과와 한계를 함께 기록합니다.
 
 - 커리어 홈(전체 경력·연락처): [mahokani7.github.io](https://mahokani7.github.io/)
 - AI QA 핵심 포트폴리오: [mahokani7.github.io/qa](https://mahokani7.github.io/qa/)
-- 실무면접관용 상세 검증 포트폴리오: [mahokani7.github.io/qa-portfolio](https://mahokani7.github.io/qa-portfolio/)
+- 상세 QA 검증 및 증적: [mahokani7.github.io/qa-portfolio](https://mahokani7.github.io/qa-portfolio/)
+
+---
+
+## Evidence Snapshot
+
+| Evidence | Result |
+|---|---:|
+| 공개 QA 프로젝트 | **9개** |
+| 실행 확인 자동 테스트 | **276건 PASS** |
+| 검증 과정에서 추적한 결함 | **7건** |
+| PRJ_01 Live E2E | **18건** |
+| 대표 Release 판단 | **HOLD** |
+
+> **TEST PASS ≠ RELEASE GO** — PRJ_01은 pytest 32/32 PASS 이후에도 독립 Judge 평균 81.2점이 Release 기준 95점에 미달해 **HOLD**로 판단했습니다. 테스트 성공과 Release 승인을 분리한 대표 QA 사례입니다.
+
+## Core Competencies
+
+- 요구사항을 검증 가능한 품질 기준으로 구조화
+- 테스트 전략·테스트 케이스·회귀 시나리오 설계
+- pytest·Cypress·Jest·node:test·k6 기반 자동화 검증
+- LLM Judge·Rubric·Rule 기반 AI 응답 품질평가
+- 결함 분석·수정 확인·재검증·Release 판단
 
 ---
 
@@ -14,10 +37,9 @@
 
 ## Why Me?
 
-- 20년+ IT 기획·PM 경험 — 요구사항과 서비스 구조를 먼저 이해하는 QA
-- LLM 응답 품질 평가 기준(Rubric) 설계 — "무엇을 좋은 응답이라고 볼 것인가"를 측정 가능한 축으로 정의
-- 테스트 자동화 및 품질 리포트 작성 — pytest·Cypress·k6로 검증하고 결과를 문서로 남김
-- AI 도구를 활용하되, 요구사항 정의·결과 검증·최종 품질 판단은 직접 수행
+1. **요구사항을 품질 기준으로 전환** — 20년+ 기획·PM 경험을 활용해 요구사항과 리스크를 검증 가능한 기준으로 구조화합니다.
+2. **테스트에서 끝내지 않는 QA** — 테스트 결과를 결함 분석·수정 확인·재검증·Release 판단까지 연결합니다.
+3. **AI 품질평가의 범위와 한계 구분** — LLM Judge·Rubric·Rule 기반 평가를 활용하되 Mock, 실제 실행, API 필요 범위를 명확히 밝힙니다.
 
 ---
 
