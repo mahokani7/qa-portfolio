@@ -25,7 +25,7 @@ Express(MongoDB) 백엔드 + React(Vite) 프론트엔드로 만든 Todo/연락�
 
 테스트 대상 웹앱(백엔드 API + 프론트엔드)과 Cypress/Jest 테스트 스위트를 직접 작성했습니다.
 
-## 📌 채용담당자용 핵심 문서
+## 📌 포트폴리오 핵심 문서
 
 - [`backend/utils/passwordStrength.test.js`](backend/utils/passwordStrength.test.js) — node:test 단위 5건(경계값 위주)
 - [`backend/routes/todos.integration.test.js`](backend/routes/todos.integration.test.js) — Jest 통합 4건
@@ -46,7 +46,7 @@ Express(MongoDB) 백엔드 + React(Vite) 프론트엔드로 만든 Todo/연락�
 
 ## 🔧 Technical Reference
 
-아래는 실행 방법·코드 구조 등 기술적 상세입니다. 채용담당자는 위 내용만으로 프로젝트를 이해할 수 있습니다.
+아래는 실행 방법·코드 구조 등 기술적 상세입니다. 프로젝트 핵심 내용은 위 요약과 문서에서 먼저 확인할 수 있습니다.
 
 ## 프로젝트 구조
 

@@ -30,7 +30,7 @@ AI 응답 품질을 RE·EX·UP·ST·TR·AT·CO·PR(Relevance·Exactness·Upright
 - Streamlit 대시보드(`app/app.py`) 구현
 - Mock LLM Judge로 파이프라인 전체 실행 검증(별도 pytest 스위트는 없음)
 
-## 📌 채용담당자용 핵심 문서
+## 📌 포트폴리오 핵심 문서
 
 - [EXPLAIN.md](EXPLAIN.md) — 8축 지표 정의와 코드 흐름 설명
 - [config/policy_config.json](config/policy_config.json) — 도메인별 실제 정책(기준점·가중치·과락 조건)
@@ -49,7 +49,7 @@ AI 응답 품질을 RE·EX·UP·ST·TR·AT·CO·PR(Relevance·Exactness·Upright
 
 ## 🔧 Technical Reference
 
-아래는 실행 방법·코드 구조 등 기술적 상세입니다. 채용담당자는 위 내용만으로 프로젝트를 이해할 수 있습니다.
+아래는 실행 방법·코드 구조 등 기술적 상세입니다. 프로젝트 핵심 내용은 위 요약과 문서에서 먼저 확인할 수 있습니다.
 
 ## 주요 기능
 

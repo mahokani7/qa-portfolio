@@ -31,7 +31,7 @@ AI 기반 소프트웨어 테스터(QA) 및 모니터링 실무 과정의 팀 �
 
 Service Agent·Judge Agent·규칙 검증 로직, 환경 구성, 리포트/대시보드 구현은 팀원이 담당했습니다. 자세한 역할 분담 근거는 [`04_QA_WBS_TestPlan`](../04_QA_WBS_TestPlan/)의 업무분장 문서를 참고하세요.
 
-## 📌 채용담당자용 핵심 문서
+## 📌 포트폴리오 핵심 문서
 
 - [최종 품질 보고서](reports/final_quality_report.md) — 규칙 검증 23건 통과율 등 실측 결과
 - 위 QA SUMMARY, 아래 QA 관점의 핵심 — 제가 수행한 역할과 발견한 문제
@@ -51,7 +51,7 @@ Service Agent·Judge Agent·규칙 검증 로직, 환경 구성, 리포트/대�
 
 ## 🔧 Technical Reference
 
-아래는 실행 방법·API·코드 구조 등 기술적 상세입니다(RUN_GUIDE.md 포함). 채용담당자는 위 내용만으로 프로젝트를 이해할 수 있습니다.
+아래는 실행 방법·API·코드 구조 등 기술적 상세입니다(RUN_GUIDE.md 포함). 프로젝트 핵심 내용은 위 요약과 문서에서 먼저 확인할 수 있습니다.
 
 ## 주요 기능
 

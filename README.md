@@ -3,7 +3,7 @@
 20년+ IT 기획·PM 경험을 기반으로 요구사항 분석부터 AI/LLM 품질기준 설계, 테스트 자동화, 결함 분석까지 연결합니다.
 
 - 커리어 홈(전체 경력·연락처): [mahokani7.github.io](https://mahokani7.github.io/)
-- 채용담당자용 AI QA 요약: [mahokani7.github.io/qa](https://mahokani7.github.io/qa/)
+- AI QA 핵심 포트폴리오: [mahokani7.github.io/qa](https://mahokani7.github.io/qa/)
 - 실무면접관용 상세 검증 포트폴리오: [mahokani7.github.io/qa-portfolio](https://mahokani7.github.io/qa-portfolio/)
 
 ---
@@ -81,7 +81,7 @@
 
 > 번호가 02→04로 건너뛰는 이유: 03(AI 챗봇 QA 파이프라인 초기 버전)은 같은 팀 프로젝트의 확장판인 06으로 완전히 대체되어 이 저장소에서 제외했습니다. 자세한 내용은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md) 참고.
 
-각 프로젝트 README에는 QA SUMMARY(역할·테스트범위·주요 결함·최종 판정)와 My Role, 📌 채용담당자용 핵심 문서가 정리돼 있습니다.
+각 프로젝트 README에는 QA SUMMARY(역할·테스트범위·주요 결함·최종 판정)와 My Role, 📌 포트폴리오 핵심 문서가 정리돼 있습니다.
 
 ---
 

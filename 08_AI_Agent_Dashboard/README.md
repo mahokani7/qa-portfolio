@@ -27,7 +27,7 @@ AI Agent(챗봇) API를 FastAPI로 서비스하고, Streamlit 대시보드에서
 - Streamlit 대시보드 5개 탭(서비스 상태·질문 테스트·로그 분석·기능 테스트·성능 테스트) 구현
 - 기능/성능 테스트 스크립트(`tests/run_tests.py`) 설계·실행(4개 시나리오 PASS 확인)
 
-## 📌 채용담당자용 핵심 문서
+## 📌 포트폴리오 핵심 문서
 
 - [기능 테스트 결과](tests/test_result.json) — 4개 시나리오(정상 응답·오류 처리·지연 응답·헬스체크) 전부 PASS
 - [성능 테스트 판정](performance/performance_judgment.md) — k6 100요청·오류율 0%·P95 17.72ms·"적합" 판정
@@ -46,7 +46,7 @@ AI Agent(챗봇) API를 FastAPI로 서비스하고, Streamlit 대시보드에서
 
 ## 🔧 Technical Reference
 
-아래는 실행 방법·코드 구조 등 기술적 상세입니다. 채용담당자는 위 내용만으로 프로젝트를 이해할 수 있습니다.
+아래는 실행 방법·코드 구조 등 기술적 상세입니다. 프로젝트 핵심 내용은 위 요약과 문서에서 먼저 확인할 수 있습니다.
 
 ## 주요 기능
 

@@ -32,7 +32,7 @@ LangGraph의 `create_react_agent`로 만든 도구 호출형(Tool-calling) AI Ag
 - 시스템 프롬프트 안전성 원칙 설계
 - 분기·도구호출 경로별 시나리오 테스트
 
-## 📌 채용담당자용 핵심 문서
+## 📌 포트폴리오 핵심 문서
 
 별도 QA 문서 파일은 없습니다 — 위 QA SUMMARY와 아래 QA 관점의 핵심, [`chatbot_agent.py`](chatbot_agent.py)의 실제 시스템 프롬프트가 판단 근거입니다.
 
@@ -52,7 +52,7 @@ LangGraph의 `create_react_agent`로 만든 도구 호출형(Tool-calling) AI Ag
 
 ## 🔧 Technical Reference
 
-아래는 실행 방법·코드 구조 등 기술적 상세입니다. 채용담당자는 위 내용만으로 프로젝트를 이해할 수 있습니다.
+아래는 실행 방법·코드 구조 등 기술적 상세입니다. 프로젝트 핵심 내용은 위 요약과 문서에서 먼저 확인할 수 있습니다.
 
 ## 프로젝트 구조
 

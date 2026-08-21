@@ -31,7 +31,7 @@ AI Agent의 답변 품질을 평가하고 운영 상태를 모니터링하는 �
 - pytest 테스트 18개 파일(정상 케이스·레드팀·회귀 시나리오) 설계·구현
 - k6 성능 테스트 설계·실행
 
-## 📌 채용담당자용 핵심 문서
+## 📌 포트폴리오 핵심 문서
 
 - [Test Plan](docs/test_plan.md) — 테스트 레벨(Health/API/Quality Pipeline/Negative/Performance/Monitoring) 정의, PASS 기준(`ITEM_PASS_THRESHOLD = 85%`)
 - [Performance Report](docs/performance_report.md) — k6 실측(10 VU·30s, 총 600요청·오류율 0%·p95 13~21ms)
@@ -54,7 +54,7 @@ AI Agent의 답변 품질을 평가하고 운영 상태를 모니터링하는 �
 
 ## 🔧 Technical Reference
 
-아래는 실행 방법·모듈 구조 등 기술적 상세입니다. 채용담당자는 위 내용만으로 프로젝트를 이해할 수 있습니다.
+아래는 실행 방법·모듈 구조 등 기술적 상세입니다. 프로젝트 핵심 내용은 위 요약과 문서에서 먼저 확인할 수 있습니다.
 
 ## 주요 기능
 
