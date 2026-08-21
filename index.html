@@ -156,7 +156,7 @@
     outline-offset: 3px;
     border-radius: 2px;
   }
-  code, kbd { font-family: var(--mono); font-size: 0.86em; }
+  code, kbd { font-family: var(--mono); font-size: 0.86em; word-break: break-word; overflow-wrap: anywhere; }
 
   /* mono utility label — the recurring identity element */
   .lbl {
@@ -1519,7 +1519,7 @@ python_gc_objects_collected_total{generation="0"} 382.0
 <span class="p">200 ok</span>          <span class="c"># OPENAI_API_KEY 미설정 상태에서 기동</span>
 
 <span class="c"># 정책 로딩도 프로젝트 밖 경로에서 확인</span>
-high_risk_finance weights S = <span class="p">2.0</span></pre>
+high_risk_finance weights ST = <span class="p">2.0</span></pre>
             </div>
           </details>
         </div>
@@ -1583,7 +1583,7 @@ high_risk_finance weights S = <span class="p">2.0</span></pre>
               <td><span class="sev sev--hi">HIGH</span></td>
               <td>05<br><code>src/utils/config_loader.py</code></td>
               <td>오류 없이 <strong>평가 점수만 조용히 달라짐</strong><br>프로젝트 폴더 밖에서 실행할 때 재현</td>
-              <td>설정 경로가 상대경로라 CWD에 의존 →<br>못 찾으면 예외 대신 <strong>기본값 파일을 새로 씀</strong><br>→ <code>high_risk_finance</code>의 가중치<br><code>S·A = 2.0</code>이 <code>1.0</code>으로 대체됨</td>
+              <td>설정 경로가 상대경로라 CWD에 의존 →<br>못 찾으면 예외 대신 <strong>기본값 파일을 새로 씀</strong><br>→ <code>high_risk_finance</code>의 가중치<br><code>ST·AT = 2.0</code>이 <code>1.0</code>으로 대체됨</td>
               <td><code>__file__</code> 기준 절대경로로 교체하고<br>설정 누락·미등록 정책명은 즉시 예외 처리<br>→ 다른 CWD에서 실행해 정상 로드 확인</td>
               <td>조치 완료</td>
             </tr>
