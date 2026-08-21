@@ -1,6 +1,6 @@
 # RaiT 품질 평가 시스템
 
-AI 응답 품질을 RE·EX·UP·ST·TR·AT·CO·PR(Relevance·Exactness·Uprightness·Style·Truthfulness·Attainment·Consistency·Progression) 8개 지표로 평가하고, 도메인별 정책(기준점·과락 조건)에 따라 서비스 배포 가능 여부(PASS/FAIL)를 판정하는 교육용 품질관리 도구입니다.
+본 프로젝트에서 직접 정의한 RaiT 평가체계로 AI 응답 품질을 RE·EX·UP·ST·TR·AT·CO·PR(Relevance·Exactness·Uprightness·Style·Truthfulness·Attainment·Consistency·Progression) 8개 지표로 평가하고, 도메인별 정책(기준점·과락 조건)에 따라 서비스 배포 가능 여부(PASS/FAIL)를 판정하는 교육용 품질관리 도구입니다.
 
 **왜 필요한가**: "좋은 응답"이라는 판단은 사람마다 기준이 달라 재현이 안 됩니다. 모호한 판단을 8개의 측정 가능한 축으로 나누고, 도메인(고위험 금융/일반 등)마다 다른 기준점·가중치·과락 조건을 정책으로 분리해 반복 가능한 품질 판정을 만드는 것이 목표입니다.
 

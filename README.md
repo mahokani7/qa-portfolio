@@ -9,17 +9,26 @@ AI/LLM 품질평가에서는 실제 실행, Mock, 외부 API 필요 범위를 �
 
 ---
 
+## Target Role
+
+**Primary** · AI/LLM QA · AI 품질기획<br>
+**Adjacent** · IT 서비스기획 · Technical PM
+
 ## Evidence Snapshot
 
 | Evidence | Result |
 |---|---:|
-| 공개 QA 프로젝트 | **9개** |
-| 실행 확인 자동 테스트 | **276건 PASS** |
-| 검증 과정에서 추적한 결함 | **7건** |
-| PRJ_01 Live E2E | **18건** |
-| 대표 Release 판단 | **HOLD** |
+| Public QA Projects | **9** |
+| Verified Automated Tests | **276 PASS** |
+| Validation Findings | **7** |
+| PRJ_01 Live E2E | **18** |
+| Release Decision Case | **HOLD** |
 
-> **TEST PASS ≠ RELEASE GO** — PRJ_01은 pytest 32/32 PASS 이후에도 독립 Judge 평균 81.2점이 Release 기준 95점에 미달해 **HOLD**로 판단했습니다. 테스트 성공과 Release 승인을 분리한 대표 QA 사례입니다.
+> **TEST PASS ≠ RELEASE GO**<br>
+> pytest 32/32 PASS → Live E2E 18건 → 독립 Judge 평균 81.2점 → Release 기준 95점 미달 → **HOLD**<br>
+> 테스트 성공과 Release 승인을 분리한 대표 QA 판단 사례입니다.
+
+`276`은 전체 포트폴리오에서 실제 실행 결과를 확인한 자동 테스트 수이며, 팀 프로젝트에 포함된 테스트를 함께 집계한 값입니다. `7`은 코드 결함뿐 아니라 보안·의존성·설정 로딩·테스트 러너·테스트 용이성에서 확인한 검증 이슈를 포함합니다.
 
 ## Core Competencies
 
@@ -31,75 +40,43 @@ AI/LLM 품질평가에서는 실제 실행, Mock, 외부 API 필요 범위를 �
 
 ---
 
-## Target Role
-
-**AI/LLM QA · AI 품질기획 · IT 서비스기획 · Technical PM**
-
-## Why Me?
-
-1. **요구사항을 품질 기준으로 전환** — 20년+ 기획·PM 경험을 활용해 요구사항과 리스크를 검증 가능한 기준으로 구조화합니다.
-2. **테스트에서 끝내지 않는 QA** — 테스트 결과를 결함 분석·수정 확인·재검증·Release 판단까지 연결합니다.
-3. **AI 품질평가의 범위와 한계 구분** — LLM Judge·Rubric·Rule 기반 평가를 활용하되 Mock, 실제 실행, API 필요 범위를 명확히 밝힙니다.
-
----
-
 ## Featured Projects
 
 > 프로젝트 번호는 원본 작업 순서를 유지했으며, 03은 공개 포트폴리오 범위에서 제외했습니다.
 
-### [`01`](01_VOC_Improve_MultiAgent/) VOC 멀티에이전트 QA
+### [`01`](01_VOC_Improve_MultiAgent/) · VOC Multi-Agent QA
 
-**Purpose**: VOC(고객의 소리) 멀티에이전트가 만든 정책 개선안을, 자동 처리 결과 그대로 배포해도 되는지 독립적으로 검증하는 QA 체계 구축
+- **검증 목표**: 멀티에이전트 결과물을 독립 Judge로 재검증
+- **My Role**: 테스트 시나리오·루브릭 설계, Judge 프롬프트·결과 검증, 발표·시연
+- **Team Scope**: 멀티에이전트 파이프라인·AWS 인프라·대시보드는 팀원 담당
+- **Evidence / Result**: pytest 32건·Live E2E 18건, Judge 81.2점 / 기준 95점 → **HOLD**
 
-**My Role**: 테스트 시나리오 설계, 평가 루브릭(LLM Judge 채점 기준) 설계, Judge 프롬프트 검증, 독립 LLM Judge 결과 검증, 발표·시연 — 팀 프로젝트(4인)이며 멀티에이전트 파이프라인·AWS 인프라는 팀원 담당
+### [`02`](02_AI_Quality_Platform/) · AI 품질 평가 플랫폼
 
-**QA Challenge**: 자동 테스트가 통과했더라도 독립적인 LLM Judge의 평가를 통해 배포 여부를 다시 판단할 수 있는 QA 구조가 필요했음 — 내부 파이프라인이 100점(배포 가능)으로 판정한 케이스를 독립 Judge는 정책구체성 축에서 0점으로 재평가
+- **검증 목표**: Judge·Rule·레드팀·PII·환각·회귀 검증을 조합해 단일 채점 의존 완화
+- **My Role**: 팀 프로젝트 기반 코드에서 12개 품질 모듈·대시보드·테스트 체계를 독립 확장
+- **Evidence**: pytest 84건, k6 600요청
+- **Result**: 84/84 PASS, 오류율 0%·p95 13~21ms — **개인 확장 프로젝트**
 
-**Key Result**: pytest 32/32 PASS, 독립 Judge 평균 81.2점(배포 기준 95점 미달) → **배포 보류(HOLD)** 판정
+### [`05`](05_RAIT_Evaluation_System/) · RaiT 평가 시스템
 
-**View Project**: [01_VOC_Improve_MultiAgent](01_VOC_Improve_MultiAgent/)
-
-### [`02`](02_AI_Quality_Platform/) AI 품질 평가 플랫폼
-
-**Purpose**: AI 응답 품질을 Judge 채점 하나에 의존하지 않고, 레드팀·PII·환각·회귀 등 서로 다른 방식으로 교차 검증하는 품질 관리 체계 설계
-
-**My Role**: 팀 프로젝트 기반 Judge/Rule-based 코드를 바탕으로 루브릭(8축 평가 기준), JSON Schema, 레드팀·PII스캔·환각검출 등 12개 독립 검증 모듈, Streamlit 대시보드, pytest·k6 테스트 체계를 단독 확장 — 개인 확장 프로젝트
-
-**QA Challenge**: 채점 기준(Judge) 하나가 틀렸을 때 그 오류를 놓치지 않으려면 어떻게 교차 검증할 것인가
-
-**Key Result**: pytest 84/84 PASS, k6 부하테스트 오류율 0%·p95 13~21ms
-
-**View Project**: [02_AI_Quality_Platform](02_AI_Quality_Platform/)
-
-### [`05`](05_RAIT_Evaluation_System/) RaiT 평가 시스템
-
-**Purpose**: 사람마다 다른 "좋은 응답"의 판단 기준을, 8개의 측정 가능한 축과 도메인별 정책으로 표준화해 반복 가능한 품질 판정 체계로 구현
-
-**My Role**: 8축 지표 체계 정의, Judge 프롬프트 설계, 계산 엔진(4가지 집계 방식) 구현, 도메인별 정책(기준점·가중치·과락 조건) 설계, Streamlit 대시보드 구현 — 개인 프로젝트(단독 설계·구현)
-
-**QA Challenge**: 정책 설정을 못 찾았을 때 조용히 기본값(가중치 1.0)으로 채점을 이어가면, 도메인별 가중치가 소리 없이 사라지는 채점 결함이 생김 — 실패를 숨기지 않고 즉시 드러내는 설계로 방지
-
-**Key Result**: Mock LLM Judge 기준 파이프라인 정상 동작 확인(실제 LLM 대량 채점·pytest 스위트는 이 프로젝트에서 수행하지 않았음을 그대로 밝혀둠)
-
-**View Project**: [05_RAIT_Evaluation_System](05_RAIT_Evaluation_System/)
+- **검증 목표**: 본 프로젝트에서 직접 정의한 RaiT 8축으로 반복 가능한 1차 품질평가 기준 구성
+- **My Role**: 지표·루브릭·Judge 프롬프트·계산 엔진·도메인 정책·대시보드 단독 설계·구현
+- **Evidence**: RE·EX·UP·ST·TR·AT·CO·PR, 4가지 집계 방식과 도메인별 정책 실행
+- **Result**: Mock LLM Judge로 파이프라인 검증 — 실서비스 대량 LLM 채점과 pytest는 미수행
 
 ---
 
 ## Additional Projects
 
-대표 3개 외에도 다양한 QA 환경(팀 프로젝트, RAG, 웹 E2E, Agent 안전성 등)을 직접 검증했습니다.
-
-### AI/LLM QA & Evaluation
-
-- [`06`](06_AI_Chatbot_QA/) AI 챗봇 QA 자동화 플랫폼(팀 프로젝트) — 규칙 기반 1차 검증 + LLM Judge 2차 평가 이중 검증, pytest 53건
-- [`07`](07_RAG_Chatbot/) RAG 챗봇 — 문서 기반 근거 답변 + LLM Judge 채점(이해도·정확성), 최신 평가 10건 중 7건 PASS
-- [`08`](08_AI_Agent_Dashboard/) AI Agent 모니터링 대시보드 — Mock 기반 장애·성능 시뮬레이션, 기능 테스트 4/4 PASS
-- [`10`](10_LangGraph_Chatbot/) LangGraph 챗봇 — 도구 호출(Tool-calling) Agent의 안전성 원칙을 수동 시나리오로 검증
-
-### QA Process / Planning
-
-- [`04`](04_QA_WBS_TestPlan/) QA 문서 산출물(팀 프로젝트) — 요구사항→WBS→테스트계획→재검증으로 이어지는 QA 프로세스 문서화, My Work/Team Artifacts 구분
-- [`09`](09_FullStack_WebApp/) 풀스택 웹앱 QA — Cypress E2E + Jest/node:test로 단위→통합→E2E 계층을 분리한 자동화 테스트
+| Project | Focus | Evidence |
+|---|---|---|
+| [`04`](04_QA_WBS_TestPlan/) | 테스트 계획·WBS | 본인 작성 테스트 계획서·발표자료, 팀 산출물 구분 |
+| [`06`](06_AI_Chatbot_QA/) | AI Chatbot QA | pytest 53건, 팀 프로젝트 역할 구분 |
+| [`07`](07_RAG_Chatbot/) | RAG QA | 최신 평가 7/10 PASS, 실패 결과 유지 |
+| [`08`](08_AI_Agent_Dashboard/) | Monitoring | Mock 기반 기능 테스트 4/4 PASS |
+| [`09`](09_FullStack_WebApp/) | Full-stack QA | node:test 5건 + Jest 4건 = 9/9 PASS, Cypress E2E 코드 |
+| [`10`](10_LangGraph_Chatbot/) | Agent 안전성 | Python import 검증, Node 구현 정적 검토, API 키 필요 |
 
 > 번호가 02→04로 건너뛰는 이유: 03(AI 챗봇 QA 파이프라인 초기 버전)은 같은 팀 프로젝트의 확장판인 06으로 완전히 대체되어 이 저장소에서 제외했습니다. 자세한 내용은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md) 참고.
 
@@ -143,27 +120,21 @@ AI/LLM 품질평가에서는 실제 실행, Mock, 외부 API 필요 범위를 �
 
 `✅ 실행검증` = 실제 명령을 돌려 종료 코드와 출력을 확인 · `구조 확인` = API 키가 필요해 모듈 구조·의존성까지만 확인 · `🔑`/`🐳`/`💾` = 실행에 필요한 조건(문제가 아니라 실행 환경 요구사항)
 
-검증 과정에서 발견한 결함 7건(의존성 오류, 자격 증명 노출, 채점 로직 결함 등)과 수정·재검증 내역은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)에 정리했습니다. 자동 테스트는 총 276건을 직접 실행해 통과를 확인했습니다.
+검증 과정에서 확인한 이슈 7건(자격 증명 노출, 의존성, 설정 로딩, 테스트 러너·용이성)과 수정·재검증 내역은 [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)에 정리했습니다. 자동 테스트 276건은 팀 프로젝트를 포함해 전체 포트폴리오에서 실제 실행 결과를 확인한 합계입니다.
 
 ---
 
-## 실행 방법 (빠른 시작)
+## Run & Validation
 
-```powershell
-cd <프로젝트 폴더>
-python -m venv .venv && .\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-copy .env.example .env   # 필요한 경우 API 키 입력
-pytest   # 또는 각 프로젝트 README의 실행 명령
-```
-
-API 키 안내, Node 프로젝트 설치, 프로젝트별 상세 실행 명령, 공개 호스팅 시 주의사항은 [`SETUP.md`](SETUP.md)에 정리했습니다.
+- 실행 환경·설치·프로젝트별 명령: [`SETUP.md`](SETUP.md)
+- 실제 실행 여부·테스트 수·Mock/API 조건·결함·재검증: [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md)
 
 ---
 
-## AI 활용 원칙
+## AI 활용 범위
 
-이 저장소의 코드와 문서 작성에 AI 도구(Claude 등)를 코드 작성과 문서 초안의 **보조 수단**으로 활용했습니다. 요구사항 정의·테스트 설계·결과 검증·오류 원인 분석·최종 품질 판단은 **직접 수행**했습니다.
+- **AI 활용**: 코드·문서 초안, 반복 작업, 코드 검토 보조
+- **직접 수행**: 요구사항 분석, 테스트 전략·TC 설계, 테스트 실행, 결과 검증, 결함 분석, 재검증, 품질·Release 판단
 
 ---
 
