@@ -627,14 +627,26 @@
   .addl-row .row-id { font-family: var(--mono); font-weight: 700; color: var(--ink-faint); font-size: 0.85rem; }
   .addl-row .row-name { font-weight: 700; font-size: 0.98rem; }
   .addl-row p { max-width: var(--measure); font-size: 0.86rem; color: var(--ink-muted); line-height: 1.6; }
+  .matrix-more { margin-top: 0.75rem; }
+  .matrix-more[open] > summary { margin-bottom: 0.75rem; }
 
   /* ── section divider into verification area ────────── */
+  .verif-details { margin-top: 5rem; }
+  .verif-details > summary { cursor: pointer; list-style: none; }
+  .verif-details > summary::-webkit-details-marker { display: none; }
   .verif-divider {
-    margin-top: 5rem; padding: 1.5rem 0; border-top: 2px solid var(--ink);
+    padding: 1.5rem 0; border-top: 2px solid var(--ink);
     display: flex; flex-direction: column; gap: 0.5rem;
   }
   .verif-divider h2 { font-size: 1.15rem; font-weight: 700; }
   .verif-divider p { max-width: var(--measure); font-size: 0.9rem; color: var(--ink-muted); }
+  .verif-toggle {
+    display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.25rem;
+    font-family: var(--mono); font-size: 0.8rem; font-weight: 700; color: var(--brand);
+  }
+  .verif-toggle-open { display: none; }
+  .verif-details[open] .verif-toggle-closed { display: none; }
+  .verif-details[open] .verif-toggle-open { display: inline; }
 
   /* ── why-me chain ──────────────────────────────────── */
   .chain { display: flex; flex-wrap: wrap; align-items: stretch; gap: 0; }
@@ -803,31 +815,42 @@
       <table class="matrix-tbl">
         <thead><tr><th>역량</th><th>실제 증거</th></tr></thead>
         <tbody>
-          <tr><td>요구사항 분석</td><td>요구사항정의서 작성(<a href="#proj-04">04</a>)</td></tr>
           <tr><td>테스트 전략</td><td>Judge 단일 채점 대신 레드팀·PII·환각검출 등 12개 모듈로 교차검증 설계(<a href="#proj-02">02</a>), 내부 채점과 별도로 독립 Judge를 배포 게이트로 설계(<a href="#proj-01">01</a>)</td></tr>
-          <tr><td>테스트 케이스 설계</td><td>단위·통합 테스트 계획서 작성(<a href="#proj-04">04</a>)</td></tr>
           <tr><td>Functional Test</td><td><code>pytest</code> 84건(<a href="#proj-02">02</a>) · 53건(<a href="#proj-06">06</a>) · 품질 스위트 32건(<a href="#proj-01">01</a>) 전부 PASS</td></tr>
-          <tr><td>Boundary Value Test</td><td>비밀번호 검증 경계값(빈 값·길이 초과·특수문자 누락) 단위 테스트 설계(<a href="#proj-09">09</a>)</td></tr>
-          <tr><td>Negative Test</td><td>설정 파일을 못 찾으면 조용히 기본값 대신 즉시 예외(<a href="#proj-05">05</a>), Judge 파싱 실패 시 임의 통과 대신 안전 실패 처리(<a href="#proj-07">07</a>)</td></tr>
-          <tr><td>API Test</td><td>FastAPI 엔드포인트 테스트(01·02·06·08·10)</td></tr>
-          <tr><td>E2E Test</td><td>Cypress E2E(<a href="#proj-09">09</a>), 라이브 E2E 18건(<a href="#proj-01">01</a>)</td></tr>
-          <tr><td>자동화 테스트</td><td>자동화 테스트 총 276건 실행(전 프로젝트 합산, 중복 없음)</td></tr>
           <tr><td>AI/LLM 품질평가</td><td>LLM-as-a-Judge 루브릭 설계(<a href="#proj-02">02</a>·<a href="#proj-05">05</a>), 8축 평가 체계(<a href="#proj-05">05</a>)</td></tr>
-          <tr><td>RAG 평가</td><td>RAG on/off 대조 실험으로 효과를 수치화(<a href="#proj-02">02</a>), 근거 기반 답변 품질 평가(07)</td></tr>
+          <tr><td>자동화 테스트</td><td>자동화 테스트 총 276건 실행(전 프로젝트 합산, 중복 없음)</td></tr>
           <tr><td>Prompt Injection / Red Team</td><td>레드팀 검증 모듈(정규식·패턴 기반, <a href="#proj-02">02</a>), 프롬프트 인젝션·권한공격 시나리오(01·02)</td></tr>
-          <tr><td>PII 검증</td><td>PII 스캔 모듈(<a href="#proj-02">02</a>)</td></tr>
           <tr><td>성능 테스트</td><td>k6 부하테스트 — 오류율 0% · p95 13~21ms(<a href="#proj-02">02</a>)</td></tr>
-          <tr><td>모니터링</td><td>Prometheus/Grafana 연동(02·<a href="#proj-06">06</a>), 장애주입 모니터링 대시보드(08)</td></tr>
           <tr><td>결함 분석</td><td>검증 중 발견한 결함·개선사항 7건, 증상→원인→조치까지 추적(<a href="#defects">결함 표</a>)</td></tr>
-          <tr><td>재검증</td><td>수정 후 재실행해 exit 0 재확인 — 05·06·09·10 적용 완료(<a href="#defects">근거</a>)</td></tr>
           <tr><td>Release 품질 판단</td><td>pytest 32건 PASS했음에도 독립 Judge 81.2점(기준 95점 미달)로 HOLD 판정(<a href="#case-study">Case Study</a>)</td></tr>
-          <tr><td>Jira</td><td>Jira 칸반 문서화(04), Jira 자동등록 모듈(02)</td></tr>
-          <tr><td>WBS</td><td>WBS 작성(<a href="#proj-04">04</a>)</td></tr>
-          <tr><td>QA 문서</td><td>요구사항정의서·테스트계획서 등 13종(<a href="#proj-04">04</a>)</td></tr>
-          <tr><td>팀 협업</td><td>4인 팀 프로젝트에서 담당 범위를 팀원과 명시적으로 구분(01·04·06)</td></tr>
         </tbody>
       </table>
     </div>
+
+    <details class="addl matrix-more">
+      <summary>나머지 14개 역량 전체 보기</summary>
+      <div class="tbl-scroll">
+        <table class="matrix-tbl">
+          <thead><tr><th>역량</th><th>실제 증거</th></tr></thead>
+          <tbody>
+            <tr><td>요구사항 분석</td><td>요구사항정의서 작성(<a href="#proj-04">04</a>)</td></tr>
+            <tr><td>테스트 케이스 설계</td><td>단위·통합 테스트 계획서 작성(<a href="#proj-04">04</a>)</td></tr>
+            <tr><td>Boundary Value Test</td><td>비밀번호 검증 경계값(빈 값·길이 초과·특수문자 누락) 단위 테스트 설계(<a href="#proj-09">09</a>)</td></tr>
+            <tr><td>Negative Test</td><td>설정 파일을 못 찾으면 조용히 기본값 대신 즉시 예외(<a href="#proj-05">05</a>), Judge 파싱 실패 시 임의 통과 대신 안전 실패 처리(<a href="#proj-07">07</a>)</td></tr>
+            <tr><td>API Test</td><td>FastAPI 엔드포인트 테스트(01·02·06·08·10)</td></tr>
+            <tr><td>E2E Test</td><td>Cypress E2E(<a href="#proj-09">09</a>), 라이브 E2E 18건(<a href="#proj-01">01</a>)</td></tr>
+            <tr><td>RAG 평가</td><td>RAG on/off 대조 실험으로 효과를 수치화(<a href="#proj-02">02</a>), 근거 기반 답변 품질 평가(07)</td></tr>
+            <tr><td>PII 검증</td><td>PII 스캔 모듈(<a href="#proj-02">02</a>)</td></tr>
+            <tr><td>모니터링</td><td>Prometheus/Grafana 연동(02·<a href="#proj-06">06</a>), 장애주입 모니터링 대시보드(08)</td></tr>
+            <tr><td>재검증</td><td>수정 후 재실행해 exit 0 재확인 — 05·06·09·10 적용 완료(<a href="#defects">근거</a>)</td></tr>
+            <tr><td>Jira</td><td>Jira 칸반 문서화(04), Jira 자동등록 모듈(02)</td></tr>
+            <tr><td>WBS</td><td>WBS 작성(<a href="#proj-04">04</a>)</td></tr>
+            <tr><td>QA 문서</td><td>요구사항정의서·테스트계획서 등 13종(<a href="#proj-04">04</a>)</td></tr>
+            <tr><td>팀 협업</td><td>4인 팀 프로젝트에서 담당 범위를 팀원과 명시적으로 구분(01·04·06)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
   </section>
 
   <!-- ══ FEATURED PROJECTS ═══════════════════════════════ -->
@@ -1185,14 +1208,19 @@
   </section>
 
   <!-- ══ 실무자 영역 진입 ═══════════════════════════════ -->
-  <div class="verif-divider" id="verification">
-    <span class="lbl">실무자 영역</span>
-    <h2>실무자를 위한 실행 증적</h2>
-    <p>
-      프로젝트별 실행 로그, 결함 기록, 코드, 테스트 케이스, 기술 스택을 확인할 수 있습니다.
-      한 대의 PC에서 처음부터 설치·실행해 얻은 결과입니다.
-    </p>
-  </div>
+  <details class="verif-details" id="verification">
+    <summary class="verif-divider">
+      <span class="lbl">실무자 영역</span>
+      <h2>실무자를 위한 실행 증적</h2>
+      <p>
+        프로젝트별 실행 로그, 결함 기록, 코드, 테스트 케이스, 기술 스택을 확인할 수 있습니다.
+        한 대의 PC에서 처음부터 설치·실행해 얻은 결과입니다.
+      </p>
+      <span class="verif-toggle">
+        <span class="verif-toggle-closed">▸ 전체 실행 증적 펼치기</span>
+        <span class="verif-toggle-open">▾ 접기</span>
+      </span>
+    </summary>
 
   <!-- ══ MASTHEAD ══════════════════════════════════════ -->
   <header class="mast">
@@ -1827,6 +1855,19 @@ npm install</pre>
     </p>
   </footer>
 
+  </details>
+
 </div>
+<script>
+(function () {
+  var details = document.getElementById('verification');
+  if (!details) return;
+  function openIfTargeted() {
+    if (location.hash === '#verification') details.open = true;
+  }
+  openIfTargeted();
+  window.addEventListener('hashchange', openIfTargeted);
+})();
+</script>
 </body>
 </html>
