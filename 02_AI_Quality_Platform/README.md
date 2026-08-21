@@ -23,7 +23,7 @@ AI Agent의 답변 품질을 평가하고 운영 상태를 모니터링하는 �
 
 ## My Role
 
-- 루브릭(8축 평가 기준·가중치) 설계
+- Judge 루브릭(정확성·근거성·유용성·안전성 4개 지표) 설계
 - Judge/Rule-based Agent(`app/judge_agent.py`, `app/rule_based_agent.py`) — 팀 프로젝트(01·06 계열)와 같은 기반 코드에서 출발해 이 프로젝트에 맞게 확장. 핵심 채점 로직 자체는 그 기반 코드와 상당 부분 동일하고, 아래 항목들이 이 프로젝트에서 새로 설계·구현한 부분입니다
 - JSON Schema(`app/schemas.py`) 설계 — Judge 출력 구조화
 - `quality/` 12개 검증 모듈(레드팀·PII스캔·환각검출·회귀·RAG ablation·비용추적·Jira연동 등) — 팀 프로젝트에는 없는, 이 프로젝트만의 확장
