@@ -716,7 +716,8 @@
   <header class="recruit" id="top">
     <div class="recruit-meta">
       <span class="lbl">최성우 · IT 기획·PM → AI QA</span>
-      <span class="lbl">지원 직무 — AI/LLM QA · AI 품질기획 · IT 서비스기획 · Technical PM</span>
+      <span class="lbl">Primary — AI/LLM QA · AI 품질기획</span>
+      <span class="lbl">Adjacent — IT 서비스기획 · Technical PM</span>
       <span class="lbl">9개 프로젝트</span>
     </div>
 
@@ -818,10 +819,10 @@
           <tr><td>테스트 전략</td><td>Judge 단일 채점 대신 레드팀·PII·환각검출 등 12개 모듈로 교차검증 설계(<a href="#proj-02">02</a>), 내부 채점과 별도로 독립 Judge를 배포 게이트로 설계(<a href="#proj-01">01</a>)</td></tr>
           <tr><td>Functional Test</td><td><code>pytest</code> 84건(<a href="#proj-02">02</a>) · 53건(<a href="#proj-06">06</a>) · 품질 스위트 32건(<a href="#proj-01">01</a>) 전부 PASS</td></tr>
           <tr><td>AI/LLM 품질평가</td><td>LLM-as-a-Judge 루브릭 설계(<a href="#proj-02">02</a>·<a href="#proj-05">05</a>), 8축 평가 체계(<a href="#proj-05">05</a>)</td></tr>
-          <tr><td>자동화 테스트</td><td>자동화 테스트 총 276건 실행(전 프로젝트 합산, 중복 없음)</td></tr>
+          <tr><td>자동화 테스트</td><td>검증한 자동화 테스트 276건 · 팀 프로젝트 포함 전체 포트폴리오 합계</td></tr>
           <tr><td>Prompt Injection / Red Team</td><td>레드팀 검증 모듈(정규식·패턴 기반, <a href="#proj-02">02</a>), 프롬프트 인젝션·권한공격 시나리오(01·02)</td></tr>
           <tr><td>성능 테스트</td><td>k6 부하테스트 — 오류율 0% · p95 13~21ms(<a href="#proj-02">02</a>)</td></tr>
-          <tr><td>결함 분석</td><td>검증 중 발견한 결함·개선사항 7건, 증상→원인→조치까지 추적(<a href="#defects">결함 표</a>)</td></tr>
+          <tr><td>검증 이슈 분석</td><td>검증 중 확인한 보안·의존성·설정·테스트 용이성 등 이슈 7건을 증상→원인→조치까지 추적(<a href="#defects">검증 이슈 표</a>)</td></tr>
           <tr><td>Release 품질 판단</td><td>pytest 32건 PASS했음에도 독립 Judge 81.2점(기준 95점 미달)로 HOLD 판정(<a href="#case-study">Case Study</a>)</td></tr>
         </tbody>
       </table>
@@ -1234,9 +1235,9 @@
     <h2>실행 검증 결과</h2>
 
     <p class="mast-lede">
-      QA 교육과정에서 만든 프로젝트를 한 대의 PC에서 새로 설치하고 실행했습니다.
+      QA 교육과정에서 시작해 이후 확장·보완한 프로젝트를 새 환경에서 다시 설치하고 실행 검증했습니다.
       실제 실행 결과를 확인한 프로젝트와 외부 API Key 등 추가 조건이 필요한 프로젝트를 구분해 표시합니다.
-      그 과정에서 결함·개선사항 7건을 원인까지 확인했습니다.
+      그 과정에서 검증 이슈 7건을 원인까지 확인했습니다.
     </p>
 
     <div class="term term-hero">
@@ -1493,7 +1494,7 @@ python_gc_objects_collected_total{generation="0"} 382.0
       <article class="row row--pass">
         <div class="row-top">
           <span class="row-id">05</span>
-          <span class="row-name">RAIT 평가 시스템</span>
+          <span class="row-name">RaiT 평가 시스템</span>
           <span class="chip chip--pass">검증 완료</span>
         </div>
         <div class="row-body">
@@ -1737,7 +1738,7 @@ high_risk_finance weights ST = <span class="p">2.0</span></pre>
           <tr><td>01 VOC 멀티에이전트 QA</td><td>팀(4인)</td><td>QA 시나리오·루브릭·Judge 검증</td><td>LLM Judge, E2E 18건</td><td>HOLD(81.2점, 기준 95점)</td></tr>
           <tr><td>02 AI 품질 평가 플랫폼</td><td>개인 확장</td><td>품질 모듈·대시보드·테스트 체계 확장</td><td>pytest, k6, 레드팀 등 12모듈</td><td>84 PASS</td></tr>
           <tr><td>04 QA 문서 산출물</td><td>팀(4인)</td><td>단위/통합 테스트계획서, 발표자료</td><td>문서화</td><td>문서 13종</td></tr>
-          <tr><td>05 RAIT 평가 시스템</td><td>개인</td><td>전체</td><td>정책 기반 평가 엔진</td><td>Mock 기준 정상 동작 확인</td></tr>
+          <tr><td>05 RaiT 평가 시스템</td><td>개인</td><td>전체</td><td>정책 기반 평가 엔진</td><td>Mock 기준 정상 동작 확인</td></tr>
           <tr><td>06 AI 챗봇 QA</td><td>팀(4인)</td><td>pytest 스위트, QA 문서</td><td>pytest</td><td>53 PASS</td></tr>
           <tr><td>07 RAG 챗봇</td><td>개인</td><td>전체</td><td>Judge 평가</td><td>리포트 6회분</td></tr>
           <tr><td>08 AI Agent 모니터링</td><td>개인</td><td>전체</td><td>장애주입 테스트</td><td>4 PASS</td></tr>

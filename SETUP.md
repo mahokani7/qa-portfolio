@@ -57,7 +57,7 @@ pip install -r requirements.txt
 | 01 | VOC 멀티에이전트 | 일부 기능 제한 | Docker 필요(gRPC 6개 + 웹서버 동시 기동) |
 | 02 | AI품질·운영 모니터링 | 일부 기능 제한 | Prometheus·Grafana·k6가 로컬 Docker 스택 전제 |
 | 04 | QA 문서 산출물 | 해당 없음 | 문서 13종, 실행 프로그램이 아님 |
-| 05 | RAIT 평가 시스템 | 정상 | 키 불필요, 기동 확인 완료 |
+| 05 | RaiT 평가 시스템 | 정상 | 키 불필요, 기동 확인 완료 |
 | 06 | 팀 프로젝트 — AI 챗봇 QA | 일부 기능 제한 | compose 4서비스 구조 |
 | 07 | RAG 챗봇 | 정상 | API 키 필요 |
 | 08 | AI Agent 모니터링 | 일부 기능 제한 | `streamlit_app.py:17`의 `127.0.0.1:8001` 하드코딩을 환경변수로 바꾸는 수정 필요 |
@@ -101,7 +101,7 @@ k6 run performance\k6_test.js               # 부하 테스트 (k6 미설치 시
 
 요구사항정의서·업무분장·WBS·Jira 칸반·보안가이드·취약지표 분석기준·회의록·이슈트래킹시트·단위/통합 테스트계획서·프로그램분석보고서 등 13종.
 
-### 05. RAIT 평가 시스템
+### 05. RaiT 평가 시스템
 ```powershell
 cd 05_RAIT_Evaluation_System
 streamlit run app\app.py     # ① 평가 대시보드
